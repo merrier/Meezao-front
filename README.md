@@ -1,2 +1,274 @@
-# Meezao-front
-Meezao网(http://www.meezao.com)前端工程
+各种文档及规范要求：document\_folder
+---
+
+### 游戏相关：game\_design
+
+####  common\_folder:存放各种通用文件
+- **css**:通用audio文件
+	1. **always\_with\_me.mp3**
+	1. **nide\_ming\_zi.mp3**:你的名字的插曲
+	1. **song.mp3**
+	1. **yong\_dao.mp3**
+- **css**:通用css文件(Koala编译less后的css文件和reset文件)
+	1. **Game\_library.css**:编译后的Game\_library
+	1. **base.css**:css reset文件(来自 Yahoo)
+- **images**:通用图片
+- **javascripts**:通用js文件
+	1. **base.js**:封装的插件以及函数
+	1. **iconfont.js**:SVG字体插件
+	1. **jquery-1.11.3.min.js**:jquery
+	1. **register.js**:通用的注册函数(已废弃)
+- **less**:通用less文件
+	1. **Game\_library.less**:通用less文件,（所有的less文件都需要@import引入）
+- **stylesheets**:通用CSS文件
+	1. **base.css**:css reset,不需要修改
+	1. **game\_base.css**:游戏全局通用样式,一般也不需要修改
+
+####  contents\_folder:存放具体前端文件(按照左侧目录顺序进行排序)
+- **3Dmove**:720度全景游戏
+- **Euro\_quiz**:欧洲杯
+- **bargain\_game**:集字游戏
+- **christmas\_tree**:圣诞树摇一摇
+- **collect\_word**:集字游戏
+- **crowd\_funding**:众筹
+- **game\_template**:游戏通用模板
+- **gamepro**:红包
+- **gift**:某个游戏的小demo
+- **golden\_egg**:摇一摇
+- **lucky_bag**:福袋游戏
+- **puzzle\_game**:拼图游戏
+- **test**:移动端测试文件
+
+####  plugin\_demo:存放插件demo
+- **css3d-engine**:css粒子化3D动画
+- **touchSwipe**:移动端手势插件
+
+####  plugin\_folder:存放插件以及框架,格式为"插件名_v版本号"
+- **animate\_css**:css动画
+- **bootstrap**:前端框架bootstrap
+- **css3d**:css3D动画
+- **flyer**:凡科互动所用插件
+- **font-awesome**:icon库
+- **hammer**:移动端手势库
+- **iscroll**:移动端滚动
+- **jquery-ui**:jquery的ui框架
+- **jquery.mobile**:jquery的移动端框架
+- **jquery.touchswipe**:jquery的移动端手势框架
+- **jquery.validate**:jQuery表单验证插件
+- **jquery**:jQuery
+- **jstween**:动画相关
+- **less**:less解析插件
+
+
+### 移动端相关：mobile\_design
+
+#### common\_folder:存放各种通用文件
+- **css**:通用css文件（编译less后的css文件）
+	1. **Mobile\_index.css**:移动端通用首页相关样式
+	1. **Mobile\_library.css**:移动端通用样式
+- **javascripts**:通用js文件
+	1. **base.js**:封装的插件以及函数
+	1. **common\_index.js**:首页通用js
+	1. **register.js**:通用的注册函数（已废弃）
+- **less**:通用less文件
+	1. **Mobile\_index.less**:首页通用less文件
+	1. **Mobile\_library.less**:移动端通用less文件,（所有的less文件都需要@import引入）
+- **stylesheets**:通用CSS文件
+	1. **common\_base.css**:css reset,不需要修改
+
+####  contents\_folder:存放具体前端文件(按照左侧目录顺序进行排序)
+- **VIP**:卡券相关
+    1. **dawanglu**:关注蒙版
+	1. **NVIP**:VIP服务列表
+	1. **vip**:VIP服务列表
+- **coupons\_list**:卡券列表
+- **mobile\_universal\_register**:移动端通用注册页面
+- **mobile\_template**:移动端模板
+            
+####  plugin\_folder:存放插件以及框架,格式为"插件名\_v版本号"
+- **bootstrap**:前端框架bootstrap
+- **font-awesome**:icon库
+- **jquery.mobile**:jquery移动端
+- **jquery.validate**:jQuery表单验证插件
+- **jquery-ui**:jquery的ui框架
+- **jquery**:jQuery
+- **less**:less解析插件
+
+### PC端相关：web\_design
+#### common\_folder:存放各种通用文件
+- **css**:通用css文件(Koala编译less后的css文件)
+	1. **library\_platform\_module.css**:编译后的library\_platform\_module
+	1. **PC\_index.css**:编译后的PC\_index
+	1. **PC\_library.css**:编译后的PC\_library
+- **fonts**:用到的特殊字体文件
+	1. **SourceHanSansCN**:思源黑体
+- **images**:通用图片
+	1. **platform\_module.png**:几个html页面里面都用到的图片 
+- **javascripts**:通用js文件
+	1. **base.js**:封装的插件以及函数
+	1. **common\_index.js**:首页通用方法
+	1. **less\_compile.js**:less编译文件
+- **less**:通用less文件
+	1. **library\_platform\_module.less**:一些html页面通用的less文件
+	1. **PC\_index.less**:首页通用less文件
+	1. **PC\_library.less**:通用less文件,（所有的less文件都需要@import引入）
+- **stylesheets**:通用CSS文件
+	1. **common\_base.css**:css reset,不需要修改
+	1. **common\_index.css**:首页通用样式（已废弃）
+	1. **common\_index\_new.css**:新的首页通用样式(已废弃)
+
+####  contents\_folder:存放具体前端文件(按照左侧目录顺序进行排序)
+- **A\_manage**:A端管理
+    1. **category\_manage**:品类管理
+    1. **check\_collection**:查看收藏
+	1. **configure\_list**:配置列表
+	1. **ID\_code\_list**:标志码列表
+	1. **open\_delay**:开通延期
+	1. **publish\_list**:发布列表
+- **A\_new**:新A端页面
+    1. **A\_register**:A端注册
+	1. **common**:A端通用文件
+- **A\_user_manage**:A端用户管理
+	1. **account\_list**:账户列表
+	1. **company\_list**:公司列表
+	1. **configure\_menu\_B**:配置菜单B端
+	1. **configure\_menu\_C**:配置菜单C端
+	1. **create\_account**:创建账户
+	1. **edit\_account**:编辑账户
+	1. **weixin\_group\_list**:微信群组列表
+- **Euro\_quiz**:欧洲杯竞猜后台配置
+	1. **battle\_list**:对战列表
+	2. **create\_battle**:新建对战
+	3. **entry\_result**:录入结果
+	4. **quiz\_check**:核销
+- **M-CRM**:CRM系统
+- **auto\_reply**:自动回复
+- **brand\_list**:品牌列表
+	1. **brand\_detail**:品类详情
+	1. **brand\_list**:品牌品类列表
+- **card\_ticket**:卡券
+	1. **coupon\_data**:优惠券数据
+	1. **coupon\_manage**:优惠券管理
+	1. **form\_list**:表单列表
+	1. **vertificate\_record**:核销记录
+- **connect\_custom\_service**:联系客服
+- **coupon\_member\_card**:模仿微信会员卡
+- **create\_document**:创建文案
+	1. **get\_tag.json**:标签所用json文件
+- **data\_record\_center**:数据记录中心
+	1. **brand\_list**:品牌列表
+	2. **brand\_location**:品牌定位
+	3. **category\_list**:品类列表
+	4. **goods\_SKU\_list**:商品SKU列表
+	5. **member\_grade\_list**:会员等级列表
+- **data\_reduction\_backup**:数据备份/还原
+- **data\_upload\_center**:数据上传中心
+	1. **data\_format\_management**:数据格式管理
+	2. **data\_upload**:数据上传
+	3. **data\_upload\_list**：数据上传列表
+- **data\_upload\_fast**:旧的快速数据上传
+- **department\_manage**:部门管理
+- **document\_management**:文案管理
+	1. **multiple\_document\_list**:多文案列表
+	2. **send\_document\_list**:发送列表
+	3. **single\_document\_list**:单文案列表 
+- **fast\_data\_upload**:快速数据上传
+- **form\_center\_final**:报表中心最终版
+	1. **form\_center\_form**:报表中心-报表
+	2. **form\_center\_module**:报表中心-模块
+	3. **form\_draggable\_show**:报表中心-可拖拽
+	4. **form\_modules\_show**:报表中心-查看
+- **function\_center**:功能中心
+	1. **form\_module**:报表模块
+	2. **function\_list**:功能列表
+	3. **function\_module**:功能模块
+- **game\_collect\_word\_configure**:集字游戏后台配置
+- **game\_golden\_egg\_configure**:金蛋摇一摇游戏后台配置
+- **game\_red\_configure**:红包游戏后台配置
+- **game\_zhuanpan\_configure**:大转盘游戏后台配置
+- **index**:新的首页
+- **interaction\_center**:互动中心
+	1. **custom\_interaction**:定制互动
+	2. **custom\_list**:定制列表
+	3. **game\_check**:游戏核销
+	4. **template\_interaction**:模版互动
+	5. **template\_list**:模版列表
+- **list**:模板列表（胡艺馨）
+- **login**:登录页面
+- **M-CRM**:CRM系统
+	1. **actions\_all**:行为的数据json
+	2. **group\_management**:群组管理
+	3. **market\_axle\_manage**:市场轴管理
+	4. **user\_list**:用户列表
+	5. **life\_expectancy**:用户行为具体数据
+	6. **User\_message**:用户信息
+- **menu\_mould**:菜单模板
+	1. **mould\_list**:模板列表
+	2. **create\_B\_mould**:创建B端模板
+	3. **create\_C\_mould**:创建C端模板
+- **message\_manage**:短信管理
+	1. **document\_list**:文档列表
+	2. **document\_upload**:文档上传
+	3. **key\_word\_list**:关键词列表
+	4. **key\_word\_upload**:关键词上传
+	5. **masking\_message\_create**:创建蒙版消息
+	6. **message\_list**:通知消息列表
+	7. **popup\_message_\create**:创建弹窗消息
+- **message\_system**:短信系统
+	1. **precharge\_record**:预充记录
+	2. **precharge\_setting**:预充配置(旧)
+	3. **precharge\_setting\_change**:预充配置(新)
+	4. **send\_list**:发送列表
+	5. **send\_record**:发送记录
+- **modules\_details**:模块详情页
+	1. **attention\_number\_changes**:关注人数变化曲线
+	2. **mobile\_user\_changes**:移动端使用人数变化曲线
+- **modules\_details**:模块配置
+- **modules\_folder**:模块组
+	1. 文件太多,不一一解释,每个html对应一个同名js,即使js中没有内容
+- **questionnaire\_configure**:问答配置
+- **rapid\_marketing**:快速营销
+- **report**:调查问卷报告
+- **rfm\_group**:rfm分组
+- **service\_management**:服务管理
+	1. **document\_center**:文档中心
+	2. **message\_management**:消息管理
+- **system\_maintenance**:系统维护
+- **test**:测试专用
+- **trial\_guide**:使用引导
+- **user\_defined\_menu**:自定义菜单
+- **user\_manage**:用户管理
+	1. **authority\_list**:权限列表
+	2. **user\_authority**:用户权限
+- **web\_template**:web端通用模板
+- **wechat\_authority**:微信授权说明
+
+####  plugin\_demo:存放插件demo
+- **Autocomplete**:自动完成
+- **Validate**:表单验证
+- **datepicker**:日期选择
+
+####  plugin\_folder:存放插件以及框架,格式为"插件名\_v版本号"
+- **Echarts**:js生成图表
+- **Highcharts**:js生成图表
+- **Tdrag**:jQuery拖拽
+- **TimePicki**:时间选择
+- **Turn.js**:翻书效果
+- **bootstrap**:前端框架bootstrap
+- **font-awesome**:icon库
+- **html2canvas**:将html生成图片
+- **jquery-ui**:jquery的ui框架
+- **jquery.gridly**:jquery的将html变成可拖拽元素
+- **jquery.validate**:jQuery表单验证
+- **jquery**:jQuery
+- **less**:less解析
+- **mCustomScroller**:jquery的滚动条
+- **qrcodejs**:js生成二维码
+- **scrollify**:jquery的滚动条定制化
+- **sorttable**:表格排序
+- **swiper**:移动端触摸滑动
+
+
+####  ps\_folder:存放ppt以及设计图
+
+---
