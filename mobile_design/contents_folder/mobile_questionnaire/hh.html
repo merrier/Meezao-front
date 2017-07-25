@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!--360 浏览器在读取到这个标签后，立即切换对应的极速核-->
+    <meta name="renderer" content="webkit">
+    <!--优先使用 IE 最新版本和 Chrome-->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <!--百度禁止转码-->
+    <meta http-equiv="Cache-Control" content="no-siteapp"/>
+    <!--缩放比例为1-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0,user-scalable=no">
+
+    <title>调查问卷</title>
+
+    <!--全局css开始-->
+    <link href="../../plugin_folder/font-awesome/font-awesome.min.css" rel="stylesheet">
+    <link href="../../common_folder/stylesheets/common_base.css" rel="stylesheet">
+    <link href="../../common_folder/less/Mobile_index.less" rel="stylesheet/less">
+
+    <!--<link href="../../plugin_folder/bootstrap_v3.3.5/css/bootstrap.min.css" rel="stylesheet"/>-->
+    <link href="../../plugin_folder/bootstrap_v3.3.5/css/bootstrap-switch.min.css" rel="stylesheet"/>
+    <!--全局css结束-->
+
+    <link href="mobile_questionnaire.css" rel="stylesheet">
+
+</head>
+<body>
+
+<!--展示页面开始-->
+<div class="main_mobie_questionnaire">
+    <form action="" method="post">
+        <div class="mobile_questionnaire" action="" method="post">
+            <!--logo-->
+            <div class="logo">
+                <a href=""><img src="logo.png" height="100" width="100%"/></a>
+            </div>
+            <p class="question_fixed">年龄</p>
+            <input type="number" id="elec_age" placeholder="请点击输入年龄">
+            <div class="error_tips" style="display: none">请输入0-100的整数</div>
+            <hr>
+
+            <p class="question_fixed">性别</p>
+            <!--<select name="gender" class="gender">-->
+            <!--<option disabled selected style='display:none;' value="0">请选择性别</option>-->
+            <!--<option value="1">男</option>-->
+            <!--<option value="1">女</option>-->
+            <!--</select>-->
+            <div class="switch">
+                <input type="checkbox" onchange="gcheck('g_title');" id="g_title" name="my-checkbox" checked />
+                <input type="hidden" name="g_title" class="g_title" value="">
+            </div>
+            <hr>
+
+            <p class="question_fixed">地址</p>
+            <select name="district" class="district">
+                <option disabled selected style='display:none;' value="0">请输入常驻地址</option>
+                <option value='1'>海淀区</option>
+                <option value='1'>朝阳区</option>
+                <option value='1'>西城区</option>
+                <option value='1'>东城区</option>
+                <option value='1'>大兴区</option>
+            </select>
+            <hr>
+
+            <div class="question_title">问答卷</div>
+
+            <div class="question">
+                <div class="question_block" data-role="controlgroup">
+                    <p class="question_own">1.</p>
+                    <p class="question_type">(单选）</p>
+                    <div class="question_content">为什么会打雷下雨</div>
+                    <div class="answer">
+                        <label><input name="answer1" type="radio" value="">我是我是答案1我是我是答案1我是我是答案1我是我是答案1我是我是答案1</label>
+                        <label><input name="answer1" type="radio" value="">答案2哈弗哈佛卡夫卡</label>
+                        <label><input name="answer1" type="radio" value="">答案3哈减肥哈卡夫卡</label>
+                    </div>
+                </div>
+
+                <div class="question_block" data-role="controlgroup">
+                    <p class="question_own">2.</p>
+                    <p class="question_type">(单选）</p>
+                    <div class="question_content">我是问题呀呀呀呀</div>
+                    <div class="answer">
+                        <label><input name="answer2" type="radio" value="">答案11</label>
+                        <label><input name="answer2" type="radio" value="">答案22</label>
+                        <label><input name="answer2" type="radio" value="">答案33</label>
+                        <label><input name="answer2" type="radio" value="">答案44</label>
+                    </div>
+                </div>
+
+                <div class="question_block" data-role="controlgroup">
+                    <p class="question_own">3.</p>
+                    <p class="question_type">(单选）</p>
+                    <div class="question_content">我是问题hhhhh</div>
+                    <div class="answer">
+                        <label><input name="answer3" type="radio" value="">答案111</label>
+                        <label><input name="answer3" type="radio" value="">答案222</label>
+                        <label><input name="answer3" type="radio" value="">答案333</label>
+                        <label><input name="answer3" type="radio" value="">答案444</label>
+                    </div>
+                </div>
+
+                <div class="question_block" data-role="controlgroup">
+                    <p class="question_own">4.</p>
+                    <p class="question_type">(多选）</p>
+                    <div class="question_content">我是问题hhhhh</div>
+                    <div class="answer">
+                        <label><input type="checkbox" value="">答案111</label>
+                        <label><input type="checkbox" value="">答案222</label>
+                        <label><input type="checkbox" value="">答案333</label>
+                        <label><input type="checkbox" value="">答案444</label>
+                    </div>
+                </div>
+            </div>
+            <button class="btn_submit" type="button">提交问卷</button>
+            <button class="hide" type="button" style="display:none;">提交问卷</button>
+
+        </div>
+    </form>
+
+</div>
+<!--展示页面结束-->
+
+</body>
+
+<!--全局js开始-->
+<script src="../../plugin_folder/jquery_v1.11.3/jquery-1.11.3.min.js"></script>
+<!--<script src="../../plugin_folder/jquery.mobile_v1.4.5/jquery.mobile-1.4.5.min.js"></script>-->
+<script src="../../plugin_folder/less_v1.7.0/less.min.js"></script>
+<script src="../../common_folder/javascripts/base.js"></script>
+<script src="../../common_folder/javascripts/common_index.js"></script>
+
+<script src="../../plugin_folder/bootstrap_v3.3.5/js/bootstrap.min.js"></script>
+<script src="../../plugin_folder/bootstrap_v3.3.5/js/bootstrap-switch.min.js"></script>
+
+<!--全局js结束-->
+
+<script src=../../plugin_folder/jquery-ui_v1.10.0/jquery-ui-1.10.0.custom.min.js></script>
+<script src="mobile_questionnaire.js"></script>
+
+</html>

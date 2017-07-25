@@ -1,0 +1,305 @@
+//引入全局less变量
+@import "../../../common_folder/less/PC_library";
+//后台路径
+//@import "../../MeeZao/B_New/common_folder/less/PC_library";
+
+html {
+  height: 100%;
+  body {
+    height: 100%;
+    font-size: 14px;
+    .content_mb_subject {
+      .navbar-default{
+        height: 102px;
+        padding-right: 0;
+        .nav_top{
+          height: 50px;
+          border-bottom: 1px solid #cccccc;
+        }
+        .nav_bottom{
+          padding: 0 20px;
+          .checkAll_checkbox{
+            float: left;
+            margin-top: 18px;
+          }
+          .checkAll_p{
+            float: left;
+            margin-top: 14px;
+            margin-left: 10px;
+          }
+          .btn_delete{
+            margin-top: 8px;
+            margin-left: 20px;
+          }
+          .btn_crate_main_activity{
+            float: right;
+            margin-top: 12px;
+            width: 100px;
+          }
+          .form-group{
+            float: right;
+            margin-top: 10px;
+            margin-left: 10px;
+            .search_input{
+              width: 250px;
+              border-radius: 4px;
+            }
+          }
+          .btn_search{
+            float: right;
+            margin-top: 10px;
+            margin-left: 4px;
+          }
+        }
+      }
+
+      .common_table{
+        height: 500px;
+        border: 1px solid @color_border;
+        border-radius: 4px;
+        padding: 20px 10px;
+        .table{
+          margin-top: 10px;
+          .table_head{
+            .create_time{
+              width: 11.5%;
+              position: relative;
+              .create_time_checkbox{
+                position: absolute;
+                left: 8px;
+                top:16px;
+              }
+            }
+            .mark_color{
+              width: 7.5%;
+            }
+            .main_activity_name{
+              width: 18.3%;
+            }
+            .activity_time_section{
+              width: 20.2%;
+            }
+            .subsidiary{
+              width: 7.5%;
+            }
+            .remark{
+              width: 22.5%;
+            }
+            .operation{
+              width: 12.5%;
+              i{
+                margin-left: 10px;
+
+                }
+              .unclickable{
+                color: grey;
+              }
+            }
+          }
+          .table_body{
+            tr{
+              height: 50px;
+              td{
+                text-align: center;
+                .color_square{
+                  .size(30px,30px);
+                  margin-left: 16px;
+                  background-color: @color_blue;
+                  border:2px solid @color_blue;
+                }
+                .color_square_child{
+                  .size(30px,30px);
+                  margin-left: 16px;
+                  background-color: @color_white;
+                  border:2px solid @color_blue;
+                }
+                .btn-group{
+                  width: 80px;
+                  .btn-default{
+                    .size(40px,22px);
+                    padding: 0;
+                  }
+                }
+              }
+
+            }
+          }
+        }
+      }
+      .remark_div{
+        .size(260px,160px);
+        position: absolute;
+        left: 69%;
+        border: 1px solid @color_border;
+        border-radius: 4px;
+        padding: 20px;
+        overflow: auto;
+        display: none;
+        background-color: @color_white;
+      }
+
+    }
+    .modal_subsidiary{
+      .modal-dialog{
+        width: 960px;
+        .modal-body{
+          height: 340px;
+          overflow: auto;
+          .common_table{
+            min-height: 200px;
+            .table{
+              .coupon_name{
+                width: 34%;
+              }
+              .coupon_kind{
+                width: 19%;
+              }
+              .coupon_term{
+                width: 31%;
+              }
+              .stock_quantity{
+                width: 16%;
+              }
+            }
+          }
+
+        }
+        .modal-footer{
+          .btn-default{
+            background-color: @color_black;
+            color: @color_white;
+          }
+        }
+      }
+    }
+    .modal_activity{
+      .modal-dialog{
+        width: 960px;
+
+        .modal-body{
+          height: 530px;
+          overflow: auto;
+          padding:20px 260px 0 260px;
+          .form-group{
+            margin-top: 20px;
+            position: relative;
+            #activity_name_span{
+              position: absolute;
+              top:5px;
+              right: 5px;
+              color: #111;
+              z-index: 2;
+            }
+            .datimepicker{
+              line-height: 30px;
+              #from{
+                .size(180px,30px);
+                float: left;
+                margin-right: 33px;
+                padding: 0 50px;
+              }
+              #to{
+                .size(180px,30px);
+                float: right;
+                padding: 0 50px;
+              }
+            }
+            .dropdown{
+              .btn-default{
+                float: left;
+              }
+              .dropdown-menu{
+                min-width: 30%;
+                top:32px;
+              }
+              .brand_input_div{
+                margin-left: 123px;
+                height: 35px;
+                .brand_input{
+                  width: 100%;
+                  height: 33px;
+                  border:none;
+                }
+                .brand_span{
+                  width: 100%;
+                  height: 30px;
+                  font-size: 12px;
+                  line-height: 20px;
+                  border: 1px solid #cccccc;
+                  position: relative;
+                  padding: 5px 20px;
+                  border-radius: 4px;
+                  text-align: left;
+                  background-color: @color_white;
+                  display: block;
+                  .float_right_multiple{
+                    position: absolute;
+                    float: right;
+                    right: 20px;
+                    margin-top: 4px;
+                  }
+                }
+              }
+            }
+            .brand_input_div{
+              height: 36px;
+              border: 1px solid @color_border;
+              .input-default{
+                .size(300px,30px);
+              }
+              .brand_input{
+                width: 100%;
+                height: 33px;
+                border:none;
+              }
+              .brand_span {
+                width: 100%;
+                height: 30px;
+                font-size: 12px;
+                line-height: 20px;
+                border: 1px solid #cccccc;
+                position: relative;
+                padding: 5px 20px;
+                border-radius: 4px;
+                text-align: left;
+                background-color: @color_white;
+                display: block;
+                .float_right_multiple {
+                  position: absolute;
+                  float: right;
+                  right: 20px;
+                  margin-top: 4px;
+                }
+              }
+            }
+
+          }
+          textarea{
+            display: block;
+            .size(100%,150px);
+            resize: none;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+          }
+          #remark_span{
+            position: absolute;
+            top:150px;
+            right: 10px;
+          }
+          .error_show{
+            color: red;
+            margin-bottom: 10px;
+            display: none;
+          }
+        }
+        .modal-footer{
+          .btn-default{
+            background-color: @color_black;
+            color: @color_white;
+          }
+        }
+      }
+    }
+
+  }
+}

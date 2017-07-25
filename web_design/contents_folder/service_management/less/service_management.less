@@ -1,0 +1,65 @@
+/* less message_management */
+/* +--------------------------------------------------------------------------
+// | Author: Merrier <953075999@qq.com> <http://> <Date:2016/5/11 22:27>
+// +--------------------------------------------------------------------------*/
+//引入全局less变量
+@import "../../../common_folder/less/PC_library";
+//后台路径
+//@import "../../MeeZao/B_New/common_folder/less/PC_library";
+
+
+//消息管理开始
+
+//表格开始
+.message_management_table{
+
+  thead{
+
+    .th_classification{
+      width:15%;
+    }
+    .th_time{
+      width:18%;
+    }
+    .th_title{
+      width:30%;
+    }
+    .th_content{
+      width:37%;
+    }
+
+  }
+
+  tbody{
+    word-break: break-all;
+
+    .td_content{
+
+      .td_content_tooltips{
+        display: none;
+        position: absolute;
+        width:400px;
+        padding: 10px;
+        border: 1px solid @color_border;
+        background-color: #ffffff;
+        text-align: left;
+        word-break: break-all;
+      }
+    }
+  }
+}
+//表格结束
+
+//模态框-内容展示开始
+.modal_message_content{
+
+  .modal-body{
+    max-height: 200px;
+    overflow-y: auto;
+    word-break: break-all;
+  }
+}
+//模态框-内容展示结束
+
+
+//消息管理结束

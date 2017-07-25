@@ -1,0 +1,245 @@
+/* Less web_template */
+/* +--------------------------------------------------------------------------
+// | Author: Merrier <953075999@qq.com> <http://> <Date:2016/9/21 22:27>
+// +--------------------------------------------------------------------------*/
+//引入全局less变量
+@import "../../../common_folder/less/PC_library";
+
+//后台路径
+//@import "../../MeeZao/B_New/common_folder/less/PC_library";
+
+html {
+
+  body {
+
+    .content_mb_subject {
+
+      .content_new_title {
+        height: 50px;
+        font-family: SourceHanSansCN-Medium;
+        font-size: 16px;
+        color: #1c1c1c;
+        line-height: 50px;
+        margin-bottom: 15px;
+      }
+
+      //新的主要内容开始
+      .content_new_main {
+
+        .rapid_manage_title {
+          height: 25px;
+          margin-bottom: 5px;
+          line-height: 25px;
+          font-family: SourceHanSansCN-Medium;
+          font-size: 16px;
+
+          h5 {
+            float: left;
+            line-height: 25px;
+            color: #1c1c1c;
+          }
+          p {
+            float: right;
+            line-height: 25px;
+            color: #00b6f6;
+          }
+        }
+
+        .rapid_manage_edit {
+          position: relative;
+          height: 160px;
+          border: 1px solid #d2e3ee;
+          background-color: #eff4f7;
+
+          p {
+            position: absolute;
+            left: 0;
+            right: 0;
+            padding: 5px;
+            line-height: 20px;
+            color: #3c3c3c;
+            font-family: SourceHanSansCN-Medium;
+            font-size: 15px;
+          }
+          .edit_company_name {
+            top: 0;
+          }
+          .edit_company_foot {
+            bottom: 0;
+          }
+          textarea {
+            .size(100%, 100%);
+            padding: 25px 5px;
+            color: #3c3c3c;
+            font-family: SourceHanSansCN-Medium;
+            font-size: 15px;
+            border: 0;
+            background-color: #eff4f7;
+            word-wrap: break-word;
+            word-break: break-all;
+            overflow-y: auto;
+            resize: none;
+          }
+          .message_error_box {
+            display: none;
+            position: absolute;
+            .size(100%, 40px);
+            bottom: 0;
+            left: 0;
+            padding: 0 10px;
+            line-height: 40px;
+            color: #ffffff;
+            background-color: #f54c5f;
+
+            span {
+              float: left;
+              font-family: SourceHanSansCN-Medium;
+              font-size: 16px;
+            }
+            .fa-times {
+              float: right;
+              line-height: 40px;
+              font-size: 25px;
+              cursor: pointer;
+            }
+          }
+        }
+
+        .rapid_manage_tipsbox {
+          height: 35px;
+          line-height: 35px;
+          font-family: "宋体";
+          font-size: 12px;
+
+          h5 {
+            float: left;
+            line-height: 35px;
+            color: #939393;
+          }
+          p {
+            float: right;
+            color: #f72239;
+          }
+        }
+        .rapid_manage_oprbox {
+          margin-top: 40px;
+          .clearfix;
+
+          a {
+            float: right;
+            margin-left: 15px;
+          }
+          p {
+            float: right;
+            line-height: 40px;
+            margin-right: 5px;
+            font-family: SourceHanSansCN-Medium;
+            font-size: 16px;
+            color: #00b6f6;
+          }
+        }
+      }
+      //新的主要内容结束
+
+      //短信编写攻略开始
+      .message_strategy {
+        margin-top: 30px;
+        padding: 15px;
+        background-color: #eff4f7;
+        font-family: "SourceHanSansCN-Medium";
+
+        .message_strategy_title {
+          color: #a0a0a5;
+        }
+
+        .message_strategy_content {
+          margin-top: 10px;
+          height: 100px;
+          font-family: "微软雅黑";
+
+          .content_description {
+            width: 50%;
+            float: left;
+            margin: 5px 0;
+            font-size: 13px;
+          }
+        }
+        .message_strategy_bottom {
+          display: flex;
+          justify-content: space-between;
+
+          .btn_view_example {
+            color: #00b6f6;
+            border-bottom: 1px solid #00b6f6;
+            text-decoration: none;
+          }
+          .btn_view_example:last-child {
+            margin-right: 0;
+          }
+          .btn_green {
+            color: #2bd948;
+            border-bottom: 1px solid #2bd948;
+          }
+
+        }
+      }
+      //短信编写攻略结束
+    }
+
+    //模态框-短信样例开始
+    .modal_message_example {
+      .modal-dialog {
+        width: 430px;
+
+        .modal-content{
+          border: 0;
+          border-radius: 0;
+          box-shadow: 0 8px 50px rgba(0, 182, 246, 0.6);
+
+          .modal-body {
+            position: relative;
+            padding: 40px;
+            text-align: center;
+            font-family: "微软雅黑";
+            font-size: 13px;
+            line-height: 25px;
+
+            .message_VIP {
+              text-align: left;
+            }
+          }
+        }
+
+      }
+    }
+    //模态框-短信样例结束
+
+    //模态框-短信发送成功开始
+    .modal_message_success {
+
+      .modal-dialog{
+        width:400px;
+
+        .modal-body {
+          text-align: center;
+
+          .fa{
+            font-size: 40px;
+            color:#2bd948;
+          }
+          h5{
+            font-size: 20px;
+            font-family: SourceHanSansCN-Medium;
+            margin: 20px 0;
+          }
+          p{
+            font-size: 14px;
+            font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+          }
+        }
+      }
+    }
+    //模态框-短信发送成功结束
+  }
+}
+

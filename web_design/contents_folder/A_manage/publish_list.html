@@ -1,0 +1,501 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <!--360 浏览器在读取到这个标签后，立即切换对应的极速核-->
+    <meta name="renderer" content="webkit">
+    <!--优先使用 IE 最新版本和 Chrome-->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <!--百度禁止转码-->
+    <meta http-equiv="Cache-Control" content="no-siteapp"/>
+    <title>发布列表</title>
+
+    <!--全局css开始-->
+    <link href="../../plugin_folder/bootstrap_v3.3.5/css/bootstrap.min.css" rel="stylesheet"/>
+    <link href="../../plugin_folder/font-awesome/font-awesome.min.css" rel="stylesheet"/>
+    <link href="../../common_folder/stylesheets/common_base.css" rel="stylesheet"/>
+    <link href="../../common_folder/less/PC_index.less" rel="stylesheet/less"/>
+    <!--全局css结束-->
+
+    <link href=../../plugin_folder/jquery-ui_v1.10.0/jquery.ui.datepicker.css rel="stylesheet"/>
+    <link href="../../plugin_folder/jquery-ui_v1.10.0/jquery-ui-1.10.0.custom.css" rel="stylesheet"/>
+
+    <link href="less/publish_list.less" rel="stylesheet/less" />
+
+</head>
+
+<body class="publish_list">
+
+
+<!--标题栏开始-->
+<div class="row header">
+    <h2>MEEZAO</h2>
+
+    <div class="toolbar">
+        <a href="" class="fa fa-envelope-o toolbar_information_center"><sup class="information_num"><i class="fa fa-circle"></i></sup></a><!--
+         --><div class="toolbar_item">
+        <a href="#none" class="toolbar_person_information">
+            <i class="fa fa-circle"></i>
+            <span class="toolbar_user_name">萨达sdfsadf</span>
+        </a>
+        <ul class="toolbar_drop_menu">
+            <li class="toolopr_modify_password" data-toggle="modal" data-target=".modal_modify_password">修改密码</li>
+            <li class="toolopr_phone_solution" data-toggle="modal" data-target=".modal_phone_solution">手机号解绑</li>
+            <li class="toolopr_log_out">退出登录</li>
+        </ul>
+    </div>
+    </div>
+</div>
+<!--标题栏结束-->
+
+<!--页面开始-->
+<div class="container-fluid wrp">
+
+    <!--导航栏开始-->
+    <div class="nav_bar">
+        <ul class="nav_bar_level1">
+            <li><a href="#none"><span>全数据报表系统</span></a>
+                <ul class="nav_bar_level2">
+                    <li><a href="index.php/MeeZao/Plat/Fun/Form"><span>微官基础报表</span></a></li>
+                    <li><a href="#none"><span>官网基础报表</span></a></li>
+                    <li><a href="#none"><span>CRM报表</span></a></li>
+                    <li><a href="#none"><span>Meezao免费报表</span></a></li>
+                    <li><a href="#none"><span>Meezao付费报表</span></a></li>
+                </ul>
+            </li>
+            <li><a href="#none"><span>微信管理系统</span></a>
+                <ul class="nav_bar_level2">
+                    <li><a href="#none"><span>文案系统</span></a>
+                        <ul class="nav_bar_level3">
+                            <li><a href="#none"><i class="fa fa-circle"></i><span>创建文案</span></a></li>
+                            <li><a href="#none"><i class="fa fa-circle"></i><span>组合文案</span></a></li>
+                            <li><a href="#none"><i class="fa fa-circle"></i><span>文案列表</span></a></li>
+                            <li><a href="#none"><i class="fa fa-circle"></i><span>Meezao文案系统</span></a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#none"><span>微信平台管理系统</span></a>
+                        <ul class="nav_bar_level3">
+                            <li><a href="#none"><i class="fa fa-circle"></i><span>自定义菜单</span></a></li>
+                            <li><a href="#none"><i class="fa fa-circle"></i><span>自动回复管理</span></a></li>
+                            <li><a href="#none"><i class="fa fa-circle"></i><span>消息管理</span></a></li>
+                            <li><a href="#none"><i class="fa fa-circle"></i><span>素材管理</span></a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+            <li><a href="#none"><span>官网管理系统</span></a>
+                <ul class="nav_bar_level2">
+                    <li><a href="#none"><span>微信基础报表</span></a></li>
+                    <li><a href="#none"><span>微官网基础报表</span></a></li>
+                    <li><a href="#none"><span>会员分析报表</span></a>
+                        <ul class="nav_bar_level3">
+                            <li><a href="#none"><i class="fa fa-circle"></i><span>Meezao免费报表</span></a></li>
+                            <li><a href="#none"><i class="fa fa-circle"></i><span>Meezao付费报表</span></a></li>
+                            <li><a href="#none"><i class="fa fa-circle"></i><span>Meezao定制报表</span></a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+            <li><a href="#none"><span>M-CRM系统</span></a>
+                <ul class="nav_bar_level2">
+                    <li><a href="#none"><span>会员分组</span></a></li>
+                    <li><a href="#none"><span>分组管理</span></a></li>
+                    <li><a href="#none"><span>分组促销</span></a></li>
+                    <li><a href="#none"><span>会员分析图表</span></a></li>
+                </ul>
+            </li>
+            <li><a href="#none"><span>卡券管理系统</span></a>
+                <ul class="nav_bar_level2">
+                    <li><a href="#none"><span>卡券列表</span></a></li>
+                </ul>
+            </li>
+            <li><a href="#none"><span>核销系统</span></a>
+                <ul class="nav_bar_level2">
+                    <li><a href="#none"><span>网页核销</span></a></li>
+                    <li><a href="#none"><span>手机核销</span></a></li>
+                    <li><a href="#none"><span>核销记录</span></a></li>
+                </ul>
+            </li>
+            <li><a href="#none"><span>平台管理系统</span></a>
+                <ul class="nav_bar_level2">
+                    <li><a href="#none"><span>权限管理</span></a></li>
+                    <li><a href="#none"><span>品牌管理</span></a></li>
+                    <li><a href="#none"><span>系统消息</span></a></li>
+                    <li><a href="#none"><span>服务帮助</span></a></li>
+                </ul>
+            </li>
+        </ul>
+
+    </div>
+    <!--导航栏结束-->
+
+    <!--右侧内容开始-->
+    <div class="content clearfix">
+
+
+        <!--隐藏警告框标签开始-->
+        <div class="alert_hide_tag hide">
+            <div class="alert_whether_show"></div>
+            <div class="alert_tag_type"></div>
+            <div class="alert_tag_delay"></div>
+            <div class="alert_tag_content"></div>
+        </div>
+        <!--隐藏警告框标签结束-->
+
+
+        <!--右侧内容主体开始-->
+        <div class="content_main">
+            <div class="content_route"><a href="#none">首页</a>
+                <span class="content_route_pathname">>Meezao系统管理>权限管理>用户管理</span></div>
+
+            <!--主体内容开始-->
+            <div class="content_mb">
+                <h2 class="content_mb_title">发布列表</h2>
+
+                <!--警告框-范例开始-->
+                <div class="alert alert-example" role="alert">
+                    <button type="button" class="close" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <strong class="alert_content"></strong>
+                </div>
+                <!--警告框-范例结束-->
+
+
+                <!--自己的内容开始-->
+                <div class="content_mb_subject">
+                    <!--你可以在这里写你自己的内容了-->
+
+                    <!----------------导航条开始-------------------->
+                    <nav class="navbar navbar-default">
+                        <div class="navbar_top">
+                            <div class="navbar-header">
+                                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                                        data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                                    <span class="sr-only">Toggle navigation</span>
+                                    <span class="icon-bar"></span>
+                                    <span class="icon-bar"></span>
+                                    <span class="icon-bar"></span>
+                                </button>
+                                <a class="navbar-brand" href="#">Screen</a>
+                            </div>
+
+                            <ul class="nav navbar-nav">
+                                <li><a href="#">标志码列表</a></li>
+                                <li><a href="#">配置列表</a></li>
+                                <li class="active"><a href="#">发布列表<span class="sr-only">(current)</span></a></li>
+                                <li><a href="#">开通延期</a></li>
+                            </ul>
+
+                        </div>
+
+                        <div class="navbar_bottom">
+                            <form class="navbar-form navbar-right" role="search">
+                                <div class="form-group">
+                                    <input type="text" class="form-control search_user_input" placeholder="请输入您要搜索的用户名称">
+                                    <input type="text" class="form-control search_name_input" placeholder="请输入您要搜索的内容名称">
+                                </div>
+                                <button type="button" class="btn btn-default btn_search">查询</button>
+                            </form>
+
+                            <button type="button" class="btn btn-primary btn_publish">发布/开通</button>
+                        </div>
+
+
+                    </nav>
+                    <!----------------导航条结束-------------------->
+
+                    <!----------------发送列表表格开始-------------------->
+                    <div class="common_table">
+                        <table class="table table-bordered">
+                            <thead>
+                            <tr class="table_head">
+                                <th class="publish_time">时间</th>
+                                <th class="kind">类别</th>
+                                <th class="name">名称</th>
+                                <th class="user">用户</th>
+                                <th class="operation">操作</th>
+                            </tr>
+                            </thead>
+                            <tbody class="table_body">
+                            <tr data-id="1">
+                                <td>2016-5-17 11:03</td>
+                                <td>定制化游戏</td>
+                                <td>大转盘</td>
+                                <td>新世界百货望京店</td>
+                                <td>
+                                    <div class="btn-group" role="group" aria-label="...">
+                                        <button type="button" class="btn btn-default btn_withdraw">撤回</button>
+                                        <button type="button" class="btn btn-default btn_open">开通</button>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr data-id="2">
+                                <td>2016-5-19 10:17</td>
+                                <td>模板化游戏</td>
+                                <td>不不不不不不不不不不不不不不不不吧</td>
+                                <td>新世界百货崇文店</td>
+                                <td>
+                                    <div class="btn-group" role="group" aria-label="...">
+                                        <button type="button" class="btn btn-default btn_withdraw">撤回</button>
+                                        <button type="button" class="btn btn-default btn_open">开通</button>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr data-id="3">
+                                <td>2016-5-19 10:17</td>
+                                <td>功能</td>
+                                <td>噢噢噢噢噢噢噢噢哦哦哦哦哦哦哦哦哦</td>
+                                <td></td>
+                                <td>
+                                    <div class="btn-group" role="group" aria-label="...">
+                                        <button type="button" class="btn btn-default btn_withdraw">撤回</button>
+                                        <button type="button" class="btn btn-default btn_open">开通</button>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr data-id="4">
+                                <td>2016-5-19 10:17</td>
+                                <td>报表</td>
+                                <td>啊啊啊啊啊啊啊啊啊啊啊</td>
+                                <td></td>
+                                <td>
+                                    <div class="btn-group" role="group" aria-label="...">
+                                        <button type="button" class="btn btn-default btn_withdraw">撤回</button>
+                                        <button type="button" class="btn btn-default btn_open">开通</button>
+                                    </div>
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="content_mb_subject" style="display: none">
+                    <!--你可以在这里写你自己的内容了-->
+                    <div class="open_content">
+                        <div class="form-group">
+                            <label>请选择要开通的内容</label>
+                            <div class="input-group">
+                                <div class="input-group-btn">
+                                    <button type="button" class="btn btn-default open_content_button" disabled></button>
+                                </div>
+                                <input type="text" class="form-control open_content_input" disabled>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label>请选择要开通的对象</label>
+                            <input type="text" class="form-control open_object" disabled>
+                        </div>
+                        <div class="form-group">
+                            <label>请选择发布/开通</label>
+                            <input type="radio" value="open" name="open" checked disabled>开通
+                        </div>
+                        <div class="form-group">
+                            <input type="radio" value="" name="time">永久有效
+                            <br/>
+                            <input type="radio" value="" name="time">自开通一年有效
+                            <br/>
+                            <input type="radio" value="" name="time">
+                            <div class="datimepicker">
+                                <input type="text" value="" id="from">
+                                至
+                                <input type="text" value="" id="to">
+                            </div>
+                            <br/>
+                        </div>
+                        <div class="form_submit">
+                            <button class="btn btn-primary btn_open_submit">提交</button>
+                            <button class="btn btn-default btn_back">返回</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="content_mb_subject" style="display: none">
+                    <!--你可以在这里写你自己的内容了-->
+                    <div class="publish_content clearfix">
+                        <div class="publish_content_left">
+                            <div class="form-group modal_filter_box">
+                                <label>请选择要发布的内容</label>
+                                <input type="radio" name="publish_content" class="collect_bag_input" checked>使用收藏包
+                                <input type="radio" name="publish_content" class="choose_publish_input">使用选择发布
+                                <div class="dropdown collect_bag" data-id="0">
+                                    <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                                        <span></span>
+                                        <span class="caret"></span>
+                                    </button>
+                                    <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                                        <li><a href="javascript:void(0)" data-id="1">Action</a></li>
+                                        <li><a href="javascript:void(0)" data-id="2">Another action</a></li>
+                                        <li><a href="javascript:void(0)" data-id="3">Something else here</a></li>
+                                        <li><a href="javascript:void(0)" data-id="4">Separated link</a></li>
+                                    </ul>
+                                </div>
+                                <div class="input-group choose_publish">
+                                    <div class="input-group-btn group_range_choosediv">
+                                        <div class="dropdown" data-id="">
+                                            <button type="button" class="btn btn-default btn-dropdown">
+                                                <span>请选择</span></button>
+                                            <button type="button" class="btn btn-default dropdown-toggle"
+                                                    data-toggle="dropdown" aria-haspopup="true"
+                                                    aria-expanded="false">
+                                                <span class="caret"></span>
+                                                <span class="sr-only">Toggle Dropdown</span>
+                                            </button>
+                                            <ul class="dropdown-menu">
+                                                <li><a href="#" data-id="1" data-name="group_ownset">定制化游戏</a></li>
+                                                <li><a href="#" data-id="2" data-name="group_weixin">模板化游戏</a></li>
+                                                <li><a href="#" data-id="3" data-name="group_elec">功能</a></li>
+                                                <li><a href="#" data-id="4" data-name="group_crm">报表</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="input-group group_range_inputdiv">
+                                        <div class="brand_input_div">
+                                            <input type="text" class="input-default brand_input group_range_input"
+                                                   name="group_range_input">
+                                            <div class="group_range_hideinputbox hide">
+                                                <input type="hidden" class="group_range_hideinputnew" name="">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label>请选择发布/开通</label>
+                                <input type="radio" value="publish" name="open_or_publish" class="publish_input" checked>发布
+                                <input type="radio" value="open" name="open_or_publish" class="open_input">开通
+                            </div>
+                            <div class="form-group open_time">
+                                <input type="radio" value="" name="time">永久有效
+                                <br/>
+                                <input type="radio" value="" name="time">自开通一年有效
+                                <br/>
+                                <input type="radio" value="" name="time">
+                                <div class="datimepicker">
+                                    <input type="text" value="" id="from1">
+                                    至
+                                    <input type="text" value="" id="to1">
+                                </div>
+                                <br/>
+                            </div>
+                            <div class="form-group">
+                                <label>请选择要发布的对象</label>
+                                <div class="object_div">
+
+                                </div>
+                                <input type="text" class="object_input" name="object_input">
+                            </div>
+                        </div>
+                        <div class="publish_content_right">
+                            <div class="content_right_header">
+                                <input type="checkbox" name="checkAll" class="checkAll_checkbox">
+                                <div class="checkAll_p">全选/全不选</div>
+                                <div class="form-group">
+                                    <div class="input-group">
+                                        <div class="input-group-btn">
+                                            <div class="dropdown" data-id="1">
+                                                <button type="button" class="btn btn-default btn-dropdown">
+                                                    <span>组名</span></button>
+                                                <button type="button" class="btn btn-default dropdown-toggle"
+                                                        data-toggle="dropdown" aria-haspopup="true"
+                                                        aria-expanded="false">
+                                                    <span class="caret"></span>
+                                                    <span class="sr-only">Toggle Dropdown</span>
+                                                </button>
+                                                <ul class="dropdown-menu">
+                                                    <li><a href="##" data-id="1">组名</a></li>
+                                                    <li><a href="##" data-id="2">用户名</a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <!--需要修改的地方-->
+                                        <input type="text" class="form-control search_input">
+                                    </div>
+                                </div>
+                                <button type="button" class="btn btn-default search">搜索</button>
+                            </div>
+
+                            <div class="content_right_middle">
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="form_submit">
+                        <button class="btn btn-primary btn_submit">提交</button>
+                        <button class="btn btn-default btn_back">返回</button>
+                    </div>
+                </div>
+
+                <!--自己的内容结束-->
+
+            </div>
+            <!--主体内容结束-->
+
+        </div>
+        <!--右侧内容主体结束-->
+
+
+    </div>
+    <!--右侧内容结束-->
+</div>
+<!--页面结束-->
+
+
+<!--尾部开始-->
+<div class="container-fluid foot">
+    <h2>Design by Meezao</h2>
+</div>
+<!--尾部结束-->
+
+
+<!--系统管理消息开始-->
+<div class="system_information" style="display: none">
+    <div class="system_information_header">
+        <h3>系统管理消息</h3>
+        <i class="fa fa-times"></i>
+    </div>
+    <div class="system_information_content">
+        系统将于2016年2月24日24:00-2016年2月27日3:00进行系统升级,届时系统停止使用,给您带来的不变请谅解!
+
+        升级内容:
+        PC核销-卡券部分(上线)
+        权限管理(上线)
+        <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+    </div>
+</div>
+<!--系统管理消息结束-->
+
+<!--撤回模态框-->
+<div class="modal fade modal_withdraw">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title">撤回确认</h4>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary btn_confirm">确认</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+<!--撤回模态框-->
+
+
+</body>
+
+<!--全局js开始-->
+<script src="../../plugin_folder/jquery_v1.11.3/jquery-1.11.3.min.js"></script>
+<script src=../../plugin_folder/jquery-ui_v1.10.0/jquery-ui-1.10.0.custom.min.js></script>
+<script src="../../plugin_folder/bootstrap_v3.3.5/js/bootstrap.min.js"></script>
+<script src="../../plugin_folder/jquery.validate_v1.13.1/jquery.validate-1.13.1.js"></script>
+<script src="../../plugin_folder/less_v1.7.0/less.min.js"></script>
+<script src="../../common_folder/javascripts/base.js"></script>
+<script src="../../common_folder/javascripts/common_index.js"></script>
+<!--全局js结束-->
+
+<script src=../../plugin_folder/jquery-ui_v1.10.0/jquery.ui.datepicker.js></script>
+
+<script src="javascripts/publish_list.js"></script>
+
+</html>

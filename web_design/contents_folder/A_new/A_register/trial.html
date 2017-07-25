@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <!--360 浏览器在读取到这个标签后，立即切换对应的极速核-->
+    <meta name="renderer" content="webkit">
+    <!--优先使用 IE 最新版本和 Chrome-->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <!--百度禁止转码-->
+    <meta http-equiv="Cache-Control" content="no-siteapp"/>
+    <title>蜜枣网-开始试用</title>
+
+    <!--全局css开始-->
+    <link href="../common/stylesheets/bootstrap.min.css" rel="stylesheet"/>
+    <link href="../common/stylesheets/font-awesome.min.css" rel="stylesheet"/>
+    <link href="../common/stylesheets/common_base.css" rel="stylesheet"/>
+    <link href="../common/css/library.css" rel="stylesheet"/>
+    <!--全局css结束-->
+
+    <link href="css/register.css" rel="stylesheet"/>
+
+</head>
+
+<body>
+
+<!--页面开始-->
+<div class="wrp">
+
+    <!--主内容开始-->
+    <div class="content">
+
+        <!--试用开始-->
+        <div class="trial">
+            <img class="logo" src="images/logo.png"/>
+
+            <form class="reg_right_form clearfix" action="http://www.baidu.com" method="post">
+
+                <div class="reg_form_item">
+                    <img src="images/img_icon_phone.png"/>
+                    <input type="text" maxlength="11" placeholder="请输入手机号" id="reg_phone_number" name="reg_phone_number" data-reg-type="phone_number" data-error="请输入正确的手机号">
+
+                    <p class="form_tips"><i class="fa fa-exclamation-circle"></i><span>请输入手机号</span></p>
+                </div>
+
+                <div class="reg_form_item reg_form_code">
+                    <img src="images/img_icon_code.png" style="top:13px;"/>
+                    <input class="input_not_reg" type="text" maxlength="4" placeholder="请输入验证码" id="reg_code" name="reg_code" data-reg-type="positive_integers_zero" data-error="验证码错误">
+                    <a class="btn_get_code">获取验证码</a>
+
+                    <p class="form_tips"><i class="fa fa-exclamation-circle"></i><span>请输入验证码</span></p>
+                </div>
+
+                <a class="btn_new_red btn_trial">开始试用</a>
+
+                <a type="submit" class="reg_form_submit hide">提交</a>
+
+            </form>
+        </div>
+        <!--使用结束-->
+
+    </div>
+    <!--右侧内容结束-->
+</div>
+<!--页面结束-->
+
+
+</body>
+
+<!--全局js开始-->
+<script src="../common/js/jquery-1.11.3.min.js"></script>
+<script src="../common/js/bootstrap.min.js"></script>
+<script src="../common/js/less.min.js"></script>
+<script src="../common/js/base.js"></script>
+<!--全局js结束-->
+
+
+<script src="javascripts/trial.js"></script>
+
+
+</html>

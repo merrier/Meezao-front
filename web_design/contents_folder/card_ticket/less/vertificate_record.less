@@ -1,0 +1,143 @@
+//引入全局less变量
+@import "../../../common_folder/less/PC_library";
+//后台路径
+//@import "../../MeeZao/B_New/common_folder/less/PC_library";
+
+
+html {
+  height: 100%;
+  body {
+    height: 100%;
+    font-size: 14px;
+    select{
+      color: #555;
+    }
+    .wrp {
+      .content_mb_subject {
+        .navbar-default {
+          padding-right: 20px;
+          .navbar-brand {
+            .font_arial;
+            font-weight: bold;
+          }
+          .navbar-right{
+            .btn_card_vertificate{
+              margin-top: 0;
+            }
+          }
+          .datimepicker{
+            margin-top: 12px;
+            float: right;
+            margin-right: 10px;
+            input{
+              width: 120px;
+            }
+          }
+        }
+        .common_table{
+          .table_head{
+            .vertificate_time{
+              width: 9.5%;
+            }
+            .card_kind{
+              width: 11.3%;
+            }
+            .name{
+              width: 12.5%;
+            }
+            .card_number{
+              width: 12%;
+            }
+            .vertificate_way{
+              width: 11%;
+            }
+            .vaertificater_department{
+              width: 15.8%;
+            }
+            .user_name{
+              width: 11.8%;
+            }
+            .user_ID{
+              width: 15.9%;
+            }
+          }
+        }
+
+      }
+    }
+    .modal_card_vertificate_success{
+      .modal-dialog{
+        .modal-content{
+          .modal-footer{
+            .btn-primary{
+              width: 112px;
+              text-align: center;
+              text-indent: 0;
+              letter-spacing: 0;
+            }
+          }
+        }
+      }
+    }
+    .modal_card_vertificate{
+      .modal-dialog{
+        width: 960px;
+        .modal-header{
+          .navbar-right{
+            position: absolute;
+            right: 40px;
+            top: 2px;
+            .search_input{
+              .size(250px,30px);
+            }
+            .search{
+              .size(70px,30px);
+              line-height: 18px;
+            }
+          }
+        }
+        .modal-body{
+          height: 400px;
+          padding-top: 34px;
+          .body_left{
+            width: 40%;
+            float: left;
+            padding-left: 49px;
+          }
+          .body_right{
+            .card_detail{
+              display: none;
+            }
+            width: 60%;
+            float: right;
+            padding-left: 30px;
+            padding-right: 40px;
+            h5{
+              font-size: 16px;
+              font-weight: bold;
+              margin-bottom: 20px;
+            }
+            p{
+              margin-top: 10px;
+              margin-bottom: 20px;
+              line-height: 30px;
+            }
+          }
+        }
+        .modal-footer{
+          .btn-primary{
+            text-align: center;
+            text-indent: 0;
+            letter-spacing: 0;
+          }
+        }
+      }
+    }
+    .modal-footer{
+      .btn-default{
+        background-color: @color_black;
+        color: @color_white;
+      }
+    }
+  }
+}

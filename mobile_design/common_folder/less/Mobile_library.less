@@ -1,0 +1,217 @@
+/* less PC_library */
+/* +--------------------------------------------------------------------------
+// | Author: Merrier <953075999@qq.com> <http://> <Date:2016/5/11 22:27>
+// +--------------------------------------------------------------------------*/
+
+
+//变量
+@color_white: #ffffff;
+@color_blue: #0096ff;
+@color_black:#1c1c1c;
+@color_font_black: #333;
+@color_red:#ff0000;
+@color_border: #ccc;
+@color_border_darker:#7f7f7f;
+
+//通用样式
+.font_yahei {
+  font-family: 'Microsoft Yahei', '微软雅黑';
+}
+
+.font_arial {
+  font-family: arial,sans-serif;
+}
+
+.font_sitka {
+  font-family: 'Sitka';
+}
+
+.font_hei{
+  font-family:'黑体';
+}
+
+.center_block {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.content_box {
+  box-sizing: content-box;
+  -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+}
+
+.clearfix {
+  &:after {
+    content: ".";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+  }
+}
+
+.caret {
+  border-top-width: 8px;
+  border-right-width: 8px;
+  border-left-width: 8px;
+}
+
+.btn_shadow_gray {
+  color: #333;
+  background-color: #eeeeee;
+  //background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #eeeeee), color-stop(100%, #cccccc));
+  //background-image: -webkit-linear-gradient(top #eeeeee, #cccccc);
+  //background-image: -moz-linear-gradient(top, #eeeeee, #cccccc);
+  //background-image: -ms-linear-gradient(top, #eeeeee, #cccccc);
+  //background-image: -o-linear-gradient(top, #eeeeee, #cccccc);
+  //background-image: linear-gradient(top #eeeeee, #cccccc);
+  border: 1px solid #ccc;
+  border-bottom: 1px solid #bbb;
+  border-radius: 2px;
+  //box-shadow: inset 0 0 6px 4px #ccc;
+}
+
+.btn_shadow_orange {
+  color: #333;
+  background-color: #eeeeee;
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #ffe9a6), color-stop(100%, #ffc107));
+  background-image: -webkit-linear-gradient(top #ffe9a6, #ffc107);
+  background-image: -moz-linear-gradient(top, #ffe9a6, #ffc107);
+  background-image: -ms-linear-gradient(top, #ffe9a6, #ffc107);
+  background-image: -o-linear-gradient(top, #ffe9a6, #ffc107);
+  background-image: linear-gradient(top #ffe9a6, #ffc107);
+  border: 1px solid #ccc;
+  border-bottom: 1px solid #bbb;
+  border-radius: 2px;
+  //box-shadow: inset 0 0 6px 4px #ccc;
+}
+
+
+//函数
+.size(@width,@height) {
+  width: @width;
+  height: @height;
+}
+
+.background_percent100(@img_url) {
+  background-image: url(@img_url);
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+  background-position: center center;
+}
+
+.word_space(@word_space) {
+  text-indent: @word_space;
+  letter-spacing: @word_space;
+}
+
+.border-top-radius(@radius) {
+  border-top-right-radius: @radius;
+  border-top-left-radius: @radius;
+}
+
+.border-right-radius(@radius) {
+  border-bottom-right-radius: @radius;
+  border-top-right-radius: @radius;
+}
+
+.border-bottom-radius(@radius) {
+  border-bottom-right-radius: @radius;
+  border-bottom-left-radius: @radius;
+}
+
+.border-left-radius(@radius) {
+  border-bottom-left-radius: @radius;
+  border-top-left-radius: @radius;
+}
+
+.border-radius(@radius) {
+  border-top-left-radius: @radius;
+  border-top-right-radius: @radius;
+  border-bottom-left-radius: @radius;
+  border-bottom-right-radius: @radius;
+}
+
+
+.box_shadow(@px){
+  box-shadow:0 0 @px #aaa;
+}
+
+.border_zigzag(@w,@h,@color){
+  background-image: -webkit-gradient(linear,50% 0,0 100%,from(transparent), color-stop(.5,transparent),color-stop(.5,@color),to(@color)), -webkit-gradient(linear,50% 0,100% 100%,from(transparent), color-stop(.5,transparent),color-stop(.5,@color),to(@color));
+  background-image: -moz-linear-gradient(50% 0 -45deg,transparent,transparent 50%,@color 50%,@color),-moz-linear-gradient(50% 0 -135deg,transparent,transparent 50%,@color 50%,@color);
+  background-size: @w @h;
+  background-repeat: repeat-x;
+  background-position: 0 100%;
+}
+
+
+*{text-shadow: none}
+/*消除jquery.mobile的text-shadow影响*/
+
+*{box-sizing: border-box}
+
+
+html{
+
+  body{
+    text-shadow:none;
+
+    /*提示信息开始*/
+    .error_tips{
+      color: @color_red;
+      font-size: 0.5rem;
+      margin-bottom: 5px;
+      text-align: left;
+    }
+
+    /*统计数字提示信息开始*/
+    .input_num_box{
+      position: absolute;
+      color: #1c1c1c;
+    }
+
+    /*标签提示信息*/
+    .label_tips{
+      font-size: inherit;
+      color: #dcdcdc;
+    }
+
+    /*黑色背景按钮*/
+    .btn-black{
+      background-color: #1c1c1c;
+      color: #ffffff;
+    }
+
+    .btn-black:hover{
+      background-color: #000;
+      color:#eee;
+    }
+
+    .btn-black:focus{
+      background-color: #000;
+      color:#eee;
+    }
+
+    /*自动完成删除按钮*/
+    .singleauto_choose_delete{
+      margin-left: 5px;
+      cursor: pointer;
+    }
+
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+

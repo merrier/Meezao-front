@@ -1,0 +1,125 @@
+//引入全局less变量
+@import "../../../common_folder/less/PC_library";
+//后台路径
+//@import "../../MeeZao/B_New/common_folder/less/PC_library";
+
+html{
+  body{
+    .opr_btn{
+      position: relative;
+      margin: 100px 20px!important;
+    }
+    .jsNecessary{
+      display: block;
+      margin-bottom: 30px;
+    }
+    .jsSelect{
+      display: block;
+    }
+    .modal_setting_active .modal-dialog .modal-content .modal-body .dialog_bd .scope_area .addToList {
+      height: 45%;
+      overflow-y: scroll;
+      zoom: 1;
+      position: relative;
+      border-bottom: 1px solid #e7e7eb;
+    }
+    .modal_setting_active .modal-dialog .modal-content .modal-body .dialog_bd .scope_area .addToList:nth-of-type(2) {
+      border-bottom: none;
+    }
+    .listHead{
+    margin-left: 10px;
+    }
+
+    .popover {
+      width: 290px;
+      z-index: 99999;
+      text-align: left;
+      color: #222;
+      line-height: 1.6;
+      position: absolute;
+      margin-top: 12px;
+    }
+    .popover .popover_inner {
+      border: 1px solid #d9dadc;
+      word-wrap: break-word;
+      word-break: break-all;
+      padding: 30px;
+      background-color: #fff;
+      box-shadow: none;
+      -moz-box-shadow: none;
+      -webkit-box-shadow: none;
+    }
+    .popover .popover_title {
+      font-weight: 400;
+      font-style: normal;
+      padding-bottom: 5px;
+      font-size: 14px;
+    }
+    .popover .frm_input_box {
+      display: inline-block;
+      width: 170px;
+      position: relative;
+      height: 30px;
+      line-height: 30px;
+      vertical-align: middle;
+      font-size: 14px;
+      padding: 0 10px;
+      border: 1px solid #e7e7eb;
+      box-shadow: none;
+      -moz-box-shadow: none;
+      -webkit-box-shadow: none;
+      border-radius: 0;
+      -moz-border-radius: 0;
+      -webkit-border-radius: 0;
+      background-color: #fff;
+    }
+    .frm_input, .frm_textarea {
+      width: 100%;
+      background-color: transparent;
+      border: 0;
+      outline: 0;
+      box-shadow: none;
+    }
+    .popover .frm_hint {
+      margin-right: .5em;
+      color: #8d8d8d;
+    }
+    .popover .popover_bar {
+      text-align: justify;
+      font-size: 0;
+      margin-top: 20px;
+    }
+    .popover .popover_bar:after {
+      display: inline-block;
+      width: 100%;
+      height: 0;
+      font-size: 0;
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      content: ".";
+    }
+    .popover .popover_arrow {
+      position: absolute;
+      left: 50%;
+      margin-left: -8px;
+      margin-top: -8px;
+      display: inline-block;
+      width: 0;
+      height: 0;
+      border-width: 8px;
+      border-style: dashed;
+      border-color: transparent;
+      border-top-width: 0;
+      border-bottom-color: #d9dadc;
+      border-bottom-style: solid;
+    }
+    .popover .popover_arrow_out {
+      top: 0;
+    }
+    .popover .popover_arrow_in {
+      border-bottom-color: #fff;
+      top: 1px;
+    }
+  }
+}

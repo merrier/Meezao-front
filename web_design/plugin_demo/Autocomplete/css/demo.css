@@ -1,0 +1,35 @@
+.main{
+    margin: 40px;
+}
+
+.auto_input_div {
+    height: 36px;
+    border: 1px solid #ccc;
+}
+
+.auto_input{
+    width: 100%;
+    height: 34px;
+    border: none!important;
+    display: inline-block;
+}
+
+.auto_span {
+    width: 100%;
+    height: 34px;
+    line-height: 20px;
+    border: 1px solid #cccccc;
+    position: relative;
+    padding: 5px 62px;
+    border-radius: 4px;
+    text-align: center;
+    background-color: white;
+    display: block;
+}
+
+.float_right_single, .float_right_multiple {
+    position: absolute;
+    float: right;
+    right: 20px;
+    margin-top: 4px;
+}

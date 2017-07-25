@@ -1,0 +1,266 @@
+/* LESS create_document */
+/* +--------------------------------------------------------------------------
+// | Author: Merrier <953075999@qq.com> <http://> <Date:2016/5/11 22:27>
+// +--------------------------------------------------------------------------*/
+//引入全局less变量
+@import "../../../common_folder/less/PC_library";
+//后台路径
+//@import "../../MeeZao/B_New/common_folder/less/PC_library";
+
+html {
+  body.create_document{
+    font-size: 14px;
+
+    //主体内容开始
+    .create_document_main{
+      padding:15px;
+      padding-right: 0;
+      margin-top: 15px;
+      border-color: @color_border;
+      border-width: 1px;
+      border-style: solid;
+      border-radius: 5px;
+      color: @color_black;
+
+      //主要内容开始
+      .create_document_content{
+        .clearfix;
+        margin-bottom: 15px;
+
+        //左侧表单开始
+        .credoc_con_left{
+          float: left;
+          width:60%;
+          border-right:1px solid @color_border;
+
+          .form-group{
+            width:90%;
+            .center_block;
+            margin-bottom: 60px;
+
+            label{
+              height: 30px;
+              line-height:30px;
+              text-align: left;
+              font-weight: normal;
+              margin-bottom: 10px;
+            }
+
+            .credoc_upload_box{
+              position: relative;
+              .size(270px,150px);
+              margin-bottom: 10px;
+              cursor: pointer;
+
+              input{
+                position: absolute;
+                .size(100%,100%);
+                opacity: 0;
+                cursor:pointer;
+              }
+
+              img{
+                .size(100%,100%);
+              }
+            }
+
+            .btn_imgshow_article{
+
+              input{
+                .size(20px,20px);
+              }
+
+              strong{
+                display: inline-block;
+                height:30px;
+                line-height:30px;
+              }
+            }
+          }
+
+          .form-inline{
+            position: relative;
+            width:90%;
+            .center_block;
+            margin-bottom: 60px;
+
+            label{
+              .size(100px,30px);
+              line-height:30px;
+              text-align: left;
+              font-weight: normal;
+              vertical-align: top;
+            }
+
+            input{
+              .size(350px,30px);
+            }
+
+            textarea{
+              .size(350px,95px);
+              resize: none;
+            }
+
+            .input_num_box{
+              bottom: 5px;
+              margin-left: 10px;
+              font-size: 16px;
+            }
+
+            a,button{
+              .size(100px,30px);
+              line-height: 18px;
+            }
+
+            .btn_textlink{
+              .size(95px,30px);
+              padding: 0;
+              line-height: 30px;
+              background-color: #eeeeee;
+            }
+
+            #credoc_input_textlink{
+              width:290px;
+            }
+
+          }
+        }
+        //左侧表单结束
+
+        //右侧表单开始
+        .credoc_con_right{
+          float: left;
+          width:40%;
+
+          .credoc_right_box{
+            width:90%;
+            .center_block;
+            margin-bottom: 35px;
+
+            label{
+              .size(100%,40px);
+              font-weight: normal;
+            }
+
+            .credoc_right_main{
+              font-size: 12px;
+              border: 1px solid @color_border;
+              border-radius: 5px;
+              padding-bottom: 20px;
+
+              .right_main_head{
+                .clearfix;
+                padding:15px;
+                border-bottom: 1px solid @color_border;
+
+                .tag_deletion_box{
+                  cursor: text;
+                }
+              }
+
+              .right_main_show{
+                .clearfix;
+                padding:15px;
+
+                //右侧展示标签盒子开始
+                .right_show_labelbox{
+                  .clearfix;
+                  margin-bottom: 20px;
+
+                  label{
+                    float: left;
+                    .size(20%,35px);
+                    line-height: 35px;
+                  }
+
+                  .right_show_content{
+                    float: left;
+                    width:80%;
+                    .clearfix;
+                  }
+                }
+                //右侧展示标签盒子结束
+
+                //右侧输入标签开始
+                .form-inline{
+
+                  label{
+                    float: left;
+                    .size(20%,35px);
+                    line-height: 35px;
+                  }
+
+                  input{
+                    .size(55%,30px);
+                  }
+
+                  .input_num_box{
+                    margin-left: -35px;
+                    font-size: 15px;
+                    line-height: 32px;
+                  }
+
+                  .btn-default{
+                    .size(19%,30px);
+                    padding: 0;
+                    line-height: 30px;
+                    border: 1px solid @color_border;
+                    border-radius: 5px;
+                    background-color: #EEEEEE;
+                  }
+                }
+                //右侧输入标签结束
+
+              }
+
+              .tag_deletion_box{
+                position: relative;
+                float: left;
+                .size(70px,27px);
+                margin: 4px;
+                line-height: 25px;
+                text-align: center;
+                background-color: #eeeeee;
+                border: 1px solid @color_border;
+                border-radius: 5px;
+                cursor: pointer;
+
+                i{
+                  position: absolute;
+                  top: -7px;
+                  right: -7px;
+                  .size(18px,18px);
+                  font-size: 14px;
+                  background-color: @color_white;
+                  border: 1px solid @color_border;
+                  border-radius: 9px;
+                  cursor: pointer;
+                }
+              }
+
+              .tag_deletion_boxnew{
+                display: none;
+              }
+            }
+          }
+        }
+        //右侧表单结束
+
+      }
+      //主要内容结束
+
+      //底部按钮开始
+      .credoc_con_footbtn{
+        text-align: center;
+
+        .btn-primary{
+          margin-right: 10px;
+        }
+      }
+      //底部按钮结束
+    }
+    //主体内容结束
+  }
+}
+
+

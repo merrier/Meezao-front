@@ -1,0 +1,942 @@
+/* less PC_library */
+/* +--------------------------------------------------------------------------
+// | Author: Merrier <953075999@qq.com> <http://> <Date:2016/5/11 22:27>
+// +--------------------------------------------------------------------------*/
+@font-face {
+  font-family: 'SourceHanSansCN-Medium';
+  src: url('../fonts/SourceHanSansCN/SourceHanSansCN-Medium.otf'), url('../fonts/SourceHanSansCN/SourceHanSansCN-Medium.TTF');
+}
+@font-face {
+  font-family: 'SourceHanSansCN-Normal';
+  src: url('../fonts/SourceHanSansCN/SourceHanSansCN-Normal.otf');
+}
+.font_yahei {
+  font-family: 'Microsoft Yahei', '微软雅黑';
+}
+.font_arial {
+  font-family: 'Arial';
+}
+.font_sitka {
+  font-family: 'Sitka';
+}
+.font_hei {
+  font-family: '黑体';
+}
+.center_block {
+  margin-left: auto;
+  margin-right: auto;
+}
+.content_box {
+  box-sizing: content-box;
+  -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+}
+.clearfix:after {
+  content: ".";
+  display: block;
+  height: 0;
+  clear: both;
+  visibility: hidden;
+}
+.caret {
+  border-top-width: 8px;
+  border-right-width: 8px;
+  border-left-width: 8px;
+}
+.btn_new_green {
+  display: inline-block;
+  width: 140px;
+  height: 40px;
+  text-align: center;
+  line-height: 40px;
+  font-family: SourceHanSansCN-Medium;
+  font-size: 16px;
+  color: #ffffff;
+  background-color: #2bd948;
+  box-shadow: 3px 3px 10px #99eda7, -3px 3px 10px #99eda7;
+}
+.btn_new_green:link {
+  color: #ffffff;
+  text-decoration: none;
+}
+.btn_new_green:hover {
+  color: #ffffff;
+  box-shadow: 5px 5px 10px #99eda7, -5px 5px 10px #99eda7;
+}
+.btn_new_blue {
+  display: inline-block;
+  width: 140px;
+  height: 40px;
+  text-align: center;
+  line-height: 40px;
+  font-family: SourceHanSansCN-Medium;
+  font-size: 16px;
+  color: #ffffff;
+  background-color: #00b6f6;
+  box-shadow: 3px 3px 10px #9ed0e3, -3px 3px 10px #9ed0e3;
+}
+.btn_new_blue:link {
+  color: #ffffff;
+  text-decoration: none;
+}
+.btn_new_blue:hover {
+  color: #ffffff;
+  box-shadow: 5px 5px 10px #9ed0e3, -5px 5px 10px #9ed0e3;
+}
+.btn_new_orange {
+  display: inline-block;
+  width: 140px;
+  height: 40px;
+  text-align: center;
+  line-height: 40px;
+  font-family: SourceHanSansCN-Medium;
+  font-size: 16px;
+  color: #ffffff;
+  background-color: #ff7800;
+  box-shadow: 3px 3px 10px #ffb97b, -3px 3px 10px #ffb97b;
+}
+.btn_new_orange:link {
+  color: #ffffff;
+  text-decoration: none;
+}
+.btn_new_orange:hover {
+  color: #ffffff;
+  box-shadow: 5px 5px 10px #ffb97b, -5px 5px 10px #ffb97b;
+}
+.btn_new_red {
+  display: inline-block;
+  height: 50px;
+  text-align: center;
+  line-height: 50px;
+  font-family: SourceHanSansCN-Medium;
+  font-size: 16px;
+  color: #ffffff;
+  background-color: #ff3d5a;
+  box-shadow: 3px 3px 10px #ffcad2, -3px 3px 10px #ffcad2;
+}
+.btn_new_red:link {
+  color: #ffffff;
+  text-decoration: none;
+}
+.btn_new_red:hover {
+  color: #ffffff;
+  box-shadow: 5px 5px 10px #ffcad2, -5px 5px 10px #ffcad2;
+}
+.btn_modal_close {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  text-align: center;
+  line-height: 35px;
+  right: 10px;
+  top: 5px;
+  font-size: 40px;
+  color: #00b6f6;
+  cursor: pointer;
+}
+.btn_modal_close:hover {
+  transform: rotateZ(90deg);
+  -webkit-transform: rotateZ(90deg);
+  -o-transform: rotateZ(90deg);
+  -moz-transform: rotateZ(90deg);
+  transform-origin: center center;
+  -webkit-transform-origin: center center;
+  -o-transform-origin: center center;
+  -moz-transform-origin: center center;
+  transition: 0.5s;
+  -webkit-transition: 0.5s;
+  -o-transition: 0.5s;
+}
+.btn_new_disable {
+  background-color: #eff4f7;
+  color: #8cabbd;
+  cursor: not-allowed;
+}
+.btn_new_disable:link {
+  color: #8cabbd;
+}
+.btn_new_disable:hover {
+  color: #8cabbd;
+}
+html body {
+  /*模态框开始*/
+  /*警告框开始*/
+  /*提示信息开始*/
+  /*统计数字提示信息开始*/
+  /*标签提示信息*/
+  /*黑色背景按钮*/
+  /*自动完成删除按钮*/
+}
+html body .navbar-default {
+  width: 100%;
+  height: 50px;
+  font-size: 16px;
+  margin-bottom: 0;
+  padding-right: 15px;
+}
+html body .navbar-default .navbar_subtips {
+  float: left;
+  margin-left: 15px;
+  line-height: 50px;
+  font-size: 15px;
+  color: #666;
+}
+html body .navbar-default .dropdown_filled {
+  margin-top: 8px;
+}
+html body .navbar-default .dropdown-menu {
+  padding: 0;
+  min-width: 100%;
+}
+html body .navbar-default .dropdown-menu li {
+  height: 30px;
+  line-height: 30px;
+  text-align: center;
+}
+html body .navbar-default .dropdown-menu li :hover {
+  background-color: #0096ff;
+}
+html body .navbar-default .dropdown-menu li a {
+  padding: 0;
+  line-height: 30px;
+}
+html body .navbar-default .navbar-brand {
+  font-family: 'Arial';
+  font-weight: bold;
+}
+html body .navbar-default .navbar-nav a {
+  height: 49px;
+}
+html body .navbar-default .btn-primary {
+  float: right;
+  height: 32px;
+  min-width: 70px;
+  padding: 0 10px;
+  margin-top: 9px;
+  line-height: 32px;
+  text-indent: 0;
+  letter-spacing: 0;
+}
+html body .navbar-default .navbar-form {
+  margin-right: 0;
+  padding-right: 0;
+}
+html body .navbar-default .navbar-form .input-group-btn .dropdown .btn-dropdown {
+  border-right: 0;
+  border-bottom-right-radius: 0;
+  border-top-right-radius: 0;
+}
+html body .navbar-default .navbar-form .input-group-btn .dropdown .dropdown-toggle {
+  border-right: 0;
+  border-radius: 0;
+  padding-left: 2px;
+  padding-right: 2px;
+}
+html body .navbar-default .navbar-form .input-group-btn .dropdown .dropdown-menu {
+  min-width: 100%;
+  padding: 0;
+}
+html body .navbar-default .navbar-form .input-group-btn .dropdown .dropdown-menu li {
+  height: 34px;
+  line-height: 34px;
+  text-align: center;
+}
+html body .navbar-default .navbar-form .input-group-btn .dropdown .dropdown-menu li :hover {
+  background-color: #0096ff;
+}
+html body .navbar-default .navbar-form .input-group-btn .dropdown .dropdown-menu li a {
+  padding: 0;
+  line-height: 34px;
+}
+html body .navbar-default .navbar-form .form-control {
+  width: 252px;
+  height: 34px;
+}
+html body .navbar-default .navbar-form .btn-search {
+  width: 70px;
+  height: 34px;
+}
+html body .common_table {
+  margin-top: 10px;
+  min-height: 300px;
+  text-align: center;
+}
+html body .common_table thead {
+  height: 49px;
+  font-size: 16px;
+  font-weight: bold;
+}
+html body .common_table thead th {
+  font-weight: bold;
+  text-align: center;
+  line-height: 49px;
+  margin: 0;
+  padding: 0;
+  border-bottom: none;
+}
+html body .common_table thead th .btn-default {
+  width: 100%;
+  height: 51px;
+  border: none;
+  padding: 0;
+  font-weight: bold;
+}
+html body .common_table thead th .btn-default span {
+  font-size: 16px;
+}
+html body .common_table thead th .btn-dropdown .caret {
+  margin-left: 4px;
+  border-top-width: 8px;
+  border-right-width: 8px;
+  border-left-width: 8px;
+}
+html body .common_table thead th .dropdown-menu {
+  min-width: 100%;
+  top: 100%;
+  padding: 0;
+}
+html body .common_table thead th .dropdown-menu a {
+  width: 100%;
+  height: 34px;
+  padding: 0;
+  line-height: 34px;
+  text-align: center;
+}
+html body .common_table thead th .dropdown-menu a:hover {
+  background-color: #0096ff;
+}
+html body .common_table tbody {
+  font-size: 12px;
+}
+html body .common_table tbody tr {
+  height: 49px;
+}
+html body .common_table tbody tr td {
+  vertical-align: middle;
+}
+html body .common_table tbody tr td .btn-group .btn {
+  text-indent: 0;
+  letter-spacing: 0;
+  font-size: 12px;
+}
+html body .common_table tbody tr td .btn_single {
+  width: 80%;
+}
+html body .dropdown-menu {
+  min-width: 100%;
+  padding: 0;
+}
+html body .dropdown-menu li {
+  height: 34px;
+  line-height: 34px;
+  text-align: center;
+}
+html body .dropdown-menu li :hover {
+  background-color: #0096ff;
+}
+html body .dropdown-menu li a {
+  padding: 0;
+  line-height: 34px;
+}
+html body .mb_subject_box {
+  width: 100%;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+html body .content_modal {
+  color: #1c1c1c;
+}
+html body .modal-dialog {
+  width: 500px;
+  margin-top: 150px;
+  color: #1c1c1c;
+}
+html body .modal-dialog .modal-header .modal-title {
+  font-weight: bold;
+  font-size: 18px;
+}
+html body .modal-dialog .modal-body label {
+  font-weight: normal;
+}
+html body .modal-dialog .modal-body .checkbox label {
+  display: block;
+  margin-bottom: 5px;
+  min-width: 80px;
+}
+html body .modal-dialog .modal-body .checkbox label input {
+  width: 14px;
+  height: 14px;
+}
+html body .btn-primary {
+  min-width: 100px;
+  background-color: #0096ff;
+}
+html body .modal_reg_box {
+  position: relative;
+  width: 100%;
+  height: 30px;
+  margin-top: 15px;
+}
+html body .modal_reg_btn {
+  display: block;
+  float: right;
+  width: 100px;
+  height: 30px;
+  text-align: center;
+  line-height: 30px;
+  border: 1px solid #adadad;
+  border-radius: 5px;
+  color: #1c1c1c;
+  background-color: #ffffff;
+  box-sizing: content-box;
+  -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+}
+html body .modal_reg_btn:hover {
+  color: #1c1c1c;
+}
+html body .modal_reg_btn:focus {
+  color: #1c1c1c;
+}
+html body .modal_tips {
+  display: none;
+  font-size: 12px;
+  color: #ff0000;
+  line-height: 20px;
+}
+html body .reg_btn_mask {
+  display: none;
+  position: absolute;
+  width: 103px;
+  height: 33px;
+  right: -1px;
+  bottom: -3px;
+}
+html body .reg_btn_gray {
+  background-color: #afafaf;
+  color: #EEE;
+}
+html body .modal_code_random {
+  display: none;
+}
+html body .alert {
+  position: absolute;
+  height: 50px;
+  margin-top: 15px;
+  margin-bottom: 0;
+  z-index: 997;
+}
+html body .alert-example {
+  display: none;
+}
+html body .error_tips {
+  color: #ff0000;
+  font-size: 12px;
+  margin-bottom: 5px;
+  text-align: left;
+}
+html body .input_num_box {
+  position: absolute;
+  color: #1c1c1c;
+}
+html body .label_tips {
+  font-size: inherit;
+  color: #dcdcdc;
+}
+html body .btn-black {
+  background-color: #1c1c1c;
+  color: #ffffff;
+}
+html body .btn-black:hover {
+  background-color: #000;
+  color: #eee;
+}
+html body .btn-black:focus {
+  background-color: #000;
+  color: #eee;
+}
+html body .singleauto_choose_delete {
+  margin-left: 5px;
+  cursor: pointer;
+}
+@media (min-width: 768px) {
+  html body .content_mb_subject .navbar-default .navbar-form {
+    margin-right: 0;
+  }
+}
+html body .wrp .content_mb_subject .navbar-default .navbar-right .btn-primary {
+  margin-left: 10px;
+  margin-top: 0;
+  line-height: 30px;
+}
+html body .wrp .content_mb_subject .navbar-default .navbar-right .input-group {
+  position: relative;
+}
+html body .wrp .content_mb_subject .navbar-default .navbar-right .input-group .input_num_box {
+  position: absolute;
+  right: 6px;
+  z-index: 2;
+  top: 6px;
+}
+html body .wrp .content_mb_subject .navbar-default .navbar-right .input-group .form_input {
+  border-radius: 4px;
+  width: 300px;
+}
+html body .wrp .content_mb_subject .navbar-default .navbar-right .btn_save {
+  float: right;
+  width: 70px;
+  margin-left: 10px;
+  padding: 5px 12px;
+}
+html body .wrp .content_mb_subject .navbar-default .nav_btn_configure {
+  position: absolute;
+  right: 8px;
+  top: 6px;
+  font-size: 35px;
+  cursor: pointer;
+}
+html body .wrp .content_mb_subject .form_main {
+  position: relative;
+  width: 960px;
+  margin-left: auto;
+  margin-right: auto;
+}
+html body .wrp .content_mb_subject .form_main .form_gridly {
+  position: relative;
+  min-height: 2000px;
+}
+html body .wrp .content_mb_subject .form_main .form_gridly .form_brick_new {
+  display: none;
+}
+html body .wrp .content_mb_subject .form_main .form_gridly .form_brick {
+  position: relative;
+  padding: 5px;
+  opacity: 1;
+  cursor: default;
+}
+html body .wrp .content_mb_subject .form_main .form_gridly .form_brick .form_contents {
+  width: 100%;
+  height: 100%;
+  border-radius: 5px;
+}
+html body .wrp .content_mb_subject .form_main .form_gridly .form_brick .form_contents .title_p {
+  position: absolute;
+  z-index: 2;
+  font-size: 20px;
+}
+html body .wrp .content_mb_subject .form_main .form_gridly .form_brick .form_contents > div {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border-radius: 5px;
+}
+html body .wrp .content_mb_subject .form_main .form_gridly .form_brick .form_contents .form_bg_purple {
+  background-color: #7030a0;
+}
+html body .wrp .content_mb_subject .form_main .form_gridly .form_brick .form_contents .form_bg_green {
+  background-color: #00a300;
+}
+html body .wrp .content_mb_subject .form_main .form_gridly .form_brick .form_contents .form_bg_blue {
+  background-color: #2d89ef;
+}
+html body .wrp .content_mb_subject .form_main .form_gridly .form_brick .form_contents .form_bg_re {
+  background-color: #c84a4a;
+}
+html body .wrp .content_mb_subject .form_main .form_gridly .form_brick .form_contents .form_bg_bl {
+  background-color: #7e46db;
+}
+html body .wrp .content_mb_subject .form_main .form_gridly .form_brick .form_contents .form_bg_yellow {
+  background-color: #ffc40d;
+}
+html body .wrp .content_mb_subject .form_main .form_gridly .form_brick .form_contents .form_bg_red {
+  background-color: #ff4500;
+}
+html body .wrp .content_mb_subject .form_main .form_gridly .form_brick .form_contents .form_border_blue {
+  border: 2px solid #00b0f0;
+}
+html body .wrp .content_mb_subject .form_main .form_gridly .form_brick .form_contents .form_class1 {
+  width: 230px;
+  height: 110px;
+  padding: 15px;
+  color: #fff;
+  font-size: 14px;
+}
+html body .wrp .content_mb_subject .form_main .form_gridly .form_brick .form_contents .form_class1 h4 {
+  font-weight: bold;
+  text-align: left;
+  margin-bottom: 20px;
+  font-size: 96%;
+}
+html body .wrp .content_mb_subject .form_main .form_gridly .form_brick .form_contents .form_class1 .form_number {
+  font-family: 'Arial';
+  font-size: 250%;
+  text-align: center;
+  margin-top: 11%;
+}
+html body .wrp .content_mb_subject .form_main .form_gridly .form_brick .form_contents .form_class1 .fa-arrow-up,
+html body .wrp .content_mb_subject .form_main .form_gridly .form_brick .form_contents .form_class1 .fa-arrow-down {
+  position: absolute;
+  top: 50px;
+  right: 10px;
+  font-size: 27px;
+  transform: rotateY(40deg);
+  -webkit-transform: rotateY(40deg);
+  margin-top: 7%;
+}
+html body .wrp .content_mb_subject .form_main .form_gridly .form_brick .form_contents .form_class1 .fa-arrow-down {
+  display: none;
+}
+html body .wrp .content_mb_subject .form_main .form_gridly .form_brick .form_contents .form_class1 .form_icon {
+  position: absolute;
+  top: 6px;
+  right: 8px;
+  width: 28px;
+  height: 26px;
+}
+html body .wrp .content_mb_subject .form_main .form_gridly .form_brick .form_contents .form_class3 {
+  background-color: #fff;
+}
+html body .wrp .content_mb_subject .form_main .form_gridly .form_brick .form_contents .form_class3 p.form_pie_number {
+  position: absolute;
+  width: 100%;
+  text-align: center;
+  bottom: 5px;
+}
+html body .wrp .content_mb_subject .form_main .form_gridly .form_brick .form_contents .form_class4 {
+  width: 230px;
+  height: 230px;
+  padding: 15px 10px;
+  color: #fff;
+  font-size: 15px;
+}
+html body .wrp .content_mb_subject .form_main .form_gridly .form_brick .form_contents .form_class4 h4 {
+  font-weight: bold;
+  text-align: left;
+  margin-left: 5px;
+  margin-bottom: 25px;
+}
+html body .wrp .content_mb_subject .form_main .form_gridly .form_brick .form_contents .form_class4 p {
+  position: relative;
+  padding-left: 5px;
+  font-size: 15px;
+  text-align: left;
+  line-height: 25px;
+  height: 25px;
+}
+html body .wrp .content_mb_subject .form_main .form_gridly .form_brick .form_contents .form_class4 p:after {
+  content: ".";
+  display: block;
+  height: 0;
+  clear: both;
+  visibility: hidden;
+}
+html body .wrp .content_mb_subject .form_main .form_gridly .form_brick .form_contents .form_class4 .fa-arrow-up,
+html body .wrp .content_mb_subject .form_main .form_gridly .form_brick .form_contents .form_class4 .fa-arrow-down {
+  position: absolute;
+  right: 0;
+  top: 5px;
+}
+html body .wrp .content_mb_subject .form_main .form_gridly .form_brick .form_contents .form_class5 h1 {
+  color: #000000;
+}
+html body .wrp .content_mb_subject .form_main .form_gridly .form_brick .form_contents .form_class5 .form_table {
+  position: relative;
+  height: calc(100% - 40px);
+  padding-top: 0;
+  color: #000000;
+  word-break: break-all;
+  word-wrap: break-word;
+}
+html body .wrp .content_mb_subject .form_main .form_gridly .form_brick .form_contents .form_class5 .form_table table thead {
+  display: table;
+  table-layout: fixed;
+  width: calc( 100% - 1em );
+  height: 40px;
+  font-size: 16px;
+  background-color: #ff8000;
+}
+html body .wrp .content_mb_subject .form_main .form_gridly .form_brick .form_contents .form_class5 .form_table table thead tr th {
+  text-align: center;
+  border: 1px solid #ccc;
+  cursor: ns-resize;
+}
+html body .wrp .content_mb_subject .form_main .form_gridly .form_brick .form_contents .form_class5 .form_table table thead tr .th_brand_name {
+  width: 30%;
+}
+html body .wrp .content_mb_subject .form_main .form_gridly .form_brick .form_contents .form_class5 .form_table table thead tr .th_sales {
+  width: 12.5%;
+}
+html body .wrp .content_mb_subject .form_main .form_gridly .form_brick .form_contents .form_class5 .form_table table thead tr .th_sales_percentage {
+  width: 10%;
+}
+html body .wrp .content_mb_subject .form_main .form_gridly .form_brick .form_contents .form_class5 .form_table table thead tr .th_sales_rank {
+  width: 10%;
+}
+html body .wrp .content_mb_subject .form_main .form_gridly .form_brick .form_contents .form_class5 .form_table table thead tr .th_sales_number {
+  width: 12.5%;
+}
+html body .wrp .content_mb_subject .form_main .form_gridly .form_brick .form_contents .form_class5 .form_table table thead tr .th_sales_number_percentage {
+  width: 12.5%;
+}
+html body .wrp .content_mb_subject .form_main .form_gridly .form_brick .form_contents .form_class5 .form_table table thead tr .th_sales_number_rank {
+  width: 12.5%;
+}
+html body .wrp .content_mb_subject .form_main .form_gridly .form_brick .form_contents .form_class5 .form_table table tbody {
+  display: block;
+  height: calc(100% - 40px);
+  overflow-y: scroll;
+}
+html body .wrp .content_mb_subject .form_main .form_gridly .form_brick .form_contents .form_class5 .form_table table tbody tr {
+  display: table;
+  width: 100%;
+  height: 10%;
+  table-layout: fixed;
+}
+html body .wrp .content_mb_subject .form_main .form_gridly .form_brick .form_contents .form_class5 .form_table table tbody tr td {
+  border: 1px solid #ccc;
+}
+html body .wrp .content_mb_subject .form_main .form_gridly .form_brick .form_contents .form_class5 .form_table table tbody tr .td_hover {
+  background-color: #7bd9fa;
+}
+html body .wrp .content_mb_subject .form_main .form_gridly .form_brick .form_contents .form_class5 .form_table table tbody tr .td_brand_name {
+  width: 30%;
+}
+html body .wrp .content_mb_subject .form_main .form_gridly .form_brick .form_contents .form_class5 .form_table table tbody tr .td_sales {
+  width: 12.5%;
+}
+html body .wrp .content_mb_subject .form_main .form_gridly .form_brick .form_contents .form_class5 .form_table table tbody tr .td_sales_percentage {
+  width: 10%;
+}
+html body .wrp .content_mb_subject .form_main .form_gridly .form_brick .form_contents .form_class5 .form_table table tbody tr .td_sales_rank {
+  width: 10%;
+}
+html body .wrp .content_mb_subject .form_main .form_gridly .form_brick .form_contents .form_class5 .form_table table tbody tr .td_sales_number {
+  width: 12.5%;
+}
+html body .wrp .content_mb_subject .form_main .form_gridly .form_brick .form_contents .form_class5 .form_table table tbody tr .td_sales_number_percentage {
+  width: 12.5%;
+}
+html body .wrp .content_mb_subject .form_main .form_gridly .form_brick .form_contents .form_class5 .form_table table tbody tr .td_sales_number_rank {
+  width: 12.5%;
+}
+html body .wrp .content_mb_subject .form_main .form_gridly .form_brick .form_contents .form_class5 .form_table .table_content {
+  height: calc(100% - 40px);
+}
+html body .wrp .content_mb_subject .form_main .form_gridly .form_brick .form_contents .form_class6 .form_table_common {
+  padding: 1%;
+}
+html body .wrp .content_mb_subject .form_main .form_gridly .form_brick .form_contents .form_class6 .form_table_common table {
+  width: 100%;
+  background-color: #ffffff;
+}
+html body .wrp .content_mb_subject .form_main .form_gridly .form_brick .form_contents .form_class6 .form_table_common table thead {
+  background-color: #e6f0f8;
+}
+html body .wrp .content_mb_subject .form_main .form_gridly .form_brick .form_contents .form_class6 .form_table_common table thead tr {
+  display: table;
+  width: 100%;
+}
+html body .wrp .content_mb_subject .form_main .form_gridly .form_brick .form_contents .form_class6 .form_table_common table thead tr th {
+  height: 50px;
+  border: 1px solid #b5a6c9;
+  text-align: center;
+  font-size: 16px;
+  cursor: ns-resize;
+}
+html body .wrp .content_mb_subject .form_main .form_gridly .form_brick .form_contents .form_class6 .form_table_common table thead tr .th_purchase_times {
+  width: 20%;
+}
+html body .wrp .content_mb_subject .form_main .form_gridly .form_brick .form_contents .form_class6 .form_table_common table thead tr .th_number {
+  width: 20%;
+}
+html body .wrp .content_mb_subject .form_main .form_gridly .form_brick .form_contents .form_class6 .form_table_common table thead tr .th_repurchase_rate {
+  width: 20%;
+}
+html body .wrp .content_mb_subject .form_main .form_gridly .form_brick .form_contents .form_class6 .form_table_common table thead tr .th_repurchase_cycle {
+  width: 20%;
+}
+html body .wrp .content_mb_subject .form_main .form_gridly .form_brick .form_contents .form_class6 .form_table_common table thead tr .th_guest_price {
+  width: 20%;
+}
+html body .wrp .content_mb_subject .form_main .form_gridly .form_brick .form_contents .form_class6 .form_table_common table tbody {
+  display: block;
+  height: 480px;
+  overflow-y: auto;
+}
+html body .wrp .content_mb_subject .form_main .form_gridly .form_brick .form_contents .form_class6 .form_table_common table tbody tr {
+  display: table;
+  height: 40px;
+  width: 100%;
+  border: none;
+}
+html body .wrp .content_mb_subject .form_main .form_gridly .form_brick .form_contents .form_class6 .form_table_common table tbody tr td {
+  line-height: 40px;
+  vertical-align: middle;
+  border: 1px solid #b5a6c9;
+}
+html body .wrp .content_mb_subject .form_main .form_gridly .form_brick .form_contents .form_class6 .form_table_common table tbody tr .td_hover {
+  background-color: #ffffee;
+}
+html body .wrp .content_mb_subject .form_main .form_gridly .form_brick .form_contents .form_class6 .form_table_common table tbody tr .td_purchase_times {
+  width: 20%;
+}
+html body .wrp .content_mb_subject .form_main .form_gridly .form_brick .form_contents .form_class6 .form_table_common table tbody tr .td_number {
+  width: 20%;
+}
+html body .wrp .content_mb_subject .form_main .form_gridly .form_brick .form_contents .form_class6 .form_table_common table tbody tr .td_repurchase_rate {
+  width: 20%;
+}
+html body .wrp .content_mb_subject .form_main .form_gridly .form_brick .form_contents .form_class6 .form_table_common table tbody tr .td_repurchase_cycle {
+  width: 20%;
+}
+html body .wrp .content_mb_subject .form_main .form_gridly .form_brick .form_contents .form_class6 .form_table_common table tbody tr .td_guest_price {
+  width: 20%;
+}
+html body .wrp .content_mb_subject .form_main .form_gridly .form_brick .form_contents .form_class6 .form_table_common table tbody tr.tr_hover {
+  background-color: #ff0000;
+}
+html body .wrp .content_mb_subject .form_main .form_gridly .form_brick .form_mask {
+  display: none;
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  width: calc(100% - 10px);
+  background-color: rgba(255, 255, 255, 0.55);
+  border-radius: 5px;
+  z-index: 999;
+}
+html body .wrp .content_mb_subject .form_main .form_gridly .form_brick .form_mask .fa {
+  display: block;
+  float: right;
+  width: 20px;
+  height: 20px;
+  margin-top: 8px;
+  margin-right: 10px;
+  border-radius: 10px;
+  color: #ffffff;
+  font-size: 15px;
+  text-align: center;
+  line-height: 20px;
+  cursor: pointer;
+}
+html body .wrp .content_mb_subject .form_main .form_gridly .form_brick .form_mask .btn_delete {
+  margin-top: 9px;
+  margin-right: 6px;
+  background-color: #7f7f7f;
+  color: #fff;
+}
+html body .wrp .content_mb_subject .form_main .form_gridly .form_brick .form_mask .btn_delete:before {
+  margin-left: 1px;
+}
+html body .wrp .content_mb_subject .form_main .form_gridly .form_brick .form_mask .btn_check a {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+html body .wrp .content_mb_subject .form_main .form_gridly .form_brick .form_mask .btn_group {
+  display: none;
+}
+html body .wrp .content_mb_subject .form_main .form_gridly .form_brick .form_mask h5.form_mask_title {
+  position: absolute;
+  color: #7f7f7f;
+  font-size: 14px;
+  font-weight: bold;
+  margin-left: 15px;
+  line-height: 35px;
+}
+html body .wrp .content_mb_subject .form_main .form_gridly .form_brick .form_mask_normal {
+  display: none;
+  height: 35px;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+html body .wrp .content_mb_subject .form_main .form_gridly .form_brick .form_mask_normal h5.form_mask_title {
+  display: none;
+}
+html body .wrp .content_mb_subject .form_main .form_gridly .form_brick .form_mask_overtime {
+  height: calc(100% - 10px);
+  text-align: center;
+  background-color: rgba(255, 255, 255, 0.95);
+}
+html body .wrp .content_mb_subject .form_main .form_gridly .form_brick .form_mask_overtime p {
+  position: absolute;
+  width: 100%;
+  height: 50px;
+  top: 50%;
+  margin-top: -25px;
+  line-height: 50px;
+  text-align: center;
+  color: #7f7f7f;
+  font-size: 23px;
+  font-weight: 900;
+}
+html body .wrp .content_mb_subject .form_main .form_gridly .form_brick .form_mask_notopen {
+  height: calc(100% - 10px);
+  text-align: center;
+  background-color: rgba(255, 255, 255, 0.95);
+}
+html body .wrp .content_mb_subject .form_main .form_gridly .form_brick .form_mask_notopen p {
+  position: absolute;
+  width: 100%;
+  height: 50px;
+  top: 50%;
+  margin-top: -25px;
+  line-height: 50px;
+  text-align: center;
+  color: #7f7f7f;
+  font-size: 23px;
+  font-weight: 900;
+}
+html body .wrp .content_mb_subject .form_main .form_gridly .form_brick_normal:hover > .form_mask_normal {
+  display: block;
+}
+html body .wrp .content_mb_subject .form_main .form_gridly_bg {
+  background-image: url("../images/form_gridly_bg.png");
+  background-repeat: repeat-y;
+}
+html body .modal_add_module .modal-dialog {
+  width: 900px;
+}
+html body .modal_add_module .modal-dialog .modal-header {
+  position: relative;
+}
+html body .modal_add_module .modal-dialog .modal-header .input-group {
+  position: absolute;
+  right: 140px;
+  top: 10px;
+  width: 240px;
+}
+html body .modal_add_module .modal-dialog .modal-header .input-group .modal_search_input {
+  border-radius: 4px;
+}
+html body .modal_add_module .modal-dialog .modal-header .btn_search {
+  position: absolute;
+  right: 50px;
+  top: 10px;
+  width: 70px;
+}
+html body .modal_add_module .modal-dialog .modal-body {
+  height: 320px;
+  overflow: auto;
+}
+html body .modal_add_module .modal-dialog .modal-body .table_add_module {
+  min-height: 160px;
+}
+html body .modal_add_module .modal-dialog .modal-body .table_add_module tbody tr input {
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+}
+html body .modal_add_module .modal-dialog .modal-body .table_add_module tbody tr.tr_checked {
+  background-color: #eee;
+}
+html body .modal_add_module .modal-dialog .modal-footer .btn-default {
+  background-color: #111;
+  color: #fff;
+  width: 70px;
+}
+html body .modal_add_module .modal-dialog .modal-footer .btn-primary {
+  text-indent: 0px;
+  letter-spacing: 0px;
+}

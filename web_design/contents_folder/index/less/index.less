@@ -1,0 +1,1135 @@
+/* Less web_template */
+/* +--------------------------------------------------------------------------
+// | Author: Merrier <953075999@qq.com> <http://> <Date:2016/9/21 22:27>
+// +--------------------------------------------------------------------------*/
+
+
+//颜色
+@bg_gray: #f3f3f3;
+
+
+//字体
+@font-face {
+  font-family: 'FZLTXHK';
+  //src:url('../fonts/FZLTXHK_GBK/FZLTXHK_GBK.ttf');
+}
+
+@font-face {
+  font-family: 'SourceHanSansCN-Bold';
+  //src:url('../fonts/SourceHanSansCN/SourceHanSansCN-Bold.otf');
+}
+
+@font-face {
+  font-family: 'SourceHanSansCN-Medium';
+  //src:url('../fonts/SourceHanSansCN/SourceHanSansCN-Medium.otf'),
+  //url('../fonts/SourceHanSansCN/SourceHanSansCN-Medium.TTF');
+}
+
+@font-face {
+  font-family: 'SourceHanSansCN-Normal';
+  //src:url('../fonts/SourceHanSansCN/SourceHanSansCN-Normal.otf');
+}
+
+
+//样式相关
+.center_block {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.content_box {
+  box-sizing: content-box;
+  -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+}
+
+.clearfix {
+  &:after {
+    content: ".";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+  }
+}
+
+.flex_parent{
+  display: flex;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  justify-content:space-around;
+  -webkit-justify-content: space-around;
+  -moz-justify-content: space-around;
+  -ms-justify-content: space-around;
+  -o-justify-content: space-around;
+  align-items: center;
+  -webkit-align-items: center;
+  -moz-align-items: center;
+  -ms-align-items: center;
+  -o-align-items: center;
+  flex-wrap: wrap;
+  -webkit-flex-wrap: wrap;
+  -moz-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  -o-flex-wrap: wrap;
+}
+
+.flex_dir_column{
+  flex-direction: column;
+  -webkit-flex-direction: column;
+  -moz-flex-direction: column;
+  -ms-flex-direction: column;
+  -o-flex-direction: column;
+}
+
+
+//函数
+.size(@width,@height) {
+  width: @width;
+  height: @height;
+}
+
+.background_percent100(@img_url) {
+  background-image: url(@img_url);
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+  background-position: center center;
+}
+
+.word_space(@word_space) {
+  text-indent: @word_space;
+  letter-spacing: @word_space;
+}
+
+.border-top-radius(@radius) {
+  border-top-right-radius: @radius;
+  border-top-left-radius: @radius;
+}
+
+.border-right-radius(@radius) {
+  border-bottom-right-radius: @radius;
+  border-top-right-radius: @radius;
+}
+
+.border-bottom-radius(@radius) {
+  border-bottom-right-radius: @radius;
+  border-bottom-left-radius: @radius;
+}
+
+.border-left-radius(@radius) {
+  border-bottom-left-radius: @radius;
+  border-top-left-radius: @radius;
+}
+
+.border-radius(@radius) {
+  border-top-left-radius: @radius;
+  border-top-right-radius: @radius;
+  border-bottom-left-radius: @radius;
+  border-bottom-right-radius: @radius;
+}
+
+.background_cover(@img_url) {
+  background-image: url(@img_url);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: top center;
+}
+
+.transition(@time){
+  transition: @time;
+  -webkit-transition: @time;
+  -o-transition: @time;
+  -moz-transition: @time;
+}
+
+
+
+//按钮相关样式
+.btn_green{
+  color: #ffffff;
+  background-color: #6ab593;
+  padding:1.04*0.8vw 4.17*0.8vw;
+  font-size: 2.08*0.8vw;
+  border-radius: 0.52*0.8vw;
+  cursor: pointer;
+
+  &:hover{
+    color: #ffffff;
+  }
+}
+
+.btn_view_details{
+  color: #6ab593;
+  background-color: #ffffff;
+  padding: 0.52*0.8vw 3.125*0.8vw;
+  font-size: 2.08*0.8vw;
+  border: 3px solid #6ab593;
+  border-radius: 0.52*0.8vw;
+  cursor: pointer;
+
+  &:hover{
+    color: #ffffff;
+    background-color: #6ab593;
+  }
+}
+
+
+.btn_request_service{
+  color: #6dbc98;
+  background-color: #ffffff;
+  padding:0.83*0.8vw 4.17*0.8vw;
+  font-size: 2.08*0.8vw;
+  border: 3px solid #6dbc98;
+  border-radius: 3px;
+  cursor: pointer;
+
+  &:hover{
+    color: #ffffff;
+    background-color: #6dbc98;
+  }
+}
+
+
+.btn_footer_opr{
+  color: #ffffff;
+  background-color: transparent;
+  padding:0.83*0.8vw 4.17*0.8vw;
+  font-size: 2.08*0.8vw;
+  border: 2px solid #ffffff;
+  border-radius: 3px;
+  cursor: pointer;
+
+  &:hover{
+    color: #6ab593;
+    background-color: #ffffff;
+  }
+}
+
+
+
+//顶部导航通用开始
+nav{
+  position: fixed;
+  top: 0;
+  left: 0;
+  .size(100%,7.29*0.8vw);
+  min-width: 958px;
+  padding: 0 7.29*0.8vw;
+  font-size: 1.67*0.8vw;
+  color:#ffffff;
+  //background-color: transparent;
+  z-index:10;
+  .transition(0.5s);
+
+  .header{
+    width:100%;
+    line-height: 7.29*0.8vw;
+
+    .logo{
+      float: left;
+      height:4.17*0.8vw;
+      margin-top: 1.56*0.8vw;
+      margin-right: 7.29*0.8vw;
+    }
+    .header_nav_list{
+      float: left;
+
+      li{
+        float:left;
+        margin-right: 1.56*0.8vw;
+
+        a{
+          padding: 1.04*0.8vw 2px;
+          color:#ffffff;
+
+          &:hover{
+            border-bottom: 2px solid #ffffff;
+          }
+        }
+        a.header_item_active{
+          border-bottom: 2px solid #ffffff;
+        }
+      }
+    }
+
+    .header_opr_list{
+      float: right;
+
+      li{
+        float: left;
+        margin-left: 1.875*0.8vw;
+
+        img{
+          height:3.125*0.8vw;
+          margin-top: -2px;
+          margin-right: 2px;
+        }
+        a{
+          padding:1.04*0.8vw 2px;
+          color:#ffffff;
+
+          &:hover{
+            border-bottom: 2px solid #ffffff;
+          }
+        }
+      }
+    }
+  }
+}
+//顶部导航通用结束
+
+.nav_transparent{
+  border-bottom:1px solid #ffffff;
+  background-color: transparent;
+}
+
+.nav_black{
+  border-bottom:none;
+  background-color: rgba(0,0,0,0.8);
+  .transition(0.5s);
+}
+
+
+//全局通用样式开始
+html{
+  min-width:990px;
+
+  body{
+    -webkit-font-smoothing: antialiased;
+    background-color: #fff;
+    line-height: 1.5;
+    font-family: FZLTXHK !important;
+
+
+    .pagination_scrollify{
+      position: fixed;
+      right: 2.08*0.8vw;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 1.25*0.8vw;
+      z-index: 10;
+      margin: 0;
+      padding: 0;
+      border: 0;
+      vertical-align: baseline;
+
+      li,span,a{
+        margin: 0;
+        padding: 0;
+        border: 0;
+        font-size: 100%;
+        vertical-align: baseline;
+      }
+
+      li{
+        margin: 0;
+        padding: 0;
+        border: 0;
+        font-size: 100%;
+        vertical-align: baseline;
+
+        a{
+          display: block;
+          height: 2.08*0.8vw;
+          margin-bottom: 0.52*0.8vw;
+          color: white;
+          position: relative;
+          padding: 4px;
+
+          &:hover{
+
+            .hover-text{
+              opacity: 1;
+            }
+          }
+
+          &::after{
+            -webkit-transition: box-shadow 0.5s ease;
+            transition: box-shadow 0.5s ease;
+            width: 1.04*0.8vw;
+            height: 1.04*0.8vw;
+            display: block;
+            border: 1px solid;
+            border-radius: 50%;
+            content: '';
+            position: absolute;
+            margin: auto;
+            top: 0;
+            right: 4px;
+            bottom: 0;
+          }
+
+          .hover-text{
+            position: absolute;
+            width:11.46*0.8vw;
+            right: 1.04*0.8vw;
+            top: 0;
+            opacity: 0;
+            -webkit-transition: opacity 0.5s ease;
+            transition: opacity 0.5s ease;
+            padding-right: 1.56*0.8vw;
+            font-size: 1.25*0.8vw;
+            font-weight: bold;
+            text-align: right;
+          }
+        }
+        a.active{
+
+          &::after{
+            box-shadow: inset 0 0 0 0.52*0.8vw;
+          }
+        }
+      }
+    }
+
+    .pagination_scrollify.pagination_black{
+
+      li{
+
+        a{
+          color: #000;
+        }
+      }
+    }
+
+    .panel{
+      position: relative;
+      border: 0;
+
+      .container{
+        .size(100%,100%);
+        padding-top: 7.29*0.8vw;
+        .flex_parent;
+      }
+    }
+
+    //第一屏通用样式开始
+    .home{
+
+      .container{
+        .size(100%,100%);
+        color: #ffffff;
+        text-align: center;
+        .flex_parent;
+        .flex_dir_column;
+
+        h1{
+          font-family: SourceHanSansCN-Bold;
+          font-size: 5*0.8vw;
+        }
+        p{
+          width:80%;
+          margin: 1.56*0.8vw auto;
+          font-size: 2.08*0.8vw;
+        }
+        .container_box{
+
+          width: 100%;
+
+          h1{
+            display: inline-block;
+            padding-bottom:0.625rem;
+            border-bottom:2px solid #fff;
+          }
+        }
+      }
+    }
+    //第一屏通用样式结束
+
+    //最后一屏通用样式开始
+    .footer{
+
+      .container{
+        display: block;
+        padding:0;
+        padding-top: 7.29*0.8vw;
+
+        .footer_opr{
+          height:40%;
+          padding:3% 0;
+          .flex_parent;
+          .flex_dir_column;
+          background-color: #6ab593;
+
+          h2{
+            font-size: 3.33vw;
+            color: #ffffff;
+          }
+          .footer_opr_box{
+
+            .btn_footer_opr{
+              margin:0 4.17*0.8vw;
+              .transition(0.2s);
+            }
+          }
+
+        }
+        .footer_details{
+          height:60%;
+          padding:8% 0;
+          .flex_parent;
+          .flex_dir_column;
+          color:#ffffff;
+          background-color: #4c78d4;
+
+          .footer_details_flexbox{
+            margin-left: -40%;
+
+            .footer_btn_list{
+              display: block;
+              .clearfix;
+              margin-bottom: 10%;
+
+              li{
+                float: left;
+                margin-right: 1.56*0.8vw;
+
+                a{
+                  display: inline-block;
+                  .size(5*0.8vw,5*0.8vw);
+                  background-image: url("../images/icon_footer_list.png");
+                  background-repeat: no-repeat;
+                  background-size: cover;
+                }
+                a.btn_contact_wechat{
+                  background-position: 0 0;
+                }
+                a.btn_contact_circle{
+                  background-position: -6.56*0.8vw 0;
+                }
+                a.btn_contact_qq{
+                  background-position: -12.81*0.8vw 0;
+                }
+                a.btn_contact_weibo{
+                  background-position: -19.06*0.8vw 0;
+                }
+                a.btn_contact_facebook{
+                  background-position: -25.31*0.8vw 0;
+                }
+                a.btn_contact_renren{
+                  background-position: -32.19*0.8vw 0;
+                }
+                a.btn_contact_baidu{
+                  background-position: -38.125*0.8vw 0;
+                }
+
+              }
+            }
+            .footer_contact{
+
+              h5{
+                margin-bottom: 3%;
+                font-size: 1.67*0.8vw;
+                font-family: SourceHanSansCN-Medium;
+              }
+              p{
+                font-size: 1.46*0.8vw;
+                line-height: 2;
+              }
+            }
+          }
+
+        }
+      }
+    }
+    //最后一屏通用样式结束
+  }
+
+  //首页样式开始
+  body.index{
+
+    //首页第一屏开始
+    .home{
+      .background_cover("../images/index_bg.png");
+
+      .container{
+        background-color: rgba(0, 0, 0, 0.7);
+      }
+    }
+    //首页第一屏结束
+
+    //首页第二屏开始
+    .people{
+
+      .container{
+
+        .sc_content{
+          width:40%;
+
+          h2{
+            font-size: 3.33*0.8vw;
+            font-family: FZLTXHK;
+            color:#313131;
+          }
+          .sc_content_box{
+            position: relative;
+            margin-top: 3.125*0.8vw;
+
+            span{
+              position: absolute;
+              width:7.29*0.8vw;
+              top:0.52*0.8vw;
+              border-top: 4px solid #807d7a;
+            }
+            p{
+              font-size: 1.67*0.8vw;
+              margin-left:9.375*0.8vw;
+              line-height: 1.7;
+              color: #000000;
+            }
+          }
+        }
+        img{
+          width:40%;
+        }
+      }
+    }
+    //首页第二屏结束
+
+    //首页第三屏开始
+    .techniques{
+      background-color: @bg_gray;
+
+      .container{
+        justify-content:center;
+        -webkit-justify-content: center;
+        -moz-justify-content: center;
+        -ms-justify-content: center;
+        -o-justify-content: center;
+
+        .data_box{
+          width:25%;
+          min-height: 60%;
+          padding:2% 0;
+          .flex_parent;
+          .flex_dir_column;
+          text-align: center;
+          color:#000000;
+          //cursor: pointer;
+          .transition(0.3s);
+
+          &:hover{
+            background-color: #ffffff;
+            box-shadow: 3px 3px 10px #ccc,-3px -3px 10px #ccc;
+          }
+          img{
+            width:30%;
+          }
+          .data_box_text{
+            margin: 2.08*0.8vw auto;
+
+            h3{
+              font-size: 3.33*0.8vw;
+            }
+            span{
+              display: block;
+              .size(7.29*0.8vw,1px);
+              margin: 2.08*0.8vw auto;
+              background-color: #6e8dc5;
+            }
+            p{
+              .size(60%,14.17*0.8vw);
+              .center_block;
+              text-align: left;
+              font-size: 1.67*0.8vw;
+              line-height: 1.7;
+            }
+          }
+          .btn_view_details{
+            .transition(0.2s);
+          }
+        }
+      }
+    }
+    //首页第三屏结束
+
+    //首页第四屏开始
+    .partner{
+      .background_cover("../images/partner_bg.png");
+
+      .container{
+        display: block;
+        color: #ffffff;
+        background-color: rgba(0, 0, 0, 0.7);
+
+        .partner_title{
+          height:30%;
+          text-align: center;
+          .flex_parent;
+          .flex_dir_column;
+          justify-content:center;
+          -webkit-justify-content: center;
+          -moz-justify-content: center;
+          -ms-justify-content: center;
+          -o-justify-content: center;
+
+          h2{
+            font-size: 3.33*0.8vw;
+            margin-bottom: 3.65*0.8vw;
+          }
+          span{
+            display: block;
+            width:11.46*0.8vw;
+            height:3px;
+            .center_block;
+            background-color: #ffffff;
+          }
+
+        }
+        .swiper-container{
+          height:55%;
+          padding-bottom: 10%;
+
+          .swiper-wrapper{
+            .swiper-slide{
+              padding:0 5%;
+              .flex_parent;
+              .flex_dir_column;
+
+              .partner_list{
+                .flex_parent;
+
+                img{
+                  width:20%;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+    //首页第四屏结束
+
+  }
+  //首页样式结束
+
+  //商业声明样式开始
+  body.cooperation{
+
+    //商业声明第一屏开始
+    .home{
+      .background_cover("../images/cooperation_bg.png");
+    }
+    //商业声明第一屏结束
+
+    //商业声明第二屏开始
+    .cooperation_statement{
+
+      .container{
+
+        .sc_content{
+          width:40%;
+          margin-right: 5%;
+
+            p{
+              font-size: 1.67*0.8vw;
+              margin-bottom: 8%;
+              line-height: 2;
+              color: #191919;
+            }
+
+        }
+        img{
+          width:25%;
+        }
+      }
+
+    }
+    //商业声明第二屏结束
+
+  }
+  //商业声明样式结束
+
+  //专利技术样式开始
+  body.technology{
+
+    //专利技术第一屏开始
+    .home{
+      .background_cover("../images/technology_bg.png");
+    }
+    //专利技术第一屏结束
+
+    //专利技术第二、三、四屏开始
+    .technology_data_box{
+
+      .container{
+        justify-content:center;
+        -webkit-justify-content: center;
+        -moz-justify-content: center;
+        -ms-justify-content: center;
+        -o-justify-content: center;
+
+        .sc_content{
+          width:35%;
+          margin: 0 2.5%;
+
+          h2{
+            margin-bottom: 7%;
+            font-size:3.33*0.8vw;
+            color:#000;
+          }
+          p{
+            font-size: 1.67*0.8vw;
+            line-height: 2;
+            color: #191919;
+          }
+
+        }
+        img{
+          width:50%;
+          margin: 0 2.5%;
+        }
+      }
+
+    }
+    //专利技术第二、三、四屏结束
+
+    //专利技术第三屏开始
+    .data_penetrate{
+      background-color: @bg_gray;
+    }
+    //专利技术第三屏结束
+  }
+  //专利技术样式结束
+
+
+  //专业服务样式开始
+  body.service{
+
+    //专业服务第一屏开始
+    .home{
+      .background_cover("../images/service_bg.png");
+    }
+    //专业服务第一屏结束
+
+    //专业服务第二屏开始
+    .service_description{
+
+      .container{
+        .flex_dir_column;
+
+        .sc_content{
+          width:70%;
+
+          p{
+            font-size: 2.08*0.8vw;
+          }
+        }
+        img{
+          width:80%;
+        }
+      }
+
+    }
+    //专业服务第二屏结束
+
+    //专业服务第三、四、五屏开始
+    .service_box{
+
+      .container{
+        .flex_dir_column;
+
+        .service_content_box{
+          position: relative;
+          width:100%;
+
+          img{
+            //height:75vh;
+            width:98%;
+          }
+
+          .sc_content{
+            position: absolute;
+            top:25%;
+            width:33%;
+
+            h3{
+              margin-bottom: 3%;
+              font-size: 3.33*0.8vw;
+              color:#6dbc98;
+            }
+            p{
+              margin-bottom: 20%;
+              font-size: 1.875*0.8vw;
+              color:#404040;
+            }
+            .btn_request_service{
+              .transition(0.2s);
+            }
+          }
+
+        }
+      }
+    }
+    //专业服务第三、四、五屏开始
+
+    //专业服务第三屏开始
+    .service_wechat{
+
+      .container{
+
+        .service_content_box{
+          position: relative;
+          width:100%;
+
+          .sc_content{
+            left: 60%;
+          }
+
+        }
+      }
+    }
+    //专业服务第三屏结束
+
+    //专业服务第四屏开始
+    .service_member{
+
+      .container{
+
+        .service_content_box{
+          position: relative;
+          width:100%;
+          text-align: right;
+
+          img{
+            margin-left: 2%;
+          }
+          .sc_content{
+            top:20%;
+            right: 60%;
+          }
+
+        }
+      }
+    }
+    //专业服务第四屏结束
+
+    //专业服务第五屏开始
+    .service_finance{
+      background-color: @bg_gray;
+
+      .container{
+        text-align: center;
+
+        .service_finance_title{
+          height:8%;
+          margin-left: -45%;
+          .flex_parent;
+          .flex_dir_column;
+
+          img{
+            height:100%;
+            margin-right: 10%;
+            vertical-align: middle;
+          }
+          h3{
+            display: inline-block;
+            color:#6dbc98;
+            font-size: 3.33*0.8vw;
+            vertical-align: middle;
+          }
+        }
+        .service_finance_main{
+          width:65%;
+          margin: 2% auto;
+          .flex_parent;
+
+          .finance_main_box{
+            width:25%;
+
+            img{
+              width:100%;
+              margin-bottom: 10%;
+            }
+            h4{
+              font-size: 2.5*0.8vw;
+              color: #6dbc98;
+            }
+          }
+        }
+        .sc_content{
+          width:60%;
+
+          p{
+            font-size: 2.08*0.8vw;
+            margin-bottom: 5%;
+          }
+          .btn_request_service{
+            .transition(0.2s);
+          }
+        }
+      }
+    }
+    //专业服务第五屏结束
+
+  }
+  //专业服务样式结束
+
+  //关于我们样式开始
+  body.aboutus{
+
+    //关于我们第一屏开始
+    .home{
+      .background_cover("../images/aboutus_bg.png");
+    }
+    //关于我们第一屏结束
+
+    //关于我们第二屏开始
+    .about_meezao{
+
+      .container{
+        justify-content:center;
+        -webkit-justify-content: center;
+        -moz-justify-content: center;
+        -ms-justify-content: center;
+        -o-justify-content: center;
+
+        .sc_content{
+          width:35%;
+          margin: 0 2.5%;
+
+          h2{
+            margin-bottom: 7%;
+            font-size:3.33*0.8vw;
+            color:#000;
+
+            .vertical_line{
+              width: 1px;
+              height: 2vw;
+              background-color: #4c78d4;
+              display: inline-block;
+            }
+
+            .subtitle{
+              font-size: 2vw;
+              color: #4c78d4;
+            }
+          }
+
+          p{
+            font-size: 1.74*0.8vw;
+            line-height: 2;
+            color: #191919;
+          }
+
+        }
+        img{
+          width:50%;
+          margin: 0 2.5%;
+        }
+      }
+
+    }
+    //关于我们第二屏结束
+
+    //关于我们第三屏开始
+    .about_products{
+
+      .container{
+        justify-content:center;
+        -webkit-justify-content: center;
+        -moz-justify-content: center;
+        -ms-justify-content: center;
+        -o-justify-content: center;
+
+        .about_products_box{
+
+          width: 90%;
+          justify-content:center;
+          -webkit-justify-content: center;
+          -moz-justify-content: center;
+          -ms-justify-content: center;
+          -o-justify-content: center;
+
+          .aboutus_products_tree{
+            width: 25%;
+            margin: 0 2.5%;
+          }
+
+          .aboutus_products_intro{
+            width: 55%;
+            margin: 0 2.5%;
+          }
+
+          p{
+            margin: 2.08*0.8vw 2.5%;
+            font-size: 1.74*0.8vw;
+            line-height: 2;
+            color: #191919;
+          }
+
+        }
+      }
+
+    }
+    //关于我们第三屏结束
+
+    //关于我们第四屏开始
+    .about_detail{
+
+      .container{
+        justify-content:center;
+        -webkit-justify-content: center;
+        -moz-justify-content: center;
+        -ms-justify-content: center;
+        -o-justify-content: center;
+
+        .sc_content{
+          width:85%;
+          margin: 0 2.5%;
+
+          h2{
+            margin: 4% 0;
+            font-size:3.33*0.8vw;
+            color:#000;
+            .vertical_line{
+              width: 1px;
+              height: 2vw;
+              background-color: #4c78d4;
+              display: inline-block;
+            }
+
+            .subtitle{
+              font-size: 2vw;
+              color: #4c78d4;
+            }
+          }
+          p{
+            font-size: 1.74*0.8vw;
+            line-height: 2;
+            color: #191919;
+          }
+
+        }
+        img{
+          width:50%;
+          margin: 0 2.5%;
+        }
+      }
+
+    }
+    //关于我们第四屏结束
+
+
+  }
+  //关于我们样式结束
+
+
+}
+//全局通用样式结束
+
+//屏幕宽度大于1210px
+@media screen and (min-width:1210px){
+    html{
+      min-width:1190px;
+
+      body{
+
+        nav{
+          min-width: 1190px;
+        }
+      }
+    }
+}
+

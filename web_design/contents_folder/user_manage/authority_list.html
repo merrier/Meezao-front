@@ -1,0 +1,701 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <!--360 浏览器在读取到这个标签后，立即切换对应的极速核-->
+    <meta name="renderer" content="webkit">
+    <!--优先使用 IE 最新版本和 Chrome-->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <!--百度禁止转码-->
+    <meta http-equiv="Cache-Control" content="no-siteapp"/>
+    <title>首页</title>
+
+    <!--全局css开始-->
+    <link href="../../plugin_folder/bootstrap_v3.3.5/css/bootstrap.min.css" rel="stylesheet"/>
+    <link href="../../plugin_folder/font-awesome/font-awesome.min.css" rel="stylesheet"/>
+    <link href="../../common_folder/stylesheets/common_base.css" rel="stylesheet"/>
+    <link href="../../common_folder/stylesheets/common_index.css" rel="stylesheet"/>
+    <!--全局css结束-->
+
+    <link href="less/authority_list.less" rel="stylesheet/less"/>
+
+</head>
+
+<body class="authority_list">
+
+<!--标题栏开始-->
+<div class="row header">
+    <h2>MEEZAO</h2>
+
+    <div class="toolbar">
+        <a href="#none" class="fa fa-envelope-o toolbar_information_center"></a><!--
+         -->
+        <div class="toolbar_item">
+            <a href="#none" class="toolbar_person_information">
+                <i class="fa fa-circle"></i>
+                <span class="toolbar_user_name">萨达sdfsadf</span>
+            </a>
+            <ul class="toolbar_drop_menu">
+                <li class="toolopr_modify_password" data-toggle="modal" data-target=".modal_modify_password">修改密码
+                </li>
+                <li class="toolopr_phone_solution" data-toggle="modal" data-target=".modal_phone_solution">手机号解绑
+                </li>
+                <li class="toolopr_log_out">退出登录</li>
+            </ul>
+        </div>
+    </div>
+</div>
+<!--标题栏结束-->
+
+<!--页面开始-->
+<div class="container-fluid wrp">
+
+    <!--左侧黑色背景开始-->
+    <div class="nav_bar_bg"></div>
+    <!--左侧黑色背景结束-->
+
+    <!--中间主体开始-->
+    <div class="main">
+        <!--导航栏开始-->
+        <div class="nav_bar">
+            <ul class="nav_bar_level1">
+                <li><a href="#none"><span>全数据报表系统</span></a>
+                    <ul class="nav_bar_level2">
+                        <li><a href="index.php/MeeZao/Plat/Fun/Form"><span>微官基础报表</span></a></li>
+                        <li><a href="#none"><span>官网基础报表</span></a></li>
+                        <li><a href="#none"><span>CRM报表</span></a></li>
+                        <li><a href="#none"><span>Meezao免费报表</span></a></li>
+                        <li><a href="#none"><span>Meezao付费报表</span></a></li>
+                    </ul>
+                </li>
+                <li><a href="#none"><span>微信管理系统</span></a>
+                    <ul class="nav_bar_level2">
+                        <li><a href="#none"><span>文案系统</span></a>
+                            <ul class="nav_bar_level3">
+                                <li><a href="#none"><i class="fa fa-circle"></i><span>创建文案</span></a></li>
+                                <li><a href="#none"><i class="fa fa-circle"></i><span>组合文案</span></a></li>
+                                <li><a href="#none"><i class="fa fa-circle"></i><span>文案列表</span></a></li>
+                                <li><a href="#none"><i class="fa fa-circle"></i><span>Meezao文案系统</span></a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#none"><span>微信平台管理系统</span></a>
+                            <ul class="nav_bar_level3">
+                                <li><a href="#none"><i class="fa fa-circle"></i><span>自定义菜单</span></a></li>
+                                <li><a href="#none"><i class="fa fa-circle"></i><span>自动回复管理</span></a></li>
+                                <li><a href="#none"><i class="fa fa-circle"></i><span>消息管理</span></a></li>
+                                <li><a href="#none"><i class="fa fa-circle"></i><span>素材管理</span></a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li><a href="#none"><span>官网管理系统</span></a>
+                    <ul class="nav_bar_level2">
+                        <li><a href="#none"><span>微信基础报表</span></a></li>
+                        <li><a href="#none"><span>微官网基础报表</span></a></li>
+                        <li><a href="#none"><span>会员分析报表</span></a>
+                            <ul class="nav_bar_level3">
+                                <li><a href="#none"><i class="fa fa-circle"></i><span>Meezao免费报表</span></a></li>
+                                <li><a href="#none"><i class="fa fa-circle"></i><span>Meezao付费报表</span></a></li>
+                                <li><a href="#none"><i class="fa fa-circle"></i><span>Meezao定制报表</span></a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li><a href="#none"><span>M-CRM系统</span></a>
+                    <ul class="nav_bar_level2">
+                        <li><a href="#none"><span>会员分组</span></a></li>
+                        <li><a href="#none"><span>分组管理</span></a></li>
+                        <li><a href="#none"><span>分组促销</span></a></li>
+                        <li><a href="#none"><span>会员分析图表</span></a></li>
+                    </ul>
+                </li>
+                <li><a href="#none"><span>卡券管理系统</span></a>
+                    <ul class="nav_bar_level2">
+                        <li><a href="#none"><span>卡券列表</span></a></li>
+                    </ul>
+                </li>
+                <li><a href="#none"><span>核销系统</span></a>
+                    <ul class="nav_bar_level2">
+                        <li><a href="#none"><span>网页核销</span></a></li>
+                        <li><a href="#none"><span>手机核销</span></a></li>
+                        <li><a href="#none"><span>核销记录</span></a></li>
+                    </ul>
+                </li>
+                <li><a href="#none"><span>平台管理系统</span></a>
+                    <ul class="nav_bar_level2">
+                        <li><a href="#none"><span>权限管理</span></a></li>
+                        <li><a href="#none"><span>品牌管理</span></a></li>
+                        <li><a href="#none"><span>系统消息</span></a></li>
+                        <li><a href="#none"><span>服务帮助</span></a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <!--导航栏结束-->
+
+        <!--右侧内容开始-->
+        <div class="content clearfix">
+
+            <!--右侧内容主体开始-->
+            <div class="content_main">
+                <div class="content_route"><a href="#none">首页</a>
+                    <span class="content_route_pathname">>Meezao系统管理>权限管理>用户管理</span></div>
+
+                <!--主体内容开始-->
+                <div class="content_mb">
+                    <h2 class="content_mb_title">用户管理</h2>
+
+
+                    <!--警告框-范例开始-->
+                    <div class="alert alert-example" role="alert">
+                        <button type="button" class="close" aria-label="Close"><span aria-hidden="true">&times;</span>
+                        </button>
+                        <strong class="alert_success_content"></strong>
+                    </div>
+                    <!--警告框-范例结束-->
+
+                    <!--自己的内容开始-->
+                    <div class="content_mb_subject">
+
+                            <nav class="navbar navbar-default">
+                                <!--<div class="container-fluid">-->
+                                <!-- Brand and toggle get grouped for better mobile display -->
+                                <div class="navbar-header">
+                                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                                            data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                                        <span class="sr-only">Toggle navigation</span>
+                                        <span class="icon-bar"></span>
+                                        <span class="icon-bar"></span>
+                                        <span class="icon-bar"></span>
+                                    </button>
+                                    <a class="navbar-brand" href="#">Screen</a>
+                                </div>
+
+                                <!-- Collect the nav links, forms, and other content for toggling -->
+                                <!--<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">-->
+                                <ul class="nav navbar-nav">
+
+                                    <li><a href="#">用户权限</a></li>
+                                    <li class="active"><a href="#">权限列表 <span class="sr-only">(current)</span></a></li>
+                                </ul>
+
+
+                                <button class="btn btn-primary create_authority">创建权限</button>
+
+                                <!--</div>&lt;!&ndash; /.navbar-collapse &ndash;&gt;-->
+                                <!--</div>&lt;!&ndash; /.container-fluid &ndash;&gt;-->
+                            </nav>
+
+
+                        <div class="common_table authority_list_table">
+                            <table class="table table-bordered">
+                                <thead>
+                                <tr class="table_head">
+                                    <th class="create_time_second">
+                                        <div class="dropdown" data-id="0">
+                                            <button class="btn btn-default dropdown-toggle btn-dropdown" type="button"
+                                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                                                <span>创建时间</span>
+                                                <span class="caret"></span>
+                                            </button>
+                                            <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                                                <li><a href="#" data-id="1">倒序</a></li>
+                                                <li><a href="#" data-id="2">正序</a></li>
+                                            </ul>
+                                        </div>
+                                    </th>
+                                    <th class="group_name">组名</th>
+                                    <th class="authority_detail">权限详情</th>
+                                    <th class="operation_second">操作</th>
+                                </tr>
+                                </thead>
+                                <tbody class="table_body">
+                                <tr>
+                                    <td>2016-5-17 11:03</td>
+                                    <td>品牌权限组1</td>
+                                    <td>
+                                        <button type="button" class="btn btn-default btn-check-detail">
+                                            点击查看详情
+                                        </button>
+                                    </td>
+                                    <td>
+                                        <button type="button" class="btn btn-default btn-edit">编辑</button>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td>2016-5-17 11:03</td>
+                                    <td>品牌权限组2</td>
+                                    <td>
+                                        <button type="button" class="btn btn-default btn-check-detail">
+                                            点击查看详情
+                                        </button>
+                                    </td>
+                                    <td>
+                                        <button type="button" class="btn btn-default btn-edit">编辑</button>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td>2016-5-17 11:03</td>
+                                    <td>品牌权限组3</td>
+                                    <td>
+                                        <button type="button" class="btn btn-default btn-check-detail">
+                                            点击查看详情
+                                        </button>
+                                    </td>
+                                    <td>
+                                        <button type="button" class="btn btn-default btn-edit">编辑</button>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td>2016-5-17 11:03</td>
+                                    <td>品牌权限组4</td>
+                                    <td>
+                                        <button type="button" class="btn btn-default btn-check-detail">
+                                            点击查看详情
+                                        </button>
+                                    </td>
+                                    <td>
+                                        <button type="button" class="btn btn-default btn-edit">编辑</button>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td>2016-5-17 11:03</td>
+                                    <td>品牌权限组5</td>
+                                    <td>
+                                        <button type="button" class="btn btn-default btn-check-detail">
+                                            点击查看详情
+                                        </button>
+                                    </td>
+                                    <td>
+                                        <button type="button" class="btn btn-default btn-edit">编辑</button>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td>2016-5-17 11:03</td>
+                                    <td>品牌权限组6</td>
+                                    <td>
+                                        <button type="button" class="btn btn-default btn-check-detail">
+                                            点击查看详情
+                                        </button>
+                                    </td>
+                                    <td>
+                                        <button type="button" class="btn btn-default btn-edit">编辑</button>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td>2016-5-17 11:03</td>
+                                    <td>品牌权限组7</td>
+                                    <td>
+                                        <button type="button" class="btn btn-default btn-check-detail">
+                                            点击查看详情
+                                        </button>
+                                    </td>
+                                    <td>
+                                        <button type="button" class="btn btn-default btn-edit">编辑</button>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td>2016-5-17 11:03</td>
+                                    <td>品牌权限组8</td>
+                                    <td>
+                                        <button type="button" class="btn btn-default btn-check-detail">
+                                            点击查看详情
+                                        </button>
+                                    </td>
+                                    <td>
+                                        <button type="button" class="btn btn-default btn-edit">编辑</button>
+                                    </td>
+                                </tr>
+                                </tbody>
+
+                            </table>
+                        </div>
+                        <div class="authority_list_footer">
+                            <nav>
+                                <ul class="pagination">
+                                    <li>
+                                        <a href="#" aria-label="Previous">
+                                            <span aria-hidden="true">&laquo;</span>
+                                        </a>
+                                    </li>
+                                    <li><a href="#">1</a></li>
+                                    <li><a href="#">2</a></li>
+                                    <li><a href="#">3</a></li>
+                                    <li><a href="#">4</a></li>
+                                    <li><a href="#">5</a></li>
+                                    <li>
+                                        <a href="#" aria-label="Next">
+                                            <span aria-hidden="true">&raquo;</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </nav>
+                        </div>
+
+                        <div class="mask_hide">
+
+                        </div>
+
+                    </div>
+                    <!--自己的内容结束-->
+
+                </div>
+                <!--主体内容结束-->
+
+                <!--权限详情弹出框开始-->
+                <div class="check_authority_detail">
+                    <div class="check_head">
+                        权限详情
+                    </div>
+                    <div class="authority_detail_body">
+                        <div class="authority_detail_level1">
+                            <span class="detail_state hide_state level1_state" name="a">关</span>
+                            <span class="authority_detail_menu">公众平台管理</span>
+                            <div class="authority_detail_level2">
+                                <span class="detail_state hide_state level2_state" name="b">关</span>
+                                <span class="menu_level2">自定义菜单</span>
+                                <div class="authority_detail_level3">
+                                    <span class="detail_state hide_state level3_state" name="c">关</span>
+                                    <span class="menu_level3" name="0"><i class="fa fa-circle"></i>自定义菜单</span>
+                                </div>
+                            </div>
+                            <div class="authority_detail_level2">
+                                <span class="detail_state hide_state level2_state" name="f">关</span>
+                                <span class="menu_level2">素材管理</span>
+                                <div class="authority_detail_level3">
+                                    <span class="detail_state hide_state level3_state" name="g">关</span>
+                                    <span class="menu_level3"><i class="fa fa-circle"></i>自定义菜单</span>
+                                </div>
+                            </div>
+                            <div class="authority_detail_level2">
+                                <span class="detail_state show_state level2_state" name="i">开</span>
+                                <span class="menu_level2">自动回复管</span>
+                            </div>
+                        </div>
+                        <div class="authority_detail_level1">
+                            <span class="detail_state hide_state level1_state" name="o">关</span>
+                            <span class="authority_detail_menu">权限管理</span>
+                        </div>
+                    </div>
+                </div>
+                <!--权限详情弹出框结束-->
+
+            </div>
+            <!--右侧内容主体结束-->
+
+
+            <!--模态框开始-->
+            <div class="content_modal">
+
+                <!--模态框-绑定手机号开始-->
+                <div class="modal modal_bind_phone fade" tabindex="-1" role="dialog"
+                     aria-labelledby="exampleModalLabel">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h4 class="modal-title">为了您系统的安全,请绑定手机号,此手机号为密码找回的唯一凭证!</h4>
+                            </div>
+                            <div class="modal-body">
+                                <form action="#" method="post">
+                                    <div class="form-group">
+                                        <label class="control-label">输入绑定的手机号</label>
+                                        <input type="text" class="form-control modal_input modal_phone_number"
+                                               name="bindphone_phone_number" maxlength="15">
+                                        <p class="modal_tips modal_tips_phone"></p>
+                                    </div>
+
+                                    <div class="modal_reg_box">
+                                        <a href="#" class="modal_reg_btn reg_btn_getcode">获取验证码</a>
+                                        <div class="reg_btn_mask"></div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label class="control-label">输入验证码</label>
+                                        <input type="text" class="form-control modal_input modal_vercode"
+                                               name="bindphone_vercode" maxlength="6">
+                                        <p class="modal_tips modal_tips_vercode"></p>
+                                    </div>
+                                </form>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-primary modal_btn_confirm">确认</button>
+                            </div>
+
+                            <div class="modal_code_random"></div>
+                        </div>
+                    </div>
+                </div>
+                <!--模态框-绑定手机号结束-->
+
+                <!--模态框-手机号解绑开始-->
+                <div class="modal modal_phone_solution fade" tabindex="-1" role="dialog"
+                     aria-labelledby="exampleModalLabel">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                                        aria-hidden="true">&times;</span></button>
+                                <h4 class="modal-title">手机号解绑</h4>
+                            </div>
+                            <form action="#" method="post" class="phone_unbinding">
+                                <div class="modal-body">
+                                    <div class="form-group">
+                                        <label class="control-label">输入绑定的手机号</label>
+                                        <input type="text" class="form-control modal_input modal_phone_number"
+                                               name="phonesolution_phone_number" maxlength="15">
+                                        <p class="modal_tips modal_tips_phone"></p>
+                                    </div>
+
+                                    <div class="modal_reg_box">
+                                        <a href="#" class="modal_reg_btn reg_btn_getcode">获取验证码</a>
+                                        <div class="reg_btn_mask"></div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label class="control-label">输入验证码</label>
+                                        <input type="text" class="form-control modal_input modal_vercode"
+                                               name="phonesolution_vercode" maxlength="6">
+                                        <p class="modal_tips modal_tips_vercode"></p>
+                                    </div>
+                                </div>
+                                <div class="modal-footer">
+                                    <!-- <button type="button" class="btn btn-primary modal_btn_confirm">确认</button> -->
+                                    <input type="submit" class="btn btn-primary modal_btn_confirm" value="确认">
+                                    <button type="button" class="btn btn-default modal_btn_cancel" data-dismiss="modal">
+                                        取消
+                                    </button>
+                                </div>
+                            </form>
+                            <div class="modal_code_random"></div>
+                        </div>
+                    </div>
+                </div>
+                <!--模态框-手机号解绑结束-->
+
+
+                <!--模态框-修改密码开始-->
+                <div class="modal modal_modify_password fade" tabindex="-1" role="dialog"
+                     aria-labelledby="exampleModalLabel">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content ">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                                        aria-hidden="true">&times;</span></button>
+                                <h4 class="modal-title">修改密码</h4>
+                            </div>
+                            <form action="#" method="post" class="modifypassword_form">
+                                <div class="modal-body">
+                                    <!-- <form action="#" method="post" class="modifypassword_form"> -->
+                                    <div class="form-group">
+                                        <label class="control-label">输入原密码</label>
+                                        <input type="password" class="form-control modal_input modal_password_old"
+                                               name="modifypassword_password_old">
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label class="control-label">输入新密码</label>
+                                        <input type="password" class="form-control modal_input modal_password_new"
+                                               name="modifypassword_password_new" id="modifypassword_password_new">
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label class="control-label">再次输入新密码</label>
+                                        <input type="password" class="form-control modal_input modal_password_newagain"
+                                               name="modifypassword_password_newagain">
+                                    </div>
+
+                                    <p class="mask_tips mask_tips_password"></p>
+
+                                    <!-- </form> -->
+                                </div>
+                                <div class="modal-footer">
+                                    <!-- <button type="button" class="btn btn-primary modal_btn_confirm">确认</button> -->
+                                    <input type="submit" class="btn btn-primary modal_btn_confirm" value="确认">
+                                    <button type="button" class="btn btn-default modal_btn_cancel" data-dismiss="modal">
+                                        取消
+                                    </button>
+                                </div>
+                            </form>
+                            <!-- <div class="modal_code_random"></div> -->
+                        </div>
+                    </div>
+                </div>
+                <!--模态框-修改密码结束-->
+
+                <!--模态框-找回密码开始-->
+                <div class="modal modal_retrieve_password fade" tabindex="-1" role="dialog"
+                     aria-labelledby="exampleModalLabel">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                                        aria-hidden="true">&times;</span></button>
+                                <h4 class="modal-title">密码找回</h4>
+                            </div>
+                            <div class="modal-body">
+                                <form action="#" method="post">
+                                    <div class="form-group">
+                                        <label class="control-label">输入用户名</label>
+                                        <input type="password" class="form-control modal_input modal_username"
+                                               name="retrievepassword_username">
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label class="control-label">输入绑定的手机号</label>
+                                        <input type="password" class="form-control modal_input modal_phone_number"
+                                               name="retrievepassword_phone_number">
+                                        <p class="modal_tips modal_tips_phone"></p>
+                                    </div>
+
+                                    <div class="modal_reg_box">
+                                        <a href="#" class="modal_reg_btn reg_btn_getcode">获取验证码</a>
+                                        <div class="reg_btn_mask"></div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label class="control-label">输入验证码</label>
+                                        <input type="text" class="form-control modal_input modal_vercode"
+                                               name="retrievepassword_vercode" maxlength="6">
+                                        <p class="modal_tips modal_tips_vercode"></p>
+                                    </div>
+
+                                </form>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-primary modal_btn_confirm">确认</button>
+                                <button type="button" class="btn btn-default modal_btn_cancel" data-dismiss="modal">取消
+                                </button>
+                            </div>
+
+                            <div class="modal_code_random"></div>
+                        </div>
+                    </div>
+                </div>
+                <!--模态框-找回密码结束-->
+
+            </div>
+            <!--模态框结束-->
+        </div>
+        <!--右侧内容结束-->
+    </div>
+    <!--中间主体结束-->
+
+    <!--尾部开始-->
+    <div class="container-fluid foot">
+        <h2>Design by Meezao</h2>
+    </div>
+    <!--尾部结束-->
+
+</div>
+<!--页面结束-->
+
+<!--模态框（创建权限）开始-->
+<div class="modal fade create_authority_modal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                        aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title">创建权限</h4>
+                <button type="text" class="btn btn-default clear_setting">清空配置</button>
+            </div>
+            <form action="#" method="post" class="authority_form">
+                <div class="modal-body">
+                    <div class="body_left">
+                        <div class="form-group">
+                            <div class="input-group">
+                                <div class="input-group-addon">组名</div>
+                                <input type="text" class="input-sm form-control group_name_input"
+                                       name="group_name_input" id="group_name_input" maxlength="10" onkeyup="count('group_name_input',10,'count_title')">
+                            </div>
+                            <span id="count_title" class="count">0/10</span>
+                            <label>注意组名不可重复</label>
+                            <p class="error_show"></p>
+                        </div>
+                    </div>
+                    <div class="body_right">
+                        <div class="authority_mould nav_bar">
+                            <div class="authority_detail_body">
+                                <div class="authority_detail_level1">
+                                    <span class="detail_state hide_state level1_state" name="a">关</span>
+                                    <span class="authority_detail_menu">公众平台管理</span>
+                                    <div class="authority_detail_level2">
+                                        <span class="detail_state hide_state level2_state" name="b">关</span>
+									    <span class="menu_level2">自定义菜单</span>
+                                        <div class="authority_detail_level3">
+                                            <span class="detail_state hide_state level3_state" name="c">关</span>
+                                            <span class="menu_level3" name="0"><i class="fa fa-circle"></i>自定义菜单</span>
+                                        </div>
+                                        <div class="authority_detail_level3">
+                                            <span class="detail_state hide_state level3_state" name="d">关</span>
+                                            <span class="menu_level3" name="0"><i class="fa fa-circle"></i>自定义菜单</span>
+                                        </div>
+                                        <div class="authority_detail_level3">
+                                            <span class="detail_state hide_state level3_state" name="e">关</span>
+                                            <span class="menu_level3"><i class="fa fa-circle"></i>自定义菜单</span>
+                                        </div>
+                                    </div>
+                                    <div class="authority_detail_level2">
+                                        <span class="detail_state hide_state level2_state" name="f">关</span>
+									    <span class="menu_level2">素材管理</span>
+                                        <div class="authority_detail_level3">
+                                            <span class="detail_state hide_state level3_state" name="g">关</span>
+                                            <span class="menu_level3"><i class="fa fa-circle"></i>自定义菜单</span>
+                                        </div>
+                                    </div>
+                                    <div class="authority_detail_level2">
+                                        <span class="detail_state show_state level2_state" name="i">开</span>
+									    <span class="menu_level2">自动回复管</span>
+                                    </div>
+                                </div>
+                                <div class="authority_detail_level1">
+                                    <span class="detail_state hide_state level1_state" name="o">关</span>
+                                    <span class="authority_detail_menu">权限管理</span>
+                                </div>
+                                <div class="authority_detail_level1">
+                                    <span class="detail_state hide_state level1_state" name="l">关</span>
+                                    <span class="authority_detail_menu">会员管理</span>
+                                    <div class="authority_detail_level2">
+                                        <span class="detail_state hide_state level2_state" name="m">关</span>
+									    <span class="menu_level2">自定义菜单</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-primary confirm">确认</button>
+                    <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                </div>
+            </form>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+<!--模态框（用户注册）结束-->
+
+
+
+
+</body>
+
+<!--全局js开始-->
+<script src="../../plugin_folder/jquery_v1.11.3/jquery-1.11.3.min.js"></script>
+<script src="../../plugin_folder/bootstrap_v3.3.5/js/bootstrap.min.js"></script>
+<script src="../../plugin_folder/jquery.validate_v1.13.1/jquery.validate-1.13.1.js"></script>
+<script src="../../plugin_folder/less_v1.7.0/less.min.js"></script>
+<script src="../../common_folder/javascripts/base.js"></script>
+<script src="../../common_folder/javascripts/common_index.js"></script>
+<!--全局js结束-->
+
+<script src="javascripts/authority_list.js"></script>
+
+</html>

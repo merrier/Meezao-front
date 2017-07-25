@@ -1,0 +1,273 @@
+//引入全局less变量
+@import "../../../common_folder/less/PC_library";
+//后台路径
+//@import "../../MeeZao/B_New/common_folder/less/PC_library";
+
+html {
+  height: 100%;
+  body {
+    height: 100%;
+    font-size: 14px;
+
+    //自己的内容开始
+    .content_mb_subject {
+
+      .navbar-default {
+
+
+      }
+
+      .common_table{
+        thead{
+          tr{
+
+          }
+        }
+        tbody{
+          tr{
+            td{
+              font-size: 14px;
+
+              .btn-group{
+                .btn{
+                  font-size: 14px;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+    //自己的内容结束
+
+    //模态框开始
+
+    //模态框-创建、编辑群组开始
+    .modal_group{
+
+      .modal-body{
+        .form-group{
+          label{
+            width:100%;
+            font-size: 15px;
+          }
+        }
+        .form_group_URL{
+          input{
+            width:100%;
+            padding:3px 5px;
+          }
+        }
+
+
+        //模糊搜索相关开始
+        .modal_filter_box{
+          .clearfix();
+          margin-bottom: 15px;
+
+          .group_input_div{
+            position: relative;
+            .size(350px,30px);
+            padding: 0;
+            line-height: 30px;
+            text-align: left;
+            border: 1px solid @color_border;
+            border-radius: 4px;
+
+            .filter_actions_input{
+              position: absolute;
+              .size(348px,28px);
+              border: 0;
+            }
+            .singleauto_choose_span{
+              position: absolute;
+              .size(100%,30px);
+              line-height: 30px;
+              border-radius: 4px;
+              margin-top: -1px;
+              text-align: center;
+
+              .singleauto_choose_deletenew{
+                margin-left: 10px;
+                cursor: pointer;
+              }
+            }
+            .caret{
+              position: absolute;
+              right: 8px;
+              bottom: 10px;
+              color: #afafad;
+            }
+            .filter_input_mask{
+              position: absolute;
+              .size(100%,100%);
+              top: 0;
+              left: 0;
+              background-color: #000000;
+              opacity: .4;
+              cursor: not-allowed;
+              z-index:2;
+            }
+          }
+          .dropdown-toggle{
+            .size(30px,30px);
+            line-height: 30px;
+            padding: 0;
+            color: #afafad;
+            .border-left-radius(0);
+          }
+        }
+
+        .input-group-btn{
+          display: block;
+
+          .dropdown{
+            .clearfix();
+
+            .btn-dropdown{
+              .size(320px,30px);
+              padding:0;
+              padding-left: 10px;
+              line-height: 30px;
+              text-align: left;
+              .border-right-radius(0);
+            }
+
+            .dropdown-menu{
+              width:350px;
+              max-height: 180px;
+              padding: 0;
+              overflow: auto;
+
+              li{
+                height: 30px;
+                line-height: 30px;
+                text-align: center;
+
+                a{
+                  padding: 0;
+                  line-height: 30px;
+
+                  &:hover{
+                    background-color: @color_blue;
+                  }
+                }
+              }
+            }
+          }
+        }
+
+        .group_range_choosediv{
+          float: left;
+          width:110px;
+
+          .dropdown{
+
+            .btn-dropdown{
+              width: 90px;
+              padding:0;
+              text-align: center;
+              border-right: 0;
+            }
+            .dropdown-toggle{
+              width:20px;
+              .border-right-radius(0);
+            }
+            .dropdown-menu{
+              width:110px;
+              min-width: 110px;
+            }
+          }
+        }
+
+
+        .group_range_inputdiv{
+          float: left;
+
+          .group_range_input{
+            .size(359px,30px);
+            margin-left: -1px;
+            padding:3px 5px;
+          }
+          .brand_span{
+            position: relative;
+            display: block;
+            padding: 3px 0;
+            text-align: center;
+            line-height: 20px;
+            font-size: 0.8em;
+            border: 1px solid #cccccc;
+            border-radius: 4px;
+            background-color: @color_white;
+
+            .float_right_multiple{
+              position: absolute;
+              float: right;
+              right: 3px;
+              margin-top: 4px;
+              cursor: pointer;
+            }
+          }
+          .caret{
+            position: absolute;
+            top:12px;
+            right:8px;
+            color:#afafad;
+          }
+        }
+
+        .group_name_inputbox{
+          .size(350px,30px);
+
+          #filter_input_groupname{
+            .size(240px,30px);
+            .border-right-radius(4px);
+          }
+          .input_num_box{
+            top: 4px;
+            right: 4px;
+            z-index: 2;
+          }
+        }
+        //模糊搜索相关结束
+
+      }
+    }
+    //模态框-创建群组结束
+
+    //模态框-查看群组开始
+    .modal_check_group{
+      .modal-body{
+        h5{
+          margin-bottom: 3px;
+          font-size: 15px;
+          color: #ffffff;
+          text-align: center;
+          line-height: 35px;
+          background-color: #065f63;
+        }
+        ul{
+          max-height: 160px;
+          overflow-y: auto;
+          line-height: 30px;
+          text-align: center;
+          li{
+            margin-bottom: 2px;
+          }
+          li:nth-child(odd){
+            background-color: #ddd;
+          }
+          li:nth-child(even){
+            background-color: #eee;
+          }
+          .modal_group_item_new{
+            display: none;
+          }
+        }
+      }
+    }
+    //模态框-查看群组结束
+
+    //模态框结束
+  }
+}

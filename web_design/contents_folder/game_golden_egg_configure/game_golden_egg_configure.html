@@ -1,0 +1,254 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <!--360 浏览器在读取到这个标签后，立即切换对应的极速核-->
+    <meta name="renderer" content="webkit">
+    <!--优先使用 IE 最新版本和 Chrome-->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <!--百度禁止转码-->
+    <meta http-equiv="Cache-Control" content="no-siteapp"/>
+    <title>抢金蛋游戏配置</title>
+
+    <!--全局css开始-->
+    <link href="../../plugin_folder/bootstrap_v3.3.5/css/bootstrap.min.css" rel="stylesheet"/>
+    <link href="../../plugin_folder/font-awesome/font-awesome.min.css" rel="stylesheet"/>
+    <link href="../../common_folder/stylesheets/common_base.css" rel="stylesheet"/>
+    <link href="../../common_folder/less/PC_index.less" rel="stylesheet/less"/>
+    <!--全局css结束-->
+
+    <!--<link href="../../plugin_folder/TimePicki/css/timepicki.css" rel="stylesheet/less"/>-->
+    <link href="../../plugin_folder/jquery-ui_v1.10.0/jquery-ui-1.10.0.custom.css" rel="stylesheet"/>
+    <link href="../../plugin_folder/jquery-ui_v1.10.0/jquery-ui-timepicker-addon.css" rel="stylesheet"/>
+    <link href="css/game_golden_egg_configure.css" rel="stylesheet/less"/>
+
+</head>
+
+<body>
+
+<!--页面开始-->
+<div class="container-fluid wrp">
+
+    <!--右侧内容开始-->
+    <div class="content clearfix">
+
+        <!--隐藏警告框标签开始-->
+        <div class="alert_hide_tag hide">
+            <div class="alert_whether_show"></div>
+            <div class="alert_tag_type"></div>
+            <div class="alert_tag_delay"></div>
+            <div class="alert_tag_content"></div>
+        </div>
+        <!--隐藏警告框标签结束-->
+
+        <!--右侧内容主体开始-->
+        <div class="content_main">
+            <div class="content_route"><a href="#none">首页</a>
+                <span class="content_route_pathname">>CRM系统>消费者管理</span></div>
+
+            <!--主体内容开始-->
+            <div class="content_mb">
+                <h2 class="content_mb_title">游戏平台配置-抢金蛋游戏</h2>
+
+                <!--警告框-范例开始-->
+                <div class="alert alert-example" role="alert">
+                    <button type="button" class="close" aria-label="Close"><span aria-hidden="true">&times;</span>
+                    </button>
+                    <strong class="alert_content"></strong>
+                </div>
+                <!--警告框-范例结束-->
+
+
+                <!--自己的内容开始-->
+                <div class="content_mb_subject">
+
+
+                    <!--你可以在这里写你自己的内容了-->
+                    <!--导航条开始-->
+                    <nav class="navbar navbar-default">
+                        <div class="navbar-header">
+                            <a class="navbar-brand" href="javascript:void(0)">Screen</a>
+                        </div>
+
+                        <ul class="nav navbar-nav">
+                            <li class="active"><a href="#none">活动列表<span class="sr-only">(current)</span></a>
+                            </li>
+                        </ul>
+
+                        <button type="button" class="btn btn-primary btn_create_activity">创建活动</button>
+
+                    </nav>
+                    <!--导航条结束-->
+
+                    <!--表格开始-->
+                    <div class="common_table">
+                        <table class="table table-bordered form_center_table form_center_tableform">
+                            <thead>
+                            <tr class="table_head">
+                                <th class="th_order">序号</th>
+                                <th class="th_name">活动开始时间</th>
+                                <th class="th_opr">操作</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr data-id="1">
+                                <td>1</td>
+                                <td>2017-01-18 15:40</td>
+                                <td>
+                                    <div class="btn-group" role="group">
+                                        <div class="btn btn-default btn_edit">编辑</div>
+                                        <div class="btn btn-black btn_delete">删除</div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr data-id="2">
+                                <td>2</td>
+                                <td>2017-01-18  3:40</td>
+                                <td>
+                                    <div class="btn-group" role="group">
+                                        <div class="btn btn-default btn_edit">编辑</div>
+                                        <div class="btn btn-black btn_delete">删除</div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr data-id="3">
+                                <td>3</td>
+                                <td>2017-01-18 11:28</td>
+                                <td>
+                                    <div class="btn-group" role="group">
+                                        <div class="btn btn-default btn_edit">编辑</div>
+                                        <div class="btn btn-black btn_delete">删除</div>
+                                    </div>
+                                </td>
+                            </tr>
+
+                            </tbody>
+                        </table>
+                    </div>
+                    <!--表格结束-->
+
+                </div>
+                <!--自己的内容结束-->
+
+            </div>
+            <!--主体内容结束-->
+
+        </div>
+        <!--右侧内容主体结束-->
+
+
+    </div>
+    <!--右侧内容结束-->
+</div>
+<!--页面结束-->
+
+<!--模态框-创建活动开始-->
+<div class="modal fade modal_create_activity">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                        aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title">创建活动</h4>
+            </div>
+
+            <div class="modal-body">
+                <div class="form-group">
+                    <label>活动序号</label>
+                    <input type="number" class="form-control create_order_input"  name="create_order_input">
+                </div>
+                <div class="form-group">
+                    <label>活动开始时间</label>
+                    <div class="datimepicker">
+                        <input type="text" value="" id="create_from" name="from">
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary">确认</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+            </div>
+
+        </div>
+    </div>
+</div>
+<!--模态框-创建活动结束-->
+
+<!--模态框-编辑活动开始-->
+<div class="modal fade modal_edit_activity">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                        aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title">编辑活动</h4>
+            </div>
+
+            <div class="modal-body">
+                <div class="form-group">
+                    <label>活动序号</label>
+                    <input type="number" class="form-control edit_order_input"  name="create_order_input">
+                </div>
+                <div class="form-group">
+                    <label>活动开始时间</label>
+                    <div class="datimepicker">
+                        <input type="text" value="" id="edit_from" name="from">
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary">确认</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+            </div>
+
+        </div>
+    </div>
+</div>
+<!--模态框-编辑活动结束-->
+
+<!--模态框-删除活动开始-->
+<div class="modal fade modal_delete_activity">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                        aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title">删除活动</h4>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary">确认</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+            </div>
+
+        </div>
+    </div>
+</div>
+<!--模态框-删除活动结束-->
+
+<!--尾部开始-->
+<div class="container-fluid foot">
+    <h2>Design by Meezao</h2>
+</div>
+<!--尾部结束-->
+
+
+</body>
+
+<!--全局js开始-->
+<script src="../../plugin_folder/jquery_v1.11.3/jquery-1.11.3.min.js"></script>
+<script src="../../plugin_folder/jquery-ui_v1.10.0/jquery-ui-1.10.0.custom.min.js"></script>
+<script src="../../plugin_folder/bootstrap_v3.3.5/js/bootstrap.min.js"></script>
+<script src="../../plugin_folder/jquery.validate_v1.13.1/jquery.validate-1.13.1.js"></script>
+<script src="../../plugin_folder/less_v1.7.0/less.min.js"></script>
+<script src="../../common_folder/javascripts/base.js"></script>
+<script src="../../common_folder/javascripts/common_index.js"></script>
+<!--全局js结束-->
+
+<!--<script src="../../plugin_folder/TimePicki/javascripts/timepicki.js"></script>-->
+<script src=../../plugin_folder/jquery-ui_v1.10.0/jquery.ui.datepicker.js></script>
+<script src=../../plugin_folder/jquery-ui_v1.10.0/jquery-ui-timepicker-addon.js></script>
+
+<script src="javascripts/game_golden_egg_configure.js"></script>
+
+
+</html>

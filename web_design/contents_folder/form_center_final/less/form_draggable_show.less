@@ -1,0 +1,745 @@
+//引入全局less变量
+@import "../../../common_folder/less/PC_library";
+//后台路径
+//@import "../../MeeZao/B_New/common_folder/less/PC_library";
+
+@title_size: 0.875rem;
+@title_left: 1rem;
+@title_top: 0.8rem;
+
+html {
+
+  body {
+
+    .wrp {
+      .content_mb_subject {
+        //导航条开始
+        .navbar-default {
+          .navbar-right {
+            .btn-primary {
+              margin-left: 10px;
+              margin-top: 0;
+              line-height: 30px;
+            }
+            .input-group {
+              position: relative;
+              .input_num_box {
+                position: absolute;
+                right: 6px;
+                z-index: 2;
+                top: 6px;
+              }
+              .form_input {
+                border-radius: 4px;
+                width: 300px;
+              }
+            }
+            .btn_save {
+              float: right;
+              width: 70px;
+              margin-left: 10px;
+              padding: 5px 12px;
+            }
+          }
+
+          .nav_btn_configure {
+            position: absolute;
+            right: 8px;
+            top: 6px;
+            font-size: 35px;
+            cursor: pointer;
+          }
+        }
+        //导航条结束
+
+        //报表展示开始
+        .form_main {
+          position: relative;
+          width: 960px;
+          .center_block;
+
+          .form_gridly {
+            position: relative;
+            min-height: 2000px;
+
+            .form_brick_new {
+              display: none;
+            }
+
+            .form_brick {
+              position: relative;
+              padding: 5px;
+              margin-bottom: 3rem;
+              opacity: 1;
+              cursor: default;
+
+              .form_border_blue {
+                border: 2px solid #00b0f0;
+              }
+
+              .form_contents {
+                .size(100%, 100%);
+                border-radius: 5px;
+
+                .title_p {
+                  position: absolute;
+                  left: @title_left;
+                  top: @title_top;
+                  font-size: @title_size;
+                  font-weight: normal;
+                  font-family: "微软雅黑", "Microsoft YaHei";
+                  text-align: left;
+                  z-index: 2;
+                }
+
+                > div {
+                  position: relative;
+                  .size(100%, 100%);
+                  border-radius: 5px;
+                }
+
+                //模块背景颜色开始
+                .form_bg_purple {
+                  background-color: #7030a0;
+                }
+                .form_bg_green {
+                  background-color: #00a300;
+                }
+                .form_bg_blue {
+                  background-color: #2d89ef;
+                }
+                .form_bg_re {
+                  background-color: #c84a4a;
+                }
+                .form_bg_bl {
+                  background-color: #7e46db;
+                }
+                .form_bg_yellow {
+                  background-color: #ffc40d;
+                }
+                .form_bg_red {
+                  background-color: #ff4500;
+                }
+                .form_border_blue {
+                  border: 2px solid #00b0f0;
+                }
+
+                //模块背景颜色结束
+
+                //模块类别通用样式开始
+                .form_class1 {
+                  .size(230px, 110px);
+                  padding: @title_top @title_left;
+                  color: #fff;
+                  border-radius: 5px;
+
+                  h4 {
+                    font-weight: normal;
+                    text-align: left;
+                    font-size: @title_size;
+                  }
+                  .form_number {
+                    .font_arial;
+                    font-size: 1.5rem;
+                    text-align: center;
+                    margin-top: 1.5rem;
+                  }
+                  .fa-arrow-up, .fa-arrow-down {
+                    position: absolute;
+                    top: 50px;
+                    right: 10px;
+                    font-size: 1.6rem;
+                    transform: rotateY(40deg);
+                    -webkit-transform: rotateY(40deg);
+                    margin-top: 7%;
+                  }
+                  .fa-arrow-down {
+                    display: none;
+                  }
+                  .form_icon {
+                    position: absolute;
+                    top: 0.4rem;
+                    right: 0.5rem;
+                    .size(1.5rem, 1.6rem);
+                  }
+                }
+
+                .form_class2 {
+
+                  .title_p {
+                    position: absolute;
+                    left: 1rem;
+                    top: 0.6rem;
+                    .font_yahei;
+                    font-size: 1rem;
+                    font-weight: normal;
+                    z-index: 2;
+                  }
+                }
+
+                .form_class3 {
+                  background-color: #fff;
+
+                  p.form_pie_number {
+                    position: absolute;
+                    width: 100%;
+                    text-align: center;
+                    bottom: 0.3rem;
+                    font-size: 0.9rem;
+                  }
+                }
+
+                .form_class4 {
+                  .size(230px, 230px);
+                  padding: @title_top @title_left;
+                  color: #fff;
+                  border-radius: 5px;
+
+                  h4 {
+                    margin-bottom: 1.3rem;
+                    font-weight: normal;
+                    text-align: left;
+                    font-size: @title_size;
+                  }
+
+                  p {
+                    position: relative;
+                    padding-left: @title_left;
+                    font-size: 0.8rem;
+                    text-align: left;
+                    height: 1.7rem;
+                    .clearfix;
+
+                    span {
+                      display: inline-block;
+                      vertical-align: middle;
+                    }
+                    .fa-arrow-up, .fa-arrow-down {
+                      position: absolute;
+                      right:0;
+                      top:0.1rem;
+                      font-size: 1rem;
+                    }
+                    .fa-arrow-up {
+                      display: none;
+                    }
+                  }
+                }
+
+                .form_class5 {
+                  background-color: #fff;
+
+                  h1 {
+                    color: #000000;
+                    padding: 0.8rem 1rem;
+                    font-size: 1rem;
+                  }
+
+                  .form_table {
+                    position: relative;
+                    top: 10%;
+                    height: 90%;
+                    color: #000000;
+                    word-break: break-all;
+                    word-wrap: break-word;
+
+                    table {
+                      height: 100%;
+
+                      thead {
+                        display: table;
+                        table-layout: fixed;
+                        width: ~"calc(100% - 4px)";
+                        height: 2.2rem;
+                        //font-size: 1rem;
+                        background-color: #ff8000;
+
+                        tr {
+
+                          th {
+                            font-size: 0.85rem;
+                            text-align: center;
+                            border: 1px solid #ccc;
+                            cursor: ns-resize;
+                          }
+                        }
+                      }
+
+                      tbody {
+                        display: block;
+                        height: ~"calc(100% - 2.2rem)";
+                        overflow-y: scroll;
+
+                        tr {
+                          display: table;
+                          width: ~"calc(100% - 4px)";
+                          //height: 1.5rem;
+                          table-layout: fixed;
+
+                          td {
+                            padding: 0;
+                            height: 1.6rem;
+                            text-align: center;
+                            font-size: 0.8rem;
+                            vertical-align: middle;
+                            border: 1px solid #ccc;
+                          }
+                          .td_hover {
+                            background-color: #7bd9fa;
+                          }
+                        }
+                      }
+                    }
+                    .table_content {
+                      height: ~"calc(100% - 2.2rem)";
+                    }
+                    .table_footer {
+                      height: 2.2rem;
+
+                      thead {
+                        height: 100%;
+                      }
+                    }
+                  }
+
+                  //统计图表开始
+                  .brand_statistics_table{
+
+                    .brand_name {
+                      width: 30%;
+                    }
+                    .sales {
+                      width: 12.5%;
+                    }
+                    .sales_percentage {
+                      width: 10%;
+                    }
+                    .sales_rank {
+                      width: 10%;
+                    }
+                    .sales_number {
+                      width: 12.5%;
+                    }
+                    .sales_number_percentage {
+                      width: 12.5%;
+                    }
+                    .sales_number_rank {
+                      width: 12.5%;
+                    }
+
+                  }
+                  //统计图表结束
+
+                  //最受欢迎卡券（类别）排行榜开始
+                  .most_popular_coupon_ranking_list_table{
+
+                    .rank{
+                      width:10%;
+                    }
+                    .kind{
+                      width:15%;
+                    }
+                    .name{
+                      width:30%;
+                    }
+                    .throw_in_number{
+                      width:15%;
+                    }
+                    .draw_number{
+                      width:15%;
+                    }
+                    .verification_number{
+                      width:15%;
+                    }
+                  }
+                  //最受欢迎卡券（类别）排行榜结束
+
+                  //最爱领取卡券（人员）排行榜开始
+                  .favorite_draw_coupon_ranking_list_table{
+                      .rank{
+                        width:10%;
+                      }
+                      .nickname{
+                        width:20%;
+                      }
+                      .follow_weixin{
+                        width:15%;
+                      }
+                      .follow_electric{
+                        width:15%;
+                      }
+                      .follow_CRM{
+                        width:15%;
+                      }
+                      .CRM_level{
+                        width:10%;
+                      }
+                      .draw_number{
+
+                      }
+                  }
+                  //最爱领取卡券（人员）排行榜结束
+
+                  //Top10类目/Top50品牌综合排行开始
+                  .category_brand_comprehensive_rank_table{
+                    .rank{
+                      width:7%;
+                    }
+                    .dimension{
+                      width:13%;
+                    }
+                    .repurchase_cycle{
+                      width:13%;
+                    }
+                    .purchase_times{
+                      width:10%;
+                    }
+                    .guest_price{
+                      width:13%;
+                    }
+                    .member_turnover_weight{
+                      width:12%;
+                    }
+                    .total_turnover_weight{
+                      width:12%;
+                    }
+                    .single_purchase_rate{
+                      width:10%;
+                    }
+                    .multiple_purchase_rate{
+                      width:10%;
+                    }
+                  }
+                  //Top10类目/Top50品牌综合排行结束
+                }
+
+                .form_class6 {
+
+                  .form_table {
+                    padding: 1%;
+
+                    table {
+                      .size(100%, 100%);
+                      background-color: #ffffff;
+
+                      thead {
+                        display: table;
+                        table-layout: fixed;
+                        width: ~"calc(100% - 1em)";
+                        height: 2.2rem;
+                        background-color: #e6f0f8;
+
+                        tr {
+                          display: table;
+                          width: 100%;
+
+                          th {
+                            height: 2.2rem;
+                            border: 1px solid #b5a6c9;
+                            text-align: center;
+                            font-size: 1rem;
+                            cursor: ns-resize;
+                          }
+                        }
+                      }
+
+                      tbody {
+                        display: block;
+                        height: ~"calc(100% - 2.2rem)";
+                        overflow-y: scroll;
+
+                        tr {
+                          display: table;
+                          height: 2rem;
+                          width: 100%;
+                          text-align: center;
+                          border: none;
+                          table-layout: fixed;
+                          //&:hover{
+                          //  background-color: #ffc003;
+                          //}
+
+                          td {
+                            line-height: 2rem;
+                            vertical-align: middle;
+                            border: 1px solid #b5a6c9;
+                            text-align: center;
+                          }
+                          .td_red{
+                            background-color: #ff0000;
+                          }
+                          .td_hover {
+                            background-color: #ffffee;
+                          }
+                        }
+                        tr.tr_hover {
+                          background-color: #ff0000;
+                        }
+                      }
+                    }
+                  }
+
+                  //不同回购次数下的KPI开始
+                  .different_repurchase_times_kpi_table{
+                    .purchase_times {
+                      width: 20%;
+                    }
+                    .number {
+                      width: 20%;
+                    }
+                    .repurchase_rate {
+                      width: 20%;
+                    }
+                    .repurchase_cycle {
+                      width: 20%;
+                    }
+                    .guest_price {
+                      width: 20%;
+                    }
+                  }
+                  //不同回购次数下的KPI结束
+                }
+                //模块类别通用样式结束
+              }
+
+              //蒙版相关开始
+
+              //蒙版通用开始
+              .form_mask {
+                display: none;
+                position: absolute;
+                top: 5px;
+                left: 5px;
+                width: ~'calc(100% - 10px)';
+                background-color: rgba(255, 255, 255, .55);
+                border-radius: 5px;
+                z-index: 999;
+
+                //蒙版上的图标通用开始
+                .fa {
+                  display: block;
+                  float: right;
+                  .size(1.7rem, 1.7rem);
+                  margin-top: 0.5rem;
+                  margin-right: 0.5rem;
+                  border-radius: 1rem;
+                  color: #ffffff;
+                  //background-color: #7f7f7f;
+                  font-size: 1.2rem;
+                  text-align: center;
+                  line-height: 1.7rem;
+                  cursor: pointer;
+                }
+                //蒙版上的图标通用结束
+
+                //蒙版上的删除图标开始
+                .btn_delete {
+                  margin-top: 9px;
+                  margin-right: 6px;
+                  background-color: #7f7f7f;
+                  color: #fff;
+
+                  &:before {
+                    margin-left: 1px;
+                  }
+                }
+                //蒙版上的删除图标结束
+
+                //蒙版上的查看图标开始
+                .btn_check {
+
+                  a {
+                    display: block;
+                    .size(100%, 100%);
+                  }
+                }
+                //蒙版上的查看图标结束
+
+                //蒙版上的分组图标开始
+                .btn_group {
+                  display: none;
+                }
+                //蒙版上的分组图标结束
+
+                h5.form_mask_title {
+                  position: absolute;
+                  color: #7f7f7f;
+                  font-size: 1rem;
+                  font-weight: bold;
+                  margin-left: 15px;
+                  line-height: 35px;
+                }
+              }
+              //蒙版通用结束
+
+              //蒙版-正常开始
+              .form_mask_normal {
+                display: none;
+                height: 2.7rem;
+                .border-bottom-radius(0);
+                background-color: rgba(0, 0, 0, .4);
+
+                h5.form_mask_title {
+                  display: none;
+                }
+              }
+              //蒙版-正常结束
+
+              ////蒙版-更新中开始
+              //.form_mask_update{
+              //  height:~"calc(100% - 10px)";
+              //  text-align: center;
+              //  cursor:progress;
+              //  z-index:3;
+              //
+              //  .fa{
+              //    display: inline-block;
+              //    float:none;
+              //    .size(60px,60px);
+              //    margin:0;
+              //    border-radius:0;
+              //    color:#000;
+              //    background-color: transparent;
+              //    line-height: 60px;
+              //    vertical-align: middle;
+              //    text-align: center;
+              //    font-size: 60px;
+              //  }
+              //  span{
+              //    display: inline-block;
+              //    height:100%;
+              //    vertical-align: middle;
+              //  }
+              //
+              //  h5.form_mask_title{
+              //    display: none;
+              //  }
+              //}
+              ////蒙版-更新中结束
+
+              //蒙版-已过期开始
+              .form_mask_overtime {
+                height: ~"calc(100% - 10px)";
+                text-align: center;
+                background-color: rgba(255, 255, 255, .95);
+
+                p {
+                  position: absolute;
+                  .size(100%, 50px);
+                  top: 50%;
+                  margin-top: -25px;
+                  line-height: 50px;
+                  text-align: center;
+                  color: #7f7f7f;
+                  font-size: 23px;
+                  font-weight: 900;
+                }
+              }
+              //蒙版-已过期结束
+
+              //蒙版-未开通开始
+              .form_mask_notopen {
+                height: ~"calc(100% - 10px)";
+                text-align: center;
+                background-color: rgba(255, 255, 255, .95);
+
+                p {
+                  position: absolute;
+                  .size(100%, 50px);
+                  top: 50%;
+                  margin-top: -25px;
+                  line-height: 50px;
+                  text-align: center;
+                  color: #7f7f7f;
+                  font-size: 23px;
+                  font-weight: 900;
+                }
+              }
+              //蒙版-未开通结束
+
+              //蒙版相关结束
+            }
+
+            .form_brick_normal {
+
+              &:hover > .form_mask_normal {
+                display: block;
+              }
+            }
+
+          }
+
+          //背景网格开始
+          .form_gridly_bg {
+            background-image: url("../images/form_gridly_bg.png");
+            background-repeat: repeat-y;
+          }
+          //背景网格结束
+
+        }
+        //报表展示结束
+      }
+    }
+
+    //模态框-添加模块和报表开始
+    .modal_add_module {
+      .modal-dialog {
+        width: 900px;
+        .modal-header {
+          position: relative;
+          .input-group {
+            position: absolute;
+            right: 140px;
+            top: 10px;
+            width: 240px;
+
+            .modal_search_input {
+              border-radius: 4px;
+            }
+          }
+          .btn_search {
+            position: absolute;
+            right: 50px;
+            top: 10px;
+            width: 70px;
+          }
+        }
+        .modal-body {
+          height: 320px;
+          overflow: auto;
+
+          .table_add_module {
+            min-height: 160px;
+
+            tbody {
+
+              tr {
+
+                input {
+                  .size(20px, 20px);
+                  cursor: pointer;
+                }
+              }
+              tr.tr_checked {
+                background-color: #eee;
+              }
+            }
+          }
+        }
+        .modal-footer {
+          .btn-default {
+            background-color: #111;
+            color: #fff;
+            width: 70px;
+          }
+          .btn-primary {
+            text-indent: 0px;
+            letter-spacing: 0px;
+          }
+        }
+      }
+    }
+    //模态框-添加模块和报表结束
+  }
+}
+

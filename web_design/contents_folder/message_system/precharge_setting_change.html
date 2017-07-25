@@ -1,0 +1,343 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <!--360 浏览器在读取到这个标签后，立即切换对应的极速核-->
+    <meta name="renderer" content="webkit">
+    <!--优先使用 IE 最新版本和 Chrome-->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <!--百度禁止转码-->
+    <meta http-equiv="Cache-Control" content="no-siteapp"/>
+    <title>预充配置</title>
+
+    <!--全局css开始-->
+    <link href="../../plugin_folder/bootstrap_v3.3.5/css/bootstrap.min.css" rel="stylesheet"/>
+    <link href="../../plugin_folder/font-awesome/font-awesome.min.css" rel="stylesheet"/>
+    <link href="../../common_folder/stylesheets/common_base.css" rel="stylesheet"/>
+    <link href="../../common_folder/less/PC_index.less" rel="stylesheet/less"/>
+    <!--全局css结束-->
+
+    <link href="less/precharge_setting.less" rel="stylesheet/less" />
+
+</head>
+
+<body>
+
+
+<!--标题栏开始-->
+<div class="row header">
+    <h2>MEEZAO</h2>
+
+    <div class="toolbar">
+        <a href="" class="fa fa-envelope-o toolbar_information_center"><sup class="information_num"><i class="fa fa-circle"></i></sup></a><!--
+         --><div class="toolbar_item">
+        <a href="#none" class="toolbar_person_information">
+            <i class="fa fa-circle"></i>
+            <span class="toolbar_user_name">萨达sdfsadf</span>
+        </a>
+        <ul class="toolbar_drop_menu">
+            <li class="toolopr_modify_password" data-toggle="modal" data-target=".modal_modify_password">修改密码</li>
+            <li class="toolopr_phone_solution" data-toggle="modal" data-target=".modal_phone_solution">手机号解绑</li>
+            <li class="toolopr_log_out">退出登录</li>
+        </ul>
+    </div>
+    </div>
+</div>
+<!--标题栏结束-->
+
+<!--页面开始-->
+<div class="container-fluid wrp">
+
+    <!--导航栏开始-->
+    <div class="nav_bar">
+        <ul class="nav_bar_level1">
+            <li><a href="#none"><span>全数据报表系统</span></a>
+                <ul class="nav_bar_level2">
+                    <li><a href="index.php/MeeZao/Plat/Fun/Form"><span>微官基础报表</span></a></li>
+                    <li><a href="#none"><span>官网基础报表</span></a></li>
+                    <li><a href="#none"><span>CRM报表</span></a></li>
+                    <li><a href="#none"><span>Meezao免费报表</span></a></li>
+                    <li><a href="#none"><span>Meezao付费报表</span></a></li>
+                </ul>
+            </li>
+            <li><a href="#none"><span>微信管理系统</span></a>
+                <ul class="nav_bar_level2">
+                    <li><a href="#none"><span>文案系统</span></a>
+                        <ul class="nav_bar_level3">
+                            <li><a href="#none"><i class="fa fa-circle"></i><span>创建文案</span></a></li>
+                            <li><a href="#none"><i class="fa fa-circle"></i><span>组合文案</span></a></li>
+                            <li><a href="#none"><i class="fa fa-circle"></i><span>文案列表</span></a></li>
+                            <li><a href="#none"><i class="fa fa-circle"></i><span>Meezao文案系统</span></a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#none"><span>微信平台管理系统</span></a>
+                        <ul class="nav_bar_level3">
+                            <li><a href="#none"><i class="fa fa-circle"></i><span>自定义菜单</span></a></li>
+                            <li><a href="#none"><i class="fa fa-circle"></i><span>自动回复管理</span></a></li>
+                            <li><a href="#none"><i class="fa fa-circle"></i><span>消息管理</span></a></li>
+                            <li><a href="#none"><i class="fa fa-circle"></i><span>素材管理</span></a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+            <li><a href="#none"><span>官网管理系统</span></a>
+                <ul class="nav_bar_level2">
+                    <li><a href="#none"><span>微信基础报表</span></a></li>
+                    <li><a href="#none"><span>微官网基础报表</span></a></li>
+                    <li><a href="#none"><span>会员分析报表</span></a>
+                        <ul class="nav_bar_level3">
+                            <li><a href="#none"><i class="fa fa-circle"></i><span>Meezao免费报表</span></a></li>
+                            <li><a href="#none"><i class="fa fa-circle"></i><span>Meezao付费报表</span></a></li>
+                            <li><a href="#none"><i class="fa fa-circle"></i><span>Meezao定制报表</span></a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+            <li><a href="#none"><span>M-CRM系统</span></a>
+                <ul class="nav_bar_level2">
+                    <li><a href="#none"><span>会员分组</span></a></li>
+                    <li><a href="#none"><span>分组管理</span></a></li>
+                    <li><a href="#none"><span>分组促销</span></a></li>
+                    <li><a href="#none"><span>会员分析图表</span></a></li>
+                </ul>
+            </li>
+            <li><a href="#none"><span>卡券管理系统</span></a>
+                <ul class="nav_bar_level2">
+                    <li><a href="#none"><span>卡券列表</span></a></li>
+                </ul>
+            </li>
+            <li><a href="#none"><span>核销系统</span></a>
+                <ul class="nav_bar_level2">
+                    <li><a href="#none"><span>网页核销</span></a></li>
+                    <li><a href="#none"><span>手机核销</span></a></li>
+                    <li><a href="#none"><span>核销记录</span></a></li>
+                </ul>
+            </li>
+            <li><a href="#none"><span>平台管理系统</span></a>
+                <ul class="nav_bar_level2">
+                    <li><a href="#none"><span>权限管理</span></a></li>
+                    <li><a href="#none"><span>品牌管理</span></a></li>
+                    <li><a href="#none"><span>系统消息</span></a></li>
+                    <li><a href="#none"><span>服务帮助</span></a></li>
+                </ul>
+            </li>
+        </ul>
+
+    </div>
+    <!--导航栏结束-->
+
+    <!--右侧内容开始-->
+    <div class="content clearfix">
+
+
+        <!--隐藏警告框标签开始-->
+        <div class="alert_hide_tag hide">
+            <div class="alert_whether_show"></div>
+            <div class="alert_tag_type"></div>
+            <div class="alert_tag_delay"></div>
+            <div class="alert_tag_content"></div>
+        </div>
+        <!--隐藏警告框标签结束-->
+
+
+        <!--右侧内容主体开始-->
+        <div class="content_main">
+            <div class="content_route"><a href="#none">首页</a>
+                <span class="content_route_pathname">>微信管理系统>文案系统>创建文案</span></div>
+
+            <!--主体内容开始-->
+            <div class="content_mb">
+                <h2 class="content_mb_title">预充配置</h2>
+
+                <!--警告框-范例开始-->
+                <div class="alert alert-example" role="alert">
+                    <button type="button" class="close" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <strong class="alert_content"></strong>
+                </div>
+                <!--警告框-范例结束-->
+
+
+                <!--自己的内容开始-->
+                <div class="content_mb_subject">
+                    <!--你可以在这里写你自己的内容了-->
+                    <div class="setting_content">
+                        <div class="content_left">
+                            <form class="charge_form">
+                                <div class="form-group">
+                                    <label>请选择填写要充值的条数（填写整数）</label>
+                                    <input type="text" class="form-control" name="recharge_number_input"/>
+                                </div>
+                                <div class="form-group">
+                                    <label>请选择要充值的对象</label>
+                                    <div class="object_div">
+
+                                    </div>
+                                    <input type="text" class="object_input" name="object_input">
+                                </div>
+                                <button type="submit" class="btn btn-primary btn_submit">提交</button>
+                            </form>
+                        </div>
+                        <div class="content_right">
+                            <div class="content_right_header">
+                                <input type="checkbox" name="checkAll" class="checkAll_checkbox">
+                                <div class="checkAll_p">全选/全不选</div>
+                                <div class="form-group">
+                                    <div class="input-group">
+                                        <div class="input-group-btn">
+                                            <div class="dropdown" data-id="1">
+                                                <button type="button" class="btn btn-default btn-dropdown">
+                                                    <span>组名</span></button>
+                                                <button type="button" class="btn btn-default dropdown-toggle"
+                                                        data-toggle="dropdown" aria-haspopup="true"
+                                                        aria-expanded="false">
+                                                    <span class="caret"></span>
+                                                    <span class="sr-only">Toggle Dropdown</span>
+                                                </button>
+                                                <ul class="dropdown-menu">
+                                                    <li><a href="#" data-id="1">组名</a></li>
+                                                    <li><a href="#" data-id="2">用户名</a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <!--需要修改的地方-->
+                                        <input type="text" class="form-control search_input">
+                                    </div>
+                                </div>
+                                <button type="button" class="btn btn-default search">搜索</button>
+                            </div>
+
+                            <div class="content_right_middle">
+                                <div class="content_item">
+                                    <div class="content_item_title">
+                                        <input type="checkbox" name="checkAll" class="check_item">
+                                        <div class="checkAll_p">新世界北方区</div>
+                                        <i class="fa fa-caret-down fa-2x"></i>
+                                    </div>
+                                    <div class="content_item_div">
+                                        <div class="content_item_child">
+                                            <input type="checkbox" name="checkAll" class="check_item_child" data-id="1">
+                                            <div class="checkAll_p">新世界望京店</div>
+                                        </div>
+                                        <div class="content_item_child">
+                                            <input type="checkbox" name="checkAll" class="check_item_child" data-id="2">
+                                            <div class="checkAll_p">新世界崇文店</div>
+                                        </div>
+                                        <div class="content_item_child">
+                                            <input type="checkbox" name="checkAll" class="check_item_child" data-id="3">
+                                            <div class="checkAll_p">新世界顺义店</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="content_item">
+                                    <div class="content_item_title">
+                                        <input type="checkbox" name="checkAll" class="check_item">
+                                        <div class="checkAll_p">王府井</div>
+                                        <i class="fa fa-caret-down fa-2x"></i>
+                                    </div>
+                                    <div class="content_item_div">
+                                        <div class="content_item_child">
+                                            <input type="checkbox" name="checkAll" class="check_item_child" data-id="4">
+                                            <div class="checkAll_p">王府井一店</div>
+                                        </div>
+                                        <div class="content_item_child">
+                                            <input type="checkbox" name="checkAll" class="check_item_child" data-id="5">
+                                            <div class="checkAll_p">王府井二店</div>
+                                        </div>
+                                        <div class="content_item_child">
+                                            <input type="checkbox" name="checkAll" class="check_item_child" data-id="6">
+                                            <div class="checkAll_p">王府井三店</div>
+                                        </div>
+                                        <div class="content_item_child">
+                                            <input type="checkbox" name="checkAll" class="check_item_child" data-id="7">
+                                            <div class="checkAll_p">王府井四店</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="content_item">
+                                    <div class="content_item_title">
+                                        <input type="checkbox" name="checkAll" class="check_item">
+                                        <div class="checkAll_p">重庆百货</div>
+                                        <i class="fa fa-caret-down fa-2x"></i>
+                                    </div>
+                                    <div class="content_item_div">
+                                        <div class="content_item_child">
+                                            <input type="checkbox" name="checkAll" class="check_item_child" data-id="8">
+                                            <div class="checkAll_p">重庆百货一店</div>
+                                        </div>
+                                        <div class="content_item_child">
+                                            <input type="checkbox" name="checkAll" class="check_item_child" data-id="9">
+                                            <div class="checkAll_p">重庆百货二店</div>
+                                        </div>
+                                        <div class="content_item_child">
+                                            <input type="checkbox" name="checkAll" class="check_item_child" data-id="10">
+                                            <div class="checkAll_p">重庆百货三店</div>
+                                        </div>
+                                        <div class="content_item_child">
+                                            <input type="checkbox" name="checkAll" class="check_item_child" data-id="11">
+                                            <div class="checkAll_p">重庆百货四店</div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                        </div>
+                    </div>
+
+
+
+                </div>
+                <!--自己的内容结束-->
+
+            </div>
+            <!--主体内容结束-->
+
+        </div>
+        <!--右侧内容主体结束-->
+
+
+    </div>
+    <!--右侧内容结束-->
+</div>
+<!--页面结束-->
+
+
+<!--尾部开始-->
+<div class="container-fluid foot">
+    <h2>Design by Meezao</h2>
+</div>
+<!--尾部结束-->
+
+
+<!--系统管理消息开始-->
+<div class="system_information" style="display: none">
+    <div class="system_information_header">
+        <h3>系统管理消息</h3>
+        <i class="fa fa-times"></i>
+    </div>
+    <div class="system_information_content">
+        系统将于2016年2月24日24:00-2016年2月27日3:00进行系统升级,届时系统停止使用,给您带来的不变请谅解!
+
+        升级内容:
+        PC核销-卡券部分(上线)
+        权限管理(上线)
+        <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+    </div>
+</div>
+<!--系统管理消息结束-->
+
+
+</body>
+
+<!--全局js开始-->
+<script src="../../plugin_folder/jquery_v1.11.3/jquery-1.11.3.min.js"></script>
+<script src="../../plugin_folder/bootstrap_v3.3.5/js/bootstrap.min.js"></script>
+<script src="../../plugin_folder/jquery.validate_v1.13.1/jquery.validate-1.13.1.js"></script>
+<script src="../../plugin_folder/less_v1.7.0/less.min.js"></script>
+<script src="../../common_folder/javascripts/base.js"></script>
+<script src="../../common_folder/javascripts/common_index.js"></script>
+<!--全局js结束-->
+
+<script src="javascripts/precharge_setting_change.js"></script>
+
+</html>

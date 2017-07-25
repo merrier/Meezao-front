@@ -1,0 +1,89 @@
+//引入全局less变量
+@import "../../../common_folder/less/PC_library";
+//后台路径
+//@import "../../MeeZao/B_New/common_folder/less/PC_library";
+
+
+html {
+  height: 100%;
+  body {
+    height: 100%;
+    font-size: 14px;
+    .wrp {
+      .content_mb_subject {
+        margin: 0;
+        padding: 0;
+        .navbar-default{
+          .btn-default{
+            margin-top: 6px;
+            background-color: lightgrey;
+            margin-left: 6px;
+          }
+          .btn_browser_times{
+            margin-left: 50px;
+          }
+          .form-group{
+            display: inline-block;
+            float: right;
+            width: 36%;
+            margin-top: 6px;
+            .activity_input_div{
+              height: 32px;
+              .activity_input{
+                width: 100%;
+                height: 32px;
+                border: 1px solid #acacac;
+              }
+              .brand_span{
+                width: 100%;
+                height: 100%;
+                line-height: 20px;
+                border: 1px solid #cccccc;
+                position: relative;
+                padding: 5px 62px;
+                border-radius: 4px;
+                text-align: center;
+                background-color: @color_white;
+                display: block;
+                .float_right_single{
+                  position: absolute;
+                  float: right;
+                  right: 20px;
+                  margin-top: 4px;
+                }
+              }
+            }
+          }
+        }
+        .content_chart{
+          width: 100%;
+          border: 1px solid #ccc;
+          border-radius: 4px;
+          margin: 20px 0;
+          padding: 20px;
+          text-align: center;
+          .container_div{
+            border: 1px solid #ccc;
+            margin: auto;
+            border-radius: 4px;
+            height: 580px;
+            width:1000px;
+            text-align: center;
+            .common_table{
+              width: 90%;
+              margin: auto;
+              margin-top: 20px;
+              min-height: 0;
+            }
+          }
+          #main{
+            border: 1px solid #ccc;
+            margin: auto;
+            margin-top: 20px;
+            border-radius: 4px;
+          }
+        }
+      }
+    }
+  }
+}

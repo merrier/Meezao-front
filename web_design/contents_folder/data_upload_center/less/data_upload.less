@@ -1,0 +1,223 @@
+/* Less web_template */
+/* +--------------------------------------------------------------------------
+// | Author: Merrier <953075999@qq.com> <http://> <Date:2016/9/21 22:27>
+// +--------------------------------------------------------------------------*/
+//引入全局less变量
+@import "../../../common_folder/less/PC_library";
+//后台路径
+//@import "../../MeeZao/B_New/common_folder/less/PC_library";
+
+
+html{
+
+  body{
+
+    .content_mb_subject{
+
+      .data_upload{
+        width:750px;
+        margin: 10px auto;
+        .clearfix;
+
+        .data_upload_main{
+          //float:left;
+          width:350px;
+          margin:0 auto;
+          font-size: 15px;
+
+          .data_upload_box{
+            margin: 10px auto;
+
+            .btn-group{
+              display: block;
+              .clearfix;
+              margin-bottom: 10px;
+            }
+
+            label{
+              margin-bottom: 10px;
+              font-weight: normal;
+              text-align: left;
+            }
+            #input_upload_file{
+              display: none;
+              position: absolute;
+              .size(~"calc(100% - 106px)",100%);
+              left:-75px;
+              opacity: 0;
+              z-index:1;
+              cursor:pointer;
+            }
+            .upload_file_mask{
+              position: absolute;
+              .size(75px,100%);
+              left:-75px;
+              z-index:2;
+            }
+            .data_example_img{
+              display: none;
+              position: absolute;
+              .size(980px,240px);
+              top:100%;
+              left:-275px;
+              z-index:2;
+            }
+            .dropdown{
+              width:300px;
+
+              .btn-dropdown{
+                width:100%;
+              }
+            }
+            .data_upload_tips{
+              font-size: 14px;
+              color: #aaa;
+              margin-top: -5px;
+              //margin-bottom: 10px;
+            }
+            .data_file_name{
+              color:#ff0000;
+              font-size: 14px;
+            }
+          }
+          .btn-primary{
+            .word_space(0);
+          }
+          .btn_data_save{
+            display: block;
+            width:200px;
+          }
+        }
+
+        .data_upload_guide{
+          float:right;
+          width:350px;
+
+          label{
+            margin-top: 10px;
+            font-size: 14px;
+          }
+          img{
+            .size(100%,auto);
+          }
+        }
+      }
+
+
+    }
+
+    //模态框-上传/计算进度开始
+    .modal_upload_progress{
+
+      .upload_progress_box{
+        position: relative;
+
+        label{
+          font-size: 15px;
+        }
+        .progress_label_undo{
+          color:#aaa;
+        }
+
+        .fa{
+          position: absolute;
+          right:0;
+          top:2px;
+          font-size: 20px;
+        }
+        .fa-check{
+          color:#1d9f75;
+        }
+      }
+    }
+    //模态框-上传/计算进度结束
+
+    //模态框-上传错误操作提示开始
+    .modal_opr_fail{
+
+      .modal-body{
+        padding:30px;
+
+        .fa{
+          display: block;
+          .size(40px,40px);
+          .center_block;
+          margin-bottom: 15px;
+          font-size: 25px;
+          font-weight: 200;
+          color: #ffffff;
+          text-align: center;
+          line-height: 40px;
+          background-color: #ff0000;
+          border-radius: 20px;
+        }
+        .modal_opr_des{
+          margin-bottom: 10px;
+          text-align: center;
+          font-size: 19px;
+          font-weight: 600;
+        }
+        .modal_opr_list{
+          max-height: 100px;
+          overflow-y: auto;
+          margin-bottom: 30px;
+          padding-left: 25px;
+          line-height: 25px;
+          color:#999;
+        }
+        .modal_opr_btnbox{
+          width:70%;
+          .center_block;
+          .clearfix;
+
+          .btn-success{
+            float: left;
+            width:35%;
+          }
+          .btn-info{
+            float: right;
+            width:35%;
+          }
+        }
+
+        a.btn{
+          width:100%;
+          margin-bottom: 10px;
+        }
+        .opr_tips_detail{
+          font-size: 12px;
+          color: #aaa;
+        }
+      }
+    }
+    //模态框-上传错误操作提示结束
+
+
+    //模态框-数据分隔时间段设置开始
+    .modal_finance_date{
+
+      .modal-body{
+        .dropdown{
+          margin:10px 0;
+
+          .btn-dropdown{
+            width:100%;
+          }
+          .dropdown-menu{
+            max-height: 150px;
+            overflow: auto;
+          }
+        }
+        .modal_tips{
+          display: block;
+        }
+      }
+    }
+    //模态框-数据分隔时间段设置结束
+  }
+}
+
+
+
+
+

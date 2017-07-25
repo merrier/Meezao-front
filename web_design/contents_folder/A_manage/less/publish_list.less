@@ -1,0 +1,402 @@
+//引入全局less变量
+@import "../../../common_folder/less/PC_library";
+//后台路径
+//@import "../../MeeZao/B_New/common_folder/less/PC_library";
+
+
+html {
+  height: 100%;
+  body {
+    height: 100%;
+    font-size: 14px;
+    .wrp {
+      .content_mb_subject {
+        text-align: center;
+        .navbar {
+          height: 100px;
+          .navbar_top{
+            height: 49px;
+            border-bottom: 1px solid #ececec;
+          }
+          .navbar_bottom{
+            .navbar-form {
+              .form-group{
+                .form-control{
+                  width: 200px;
+                }
+              }
+            }
+          }
+        }
+        .common_table {
+          .table {
+            .table_head {
+
+            }
+          }
+        }
+        .open_content{
+          margin: auto;
+          width: 40%;
+          margin-top: 30px;
+          font-weight: normal;
+          .form-group{
+            text-align: left;
+            label{
+              font-weight: normal;
+              display: block;
+            }
+            input{
+              margin-right: 10px;
+            }
+            .datimepicker{
+              display: inline-block;
+            }
+          }
+          .form_submit{
+            margin-top: 50px;
+            text-align: center;
+            .btn_open_submit{
+              margin-right: 10px;
+            }
+          }
+        }
+        .publish_content{
+          width: 100%;
+          margin-top: 30px;
+          font-weight: normal;
+          border: 1px solid #ccc;
+          border-radius: 4px;
+          .publish_content_left{
+            width: 50%;
+            float: left;
+            padding:20px;
+            .open_time{
+              display: none;
+              .datimepicker{
+                display: inline-block;
+              }
+            }
+            .modal_filter_box{
+              text-align: left;
+              .clearfix();
+              margin-bottom: 15px;
+              .collect_bag{
+                margin-top: 10px;
+                .btn-default{
+                  width: 80%;
+                  height: 34px;
+                  span{
+                    height: 20px;
+                    width: auto;
+                  }
+                  .caret{
+                    float: right;
+                    margin-top: 6px;
+                  }
+                }
+                .dropdown-menu{
+                  min-width: 80%;
+                  height: 100px;
+                  overflow: auto;
+                }
+              }
+              .choose_publish{
+                margin-top: 10px;
+                display: none;
+                .group_range_choosediv{
+                  float: left;
+                  width:110px;
+                  .dropdown{
+                    .btn-dropdown{
+                      width: 90px;
+                      padding:0;
+                      text-align: center;
+                      border-right: 0;
+                    }
+                    .dropdown-toggle{
+                      .border-right-radius(0);
+                      .size(20px,30px);
+                      line-height: 30px;
+                      padding: 0;
+                      color: #afafad;
+                      .border-left-radius(0);
+                    }
+                    .dropdown-menu{
+                      width:110px;
+                      min-width: 110px;
+                    }
+                  }
+                }
+              }
+              label{
+                font-weight: normal;
+              }
+              .group_input_div{
+                position: relative;
+                .size(350px,30px);
+                padding: 0;
+                line-height: 30px;
+                text-align: left;
+                border: 1px solid @color_border;
+                border-radius: 4px;
+
+                .filter_actions_input{
+                  position: absolute;
+                  .size(348px,28px);
+                  border: 0;
+                }
+                .singleauto_choose_span{
+                  position: absolute;
+                  .size(100%,30px);
+                  line-height: 30px;
+                  border-radius: 4px;
+                  margin-top: -1px;
+                  text-align: center;
+                  .singleauto_choose_deletenew{
+                    margin-left: 10px;
+                    cursor: pointer;
+                  }
+                }
+                .caret{
+                  position: absolute;
+                  right: 8px;
+                  bottom: 10px;
+                  color: #afafad;
+                }
+                .filter_input_mask{
+                  position: absolute;
+                  .size(100%,100%);
+                  top: 0;
+                  left: 0;
+                  background-color: #000000;
+                  opacity: .4;
+                  cursor: not-allowed;
+                  z-index:2;
+                }
+              }
+            }
+            .input-group-btn{
+              display: block;
+              .dropdown{
+                .clearfix();
+                .btn-dropdown{
+                  .size(320px,30px);
+                  padding:0;
+                  padding-left: 10px;
+                  line-height: 30px;
+                  text-align: left;
+                  .border-right-radius(0);
+                }
+                .dropdown-menu{
+                  width:350px;
+                  max-height: 180px;
+                  padding: 0;
+                  overflow: auto;
+                  li{
+                    height: 30px;
+                    line-height: 30px;
+                    text-align: center;
+                    a{
+                      padding: 0;
+                      line-height: 30px;
+                      &:hover{
+                        background-color: @color_blue;
+                      }
+                    }
+                  }
+                }
+              }
+            }
+            .group_range_inputdiv{
+              float: left;
+              .group_range_input{
+                .size(280px,30px);
+                border-left: 0;
+                .border-left-radius(0);
+              }
+              .brand_span{
+                position: relative;
+                display: block;
+                .size(97%,30px);
+                padding: 3px 0;
+                text-align: center;
+                line-height: 20px;
+                font-size: 0.8em;
+                border: 1px solid #cccccc;
+                border-radius: 4px;
+                background-color: @color_white;
+                .float_right_multiple{
+                  position: absolute;
+                  float: right;
+                  right: 3px;
+                  margin-top: 4px;
+                  cursor: pointer;
+                }
+              }
+              .caret{
+                position: absolute;
+                top:12px;
+                right:8px;
+                color:#afafad;
+              }
+            }
+            .group_name_inputbox{
+              .size(350px,30px);
+              #filter_input_groupname{
+                .size(240px,30px);
+                .border-right-radius(4px);
+              }
+              .input_num_box{
+                top: 4px;
+                right: 4px;
+                z-index: 2;
+              }
+            }
+            .error_tips {
+              color: red;
+              font-size: 12px;
+              display: none;
+            }
+            .form-group{
+              text-align: left;
+              label{
+                font-weight: normal;
+                display: block;
+              }
+              input{
+                margin-right: 10px;
+              }
+              .object_div{
+                width: 100%;
+                height: 300px;
+                overflow: auto;
+                border: 1px solid #e0e0e0;
+                border-radius: 4px;
+                .object_div_item{
+                  height: 32px;
+                  line-height: 32px;
+                  padding-left: 20px;
+                  border-bottom: 1px  solid #e0e0e0;
+                  position: relative;
+                  .fa{
+                    position: absolute;
+                    right: 10px;
+                    top:8px;
+                  }
+                }
+              }
+              .object_input{
+                visibility: hidden;
+                position: absolute;
+              }
+            }
+
+          }
+          .publish_content_right{
+            width: 50%;
+            float: right;
+            border-left: 1px solid #ccc;
+            .content_right_header{
+              height: 20%;
+              border-bottom: 1px solid #e0e0e0;
+              padding: 10px 0;
+              .checkAll_checkbox{
+                float: left;
+                margin-left: 10px;
+                margin-top: 10px;
+              }
+              .checkAll_p{
+                float: left;
+                font-size: 16px;
+                margin-left: 1%;
+                margin-top: 6px;
+              }
+              .form-group{
+                float: left;
+                margin-left: 4%;
+                width: 60%;
+                .btn-dropdown{
+                  width: 80px;
+                }
+                .dropdown-menu{
+                  min-width: 60%;
+                  li{
+                    :hover{
+                      background-color: #0096ff;
+                      color: #fff;
+                    }
+                  }
+                }
+                .search_input{
+                  width: 190px;
+                }
+              }
+              .search{
+                width: 70px;
+              }
+            }
+            .content_right_middle{
+              width: 100%;
+              min-height: 420px;
+              overflow: auto;
+              text-align: left;
+
+              .content_item{
+                padding: 10px 2% 0 4%;
+                .content_item_title{
+                  width: 94%;
+                  height: 34px;
+                  line-height: 34px;
+                  border: 1px solid #e0e0e0;
+                  border-radius: 4px;
+                  position: relative;
+                  .check_item{
+                    float: left;
+                    margin: 12px 10px 0 10px;
+                  }
+                  .checkAll_p{
+                    width: 80%;
+                    margin-left: 20px;
+                  }
+                  .fa{
+                    position: absolute;
+                    right: 20px;
+                    top:4px;
+                  }
+                }
+                .content_item_div{
+                  width: 94%;
+                  min-height: 100px;
+                  display: none;
+                  .content_item_child{
+                    height: 34px;
+                    line-height: 34px;
+                    .check_item_child{
+                      float: left;
+                      margin: 10px 20px 0 30px;
+                    }
+                  }
+
+                }
+              }
+            }
+          }
+
+        }
+        .form_submit{
+          width: 100%;
+          margin: auto;
+          margin-top: 30px;
+          .btn_submit{
+            margin-right: 10px;
+          }
+          .btn_back{
+            width: 70px;
+          }
+        }
+      }
+
+    }
+  }
+}

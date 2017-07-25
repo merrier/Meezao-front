@@ -1,0 +1,250 @@
+/* Less web_template */
+/* +--------------------------------------------------------------------------
+// | Author:Yangyue    createTime:2016/10/28
+// +--------------------------------------------------------------------------*/
+//引入全局less变量
+@import "../../../common_folder/less/PC_library";
+//后台路径
+//@import "../../MeeZao/B_New/common_folder/less/PC_library";
+
+html {
+
+  body {
+
+    .content{
+      background-color: #eff4f7;
+
+      .content_main{
+        font-family: SourceHanSansCN-Medium;
+        background-color: #eff4f7;
+
+        .content_mb{
+          background: #eff4f7 !important;
+
+          .content_mb_subject {
+
+            .create_coupon{
+              margin-bottom: 60px;
+              width: 100%;
+
+              .create_coupon_head{
+                background-color: #ccf0fd;
+                font-size: 16px;
+                text-align: center;
+                padding: 14px;
+              }
+
+              .download_coupon_head{
+                background-color: #d5f7da;
+              }
+
+              .create_coupon_thcontent{
+                margin-bottom: 0;
+                text-align: center;
+                border: 1px solid #ccf0fd;
+
+                  thead{
+                    tr{
+                      font-size:16px;
+                      display: table;
+                      width: 100%;
+                      border: none;
+                      th{
+                        border: none;
+                      }
+                      .choose{
+                        width: 20%;
+                        text-align: center;
+                      }
+                      .kind{
+                        width: 20%;
+                        text-align: center;
+                      }
+                      .coupon_name{
+                        width: 40%;
+                        text-align: center;
+                      }
+                      .coupon_stock{
+                        width: 20%;
+                        text-align: center;
+                      }
+                    }
+                  }
+
+
+                  tbody{
+                    //max-height: 250px;
+                    font-family: "宋体";
+                    font-size: 14px;
+                    display: block;
+                    height: 200px;
+                    overflow-y: auto;
+
+                    tr{
+                      height:40px;
+                      display: table;
+                      width: 100%;
+                      border: none;
+
+                      &:hover{
+                        background-color: rgba(0,176,240,0.5) !important;
+                        cursor: pointer;
+                      }
+
+                      td{
+                        padding:0;
+                        line-height: 30px;
+                        vertical-align: middle;
+                        width: 300px;
+                        border: none;
+                      }
+
+                      .choose{
+                        width: 20%;
+                        label{
+                          input{
+                            display: none;
+                          }
+                        }
+                        .fa-square-o,.fa-check-square{
+                          font-size: 20px;
+                          line-height: 40px;
+                          color: #00AEE4;
+                        }
+                      }
+                      .kind{
+                        width: 20%;
+                      }
+                      .coupon_name{
+                        width: 40%;
+                      }
+                      .coupon_stock{
+                        width: 20%;
+                      }
+                    }
+
+                    tr:nth-child(odd){
+                      background-color: #ccf0fd;
+                    }
+                    tr:nth-child(eveb){
+                      background-color: #f5fcff;
+                    }
+                  }
+                //}
+              }
+
+              .create_coupon_content{
+                padding:0 80px;
+                padding-top: 20px;
+                text-align: center;
+                font-family: "宋体";
+                font-size: 13px;
+                line-height: 35px;
+                background-color: #ffffff;
+
+                .content_description{
+                  display: inline-block;
+                  width: 36%;
+                  text-align: left;
+                }
+              }
+
+              .create_coupon_bottom{
+                position: relative;
+                padding:30px 0;
+                text-align: center;
+                background-color: #ffffff;
+
+                .btn_create_coupon{
+                  display: inline-block;
+                  .size(140px,40px);
+                  margin-right: 20px;
+                }
+
+                .btn_lanuch_coupon{
+                  display: inline-block;
+                  .size(140px,40px);
+                  margin-left: 20px;
+                }
+
+                .btn_download_coupon{
+                  display: inline-block;
+                }
+                .btn_unclickable{
+                  background-color: lightgrey;
+                  cursor: not-allowed;
+                  box-shadow: 3px 3px 10px lightgrey, -3px 3px 10px lightgrey;
+
+                  &:hover{
+                    box-shadow: 5px 5px 10px lightgrey, -5px 5px 10px lightgrey;
+                  }
+                }
+              }
+            }
+
+          }
+        }
+
+      }
+    }
+
+
+
+    .modal_small{
+
+      .modal-dialog{
+        width:700px;
+
+        .modal-body{
+          position: relative;
+          height:200px;
+          padding: 40px 105px;
+          padding-bottom: 65px;
+          text-align: center;
+
+          .lanch-success{
+            margin-top: 1rem;
+          }
+          .modal_btnbox {
+            margin-top: 30px;
+            text-align: center;
+          }
+
+          .fa{
+            margin-bottom: 25px;
+            font-size: 32px;
+            color:#00b6f6;
+          }
+          h5{
+            font-family: SourceHanSansCN-Medium;
+            font-size: 18px;
+            color:#254558;
+          }
+        }
+      }
+
+
+    }
+
+    .modal_check_form_preview{
+      .modal-dialog{
+        text-align: center;
+        margin-top: 100px;
+        width: 1000px;
+        height: 500px;
+        img{
+          width: 80%;
+          height: 500px;
+          border-radius: 6px;
+        }
+        span{
+          position: absolute;
+          top:0;
+          right: 20px;
+        }
+      }
+    }
+
+
+  }
+}

@@ -1,0 +1,1084 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <!--360 浏览器在读取到这个标签后，立即切换对应的极速核-->
+    <meta name="renderer" content="webkit">
+    <!--优先使用 IE 最新版本和 Chrome-->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <!--百度禁止转码-->
+    <meta http-equiv="Cache-Control" content="no-siteapp"/>
+    <title>自动回复</title>
+
+    <!--全局css开始-->
+    <link href="../../plugin_folder/bootstrap_v3.3.5/css/bootstrap.min.css" rel="stylesheet"/>
+    <link href="../../plugin_folder/font-awesome/font-awesome.min.css" rel="stylesheet"/>
+    <link href="../../common_folder/stylesheets/common_base.css" rel="stylesheet"/>
+    <link href="../../common_folder/less/PC_index.less" rel="stylesheet/less"/>
+    <!--全局css结束-->
+
+    <link href="css/demo.css" rel="stylesheet"/>
+    <!--<link href=css/font-awesome.min.css" rel="stylesheet"/>-->
+    <link href="css/meezao.css" rel="stylesheet"/>
+    <link href="css/base.css" rel="stylesheet"/>
+    <link href="css/d_reply.css" rel="stylesheet"/>
+
+</head>
+
+<body class="d_reply">
+
+
+<!--标题栏开始-->
+<div class="row header">
+    <h2>MEEZAO</h2>
+
+    <div class="toolbar">
+        <a href="" class="fa fa-envelope-o toolbar_information_center"><sup class="information_num"><i
+                class="fa fa-circle"></i></sup></a><!--
+         -->
+        <div class="toolbar_item">
+            <a href="#none" class="toolbar_person_information">
+                <i class="fa fa-circle"></i>
+                <span class="toolbar_user_name">萨达sdfsadf</span>
+            </a>
+            <ul class="toolbar_drop_menu">
+                <li class="toolopr_modify_password" data-toggle="modal" data-target=".modal_modify_password">修改密码</li>
+                <li class="toolopr_phone_solution" data-toggle="modal" data-target=".modal_phone_solution">手机号解绑</li>
+                <li class="toolopr_log_out">退出登录</li>
+            </ul>
+        </div>
+    </div>
+</div>
+<!--标题栏结束-->
+
+<!--页面开始-->
+<div class="container-fluid wrp">
+
+    <!--导航栏开始-->
+    <div class="nav_bar">
+        <ul class="nav_bar_level1">
+            <li><a href="#none"><span>全数据报表系统</span></a>
+                <ul class="nav_bar_level2">
+                    <li><a href="index.php/MeeZao/Plat/Fun/Form"><span>微官基础报表</span></a></li>
+                    <li><a href="#none"><span>官网基础报表</span></a></li>
+                    <li><a href="#none"><span>CRM报表</span></a></li>
+                    <li><a href="#none"><span>Meezao免费报表</span></a></li>
+                    <li><a href="#none"><span>Meezao付费报表</span></a></li>
+                </ul>
+            </li>
+            <li><a href="#none"><span>微信管理系统</span></a>
+                <ul class="nav_bar_level2">
+                    <li><a href="#none"><span>文案系统</span></a>
+                        <ul class="nav_bar_level3">
+                            <li><a href="#none"><i class="fa fa-circle"></i><span>创建文案</span></a></li>
+                            <li><a href="#none"><i class="fa fa-circle"></i><span>组合文案</span></a></li>
+                            <li><a href="#none"><i class="fa fa-circle"></i><span>文案列表</span></a></li>
+                            <li><a href="#none"><i class="fa fa-circle"></i><span>Meezao文案系统</span></a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#none"><span>微信平台管理系统</span></a>
+                        <ul class="nav_bar_level3">
+                            <li><a href="#none"><i class="fa fa-circle"></i><span>自定义菜单</span></a></li>
+                            <li><a href="#none"><i class="fa fa-circle"></i><span>自动回复管理</span></a></li>
+                            <li><a href="#none"><i class="fa fa-circle"></i><span>消息管理</span></a></li>
+                            <li><a href="#none"><i class="fa fa-circle"></i><span>素材管理</span></a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+            <li><a href="#none"><span>官网管理系统</span></a>
+                <ul class="nav_bar_level2">
+                    <li><a href="#none"><span>微信基础报表</span></a></li>
+                    <li><a href="#none"><span>微官网基础报表</span></a></li>
+                    <li><a href="#none"><span>会员分析报表</span></a>
+                        <ul class="nav_bar_level3">
+                            <li><a href="#none"><i class="fa fa-circle"></i><span>Meezao免费报表</span></a></li>
+                            <li><a href="#none"><i class="fa fa-circle"></i><span>Meezao付费报表</span></a></li>
+                            <li><a href="#none"><i class="fa fa-circle"></i><span>Meezao定制报表</span></a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+            <li><a href="#none"><span>M-CRM系统</span></a>
+                <ul class="nav_bar_level2">
+                    <li><a href="#none"><span>会员分组</span></a></li>
+                    <li><a href="#none"><span>分组管理</span></a></li>
+                    <li><a href="#none"><span>分组促销</span></a></li>
+                    <li><a href="#none"><span>会员分析图表</span></a></li>
+                </ul>
+            </li>
+            <li><a href="#none"><span>卡券管理系统</span></a>
+                <ul class="nav_bar_level2">
+                    <li><a href="#none"><span>卡券列表</span></a></li>
+                </ul>
+            </li>
+            <li><a href="#none"><span>核销系统</span></a>
+                <ul class="nav_bar_level2">
+                    <li><a href="#none"><span>网页核销</span></a></li>
+                    <li><a href="#none"><span>手机核销</span></a></li>
+                    <li><a href="#none"><span>核销记录</span></a></li>
+                </ul>
+            </li>
+            <li><a href="#none"><span>平台管理系统</span></a>
+                <ul class="nav_bar_level2">
+                    <li><a href="#none"><span>权限管理</span></a></li>
+                    <li><a href="#none"><span>品牌管理</span></a></li>
+                    <li><a href="#none"><span>系统消息</span></a></li>
+                    <li><a href="#none"><span>服务帮助</span></a></li>
+                </ul>
+            </li>
+        </ul>
+
+    </div>
+    <!--导航栏结束-->
+
+    <!--右侧内容开始-->
+    <div class="content clearfix">
+
+
+        <!--隐藏警告框标签开始-->
+        <div class="alert_hide_tag hide">
+            <div class="alert_whether_show"></div>
+            <div class="alert_tag_type"></div>
+            <div class="alert_tag_delay"></div>
+            <div class="alert_tag_content"></div>
+        </div>
+        <!--隐藏警告框标签结束-->
+
+
+        <!--右侧内容主体开始-->
+        <div class="content_main">
+            <div class="content_route"><a href="#none">首页</a>
+                <span class="content_route_pathname">>微信管理系统>微信平台管理系统>自动回复</span></div>
+
+            <!--主体内容开始-->
+            <div class="content_mb">
+                <h2 class="content_mb_title">自动回复管理</h2>
+
+                <!--警告框-范例开始-->
+                <div class="alert alert-example" role="alert">
+                    <button type="button" class="close" aria-label="Close"><span aria-hidden="true">&times;</span>
+                    </button>
+                    <strong class="alert_content"></strong>
+                </div>
+                <!--警告框-范例结束-->
+
+
+                <!--自己的内容开始-->
+                <div class="content_mb_subject">
+
+                    <!--你可以在这里写你自己的内容了-->
+
+                    <div class="reply_setting_box">
+                        <div class="setting_box_content">
+                            <nav class="navbar navbar-default">
+                                <div class="navbar-header">
+                                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                                            data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                                        <span class="sr-only">Toggle navigation</span>
+                                        <span class="icon-bar"></span>
+                                        <span class="icon-bar"></span>
+                                        <span class="icon-bar"></span>
+                                    </button>
+                                    <a class="navbar-brand" href="#">Screen</a>
+                                </div>
+
+                                <ul class="nav navbar-nav">
+                                    <li class="content_title active"><a href="#">被添加自动回复</a></li>
+                                    <li class="content_title"><a href="#">消息自动回复</a></li>
+                                    <li class="content_title"><a href="#">关键词自动回复 <span class="sr-only">(current)</span></a>
+                                    </li>
+                                </ul>
+
+                                <div class="navbar_right_first">
+                                    <button class="btn_main_choice_item choice_chosen">文字</button>
+                                    <button class="btn_main_choice_item">图片</button>
+                                </div>
+
+                                <div class="navbar_right_second">
+                                    <button class="btn add_rules_btn">添加规则</button>
+                                </div>
+
+                                <div class="prompt_text_top">已开启自动回复设置</div>
+                                <div class="prompt_text_bottom">通过编辑内容或关键词规则，快速进行自动回复设置</div>
+
+                            </nav>
+
+                            <!-------------------------------------被添加自动回复----------------------------------------->
+                            <div class="box_content_main" style="display:block">
+
+                                <div class="content_main_choice">
+                                </div>
+                                <div class="content_main_showbox">
+                                    <div class="content_main_show">
+                                        <textarea class="main_show_textarea main_show_textarea_lzm1" type="text"
+                                                  maxlength="600">{$first_reply.content}</textarea>
+                                    </div>
+                                    <p class="main_show_tips">
+                                        您还可以输入<span class="show_tips_number">600</span>个字
+                                    </p>
+                                </div>
+                                <div class="content_main_showbox" style="display:none">
+                                    <div class="content_main_show">
+                                        <div class="main_show_box">
+                                            <div class="main_show_btn">
+                                                <form action="__URL__/Upload_picture" enctype="multipart/form-data"
+                                                      method="post" name="argform" id="argform">
+                                                    <input type="file" name='Auto_first'
+                                                           class="show_btn_input show_input1" value=""/>
+                                                </form>
+                                                <i class="fa fa-plus"></i>
+                                                <p>上传图片</p>
+                                                <div class="main_show_bg">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="main_show_preview main_preview1" style="display:block">
+                                            <div class="show_preview_picbox preview1">
+                                                <img src="{$first_reply.picture_name}"/>
+                                            </div>
+                                            <a class="show_preview_delete lzm_delete_1" data-id='{$first_reply.id}'
+                                               href="javascript:;">删除</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="content_main_footer">
+                        <span>
+                          <a class="btn main_footer_save_1" href="javascript:;">保存</a>
+                          <a class="btn main_footer_clear">清除</a>
+                        </span>
+                                </div>
+                            </div>
+                            <!-------------------------------------被添加自动回复 end-------------------------->
+                            <!------------------------------------------消息自动回复-------------------------->
+                            <div class="box_content_main" style="display:none">
+                                <div class="content_main_showbox">
+                                    <div class="content_main_show">
+                                        <textarea class="main_show_textarea main_show_textarea_lzm2" type="text"
+                                                  maxlength="600">{$second_reply.content}</textarea>
+                                    </div>
+                                    <p class="main_show_tips">
+                                        您还可以输入<span class="show_tips_number">600</span>个字
+                                    </p>
+                                </div>
+                                <div class="content_main_showbox" style="display:none">
+                                    <div class="content_main_show">
+                                        <div class="main_show_box">
+                                            <div class="main_show_btn">
+                                                <form action="__URL__/Upload_picture_2" enctype="multipart/form-data"
+                                                      method="post" name="argform" id="argform_2">
+                                                    <input type="file" name='Auto_second'
+                                                           class="show_btn_input show_input2" value=""/>
+                                                </form>
+                                                <i class="fa fa-plus"></i>
+                                                <p>上传图片</p>
+                                                <div class="main_show_bg">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="main_show_preview main_preview2" style="display:block">
+                                            <div class="show_preview_picbox preview2">
+                                                <img src="{$second_reply.picture_name}"/>
+                                            </div>
+                                            <a class="show_preview_delete lzm_delete_2" data-id='{$second_reply.id}'
+                                               href="javascript:;">删除</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="content_main_footer">
+                        <span>
+                          <a class="btn main_footer_save_2" href="javascript:;">保存</a>
+                          <a class="btn main_footer_clear">清除</a>
+                        </span>
+                                </div>
+                            </div>
+                            <!------------------------------------------消息自动回复 end-------------------------->
+                            <!---------------------------------------------关键词自动回复-------------------------------------------->
+                            <div class="box_content_main" style="display:none">
+                                <div class="content_rules_all">
+                                    <!-----------------------------------------循环---------------------------------------->
+                                    <?php $i=0;?>
+                                    <foreach name="auto_reply" item="vo">
+                                        <div class="content_rules_main">
+                                            <div class="rules_main_title">
+                                                <em>规则:</em>
+                                                <span>{$vo.name}</span>
+                                                <a class="rules_title_delete rule_delete_all_lzm"
+                                                   data-rule-id="<?php echo $vo['id'];?>">
+                                                    删除
+                                                </a>
+                                            </div>
+                                            <div class="rules_main_overview" style="display:block">
+                                                <div class="rules_overview_box">
+                                                    <strong class="overview_label_keywords">
+                                                        关键词
+                                                    </strong>
+                                                    <div>
+                                                        <ul class="label_keywords_list">
+                                                            <li class="label_keywords_itemnew">
+                                                            </li>
+                                                            <?php foreach($auto_reply[$i]['key_words'] as $val){?>
+                                                            <li class="label_keywords_item">
+                                                                <?php echo $val['name']; ?>
+                                                            </li>
+                                                            <?php } ?>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                                <div class="rules_overview_box">
+                                                    <strong class="overview_label_reply">
+                                                        回复
+                                                    </strong>
+                                                    <div>
+                                                        <p class="label_reply_info">
+                                                            <?php if($auto_reply[$i]['type']=='text'){?>
+                                                            <em class="label_reply_number reply_number_word">1</em>条文字消息
+                                                            <?php } ?>
+                                                            <?php if($auto_reply[$i]['type']=='img'){?>
+                                                            <em class="label_reply_number reply_number_word">1</em>条图片消息
+                                                            <?php } ?>
+                                                            <?php if($auto_reply[$i]['type']=='news'||$auto_reply[$i]['type']=='more_news'){?>
+                                                            <em class="label_reply_number reply_number_word">1</em>条图文消息
+                                                            <?php } ?>
+                                                            <?php if($auto_reply[$i]['type']!='text'&&$auto_reply[$i]['type']!='img'&&$auto_reply[$i]['type']!='news'&&$auto_reply[$i]['type']!='more_news'){?>
+                                                            <em class="label_reply_number reply_number_word">无</em>回复消息
+                                                            <?php } ?>
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="rules_main_detail" style="display:none">
+                                                <div class="rules_detail_box">
+                                                    <label class="rules_detail_name">
+                                                        规则名
+                                                    </label>
+                                                    <div class="detail_name_box">
+                                                        <input class="detail_name_input" name='edit_rule_name'
+                                                               value="{$vo.name}" type="text" maxlength="60"/>
+                                                        <p class="detail_name_tips">
+                                                            您还可以输入
+                                                            <span class="name_tips_number">60</span>
+                                                            个字
+                                                        </p>
+                                                    </div>
+                                                    <button class="rule_sure rule_sure_lzm"
+                                                            data-rule-id="<?php echo $vo['id'];?>">确定
+                                                    </button>
+                                                </div>
+                                                <div class="rules_detail_keywords">
+                                                    <div class="detail_keywords_title">
+                                                        <h4>关键字</h4>
+                                                        <a class="detail_add_keywords edit_add_keywords"
+                                                           data-id="<?php echo $vo['id'];?>">
+                                                            添加关键字
+                                                        </a>
+                                                    </div>
+                                                    <div class="detail_keywords_content">
+                                                        <?php foreach($auto_reply[$i]['key_words'] as $val){?>
+                                                        <div class="detail_keywords_item">
+                                                    <span class="detail_keywords_name">
+                                                        <?php echo $val['name'];?>
+                                                    </span>
+
+                                                            <div class="detail_keywords_opr">
+                                                                <a class="keywords_opr_edit edit_keywords_lzm"
+                                                                   data-id="<?php echo $val['id']; ?>">
+                                                                    编辑
+                                                                </a>
+                                                                <a class="keywords_opr_delete del_keywords_lzm"
+                                                                   data-id="<?php echo $val['id']; ?>">
+                                                                    删除
+                                                                </a>
+                                                            </div>
+                                                        </div>
+                                                        <?php  } ?>
+                                                    </div>
+                                                </div>
+                                                <div class="rules_detail_show">
+                                                    <div class="rules_show_title">
+                                                        <ul class="rules_show_list">
+                                                            <input type='hidden' value=''
+                                                                   name='edit_text_img_news_reply' data-id=''/>
+                                                            <li class="rules_show_item edit_text_content"
+                                                                data-id="<?php echo $vo['id'];?>">文字
+                                                            </li>
+                                                            <li class="rules_show_item edit_img_content"
+                                                                data-id="<?php echo $vo['id'];?>">图片
+                                                            </li>
+                                                            <li class="rules_show_item edit_news_content"
+                                                                data-id="<?php echo $vo['relative_id'];  ?>">图文
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                    <div class="rules_show_content">
+                                                        <?php if(!empty($vo['content'])){?>
+                                                        <div class="show_content_box show_content_boxwordnew"
+                                                             style="display:block">
+                                                            <p class="show_content_name">
+                                                                <?php echo $vo['content'];?>
+                                                            </p>
+                                                            <div class="show_content_opr">
+                                                                <a class="show_opr_delete reply_del_text"
+                                                                   data-id="<?php echo $vo['relative_id'];  ?>"
+                                                                   data-reply-id="<?php echo $vo['id'];  ?>">
+                                                                    删除
+                                                                </a>
+                                                            </div>
+                                                        </div>
+                                                        <div class="show_content_box show_content_boxpicword"
+                                                             style="display:none">
+                                                            <div class="show_content_imagetext">
+                                                                <a class="content_imagetext_link">
+                                                                    <img class="content_imagetext_pic" target="_blank">
+                                                                    <span class="content_box_info">[图片]</span>
+                                                                </a>
+                                                            </div>
+                                                        </div>
+                                                        <div class="show_content_box show_content_boxpic"
+                                                             style="display: none;"
+                                                             src="/Upload/weixin/autoreply/image/2016-01-15/56990deaca9f0.jpg">
+                                                            <a class="content_box_link" target="_blank">
+                                                                <span class="content_box_info"><img
+                                                                        src="/Upload/weixin/autoreply/image/2016-01-15/56990deaca9f0.jpg"></span>
+                                                            </a>
+                                                            <div class="show_content_opr">
+                                                                <a class="show_opr_delete reply_del_img" data-id="64"
+                                                                   data-reply-id="265">
+                                                                    删除
+                                                                </a>
+                                                            </div>
+                                                        </div>
+                                                        <?php }?>
+                                                        <?php if(!empty($vo['picture_name'])){?>
+                                                        <div class="show_content_box show_content_boxpicnew"
+                                                             style="display:block">
+                                                            <a class="content_box_link" target="_blank">
+                                                                <span class="content_box_info"><img
+                                                                        src="<?php echo $vo['picture_name'];  ?>"/></span>
+                                                            </a>
+                                                            <div class="show_content_opr">
+                                                                <a class="show_opr_delete reply_del_img"
+                                                                   data-id="<?php echo $vo['relative_id'];  ?>"
+                                                                   data-reply-id="<?php echo $vo['id'];  ?>">
+                                                                    删除
+                                                                </a>
+                                                            </div>
+                                                        </div>
+                                                        <div class="show_content_box show_content_boxpicword"
+                                                             style="display:none">
+                                                            <div class="show_content_imagetext">
+                                                                <a class="content_imagetext_link">
+                                                                    <img class="content_imagetext_pic" target="_blank">
+                                                                    <span class="content_box_info">[图片]</span>
+                                                                </a>
+                                                            </div>
+                                                        </div>
+                                                        <div class="show_content_box show_content_boxword"
+                                                             style="display: none;">
+                                                            <p class="show_content_name">aa</p>
+                                                            <div class="show_content_opr">
+                                                                <a class="show_opr_delete reply_del_text" data-id="64"
+                                                                   data-reply-id="265">
+                                                                    删除
+                                                                </a>
+                                                            </div>
+                                                        </div>
+                                                        <?php }?>
+                                                        <input type="hidden" name="news_id_edit" data-id=""/>
+                                                        <?php if($vo['type']=='news'){?>
+                                                        <div class="show_content_box show_content_boxpicwordnew"
+                                                             style="display:block">
+                                                            <div class="dialog_appmsg_item news_checked_lzm"
+                                                                 data-id="<?php echo $vo['relative_id'];  ?>">
+                                                                <div class="dialog_appmsg_data">
+                                                                    <div class="appmsg_item_content"
+                                                                         style="color:black">
+                                                                        <div class="news_style1_title"><?php echo $vo['title']; ?></div>
+                                                                        <div class="news_style1_pic"
+                                                                             style="background-image:url('<?php echo $vo['thumb_pic_url']; ?>') "></div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="show_content_opr">
+                                                                <a class="show_opr_delete reply_del_news"
+                                                                   data-id="<?php echo $vo['relative_id'];  ?>"
+                                                                   data-reply-id="<?php echo $vo['id'];  ?>">
+                                                                    删除
+                                                                </a>
+                                                            </div>
+                                                        </div>
+                                                        <div class="show_content_box show_content_boxpic"
+                                                             style="display: none;"
+                                                             src="/Upload/weixin/autoreply/image/2016-01-15/56990deaca9f0.jpg">
+                                                            <a class="content_box_link" target="_blank">
+                                                                <span class="content_box_info"><img
+                                                                        src="/Upload/weixin/autoreply/image/2016-01-15/56990deaca9f0.jpg"></span>
+                                                            </a>
+                                                            <div class="show_content_opr">
+                                                                <a class="show_opr_delete reply_del_img" data-id="64"
+                                                                   data-reply-id="265">
+                                                                    删除
+                                                                </a>
+                                                            </div>
+                                                        </div>
+                                                        <div class="show_content_box show_content_boxword"
+                                                             style="display: none;">
+                                                            <p class="show_content_name">aa</p>
+                                                            <div class="show_content_opr">
+                                                                <!--<a class="show_opr_edit reply_edit_text" data-id="64" data-reply-id="265">
+                                                                    编辑
+                                                                </a>-->
+                                                                <a class="show_opr_delete reply_del_text" data-id="64"
+                                                                   data-reply-id="265">
+                                                                    删除
+                                                                </a>
+                                                            </div>
+                                                        </div>
+                                                        <?php }?>
+                                                        <?php if($vo['type']=='more_news'){?>
+                                                        <div class="show_content_box show_content_boxpicwordnew"
+                                                             style="display:block">
+                                                            <div class="dialog_appmsg_item news_checked_lzm"
+                                                                 data-id="<?php echo $vo['relative_id'];  ?>">
+                                                                <div class="dialog_appmsg_data">
+                                                                    <div class="appmsg_item_content"
+                                                                         style="color:black">
+                                                                        <?php foreach($auto_reply[$i]['articles'] as $key=>
+                                                                        $val){?>
+                                                                        <?php if($key==0){?>
+                                                                        <div class="cover_appmsg_item">
+                                                                            <h4 class="appmsg_title js_title"
+                                                                                name="3592">
+                                                                                <a class=""
+                                                                                   target="_blank"><?php echo $val['title']; ?></a>
+                                                                            </h4>
+                                                                            <div class="appmsg_thumb_wrp"
+                                                                                 style="background: url('<?php echo $val['thumb_pic_url']; ?>')"></div>
+                                                                        </div>
+                                                                        <?php }else{ ?>
+                                                                        <div class="appmsg_item">
+                                                                            <div class="appmsg_thumb_wrp"
+                                                                                 style="background: url('<?php echo $val['thumb_pic_url']; ?>')">
+                                                                            </div>
+                                                                            <h4 class="appmsg_title js_title"
+                                                                                name="3593">
+                                                                                <a class="appmsg_t_a"
+                                                                                   target="_blank"><?php echo $val['title']; ?></a>
+                                                                            </h4>
+                                                                        </div>
+                                                                        <?php }} ?>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="show_content_opr">
+                                                                <a class="show_opr_delete">
+                                                                    删除
+                                                                </a>
+                                                            </div>
+                                                        </div>
+                                                        <div class="show_content_box show_content_boxpic"
+                                                             style="display: none;"
+                                                             src="/Upload/weixin/autoreply/image/2016-01-15/56990deaca9f0.jpg">
+                                                            <a class="content_box_link" target="_blank">
+                                                                <span class="content_box_info"><img
+                                                                        src="/Upload/weixin/autoreply/image/2016-01-15/56990deaca9f0.jpg"></span>
+                                                            </a>
+                                                            <div class="show_content_opr">
+                                                                <a class="show_opr_delete reply_del_img" data-id="64"
+                                                                   data-reply-id="265">
+                                                                    删除
+                                                                </a>
+                                                            </div>
+                                                        </div>
+                                                        <div class="show_content_box show_content_boxword"
+                                                             style="display: none;">
+                                                            <p class="show_content_name">aa</p>
+                                                            <div class="show_content_opr">
+                                                                <!--<a class="show_opr_edit reply_edit_text" data-id="64" data-reply-id="265">
+                                                                    编辑
+                                                                </a>-->
+                                                                <a class="show_opr_delete reply_del_text" data-id="64"
+                                                                   data-reply-id="265">
+                                                                    删除
+                                                                </a>
+                                                            </div>
+                                                        </div>
+                                                        <?php }?>
+                                                        <?php if(empty($vo['picture_name'])&&empty($vo['content'])&&empty($vo['from_id'])){?>
+                                                        <div class="show_content_box show_content_boxpicword"
+                                                             style="display:none">
+                                                            <div class="show_content_imagetext">
+                                                                <a class="content_imagetext_link">
+                                                                    <img class="content_imagetext_pic" target="_blank">
+                                                                    <span class="content_box_info">[图片]</span>
+                                                                </a>
+                                                            </div>
+                                                        </div>
+                                                        <div class="show_content_box show_content_boxpic"
+                                                             style="display: none;"
+                                                             src="/Upload/weixin/autoreply/image/2016-01-15/56990deaca9f0.jpg">
+                                                            <a class="content_box_link" target="_blank">
+                                                                <span class="content_box_info"><img
+                                                                        src="/Upload/weixin/autoreply/image/2016-01-15/56990deaca9f0.jpg"></span>
+                                                            </a>
+                                                            <div class="show_content_opr">
+                                                                <a class="show_opr_delete reply_del_img" data-id="64"
+                                                                   data-reply-id="265">
+                                                                    删除
+                                                                </a>
+                                                            </div>
+                                                        </div>
+                                                        <div class="show_content_box show_content_boxword"
+                                                             style="display: none;">
+                                                            <p class="show_content_name">aa</p>
+                                                            <div class="show_content_opr">
+                                                                <!-- <a class="show_opr_edit reply_edit_text" data-id="64" data-reply-id="265">
+                                                                     编辑
+                                                                 </a>-->
+                                                                <a class="show_opr_delete reply_del_text" data-id="64"
+                                                                   data-reply-id="265">
+                                                                    删除
+                                                                </a>
+                                                            </div>
+                                                        </div>
+                                                        <?php }?>
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <?php $i++;?>
+                                    </foreach>
+                                    <!-----------------------------循环 end--------------------------------------------------->
+                                    <div class="content_rules_mainnew" style="display:none">
+                                        <div class="rules_main_title">
+                                            <em>新规则:</em>
+                                            <span></span>
+                                        </div>
+                                        <div class="rules_main_overview" style="display:none">
+                                            <div class="rules_overview_box">
+                                                <strong class="overview_label_keywords">
+                                                    关键词
+                                                </strong>
+                                                <div>
+                                                    <ul class="label_keywords_list">
+                                                        <li class="label_keywords_itemnew">
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            <div class="rules_overview_box">
+                                                <strong class="overview_label_reply">
+                                                    回复
+                                                </strong>
+                                                <div>
+                                                    <p class="label_reply_info">
+                                                        <em class="label_reply_number reply_number_all">3</em>
+                                                        条（
+                                                        <em class="label_reply_number reply_number_word">1</em>
+                                                        条文字，
+                                                        <em class="label_reply_number reply_number_pic">1</em>
+                                                        条图片，
+                                                        <em class="label_reply_number reply_number_picword">1</em>
+                                                        条图文）
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="rules_main_detail">
+                                            <div class="rules_detail_box">
+                                                <label class="rules_detail_name">
+                                                    规则名
+                                                </label>
+                                                <div class="detail_name_box">
+                                                    <input class="detail_name_input" name="rule_name" type="text"
+                                                           maxlength="60"/>
+                                                    <p class="detail_name_tips">
+                                                        您还可以输入
+                                                        <span class="name_tips_number">60</span>
+                                                        个字
+                                                    </p>
+                                                </div>
+                                                <button class="rule_sure rule_sure_new_lzm">确定</button>
+                                            </div>
+                                            <div class="rules_detail_keywords">
+                                                <div class="detail_keywords_title">
+                                                    <h4>关键字</h4>
+                                                    <a class="detail_add_keywords">
+                                                        添加关键字
+                                                    </a>
+                                                </div>
+                                                <div class="detail_keywords_content">
+                                                    <div class="detail_keywords_itemnew">
+                                                <span class="detail_keywords_name">
+                                                </span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="rules_detail_show">
+                                                <div class="rules_show_title">
+                                                    <ul class="rules_show_list">
+                                                        <li class="rules_show_item">文字</li>
+                                                        <li class="rules_show_item">图片</li>
+                                                        <li class="rules_show_item">图文</li>
+                                                    </ul>
+                                                </div>
+                                                <div class="rules_show_content">
+                                                    <div class="show_content_box show_content_boxword"
+                                                         style="display:none">
+                                                        <p class="show_content_name">
+                                                            asdfklasnf
+                                                        </p>
+                                                    </div>
+                                                    <div class="show_content_box show_content_boxpic"
+                                                         style="display:none">
+                                                        <a class="content_box_link" target="_blank">
+                                                            <span class="content_box_info"><img></span>
+                                                        </a>
+                                                    </div>
+                                                    <div class="show_content_box show_content_boxpicword"
+                                                         style="display:none">
+                                                        <div class="show_content_imagetext">
+                                                            <a class="content_imagetext_link">
+                                                                <img class="content_imagetext_pic" target="_blank"/>
+                                                                <span class="content_box_info">[图片]</span>
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-----------------------------------------------关键词自动回复 end-------------------------->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="add_bgall" style="display:none">
+        </div>
+        <!-----------------------添加关键字------------------------>
+        <div class="keywords_dialog common_dialog" style="display:none">
+            <div class="keywords_dialog_title dialog_title">
+                <h3>添加关键字</h3>
+                <i class="fa fa-close">
+                </i>
+            </div>
+            <div class="keywords_dialog_content dialog_content">
+                <div class="keywords_dialog_textbox dialog_textbox">
+                    <textarea class="keywords_dialog_textarea dialog_textarea keyword_text" maxlength="30"></textarea>
+                </div>
+                <div class="keywords_dialog_tips dialog_tips">
+                    <p>还可以输入<span class="keywords_tips_number">30</span>个字</p>
+                    <!--<h4>输入回车可添加多个关键字，每个关键字少于30个字符</h4>-->
+                </div>
+                <div class="keywords_add_tag">
+            <span class="add_tag_labelnew">
+                <span class="add_tag_text"></span>
+                <i class="fa fa-close"></i>
+            </span>
+                </div>
+                <input type="hidden" value="" data-id="" name="rule_id"/>
+                <input type="hidden" value="" data-id="" name="rule_id_eidt"/>
+                <div class="keywords_dialog_footer dialog_footer">
+                    <a class="keywords_btn_cancel btn_cancel">
+                        取消
+                    </a>
+                    <a class="keywords_btn_confirm btn_confirm keyword_sure">
+                        确定
+                    </a>
+                </div>
+            </div>
+        </div>
+        <!----------------------修改关键字---------------------->
+        <div class="modkey_dialog common_dialog" style="display:none">
+            <div class="modkey_dialog_title dialog_title">
+                <h3>修改关键字</h3>
+                <i class="fa fa-close">
+                </i>
+            </div>
+            <div class="modkey_dialog_content dialog_content">
+                <div class="modkey_dialog_textbox dialog_textbox">
+                    <textarea class="modkey_dialog_textarea dialog_textarea edit_keyword_text"
+                              maxlength="30"></textarea>
+                </div>
+                <div class="modkey_dialog_tips dialog_tips">
+                    <p>还可以输入<span class="modkey_tips_number">30</span>个字</p>
+                </div>
+                <div class="modkey_dialog_footer dialog_footer">
+                    <a class="modkey_btn_cancel btn_cancel">
+                        取消
+                    </a>
+                    <a class="modkey_btn_confirm btn_confirm edit_keyword_lzm">
+                        确定
+                    </a>
+                </div>
+            </div>
+        </div>
+        <!----------------------添加回复文字---------------------->
+        <div class="showword_dialog common_dialog" style="display:none">
+            <div class="showword_dialog_title dialog_title">
+                <h3>添加回复文字</h3>
+                <i class="fa fa-close">
+                </i>
+            </div>
+            <div class="showword_dialog_content dialog_content">
+                <div class="showword_dialog_textbox dialog_textbox">
+                    <textarea class="showword_dialog_textarea dialog_textarea text_meseage" maxlength="300"></textarea>
+                </div>
+                <div class="showword_dialog_tips dialog_tips">
+                    <p>还可以输入<span class="showword_tips_number">300</span>字</p>
+                </div>
+                <div class="showword_dialog_footer dialog_footer">
+                    <a class="showword_btn_cancel btn_cancel">
+                        取消
+                    </a>
+                    <a class="showword_btn_confirm btn_confirm text_sure">
+                        确定
+                    </a>
+                </div>
+            </div>
+        </div>
+        <!----------------------添加回复图片---------------------->
+        <div class="showpic_dialog common_dialog" style="display:none">
+            <div class="showpic_dialog_title dialog_title">
+                <h3>选择图片</h3>
+                <i class="fa fa-close">
+                </i>
+            </div>
+            <div class="showpic_dialog_subtitle dialog_subtitle">
+                <div class="dialog_subtitle_tips">
+                    大小:不超过1M,格式:bmp,png,jpeg,jpg,gif
+                </div>
+                <div class="dialog_subtitle_upload">
+                    <form action="__URL__/Upload_picture_3" enctype="multipart/form-data" method="post" name="argform"
+                          id="argform_3">
+                        <input type="file" name="Auto_third" class="dialog_subtitle_input show_input3"/>
+                        <p>上传图片</p>
+                    </form>
+                    <div class="dialog_subtitle_bg"></div>
+                </div>
+            </div>
+            <div class="showpic_dialog_content dialog_content">
+                <div class="showpic_dialog_textbox dialog_textbox">
+                    <div class="showpic_dialog_box">
+                        <ul class="showpic_dialog_piclist">
+                            <input name='auto_reply_picture' id="insert_flag" value='' type='hidden' data-value-id=''/>
+                            <foreach name="matter_list" item="vo">
+                                <li class="showpic_dialog_picitem auto_reply_picture" data-id="{$vo.matter_url}">
+                                    <img src="{$vo.matter_url}"/>
+
+                                    <p>{$vo.name}</p>
+
+                                    <div class="showpic_picitem_bg">
+                                        <i class="fa fa-check"></i>
+                                    </div>
+                                </li>
+                            </foreach>
+                        </ul>
+                        <!--{$page}-->
+                        <div class="showpic_dialog_page showpic_dialog_page1">
+                            <div id="count_pic" style="display: none">{$count.pic}</div>
+                            <span class="showpic_previous_page1 showpic_page_disabled">上一页</span>
+                            <span class="showpic_current_page">1</span>
+                            <span class="showpic_next_page1">下一页</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="showpic_dialog_tips dialog_tips" style="display:none">
+                    <p>已选<span class="showpic_tips_number">1</span>张图片！</p>
+                </div>
+                <div class="showpic_dialog_footer dialog_footer">
+                    <a class="showpic_btn_cancel btn_cancel">
+                        取消
+                    </a>
+                    <a class="showpic_btn_confirm btn_confirm picture_sure_lzm">
+                        确定
+                    </a>
+                </div>
+            </div>
+        </div>
+        <!----------------------添加回复图文---------------------->
+        <div class="showpicword_dialog common_dialog" style="display:none">
+            <div class="showpicword_dialog_title dialog_title">
+                <h3>选择素材</h3>
+                <i class="fa fa-close">
+                </i>
+            </div>
+            <div class="showpicword_dialog_subtitle dialog_subtitle">
+                <div class="dialog_search_bar">
+      <span class="dialog_search_box">
+        <a class="dialog_search_close">
+            <i class="fa fa-close"></i>
+        </a>
+        <a class="dialog_search_btn">
+            <i class="fa fa-search"></i>
+        </a>
+        <input class="dialog_search_input" type="text" placeholder="标题/作者/摘要"/>
+      </span>
+                </div>
+                <div class="dialog_subtitle_link">
+                    <button class="single selected">单图文</button>
+                    <button class="more">多图文</button>
+                    <a href="/MeeZao/Weixin/WeixinArticle/EditArticle.html" class="dialog_subtitle_create">
+                        ＋新建图文消息
+                    </a>
+                </div>
+            </div>
+            <div class="showpicword_dialog_content dialog_content">
+                <div class="showpicword_dialog_textbox dialog_textbox">
+                    <div class="dialog_appmsg_list">
+                        <div class="dialog_appmsg_col">
+                            <div class="dialog_appmsg_inner">
+                                <input type='hidden' id="insert_flag2" name='news_checked' data-id=''/>
+                                <?php foreach($get_articles as $vo){?>
+                                <div class="dialog_appmsg_item news_checked_lzm" data-id="<?php echo $vo['id'];?>">
+                                    <div class="dialog_appmsg_data">
+                                        <div class="appmsg_item_content" style="color:black">
+                                            <div class="news_style1_title"><?php echo $vo['title']; ?></div>
+                                            <div class="news_style1_pic"
+                                                 style="background-image:url('<?php echo $vo['thumb_pic_url'];?>') "></div>
+                                            <div class="pic_text" style="display: none">
+                                                <?php echo $vo['content']; ?>
+                                            </div>
+                                        </div>
+                                        <div class="appmsg_item_bgcheck">
+                                            <i class="fa fa-check"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                                <?php }?>
+                            </div>
+                        </div>
+                        <div class="showpic_dialog_page showpic_dialog_page2">
+                            <div id="count_articles" style="display: none">{$count.articles}</div>
+                            <div id="count_more_articles" style="display: none">{$count.more_art}</div>
+                            <!-- <span class=" showpic_previous_page2 showpic_page_disabled">上一页</span>
+                             <span class="showpic_current_page">1</span>
+                             <span class="showpic_next_page2">下一页</span>-->
+                        </div>
+                    </div>
+                </div>
+                <div class="showpicword_dialog_footer dialog_footer">
+                    <a class="showpicword_btn_cancel btn_cancel">
+                        取消
+                    </a>
+                    <a class="showpicword_btn_confirm btn_confirm news_sure_lzm">
+                        确定
+                    </a>
+                </div>
+            </div>
+        </div>
+        <!----------------------------账户框---------------------------------->
+        <div class="m_popover  hide change_account">
+            <div class="popover_title jsPopOverContent">
+                <h2>修改账户</h2>
+            </div>
+            <div class="popover_content jsPopOverContent">
+                <p><label>账户名称:</label><span class="account_name">22222</span></p>
+                <p><label>原密码:</label><input class="ori_password change_account_input" type="password"></p>
+                <p><label>新密码:</label><input class="new_password change_account_input" type="password"></p>
+            </div>
+            <div class="popover_bar"><a href="javascript:;" class="m_btn m_btn_primary jsPopoverBt"
+                                        id="change_account_confirm">确定</a>&nbsp;<a href="javascript:;"
+                                                                                   class="m_btn m_btn_default jsPopoverBt"
+                                                                                   id="change_account_del">取消</a></div>
+        </div>
+
+
+    </div>
+    <!--自己的内容结束-->
+
+</div>
+<!--主体内容结束-->
+<!--右侧内容结束-->
+<!--页面结束-->
+
+
+<!--尾部开始-->
+<div class="container-fluid foot">
+    <h2>Design by Meezao</h2>
+</div>
+<!--尾部结束-->
+
+
+<!--&lt;!&ndash;系统管理消息开始&ndash;&gt;-->
+<!--<div class="system_information">-->
+<!--<div class="system_information_header">-->
+<!--<h3>系统管理消息</h3>-->
+<!--<i class="fa fa-times"></i>-->
+<!--</div>-->
+<!--<div class="system_information_content">-->
+<!--系统将于2016年2月24日24:00-2016年2月27日3:00进行系统升级,届时系统停止使用,给您带来的不变请谅解!-->
+
+<!--升级内容:-->
+<!--PC核销-卡券部分(上线)-->
+<!--权限管理(上线)-->
+<!--<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />-->
+<!--</div>-->
+<!--</div>-->
+<!--&lt;!&ndash;系统管理消息结束&ndash;&gt;-->
+
+<script>
+    /*单图文与多图文样式切换*/
+    $('.dialog_subtitle_link button').click(function () {
+        $(this).addClass('selected').siblings().removeClass('selected');
+    })
+    /*单图文与多图文样式切换 end*/
+
+    /*被添加自动回复回复图片时图片框显示与否的控制*/
+    var src1 = $(".preview1").find("img").attr("src");
+    var src2 = $(".preview2").find("img").attr("src");
+    if (src1.length == 0) {
+        $(".main_preview1").hide();
+    } else {
+        $(".main_preview1").show();
+    }
+    if (src2.length == 0) {
+        $(".main_preview2").hide();
+    } else {
+        $(".main_preview2").show();
+    }
+    /*被添加自动回复回复图片时图片框显示与否的控制 end*/
+
+    /*关键字自动回复处图片的ajax上传与回调显示*/
+    $('.show_input3').change(function () {
+        var fd = new FormData($('#argform_3')[0]);
+        $.ajax({
+            type: 'POST',
+            url: "__URL__/Upload_picture_3",
+            data: fd,
+            cache: false,
+            processData: false,
+            contentType: false,
+            success: function (data) {
+                alert(data.state);
+                var html = "<li class='showpic_dialog_picitem auto_reply_picture' data-id='" + data.matter_url + "'> <img src='" + data.matter_url + "'/> <p>" + data.name + "</p> <div class='showpic_picitem_bg'> <i class='fa fa-check'></i> </div> </li>";
+                $(html).insertAfter($("#insert_flag"));
+            },
+            error: function () {
+                alert('执行错误,请正确操作');
+            }
+        })
+    });
+    /*关键字自动回复处图片的ajax上传与回调显示 end*/
+</script>
+</body>
+
+<!--全局js开始-->
+<script src="../../plugin_folder/jquery_v1.11.3/jquery-1.11.3.min.js"></script>
+<script src="../../plugin_folder/bootstrap_v3.3.5/js/bootstrap.min.js"></script>
+<script src="../../plugin_folder/jquery.validate_v1.13.1/jquery.validate-1.13.1.js"></script>
+<script src="../../plugin_folder/less_v1.7.0/less.min.js"></script>
+<script src="../../common_folder/javascripts/base.js"></script>
+<script src="../../common_folder/javascripts/common_index.js"></script>
+<!--全局js结束-->
+
+<script src="javascripts/meezao.js"></script>
+<script src="javascripts/d_reply.js"></script>
+
+
+</html>

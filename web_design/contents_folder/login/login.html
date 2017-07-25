@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <!--360 浏览器在读取到这个标签后，立即切换对应的极速核-->
+    <meta name="renderer" content="webkit">
+    <!--优先使用 IE 最新版本和 Chrome-->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <!--百度禁止转码-->
+    <meta http-equiv="Cache-Control" content="no-siteapp"/>
+    <title>首页</title>
+
+    <!--全局css开始-->
+    <link href="../../plugin_folder/bootstrap_v3.3.5/css/bootstrap.min.css" rel="stylesheet"/>
+    <link href="../../plugin_folder/font-awesome/font-awesome.min.css" rel="stylesheet"/>
+    <link href="../../common_folder/stylesheets/common_base.css" rel="stylesheet"/>
+    <link href="../../common_folder/less/PC_index.less" rel="stylesheet"/>
+    <!--全局css结束-->
+    <link href="less/login.less" rel="stylesheet/less"/>
+
+</head>
+
+<body class="login">
+
+
+<!--系统升级蒙版开始-->
+
+<div class="update_bg">
+    <div class="update_box">
+        <h1>系统正在升级,暂停使用!</h1>
+        <div class="progress">
+            <div class="progress-bar progress-bar-danger progress-bar-striped" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 100%">
+                <span class="sr-only">100% Complete (danger)</span>
+            </div>
+        </div>
+        <p>2016年2月26日24:00-2016年2月27日3:00</p>
+    </div>
+
+</div>
+<!--系统升级蒙版结束-->
+
+
+<div class="wrp">
+    <!--左侧背景图片开始-->
+    <div class="login_left_part"></div>
+    <!--左侧背景图片结束-->
+
+    <!--右侧主体内容开始-->
+    <div class="login_right_part">
+        <div class="right_part_box">
+            <div class="right_part_title">MEEZAO</div>
+            <form action="#" method="post" class="login_form">
+                <div class="input-group">
+                    <span class="input-group-addon login_right_user">Username:</span>
+                    <input type="text" class="form-control login_username" name="login_username" placeholder="请输入用户名" aria-describedby="sizing-addon2">
+                </div>
+                <div class="input-group">
+                    <span class="input-group-addon login_right_password">Password:</span>
+                    <input type="password" class="form-control" name="login_password" placeholder="请输入密码" aria-describedby="sizing-addon2">
+                </div>
+                <a class="login_retrieve_password">找回密码</a>
+                <!-- <button type="button" class="btn btn-info">登录</button> -->
+                <input type="submit" class="btn btn-info" value="登录">
+                <p class="tips_box"></p>
+            </form>
+            <div class="right_part_bottom">WWW.MEEZAO.COM</div>
+        </div>
+    </div>
+    <!--右侧主体内容结束-->
+
+    <!--模态框-找回密码开始-->
+    <div class="modal modal_retrieve_password fade" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title">密码找回</h4>
+                </div>
+                <form action="#" method="post" class="password_retrieve_form">
+                    <div class="modal-body">                    
+                        <div class="form-group">
+                            <label class="control-label">输入用户名</label>
+                            <input type="password" class="form-control modal_input modal_username" name="retrievepassword_username">
+                        </div>
+
+                        <div class="form-group">
+                            <label class="control-label">输入绑定的手机号</label>
+                            <input type="text" class="form-control modal_input modal_phone_number" name="retrievepassword_phone_number">
+                            <p class="modal_tips modal_tips_phone"></p>
+                        </div>
+
+                        <div class="modal_reg_box">
+                            <a href="#" class="modal_reg_btn reg_btn_getcode">获取验证码</a>
+                            <div class="reg_btn_mask"></div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="control-label">输入验证码</label>
+                            <input type="text" class="form-control modal_input modal_vercode" name="retrievepassword_vercode" maxlength="6">
+                            <p class="modal_tips modal_tips_vercode"></p>
+                        </div>                    
+                    </div>
+                    <div class="modal-footer">
+                        <button type="submit" class="btn btn-primary modal_btn_confirm">确认</button>
+                        <button type="button" class="btn btn-default modal_btn_cancel" data-dismiss="modal">取消</button>
+                    </div>
+                </form>
+                <div class="modal_code_random"></div>
+            </div>
+        </div>
+    </div>
+    <!--模态框-找回密码结束-->
+
+    <!--模态框-找回密码成功开始-->
+    <div class="modal modal_retrieve_password_success fade" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title">密码找回成功</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="form-group">
+                        <p class="modal_tips_success">密码找回成功！您的密码修改为初始密码Meezao2015，请登陆后及时修改密码，以免造成安全隐患！</p>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default modal_btn_cancel" data-dismiss="modal">关闭</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--模态框-找回密码成功结束-->
+
+</div>
+
+</body>
+
+<!--全局js开始-->
+<script src="../../plugin_folder/jquery_v1.11.3/jquery-1.11.3.min.js"></script>
+<script src="../../plugin_folder/bootstrap_v3.3.5/js/bootstrap.min.js"></script>
+<script src="../../plugin_folder/jquery.validate.1.13.1/jquery.validate-1.13.1.js"></script>
+<script src="../../plugin_folder/less_v1.7.0/less.min.js"></script>
+<script src="../../common_folder/javascripts/base.js"></script>
+<script src="../../common_folder/javascripts/common_index.js"></script>
+<!--全局js结束-->
+
+<script src="javascripts/login.js"></script>
+
+</html>

@@ -1,0 +1,225 @@
+//引入全局less变量
+@import "../../../common_folder/less/PC_library";
+//后台路径
+//@import "../../MeeZao/B_New/common_folder/less/PC_library";
+
+
+html {
+  height: 100%;
+  body {
+    height: 100%;
+    font-size: 14px;
+    .wrp{
+      .content_mb_subject{
+        .navbar-default{
+          padding-right: 20px;
+          .navbar-brand{
+            .font_arial;
+            font-weight: bold;
+          }
+        }
+        .common_table{
+          .table{
+            .table_head{
+              .time{
+                width: 14.6%;
+              }
+              .name{
+                width: 11.2%;
+              }
+              .link_address{
+                width: 31.1%;
+              }
+              .form_kind{
+                width: 11.2%;
+              }
+              .card_quantity{
+                width: 13.6%;
+              }
+              .operation{
+                width: 18.3%;
+              }
+            }
+            .table_body{
+              tr{
+                td{
+                  .btn-card-quantity{
+                    .size(75px,25px);
+                    line-height: 13px;
+                  }
+                }
+              }
+            }
+          }
+        }
+
+      }
+      .preview_div{
+        .size(110px,110px);
+        border: 1px solid @color_border;
+        position: absolute;
+        display: none;
+        img{
+          .size(100%,100%);
+        }
+      }
+    }
+  }
+  .modal{
+    .modal-footer{
+      .btn_cancel{
+        background-color: @color_black;
+        color: @color_white;
+      }
+    }
+
+  }
+
+  .modal_create_form{
+    .modal-dialog{
+      width: 960px;
+      margin-top: 70px;
+      .modal-body{
+        height: 434px;
+        .body_left{
+          width: 55%;
+          float: left;
+          padding-left: 148px;
+
+          .form-group{
+            margin-top: 35px;
+            position: relative;
+            .form-control{
+              .size(350px,30px);
+              margin-top: 10px;
+
+            }
+            .dropdown{
+              .btn-dropdown{
+                width: 350px;
+                height: 32px;
+                margin-top: 20px;
+                .caret{
+                  float: right;
+                }
+              }
+              .dropdown-menu{
+                min-width: 97%;
+                li{
+                  text-align:center;
+                  :hover{
+                    background-color: @color_blue;
+                  }
+                }
+              }
+            }
+            #form_name_span{
+              position: relative;
+              float: right;
+              top: -25px;
+              right: 20px;
+            }
+            .prompt_p{
+              font-size: 12px;
+              color: gray;
+            }
+            .image_upload{
+              position: absolute;
+              float: right;
+              top: 5px;
+              right: 12px;
+              .size(100px,30px);
+              text-indent: 0;
+              letter-spacing: 0;
+              padding: 0;
+        }
+            .form_style_btn {
+              position: absolute;
+              float: right;
+              top: 5px;
+              right: 12px;
+              .size(100px,30px);
+              .form_style_input {
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                left: 0;
+                top: 0;
+                opacity: 0;
+                z-index: 5;
+                cursor: pointer;
+
+              }
+              .form_style_opa {
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                color: #fff;
+                background-color: @color_blue;
+                line-height: 30px;
+                text-align: center;
+                font-size: 14px;
+                border-radius: 8px;
+              }
+            }
+      }
+
+    }
+    .body_right{
+      width: 45%;
+      float: right;
+      .back_img{
+        .size(253px,340px);
+        margin-top: 35px;
+        margin-left: 89px;
+        padding: 0;
+        border:1px solid @color_border ;
+        border-radius: 4px;
+        position: relative;
+      }
+      .card_style{
+        position: absolute;
+        top:16px;
+        .size(253px,340px);
+        margin-top: 35px;
+        margin-left: 89px;
+        text-align: center;
+        overflow: auto;
+        img{
+          margin-top: 30px;
+          text-align: center;
+        }
+      }
+    }
+  }
+}
+    .modal-footer{
+      padding-top: 22px;
+      .btn-default{
+        background-color: @color_black;
+        color: @color_white;
+      }
+    }
+}
+  .modal-available-card{
+    .modal-body{
+      height: 240px;
+      overflow: auto;
+      ul{
+        width: auto;
+        height: 36px;
+        li{
+          display:block;
+          float:left;
+          padding: 2px 20px;
+        }
+      }
+    }
+    .btn_cancel{
+      background-color: @color_black;
+      color: @color_white;
+    }
+
+  }
+
+}

@@ -1,0 +1,78 @@
+//引入全局less变量
+@import "../../../common_folder/less/PC_library";
+//后台路径
+//@import "../../MeeZao/B_New/common_folder/less/PC_library";
+
+
+html {
+  height: 100%;
+  body {
+    height: 100%;
+    font-size: 14px;
+    .wrp {
+      .content_mb_subject {
+        .navbar-default {
+          height: 100px;
+          .nav_top{
+            height: 50%;
+            border-bottom: 1px solid #e7e7e7;
+            .search_input{
+              width: 260px;
+              float: right;
+              margin-top: 8px;
+            }
+            .btn_search{
+              float: right;
+              margin: 8px 20px  0 20px;
+            }
+          }
+          .nav_bottom{
+            height: 50%;
+            .btn_check,.btn_download{
+              float: right;
+              margin: 8px 10px 0 0;
+              width: 70px;
+            }
+            .datimepicker{
+              float: right;
+              margin: 10px 10px 0 0;
+              #from,#to{
+                width: 140px;
+                text-align: center;
+              }
+            }
+          }
+        }
+        .table{
+          .table_head{
+            .precharge_time{
+              width: 18%;
+            }
+            .recharge_user{
+              width: 34%;
+            }
+            .state{
+              width: 16%;
+            }
+            .send_number{
+              width: 16%;
+            }
+            .operation{
+              width: 16%;
+            }
+          }
+          .table_body{
+            tr{
+              td{
+                .btn_cancel{
+                  .size(100px,30px);
+                  line-height: 14px;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

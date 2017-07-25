@@ -1,0 +1,574 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <!--360 浏览器在读取到这个标签后，立即切换对应的极速核-->
+    <meta name="renderer" content="webkit">
+    <!--优先使用 IE 最新版本和 Chrome-->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <!--百度禁止转码-->
+    <meta http-equiv="Cache-Control" content="no-siteapp"/>
+    <title>用户列表</title>
+
+    <!--全局css开始-->
+    <link href="../../plugin_folder/bootstrap_v3.3.5/css/bootstrap.min.css" rel="stylesheet"/>
+    <link href="../../plugin_folder/font-awesome/font-awesome.min.css" rel="stylesheet"/>
+    <link href="../../common_folder/stylesheets/common_base.css" rel="stylesheet"/>
+    <link href="../../common_folder/less/PC_index.less" rel="stylesheet/less"/>
+    <!--全局css结束-->
+
+    <link href="less/user_list.less" rel="stylesheet/less"/>
+
+</head>
+
+<body>
+
+
+<!--标题栏开始-->
+<div class="row header">
+    <h2>MEEZAO</h2>
+
+    <div class="toolbar">
+        <a href="" class="fa fa-envelope-o toolbar_information_center"><sup class="information_num"><i class="fa fa-circle"></i></sup></a><!--
+         --><div class="toolbar_item">
+        <a href="#none" class="toolbar_person_information">
+            <i class="fa fa-circle"></i>
+            <span class="toolbar_user_name">萨达sdfsadf</span>
+        </a>
+        <ul class="toolbar_drop_menu">
+            <li class="toolopr_modify_password" data-toggle="modal" data-target=".modal_modify_password">修改密码</li>
+            <li class="toolopr_phone_solution" data-toggle="modal" data-target=".modal_phone_solution">手机号解绑</li>
+            <li class="toolopr_log_out">退出登录</li>
+        </ul>
+    </div>
+    </div>
+</div>
+<!--标题栏结束-->
+
+<!--页面开始-->
+<div class="container-fluid wrp">
+
+    <!--导航栏开始-->
+    <div class="nav_bar">
+        <ul class="nav_bar_level1">
+            <li><a href="#none"><span>全数据报表系统</span></a>
+                <ul class="nav_bar_level2">
+                    <li><a href="index.php/MeeZao/Plat/Fun/Form"><span>微官基础报表</span></a></li>
+                    <li><a href="#none"><span>官网基础报表</span></a></li>
+                    <li><a href="#none"><span>CRM报表</span></a></li>
+                    <li><a href="#none"><span>Meezao免费报表</span></a></li>
+                    <li><a href="#none"><span>Meezao付费报表</span></a></li>
+                </ul>
+            </li>
+            <li><a href="#none"><span>微信管理系统</span></a>
+                <ul class="nav_bar_level2">
+                    <li><a href="#none"><span>文案系统</span></a>
+                        <ul class="nav_bar_level3">
+                            <li><a href="#none"><i class="fa fa-circle"></i><span>创建文案</span></a></li>
+                            <li><a href="#none"><i class="fa fa-circle"></i><span>组合文案</span></a></li>
+                            <li><a href="#none"><i class="fa fa-circle"></i><span>文案列表</span></a></li>
+                            <li><a href="#none"><i class="fa fa-circle"></i><span>Meezao文案系统</span></a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#none"><span>微信平台管理系统</span></a>
+                        <ul class="nav_bar_level3">
+                            <li><a href="#none"><i class="fa fa-circle"></i><span>自定义菜单</span></a></li>
+                            <li><a href="#none"><i class="fa fa-circle"></i><span>自动回复管理</span></a></li>
+                            <li><a href="#none"><i class="fa fa-circle"></i><span>消息管理</span></a></li>
+                            <li><a href="#none"><i class="fa fa-circle"></i><span>素材管理</span></a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+            <li><a href="#none"><span>官网管理系统</span></a>
+                <ul class="nav_bar_level2">
+                    <li><a href="#none"><span>微信基础报表</span></a></li>
+                    <li><a href="#none"><span>微官网基础报表</span></a></li>
+                    <li><a href="#none"><span>会员分析报表</span></a>
+                        <ul class="nav_bar_level3">
+                            <li><a href="#none"><i class="fa fa-circle"></i><span>Meezao免费报表</span></a></li>
+                            <li><a href="#none"><i class="fa fa-circle"></i><span>Meezao付费报表</span></a></li>
+                            <li><a href="#none"><i class="fa fa-circle"></i><span>Meezao定制报表</span></a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+            <li><a href="#none"><span>M-CRM系统</span></a>
+                <ul class="nav_bar_level2">
+                    <li><a href="#none"><span>会员分组</span></a></li>
+                    <li><a href="#none"><span>分组管理</span></a></li>
+                    <li><a href="#none"><span>分组促销</span></a></li>
+                    <li><a href="#none"><span>会员分析图表</span></a></li>
+                </ul>
+            </li>
+            <li><a href="#none"><span>卡券管理系统</span></a>
+                <ul class="nav_bar_level2">
+                    <li><a href="#none"><span>卡券列表</span></a></li>
+                </ul>
+            </li>
+            <li><a href="#none"><span>核销系统</span></a>
+                <ul class="nav_bar_level2">
+                    <li><a href="#none"><span>网页核销</span></a></li>
+                    <li><a href="#none"><span>手机核销</span></a></li>
+                    <li><a href="#none"><span>核销记录</span></a></li>
+                </ul>
+            </li>
+            <li><a href="#none"><span>平台管理系统</span></a>
+                <ul class="nav_bar_level2">
+                    <li><a href="#none"><span>权限管理</span></a></li>
+                    <li><a href="#none"><span>品牌管理</span></a></li>
+                    <li><a href="#none"><span>系统消息</span></a></li>
+                    <li><a href="#none"><span>服务帮助</span></a></li>
+                </ul>
+            </li>
+        </ul>
+
+    </div>
+    <!--导航栏结束-->
+
+    <!--右侧内容开始-->
+    <div class="content clearfix">
+
+
+        <!--隐藏警告框标签开始-->
+        <div class="alert_hide_tag hide">
+            <div class="alert_whether_show"></div>
+            <div class="alert_tag_type"></div>
+            <div class="alert_tag_delay"></div>
+            <div class="alert_tag_content"></div>
+        </div>
+        <!--隐藏警告框标签结束-->
+
+
+        <!--右侧内容主体开始-->
+        <div class="content_main">
+            <div class="content_route"><a href="#none">首页</a>
+                <span class="content_route_pathname">>CRM系统>消费者管理</span></div>
+
+            <!--主体内容开始-->
+            <div class="content_mb">
+                <h2 class="content_mb_title">消费者管理</h2>
+
+                <!--警告框-范例开始-->
+                <div class="alert alert-example" role="alert">
+                    <button type="button" class="close" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <strong class="alert_content"></strong>
+                </div>
+                <!--警告框-范例结束-->
+
+
+                <!--自己的内容开始-->
+                <div class="content_mb_subject">
+
+                    <!--你可以在这里写你自己的内容了-->
+
+                    <!----------------导航条开始-------------------->
+                    <nav class="navbar navbar-default">
+                        <div class="nav_top clearfix">
+                            <div class="navbar-header">
+                                <a class="navbar-brand" href="#">Screen</a>
+                            </div>
+
+                            <ul class="nav navbar-nav">
+                                <li class="active"><a href="#">用户列表<span class="sr-only">(current)</span></a></li>
+                                <li><a href="#">群组管理</a></li>
+                                <li><a href="#">市场轴管理</a></li>
+                            </ul>
+                        </div>
+
+                        <div class="nav_bottom clearfix">
+                            <div type="button" class="btn btn-default btn_all">全部</div>
+                            <div class="dropdown sex_choose" data-id="0">
+                                <div class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                                    <span class="inner_text">性别</span>
+                                    <span class="caret"></span>
+                                </div>
+                                <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                                    <li><a href="javascript:void(0)" data-id="1">男</a></li>
+                                    <li><a href="javascript:void(0)" data-id="2">女</a></li>
+                                    <li><a href="javascript:void(0)" data-id="3">未知性别</a></li>
+                                </ul>
+                            </div>
+                            <div class="dropdown identify_choose" data-id="0">
+                                <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                                    <span class="inner_text">身份</span>
+                                    <span class="caret"></span>
+                                </button>
+                                <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                                    <li><a href="javascript:void(0)" data-id="1">微信</a></li>
+                                    <li><a href="javascript:void(0)" data-id="2">电子会员</a></li>
+                                    <li><a href="javascript:void(0)" data-id="3">CRM会员</a></li>
+                                </ul>
+                            </div>
+                            <div class="dropdown member_card_level_choose" data-id="0">
+                                <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                                    <span class="inner_text">会员卡等级</span>
+                                    <span class="caret"></span>
+                                </button>
+                                <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                                    <!--<li><a href="#" data-id="0"></a></li>-->
+                                </ul>
+                            </div>
+                            <div class="btn btn-default btn_confirm">确认</div>
+                            <form class="navbar-form navbar-right" role="search">
+                                <div class="form-group">
+                                    <div class="input-group">
+                                        <div class="input-group-btn">
+                                            <div class="dropdown" data-id="1">
+                                                <button type="button" class="btn btn-default btn-dropdown">
+                                                    <span class="inner_text">手机号</span></button>
+                                                <button type="button" class="btn btn-default dropdown-toggle"
+                                                        data-toggle="dropdown" aria-haspopup="true"
+                                                        aria-expanded="false">
+                                                    <span class="caret"></span>
+                                                    <span class="sr-only">Toggle Dropdown</span>
+                                                </button>
+                                                <ul class="dropdown-menu">
+                                                    <li><a href="javascript:void(0)" data-id="1">手机号</a></li>
+                                                    <li><a href="javascript:void(0)" data-id="2">CRM卡号</a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <input type="text" class="form-control search_input">
+                                    </div>
+                                </div>
+                                <button type="button" class="btn btn-default btn_search">搜索</button>
+                                </form>
+                            <button class="btn btn-primary check_unvalidated_user">查证非验证用户</button>
+
+                        </div>
+
+                    </nav>
+                    <!----------------导航条结束-------------------->
+
+                    <div class="main_content clearfix">
+                        <div class="main_content_left">
+                            <div class="list_nav">
+                                <ul>
+                                    <li class="list_nav_li" data-id="1">
+                                        <div class="lisr_nav_img">
+                                            <img src="images/man_head.png"/>
+                                        </div>
+                                        <div class="list_nav_illustrate">
+                                            <p class="name_sex">
+                                                刘一
+                                            </p>
+                                            <p class="phone">
+                                                电子会员卡号:13333333333
+                                            </p>
+                                            <p class="card_number">
+                                                会员卡号:123456789
+                                            </p>
+                                        </div>
+                                        <div class="list_nav_category">
+                                            <img src="images/weixin_member.png" class="wx_cus"/>
+                                        </div>
+                                    </li>
+                                    <li class="list_nav_li" data-id="2">
+                                        <div class="lisr_nav_img">
+                                            <img src="images/man_head.png"/>
+                                        </div>
+                                        <div class="list_nav_illustrate">
+                                            <p class="name_sex">
+                                                <span class="l name">刘一</span>
+
+                                            </p>
+                                            <p class="phone">
+                                                电子会员卡号：13333333333
+                                            </p>
+                                            <p class="card_number">
+                                                会员卡号：123456789
+                                            </p>
+                                        </div>
+                                        <div class="list_nav_category">
+                                            <p class="unvalidated">VIP2</p>
+                                        </div>
+                                    </li>
+                                    <li class="list_nav_li" data-id="3">
+                                        <div class="lisr_nav_img">
+                                            <img src="images/woman_head.png"/>
+                                        </div>
+                                        <div class="list_nav_illustrate">
+                                            <p class="name_sex">
+                                                <span class="l name">欧阳娜娜</span>
+                                            </p>
+                                            <p class="phone">
+                                                手机号：13333333333
+                                            </p>
+                                            <p class="card_number">
+                                                会员卡号：11111111111
+                                            </p>
+                                        </div>
+                                        <div class="list_nav_category">
+                                            <img src="images/weixin_member.png" class="wx_cus"/>
+
+                                            <img src="images/electric_member.png" class="ele_cus"/>
+                                        </div>
+                                    </li>
+                                    <li class="list_nav_li" data-id="4">
+                                        <div class="lisr_nav_img">
+                                            <img src="images/unknow.png"/>
+                                        </div>
+                                        <div class="list_nav_illustrate">
+                                            <p class="name_sex">
+                                                <span class="l name">刘一</span>
+                                            </p>
+                                            <p class="phone">
+                                                电子会员卡号：13333333333
+                                            </p>
+                                            <p class="card_number">
+                                                会员卡号：123456789
+                                            </p>
+                                        </div>
+                                        <div class="list_nav_category">
+                                            <img src="images/weixin_member.png" class="wx_cus"/>
+                                            <p class="validated">VIP2</p>
+                                        </div>
+                                    </li>
+                                    <li class="list_nav_li" data-id="5">
+                                        <div class="lisr_nav_img">
+                                            <img src="images/man_head.png"/>
+                                        </div>
+                                        <div class="list_nav_illustrate">
+                                            <p class="name_sex">
+                                                <span class="l name">刘一</span>
+                                            </p>
+                                            <p class="phone">
+                                                电子会员卡号：13333333333
+                                            </p>
+                                            <p class="card_number">
+                                                会员卡号：123456789
+                                            </p>
+                                        </div>
+                                        <div class="list_nav_category">
+                                            <img src="images/weixin_member.png" class="wx_cus"/>
+                                            <p class="unvalidated">VIP1</p>
+                                            <img src="images/electric_member.png" class="ele_cus"/>
+                                        </div>
+                                    </li>
+                                    <li class="list_nav_li" data-id="6">
+                                        <div class="lisr_nav_img">
+                                            <img src="images/man_head.png"/>
+                                        </div>
+                                        <div class="list_nav_illustrate">
+                                            <p class="name_sex">
+                                                <span class="l name">刘一</span>
+                                            </p>
+                                            <p class="phone">
+                                                电子会员卡号：13333333333
+                                            </p>
+                                            <p class="card_number">
+                                                会员卡号：123456789
+                                            </p>
+                                        </div>
+                                        <div class="list_nav_category">
+                                            <img src="images/weixin_member.png" class="wx_cus"/>
+                                            <p class="unvalidated">VIP1</p>
+                                            <img src="images/electric_member.png" class="ele_cus"/>
+                                        </div>
+                                    </li>
+                                </ul>
+                                <div class="btn btn-primary check_more">查看更多</div>
+                            </div>
+                        </div>
+                        <div class="main_content_right">
+                            <div class="list_content">
+                                <h2 class="list_title_unvalidate">
+                                    <span>会员数据详情页</span>
+                                    <span class="un_validate_span">【未验证】</span>
+                                    <a href="#" class="add_to_blacklist">加入黑名单</a>
+                                </h2>
+
+                                <h2 class="list_title_validate">
+                                    <span>会员数据详情页</span>
+                                    <a href="#" class="add_to_blacklist">加入黑名单</a>
+                                </h2>
+
+                                <div class="list_base_mess">
+
+                                    <!--添加内容-->
+                                    <div class="crm_bac_mess">
+                                        <ul class="fold_border">
+                                            <li class="cus_bac_mess_li"  style="width:15%;padding:23px 20px;vertical-align:top;">
+                                                <p class="cus_bac_mess_p">
+                                                    <img src="images/man_head.png">
+                                                </p>
+                                                <p class="cus_bac_mess_p">
+                                                    VIP
+                                                </p>
+                                            </li>
+                                            <li class="cus_bac_mess_li" style="width:38%;">
+                                                <p>姓名：<span class="name">刘一</span></p>
+                                                <p>年龄：<span class="crm_age">27</span></p>
+                                                <p>生日：<span class="crm_birthday">1989/02/02</span></p>
+                                                <p>性别：<span class="crm_sex">女</span></p>
+                                                <p>身份证：<span class="id_card">刘一</span></p>
+                                                <p>开卡日期：<span class="open_date">刘一</span></p>
+                                            </li>
+                                            <li class="cus_bac_mess_li" style="width:40%;">
+                                                <p>手机号码：<span class="phone_number">刘一</span></p>
+                                                <p>会员卡号：<span class="card_number">刘一</span></p>
+                                                <p>邮箱 : <span class="email">刘一</span></p>
+                                                <p>邮编 : <span class="postcode">刘一</span></p>
+                                                <p>家庭住址：<span class="address">刘一</span></p>
+                                            </li>
+                                        </ul>
+                                        <img src="images/no-data.png" class="no_data_img">
+                                    </div>
+
+                                    <div class="wx_bac_mess">
+                                        <ul class="fold_border">
+                                            <li class="cus_bac_mess_li" style="width:17%;padding:23px 20px;vertical-align:top;float: left">
+                                                <p class="cus_bac_mess_p">
+                                                    <img src="images/group_man.png" class="weixin_head_img"/>
+                                                </p>
+                                                <p class="cus_bac_mess_p">
+                                                    <img src="images/electric_member.png"/>
+                                                    <img src="images/weixin_member.png"/>
+                                                </p>
+                                            </li>
+                                            <li class="cus_bac_mess_li" style="width:36%;float: left">
+                                                <p>微信昵称：<span class="nickname">liuyi89</span></p>
+                                                <p>微信地区：<span class="address">北京海淀区</span></p>
+                                                <p>微信关注时间：<span class="concern_time">2012/02/01</span></p>
+                                                <p>微信性别：<span class="sex">男</span></p>
+                                                <p>粉丝身份：<span class="fan_status">是</span></p>
+                                            </li>
+                                            <li class="cus_bac_mess_li" style="width:40%">
+                                                <p>电子会员卡号：<span class="card_number">liuyi89</span></p>
+                                                <p>电子会员姓名：<span class="card_name">北京海淀区</span></p>
+                                                <p>电子会员性别：<span class="card_sex">2012/02/01</span></p>
+                                                <p>邮编：<span class="card_postcode">100080</span></p>
+                                                <p>常用住址：<span class="usual_address"></span></p>
+                                            </li>
+                                        </ul>
+                                        <img src="images/no-data.png" class="no_data_img">
+                                    </div>
+                                    
+                                </div>
+                            </div>
+
+                            <div class="action_list">
+                                <h2 class="action_list_title">
+                                    <span class="action_record">行为记录:</span>
+                                    <i class="fa fa-navicon fa_right"></i>
+                                    <div class="btn btn-default btn_choose_confirm">确认</div>
+                                    <div class="dropdown behavior_choose" data-id="0">
+                                        <div class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                                            <span class="inner_text">全部行为</span>
+                                            <span class="caret"></span>
+                                        </div>
+                                        <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                                            <li><a href="javascript:void(0)" data-id="0">全部行为</a></li>
+                                            <li><a href="javascript:void(0)" data-id="1">订阅<div class="cicle1"></div></a></li>
+                                            <li><a href="javascript:void(0)" data-id="2">浏览<div class="cicle2"></div></a></li>
+                                            <li><a href="javascript:void(0)" data-id="3">分享<div class="cicle3"></div></a></li>
+                                            <li><a href="javascript:void(0)" data-id="4">领取<div class="cicle4"></div></a></li>
+                                            <li><a href="javascript:void(0)" data-id="5">使用<div class="cicle5"></div></a></li>
+                                            <li><a href="javascript:void(0)" data-id="6">核销<div class="cicle6"></div></a></li>
+                                            <li><a href="javascript:void(0)" data-id="7">参与<div class="cicle7"></div></a></li>
+                                            <li><a href="javascript:void(0)" data-id="8">购买<div class="cicle8"></div></a></li>
+                                            <li><a href="javascript:void(0)" data-id="9">积分<div class="cicle9"></div></a></li>
+                                            <li><a href="javascript:void(0)" data-id="10">注册会员<div class="cicle10"></div></a></li>
+                                            <li><a href="javascript:void(0)" data-id="11">绑定会员<div class="cicle11"></div></a></li>
+                                            <li><a href="javascript:void(0)" data-id="12">微信<div class="cicle12"></div></a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="dropdown time_choose" data-id="1">
+                                        <div class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                                            <span class="inner_text">2016-05</span>
+                                            <span class="caret"></span>
+                                        </div>
+                                        <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                                            <li><a href="javascript:void(0)" data-id="1"></a></li>
+                                            <li><a href="javascript:void(0)" data-id="2"></a></li>
+                                            <li><a href="javascript:void(0)" data-id="3"></a></li>
+                                        </ul>
+                                    </div>
+                                </h2>
+                                <div id="main" style="width: 640px;height:440px;"></div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    
+
+                    <!--分页开始-->
+                    <!--<nav>-->
+                        <!--<ul class="pagination">-->
+                            <!--<li>-->
+                                <!--<a href="#" aria-label="Previous">-->
+                                    <!--<span aria-hidden="true">&laquo;</span>-->
+                                <!--</a>-->
+                            <!--</li>-->
+                            <!--<li><a href="#">1</a></li>-->
+                            <!--<li><a href="#">2</a></li>-->
+                            <!--<li><a href="#">3</a></li>-->
+                            <!--<li><a href="#">4</a></li>-->
+                            <!--<li><a href="#">5</a></li>-->
+                            <!--<li>-->
+                                <!--<a href="#" aria-label="Next">-->
+                                    <!--<span aria-hidden="true">&raquo;</span>-->
+                                <!--</a>-->
+                            <!--</li>-->
+                        <!--</ul>-->
+                    <!--</nav>-->
+                    <!--分页结束-->
+
+                </div>
+                <!--自己的内容结束-->
+
+            </div>
+            <!--主体内容结束-->
+
+        </div>
+        <!--右侧内容主体结束-->
+
+
+    </div>
+    <!--右侧内容结束-->
+</div>
+<!--页面结束-->
+
+
+<!--尾部开始-->
+<div class="container-fluid foot">
+    <h2>Design by Meezao</h2>
+</div>
+<!--尾部结束-->
+
+
+<!--系统管理消息开始-->
+<div class="system_information" style="display: none">
+    <div class="system_information_header">
+        <h3>系统管理消息</h3>
+        <i class="fa fa-times"></i>
+    </div>
+    <div class="system_information_content">
+        系统将于2016年2月24日24:00-2016年2月27日3:00进行系统升级,届时系统停止使用,给您带来的不变请谅解!
+
+        升级内容:
+        PC核销-卡券部分(上线)
+        权限管理(上线)
+        <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+    </div>
+</div>
+<!--系统管理消息结束-->
+
+
+</body>
+
+<!--全局js开始-->
+<script src="../../plugin_folder/jquery_v1.11.3/jquery-1.11.3.min.js"></script>
+<script src="../../plugin_folder/bootstrap_v3.3.5/js/bootstrap.min.js"></script>
+<script src="../../plugin_folder/jquery.validate_v1.13.1/jquery.validate-1.13.1.js"></script>
+<script src="../../plugin_folder/less_v1.7.0/less.min.js"></script>
+<script src="../../common_folder/javascripts/base.js"></script>
+<script src="../../common_folder/javascripts/common_index.js"></script>
+<!--全局js结束-->
+
+<script src="../../plugin_folder/Echarts3/echarts.min.js"></script>
+<script src="javascripts/user_list.js"></script>
+
+</html>

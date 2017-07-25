@@ -1,0 +1,241 @@
+/* Less web_template */
+/* +--------------------------------------------------------------------------
+// | Author: Merrier <953075999@qq.com> <http://> <Date:2016/9/21 22:27>
+// +--------------------------------------------------------------------------*/
+//引入全局less变量
+@import "../../common/less/library";
+//后台路径
+//@import "../../MeeZao/B_New/common_folder/less/PC_library";
+
+html{
+
+  body{
+    background-image: url("../images/register_bg.png");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+
+    .wrp{
+
+      .content{
+
+        .register,.trial{
+          display: flex;
+          justify-content:center;
+          align-items: center;
+          flex-wrap: wrap;
+
+          .logo{
+            width:450px;
+            padding:120px;
+            flex-shrink: 0;
+          }
+
+          .reg_right_form{
+            width:450px;
+            flex-shrink: 0;
+
+              .reg_form_item{
+                position: relative;
+                height:50px;
+                margin-bottom: 45px;
+                line-height: 50px;
+
+                img{
+                  position: absolute;
+                  width:23px;
+                  left:20px;
+                  top:15px;
+                }
+                input{
+                  .size(100%,100%);
+                  padding: 0 60px;
+                  text-align: center;
+                  font-family: "Microsoft Yahei","微软雅黑";
+                  font-size: 14px;
+                  color:#b8b8b8;
+                  border:1px solid #e5e5e5;
+                  border-radius:3px;
+                }
+                .form_tips{
+                  display: none;
+                  position: absolute;
+                  top:45px;
+                  color:#ff3d5a;
+                  font-size: 12px;
+                  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+
+                  .fa{
+                    margin-right: 11px;
+                    font-size: 14px;
+                  }
+                }
+              }
+
+              .reg_form_code{
+
+                input{
+                  display: inline-block;
+                  width:68%;
+                }
+                .btn_get_code{
+                  float: right;
+                  .size(29%,100%);
+                  font-size: 14px;
+                  text-align: center;
+                  color:#ff3d5a;
+                  border:1px solid #e5e5e5;
+                  border-radius:3px;
+                  cursor: pointer;
+                }
+                .btn_new_disabled{
+                  cursor: not-allowed;
+                  opacity: .65;
+                }
+              }
+
+
+            .reg_agreement{
+              margin-bottom: 40px;
+              font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+              font-size: 12px;
+
+              .btn_service_agreement,.btn_secret_agreement{
+                color:#ff3d5a;
+                text-decoration: underline;
+                cursor: pointer;
+              }
+            }
+
+            .btn_register,.btn_trial{
+              width:100%;
+              font-size: 18px;
+              border-radius: 5px;
+              cursor: pointer;
+            }
+          }
+        }
+      }
+    }
+
+    //模态框-协议通用开始
+    .modal_service_agreement,.modal_secret_agreement{
+      .modal-dialog{
+        width:900px;
+
+          .modal-header{
+            padding:20px;
+
+            .modal-title{
+              font-weight: normal;
+              color:#1a0609;
+              text-align: center;
+            }
+            .close{
+              color:#ff7074;
+              font-size: 34px;
+              line-height: 27px;
+            }
+          }
+          .modal-body{
+            padding:20px 120px;
+            max-height: 350px;
+            overflow-y: auto;
+            word-wrap: break-word;
+            word-break: break-all;
+            font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+            font-size: 14px;
+            color:#1a0609;
+            line-height: 20px;
+
+            .text_section{
+              margin-bottom: 20px;
+
+              h5{
+                margin-bottom: 5px;
+                text-indent: 2em;
+              }
+            }
+            .text_indent{
+              text-indent: 2em;
+            }
+            .text_bold{
+              font-size: 16px;
+              font-weight: bold;
+            }
+            .text_underline{
+              text-decoration: underline;
+            }
+          }
+        .modal-footer{
+          border: 0;
+          padding: 20px;
+        }
+
+      }
+    }
+    //模态框-协议通用结束
+
+
+
+    //引导蒙版开始
+    .first_des_mask{
+      position: fixed;
+      display: flex;
+      flex-direction: column;
+      justify-content:space-around;
+      align-items: center;
+      .size(100%,100%);
+      top:0;
+      left:0;
+      text-align: center;
+      font-family: "SourceHanSansCN-Normal";
+      color:#ffffff;
+      background-color: #464648;
+
+      .first_des_title{
+        text-align: center;
+        font-size:24px;
+      }
+
+      .first_des_main{
+        display: flex;
+        justify-content:space-around;
+        align-items: center;
+        max-width:1550px;
+
+        .first_main_item{
+          width:28%;
+
+          img{
+            width:100%;
+            margin-bottom: 30px;
+          }
+          h4{
+            margin-bottom: 15px;
+            font-size: 18px;
+            color:#fefeff;
+          }
+          p{
+            font-size: 14px;
+            color:#bbb;
+          }
+        }
+      }
+      .btn_go_trip{
+        padding:15px 85px;
+        .word_space(2px);
+        font-size: 18px;
+        color:#ffffff;
+        font-family: SourceHanSansCN-Medium;
+        cursor: pointer;
+        text-shadow: 0 0 10px #555;
+        background-color: #9fbfe7;
+        border-radius: 30px;
+      }
+    }
+    //引导蒙版结束
+
+
+  }
+}
+

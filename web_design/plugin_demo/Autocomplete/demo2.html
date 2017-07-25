@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>单选</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="../../plugin_folder/jquery-ui_v1.10.0/jquery-ui-1.10.0.custom.css" rel="stylesheet"/>
+    <link href="../../plugin_folder/bootstrap_v3.3.5/css/bootstrap.min.css" rel="stylesheet"/>
+    <link href="../../plugin_folder/font-awesome/font-awesome.min.css" rel="stylesheet"/>
+
+</head>
+<body>
+
+<div class="form-group">
+    <label>自动完成单选demo</label>
+    <div class="input-group">
+        <div class="input-group-addon">所属品牌</div>
+        <div class="auto_input_div">
+            <input type="text" class="form-control auto_input auto_single_input">
+        </div>
+        <div class="btn btn-default dropdown-toggle input-group-addon dropdown_menu_div">
+            <span class="caret"></span>
+            <span class="sr-only">Toggle Dropdown</span>
+        </div>
+    </div>
+</div>
+
+<script src="../../plugin_folder/jquery_v1.11.3/jquery-1.11.3.min.js"></script>
+<script src="../../plugin_folder/jquery-ui_v1.10.0/jquery-ui-1.10.0.custom.min.js"></script>
+<script src="../../plugin_folder/bootstrap_v3.3.5/js/bootstrap.min.js"></script>
+
+<script>
+    $(function() {
+        var data = [
+            "ActionScript",
+            "AppleScript",
+            "Asp",
+            "BASIC",
+            "C",
+            "C++",
+            "Clojure",
+            "COBOL",
+            "ColdFusion",
+            "Erlang",
+            "Fortran",
+            "Groovy",
+            "Haskell",
+            "Java",
+            "JavaScript",
+            "Lisp",
+            "Perl",
+            "PHP",
+            "Python",
+            "Ruby",
+            "Scala",
+            "Scheme"
+        ];
+
+        $( ".auto_input" ).autocomplete({
+            source: data,
+            minLength:0,
+            change: function( event, ui ) {
+                console.log(ui.item);
+            },
+            focus: function( event, ui ) {},
+            _resizeMenu: function() {
+                this.menu.element.outerWidth( 100 );
+            }
+        });
+
+        $(".dropdown_menu_div").click(function(){
+            $( ".auto_input" ).autocomplete("search","");
+        });
+    });
+</script>
+
+</body>
+</html>

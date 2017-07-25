@@ -1,0 +1,102 @@
+*, *:after, *:before {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.trail{
+  width:500px;
+}
+.top_title{
+  text-align: center;
+}
+.cd-container {
+  width: 90%;
+  max-width: 800px;
+  margin: 0 auto;
+}
+#cd-timeline {
+  position: relative;
+  padding: 2em 0;
+  margin-top: 3em;
+  margin-bottom: 3em;
+}
+/*垂直时间线*/
+#cd-timeline::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 4px;
+  background: #d7e4ed;
+  left: 50%;
+  margin-left: -2px;
+}
+/*每个时间点及内容*/
+.cd-timeline-block {
+  position: relative;
+  margin: 4em 0;
+}
+.cd-timeline-block:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+.cd-timeline-block:first-child {
+  margin-top: 0;
+}
+.cd-timeline-block:last-child {
+  margin-bottom: 0;
+}
+/*圆形节点*/
+.cd-timeline-img {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  left: 53%;
+  margin-left: -30px;
+  border-radius: 50%;
+  box-shadow: 0 0 0 4px white, inset 0 2px 0 rgba(0, 0, 0, 0.08), 0 3px 0 4px rgba(0, 0, 0, 0.05);
+  -webkit-transform: translateZ(0);
+  -webkit-backface-visibility: hidden;
+}
+.cd-timeline-img.cd-picture {
+  background: #75ce66;
+}
+.cd-timeline-img.cd-movie {
+  background: #c03b44;
+}
+.cd-timeline-img.cd-location {
+  background: #f0ca45;
+}
+/*节点内容*/
+.cd-timeline-content {
+  position: relative;
+  background: #d7e4ed;
+  border-radius: 0.25em;
+  margin-left: 0;
+  padding: 1.6em;
+  width: 40%;
+}
+.cd-timeline-content h2{
+  text-align:center;
+
+}
+.cd-timeline-content .cd-date {
+  float: left;
+  padding: .8em 0;
+  opacity: .7;
+  position: absolute;
+  width: 100%;
+  left: 150%;
+  top: 5px;
+  font-size: 1rem;
+}
+/*偶数个节点的位置*/
+.cd-timeline-block:nth-child(even) .cd-timeline-content {
+  float: right;
+}
+.cd-timeline-block:nth-child(even) .cd-timeline-content .cd-date {
+  left: auto;
+  right: 150%;
+  text-align: right;
+}

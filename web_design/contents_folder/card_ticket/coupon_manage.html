@@ -1,0 +1,654 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <!--360 浏览器在读取到这个标签后，立即切换对应的极速核-->
+    <meta name="renderer" content="webkit">
+    <!--优先使用 IE 最新版本和 Chrome-->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <!--百度禁止转码-->
+    <meta http-equiv="Cache-Control" content="no-siteapp"/>
+    <title>优惠券管理</title>
+
+    <!--全局css开始-->
+    <link href="../../plugin_folder/bootstrap_v3.3.5/css/bootstrap.min.css" rel="stylesheet"/>
+    <link href="../../plugin_folder/font-awesome/font-awesome.min.css" rel="stylesheet"/>
+    <link href="../../common_folder/stylesheets/common_base.css" rel="stylesheet"/>
+    <link href="../../common_folder/stylesheets/common_index.css" rel="stylesheet"/>
+    <!--全局css结束-->
+
+
+    <link href="less/coupon_manage.less" rel="stylesheet/less"/>
+    <link href="../../plugin_folder/jquery-ui_v1.10.0/jquery-ui-1.10.0.custom.css" rel="stylesheet"/>
+
+</head>
+
+<body>
+
+<!--标题栏开始-->
+<div class="row header">
+    <h2>MEEZAO</h2>
+
+    <div class="toolbar">
+        <a href="#none" class="fa fa-envelope-o toolbar_information_center"></a><!--
+         -->
+        <div class="toolbar_item">
+            <a href="#none" class="toolbar_person_information">
+                <i class="fa fa-circle"></i>
+                <span class="toolbar_user_name">萨达sdfsadf</span>
+            </a>
+            <ul class="toolbar_drop_menu">
+                <li class="toolopr_modify_password" data-toggle="modal" data-target=".modal_modify_password">修改密码
+                </li>
+                <li class="toolopr_phone_solution" data-toggle="modal" data-target=".modal_phone_solution">手机号解绑
+                </li>
+                <li class="toolopr_log_out">退出登录</li>
+            </ul>
+        </div>
+    </div>
+</div>
+<!--标题栏结束-->
+
+<!--页面开始-->
+<div class="container-fluid wrp">
+
+    <!--左侧黑色背景开始-->
+    <div class="nav_bar_bg"></div>
+    <!--左侧黑色背景结束-->
+
+    <!--中间主体开始-->
+    <div class="main">
+        <!--导航栏开始-->
+        <div class="nav_bar">
+            <ul class="nav_bar_level1">
+                <li><a href="#none"><span>全数据报表系统</span></a>
+                    <ul class="nav_bar_level2">
+                        <li><a href="index.php/MeeZao/Plat/Fun/Form"><span>微官基础报表</span></a></li>
+                        <li><a href="#none"><span>官网基础报表</span></a></li>
+                        <li><a href="#none"><span>CRM报表</span></a></li>
+                        <li><a href="#none"><span>Meezao免费报表</span></a></li>
+                        <li><a href="#none"><span>Meezao付费报表</span></a></li>
+                    </ul>
+                </li>
+                <li><a href="#none"><span>微信管理系统</span></a>
+                    <ul class="nav_bar_level2">
+                        <li><a href="#none"><span>文案系统</span></a>
+                            <ul class="nav_bar_level3">
+                                <li><a href="#none"><i class="fa fa-circle"></i><span>创建文案</span></a></li>
+                                <li><a href="#none"><i class="fa fa-circle"></i><span>组合文案</span></a></li>
+                                <li><a href="#none"><i class="fa fa-circle"></i><span>文案列表</span></a></li>
+                                <li><a href="#none"><i class="fa fa-circle"></i><span>Meezao文案系统</span></a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#none"><span>微信平台管理系统</span></a>
+                            <ul class="nav_bar_level3">
+                                <li><a href="#none"><i class="fa fa-circle"></i><span>自定义菜单</span></a></li>
+                                <li><a href="#none"><i class="fa fa-circle"></i><span>自动回复管理</span></a></li>
+                                <li><a href="#none"><i class="fa fa-circle"></i><span>消息管理</span></a></li>
+                                <li><a href="#none"><i class="fa fa-circle"></i><span>素材管理</span></a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li><a href="#none"><span>官网管理系统</span></a>
+                    <ul class="nav_bar_level2">
+                        <li><a href="#none"><span>微信基础报表</span></a></li>
+                        <li><a href="#none"><span>微官网基础报表</span></a></li>
+                        <li><a href="#none"><span>会员分析报表</span></a>
+                            <ul class="nav_bar_level3">
+                                <li><a href="#none"><i class="fa fa-circle"></i><span>Meezao免费报表</span></a></li>
+                                <li><a href="#none"><i class="fa fa-circle"></i><span>Meezao付费报表</span></a></li>
+                                <li><a href="#none"><i class="fa fa-circle"></i><span>Meezao定制报表</span></a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li><a href="#none"><span>M-CRM系统</span></a>
+                    <ul class="nav_bar_level2">
+                        <li><a href="#none"><span>会员分组</span></a></li>
+                        <li><a href="#none"><span>分组管理</span></a></li>
+                        <li><a href="#none"><span>分组促销</span></a></li>
+                        <li><a href="#none"><span>会员分析图表</span></a></li>
+                    </ul>
+                </li>
+                <li><a href="#none"><span>卡券管理系统</span></a>
+                    <ul class="nav_bar_level2">
+                        <li><a href="#none"><span>卡券列表</span></a></li>
+                    </ul>
+                </li>
+                <li><a href="#none"><span>核销系统</span></a>
+                    <ul class="nav_bar_level2">
+                        <li><a href="#none"><span>网页核销</span></a></li>
+                        <li><a href="#none"><span>手机核销</span></a></li>
+                        <li><a href="#none"><span>核销记录</span></a></li>
+                    </ul>
+                </li>
+                <li><a href="#none"><span>平台管理系统</span></a>
+                    <ul class="nav_bar_level2">
+                        <li><a href="#none"><span>权限管理</span></a></li>
+                        <li><a href="#none"><span>品牌管理</span></a></li>
+                        <li><a href="#none"><span>系统消息</span></a></li>
+                        <li><a href="#none"><span>服务帮助</span></a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <!--导航栏结束-->
+
+        <!--右侧内容开始-->
+        <div class="content clearfix">
+
+            <!--右侧内容主体开始-->
+            <div class="content_main">
+                <div class="content_route"><a href="#none">首页</a>
+                    <span class="content_route_pathname">>文案系统>文案管理</span></div>
+
+                <!--主体内容开始-->
+                <div class="content_mb">
+                    <h2 class="content_mb_title">卡券</h2>
+
+
+                    <!--警告框-范例开始-->
+                    <div class="alert alert-example" role="alert">
+                        <button type="button" class="close" aria-label="Close"><span aria-hidden="true">&times;</span>
+                        </button>
+                        <strong class="alert_success_content"></strong>
+                    </div>
+                    <!--警告框-范例结束-->
+
+                    <!--自己的内容开始-->
+                    <div class="content_mb_subject">
+                        <nav class="navbar navbar-default">
+                            <div class="navbar-header">
+                                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                                        data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                                    <span class="sr-only">Toggle navigation</span>
+                                    <span class="icon-bar"></span>
+                                    <span class="icon-bar"></span>
+                                    <span class="icon-bar"></span>
+                                </button>
+                                <a class="navbar-brand" href="#">Screen</a>
+                            </div>
+
+                            <ul class="nav navbar-nav">
+                                <li class="active"><a href="#">优惠券管理 <span class="sr-only">(current)</span></a></li>
+                                <li><a href="#">优惠券数据</a></li>
+                                <li><a href="#">表单列表</a></li>
+                            </ul>
+
+                            <form class="navbar-form navbar-right" role="search">
+                                <div class="form-group">
+                                    <div class="input-group">
+                                        <div class="input-group-btn">
+                                            <div class="dropdown" data-id="1">
+                                                <button type="button" class="btn btn-default btn-dropdown">
+                                                    <span>卡券名称</span></button>
+                                                <button type="button" class="btn btn-default dropdown-toggle"
+                                                        data-toggle="dropdown" aria-haspopup="true"
+                                                        aria-expanded="false">
+                                                    <span class="caret"></span>
+                                                    <span class="sr-only">Toggle Dropdown</span>
+                                                </button>
+                                                <ul class="dropdown-menu">
+                                                    <li><a href="#" data-id="1">卡券名称</a></li>
+                                                    <li><a href="#" data-id="2">卡券ID</a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <input type="text" class="form-control search_input">
+                                    </div>
+                                </div>
+                                <button type="button" class="btn btn-default btn_search">搜索</button>
+                            </form>
+                            <button class="btn btn-primary btn_pull_card">拉取卡券</button>
+                        </nav>
+
+
+                        <div class="common_table">
+                            <table class="table table-bordered">
+                                <thead>
+                                <tr class="table_head">
+                                    <th class="kind">
+                                        <div class="dropdown" data-id="0">
+                                            <button class="btn btn-default dropdown-toggle btn-dropdown" type="button"
+                                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                                                <span>类型</span>
+                                                <span class="caret"></span>
+                                            </button>
+                                            <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                                                <li><a href="#" data-id="1">全部</a></li>
+                                                <li><a href="#" data-id="2">通用券</a></li>
+                                                <li><a href="#" data-id="3">代金券</a></li>
+                                                <li><a href="#" data-id="4">团购券</a></li>
+                                                <li><a href="#" data-id="5">折扣券</a></li>
+                                                <li><a href="#" data-id="6">礼品券</a></li>
+                                            </ul>
+                                        </div>
+                                    </th>
+                                    <th class="name">名称</th>
+                                    <th class="provide_way">
+                                        <div class="dropdown" data-id="0">
+                                            <button class="btn btn-default dropdown-toggle btn-dropdown" type="button"
+                                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                                                <span>发放方式</span>
+                                                <span class="caret"></span>
+                                            </button>
+                                            <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                                                <li><a href="#" data-id="1">全部</a></li>
+                                                <li><a href="#" data-id="2">群发</a></li>
+                                                <li><a href="#" data-id="3">定向</a></li>
+                                            </ul>
+                                        </div>
+                                    </th>
+                                    <th class="period_of_validity">卡券有效期</th>
+                                    <th class="edit">
+                                        <div class="dropdown" data-id="0">
+                                            <button class="btn btn-default dropdown-toggle btn-dropdown" type="button"
+                                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                                                <span>编辑</span>
+                                                <span class="caret"></span>
+                                            </button>
+                                            <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                                                <li><a href="#" data-id="1">全部</a></li>
+                                                <li><a href="#" data-id="2">已编辑</a></li>
+                                                <li><a href="#" data-id="3">未编辑</a></li>
+                                            </ul>
+                                        </div>
+                                    </th>
+                                    <th class="state">
+                                        <div class="dropdown" data-id="0">
+                                            <button class="btn btn-default dropdown-toggle btn-dropdown" type="button"
+                                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                                                <span>状态</span>
+                                                <span class="caret"></span>
+                                            </button>
+                                            <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                                                <li><a href="#" data-id="1">全部</a></li>
+                                                <li><a href="#" data-id="2">审核中</a></li>
+                                                <li><a href="#" data-id="3">未通过</a></li>
+                                                <li><a href="#" data-id="4">待投放</a></li>
+                                                <li><a href="#" data-id="5">已投放</a></li>
+                                                <li><a href="#" data-id="6">已下架</a></li>
+                                            </ul>
+                                        </div>
+                                    </th>
+                                    <th class="stock">库存</th>
+                                    <th class="operation">操作</th>
+                                </tr>
+                                </thead>
+                                <tbody class="table_body">
+                                <tr data-id="1">
+                                    <td>代金券</td>
+                                    <td>重百卡券发送1</td>
+                                    <td>群发</td>
+                                    <td>2016-05-18至2016-06-18</td>
+                                    <td>已编辑</td>
+                                    <td>审核中</td>
+                                    <td>15</td>
+                                    <td>
+                                        <div class="btn-group" role="group">
+                                            <button type="button" class="btn btn-default btn_edit">编辑</button>
+                                            <button type="button" class="btn btn-default btn_delete">删除</button>
+                                            <button type="button" class="btn btn-default btn_message">短信</button>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr data-id="2">
+                                    <td>团购券</td>
+                                    <td>重百卡券发送2</td>
+                                    <td>定向</td>
+                                    <td>2016-05-18至2016-06-18</td>
+                                    <td>已编辑</td>
+                                    <td>审核中</td>
+                                    <td>18</td>
+                                    <td>
+                                        <div class="btn-group" role="group">
+                                            <button type="button" class="btn btn-default btn_edit">编辑</button>
+                                            <button type="button" class="btn btn-default btn_delete">删除</button>
+                                            <button type="button" class="btn btn-default btn_message">短信</button>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>代金券</td>
+                                    <td>重百卡券发送1</td>
+                                    <td>群发</td>
+                                    <td>2016-05-18至2016-06-18</td>
+                                    <td>未编辑</td>
+                                    <td>审核中</td>
+                                    <td>15</td>
+                                    <td>
+                                        <div class="btn-group" role="group">
+                                            <button type="button" class="btn btn-default btn_edit">编辑</button>
+                                            <button type="button" class="btn btn-default btn_delete">删除</button>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>代金券</td>
+                                    <td>重百卡券发送1</td>
+                                    <td>群发</td>
+                                    <td>2016-05-18至2016-06-18</td>
+                                    <td>未编辑</td>
+                                    <td>审核中</td>
+                                    <td>15</td>
+                                    <td>
+                                        <div class="btn-group" role="group">
+                                            <button type="button" class="btn btn-default btn_edit">编辑</button>
+                                            <button type="button" class="btn btn-default btn_delete">删除</button>
+                                        </div>
+                                    </td>
+                                </tr>
+
+                                <tr>
+
+                                </tr>
+
+                                <tr>
+
+                                </tr>
+
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <nav>
+                            <ul class="pagination">
+                                <li>
+                                    <a href="#" aria-label="Previous">
+                                        <span aria-hidden="true">&laquo;</span>
+                                    </a>
+                                </li>
+                                <li><a href="#">1</a></li>
+                                <li><a href="#">2</a></li>
+                                <li><a href="#">3</a></li>
+                                <li><a href="#">4</a></li>
+                                <li><a href="#">5</a></li>
+                                <li>
+                                    <a href="#" aria-label="Next">
+                                        <span aria-hidden="true">&raquo;</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </nav>
+
+                        <div class="mask_hide">
+
+                        </div>
+
+                    </div>
+                    <!--自己的内容结束-->
+
+                </div>
+                <!--主体内容结束-->
+
+            </div>
+            <!--右侧内容主体结束-->
+
+
+            <!--模态框开始-->
+            <div class="content_modal">
+
+            </div>
+            <!--模态框结束-->
+        </div>
+        <!--右侧内容结束-->
+    </div>
+    <!--中间主体结束-->
+
+    <!--尾部开始-->
+    <div class="container-fluid foot">
+        <h2>Design by Meezao</h2>
+    </div>
+    <!--尾部结束-->
+
+    <div class="preview_div">
+        <img src="images/card_style.png">
+    </div>
+
+</div>
+<!--页面结束-->
+
+<div class="modal fade modal_progress">
+    <div class="progress">
+        <div class="progress-bar progress-bar-danger progress-bar-striped" role="progressbar" aria-valuenow="100"
+             aria-valuemin="0" aria-valuemax="100" style="width: 100%">
+            <span class="sr-only">100% Complete (danger)</span>
+        </div>
+    </div>
+</div>
+
+<!--模态框（选择投放方式）开始-->
+<div class="modal fade modal_provide_way_choose">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                        aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title">请选择投放方式</h4>
+            </div>
+            <div class="modal-body">
+                <input type="radio" name="provide_way" value="weixin_group" checked/> 群发（向所有关注者无规则限制投放）
+                <br/>
+                <br/>
+                <input type="radio" name="provide_way" value="weixin_page"/> 定向（向目标群体投放）
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary btn_confirm">确认</button>
+                <button type="button" class="btn btn-default btn_cancel" data-dismiss="modal">取消</button>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+<!--模态框（选择投放方式）结束-->
+
+<!--模态框（删除卡券）开始-->
+<div class="modal fade modal_delete_card">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                        aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title">删除卡券</h4>
+            </div>
+            <div class="modal-body">
+                <p>是否确认删除？</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary btn_confirm">确认</button>
+                <button type="button" class="btn btn-default btn_cancel" data-dismiss="modal">取消</button>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+<!--模态框（删除卡券）结束-->
+
+<!--模态框（规则管理）（定向）开始-->
+<div class="modal fade modal_rule_manage_orient">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                        aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title">规则管理（定向）</h4>
+            </div>
+            <form action="#" method="post" class="orient_form">
+                <div class="modal-body">
+                    <div class="form-group">
+                        <label>您选择的卡券</label>
+                        <input type="text" class="form-control choose_card" disabled>
+                    </div>
+                    <div class="form-group">
+                        <label>您选择的投放方式</label>
+                        <input type="text" class="form-control provide_way_input" disabled placeholder="定向投放" value="定向投放">
+                    </div>
+                    <div class="form-group">
+                        <label>请选择此卡券要出现在微官网中哪些品牌的优惠列表内（选填）</label>
+                        <div class="input-group">
+                            <div class="brand_input_div">
+                                <input type="text" class="input-default brand_input coupon_list_input" name="brand_input">
+                            </div>
+                            <div class="btn btn-default dropdown-toggle input-group-addon">
+                                <span class="caret"></span>
+                                <span class="sr-only">Toggle Dropdown</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>请选择此卡券要发送的定向人群</label>
+                        <div class="input-group">
+                            <div class="input-group-btn">
+                                <div class="dropdown" data-id="1">
+                                    <button type="button" class="btn btn-default btn-dropdown">
+                                        <span>自设群组</span></button>
+                                    <button type="button" class="btn btn-default dropdown-toggle"
+                                            data-toggle="dropdown" aria-haspopup="true"
+                                            aria-expanded="false">
+                                        <span class="caret"></span>
+                                        <span class="sr-only">Toggle Dropdown</span>
+                                    </button>
+                                    <ul class="dropdown-menu">
+                                        <li><a href="#" data-id="1">自设群组</a></li>
+                                        <li><a href="#" data-id="2">微信群组</a></li>
+                                        <li><a href="#" data-id="3">电子会员</a></li>
+                                        <li><a href="#" data-id="4">CRM会员</a></li>
+                                    </ul>
+                                    <div class="brand_input_div validate_div">
+                                        <input type="text" class="input-default brand_input orient_people_input" name="brand_input">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="error_show">*请选择此卡券要发送的定向人群</p>
+                    <div class="form-group">
+                        <label>请选择要添加的表单：（您所选择的列表中定向卡券数不能超过列表格数）</label>
+                        <div class="input-group">
+                            <div class="brand_input_div validate_div">
+                                <input type="text" class="input-default brand_input form_input" name="brand_input">
+                            </div>
+                            <div class="btn btn-default dropdown-toggle input-group-addon">
+                                <span class="caret"></span>
+                                <span class="sr-only">Toggle Dropdown</span>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="error_show">*请选择要添加的表单</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary btn_orient_finish">完成</button>
+                    <button type="button" class="btn btn-default btn_cancel" data-dismiss="modal">取消</button>
+                </div>
+            </form>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+<!--模态框（规则管理）（定向）结束-->
+
+<!--模态框（规则管理）（群发）开始-->
+<div class="modal fade modal_rule_manage_group">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                        aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title">规则管理</h4>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <div class="form-group">
+                        <label>您选择的卡券</label>
+                        <input type="text" class="form-control choose_card" disabled>
+                    </div>
+                    <div class="form-group">
+                        <label>您选择的投放方式</label>
+                        <input type="text" class="form-control provide_way_input" disabled placeholder="群发投放" value="群发投放">
+                    </div>
+                    <div class="form-group">
+                        <label>请选择此卡券要出现在微官网中哪些品牌的优惠列表内（选填）</label>
+                        <div class="input-group">
+                            <div class="brand_input_div">
+                                <input type="text" class="brand_input coupon_list_input" name="brand_input">
+                            </div>
+                            <div class="btn btn-default dropdown-toggle input-group-addon">
+                                <span class="caret"></span>
+                                <span class="sr-only">Toggle Dropdown</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>请选择要添加的表单：（您所选择的列表中定向卡券数不能超过列表格数）</label>
+                        <div class="input-group">
+                            <div class="brand_input_div validate_div">
+                                <input type="text" class="brand_input form_input" name="brand_input">
+                            </div>
+                            <div class="btn btn-default dropdown-toggle input-group-addon">
+                                <span class="caret"></span>
+                                <span class="sr-only">Toggle Dropdown</span>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="error_show">*请选择要添加的表单</p>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary btn_group_finish">完成</button>
+                <button type="button" class="btn btn-default btn_cancel" data-dismiss="modal">取消</button>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+<!--模态框（规则管理）（群发）结束-->
+
+<!--模态框（创建短信）开始-->
+<div class="modal fade modal_create_message">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                        aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title">创建短信</h4>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <label>所选发送对象</label>
+                    <input type="text" class="send_target" disabled>
+                </div>
+                <div class="form-group">
+                    <label>选择发送方式</label>
+                    <input type="radio" checked disabled><span class="send_right_away">立即发送</span>
+                </div>
+                <div class="form-group">
+                    <label>编辑发送内容</label>
+                    <textarea class="send_content" id="send_count_textarea"
+                    onkeyup="countText('send_count_textarea','send_count_span')"></textarea>
+                    <span class="prompt_span">注：单字节为70字节（已包含签名，无需编辑）</span>
+                    <div class="number_div">字数：<span id="send_count_span"></span></div>
+                    <p class="error_tips">*短信格式不正确</p>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <div class="send_number">发送人数：<span>9999</span></div>
+                <button type="button" class="btn btn-primary btn_send">发送</button>
+                <button type="button" class="btn btn-default btn_cancel" data-dismiss="modal">取消</button>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+<!--模态框（创建短信）结束-->
+
+</body>
+
+<!--全局js开始-->
+<script src="../../plugin_folder/jquery_v1.11.3/jquery-1.11.3.min.js"></script>
+<script src="../../plugin_folder/jquery-ui_v1.10.0/jquery-ui-1.10.0.custom.min.js"></script>
+<script src="../../plugin_folder/bootstrap_v3.3.5/js/bootstrap.min.js"></script>
+<script src="../../plugin_folder/jquery.validate_v1.13.1/jquery.validate-1.13.1.js"></script>
+<script src="../../plugin_folder/less_v1.7.0/less.min.js"></script>
+<script src="../../common_folder/javascripts/base.js"></script>
+<script src="../../common_folder/javascripts/common_index.js"></script>
+<!--全局js结束-->
+
+<script src="javascripts/coupon_manage.js"></script>
+
+</html>

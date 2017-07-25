@@ -1,0 +1,395 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <!--360 浏览器在读取到这个标签后，立即切换对应的极速核-->
+    <meta name="renderer" content="webkit">
+    <!--优先使用 IE 最新版本和 Chrome-->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <!--百度禁止转码-->
+    <meta http-equiv="Cache-Control" content="no-siteapp"/>
+    <title>发送列表</title>
+
+    <!--全局css开始-->
+    <link href="../../plugin_folder/bootstrap_v3.3.5/css/bootstrap.min.css" rel="stylesheet"/>
+    <link href="../../plugin_folder/font-awesome/font-awesome.min.css" rel="stylesheet"/>
+    <link href="../../common_folder/stylesheets/common_base.css" rel="stylesheet"/>
+    <link href="../../common_folder/less/PC_index.less" rel="stylesheet/less"/>
+    <!--全局css结束-->
+
+    <link href=../../plugin_folder/jquery-ui_v1.10.0/jquery.ui.datepicker.css rel="stylesheet"/>
+    <link href="../../plugin_folder/jquery-ui_v1.10.0/jquery-ui-1.10.0.custom.css" rel="stylesheet"/>
+
+    <link href="less/send_list.less" rel="stylesheet/less" />
+
+</head>
+
+<body>
+
+
+<!--标题栏开始-->
+<div class="row header">
+    <h2>MEEZAO</h2>
+
+    <div class="toolbar">
+        <a href="" class="fa fa-envelope-o toolbar_information_center"><sup class="information_num"><i class="fa fa-circle"></i></sup></a><!--
+         --><div class="toolbar_item">
+        <a href="#none" class="toolbar_person_information">
+            <i class="fa fa-circle"></i>
+            <span class="toolbar_user_name">萨达sdfsadf</span>
+        </a>
+        <ul class="toolbar_drop_menu">
+            <li class="toolopr_modify_password" data-toggle="modal" data-target=".modal_modify_password">修改密码</li>
+            <li class="toolopr_phone_solution" data-toggle="modal" data-target=".modal_phone_solution">手机号解绑</li>
+            <li class="toolopr_log_out">退出登录</li>
+        </ul>
+    </div>
+    </div>
+</div>
+<!--标题栏结束-->
+
+<!--页面开始-->
+<div class="container-fluid wrp">
+
+    <!--导航栏开始-->
+    <div class="nav_bar">
+        <ul class="nav_bar_level1">
+            <li><a href="#none"><span>全数据报表系统</span></a>
+                <ul class="nav_bar_level2">
+                    <li><a href="index.php/MeeZao/Plat/Fun/Form"><span>微官基础报表</span></a></li>
+                    <li><a href="#none"><span>官网基础报表</span></a></li>
+                    <li><a href="#none"><span>CRM报表</span></a></li>
+                    <li><a href="#none"><span>Meezao免费报表</span></a></li>
+                    <li><a href="#none"><span>Meezao付费报表</span></a></li>
+                </ul>
+            </li>
+            <li><a href="#none"><span>微信管理系统</span></a>
+                <ul class="nav_bar_level2">
+                    <li><a href="#none"><span>文案系统</span></a>
+                        <ul class="nav_bar_level3">
+                            <li><a href="#none"><i class="fa fa-circle"></i><span>创建文案</span></a></li>
+                            <li><a href="#none"><i class="fa fa-circle"></i><span>组合文案</span></a></li>
+                            <li><a href="#none"><i class="fa fa-circle"></i><span>文案列表</span></a></li>
+                            <li><a href="#none"><i class="fa fa-circle"></i><span>Meezao文案系统</span></a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#none"><span>微信平台管理系统</span></a>
+                        <ul class="nav_bar_level3">
+                            <li><a href="#none"><i class="fa fa-circle"></i><span>自定义菜单</span></a></li>
+                            <li><a href="#none"><i class="fa fa-circle"></i><span>自动回复管理</span></a></li>
+                            <li><a href="#none"><i class="fa fa-circle"></i><span>消息管理</span></a></li>
+                            <li><a href="#none"><i class="fa fa-circle"></i><span>素材管理</span></a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+            <li><a href="#none"><span>官网管理系统</span></a>
+                <ul class="nav_bar_level2">
+                    <li><a href="#none"><span>微信基础报表</span></a></li>
+                    <li><a href="#none"><span>微官网基础报表</span></a></li>
+                    <li><a href="#none"><span>会员分析报表</span></a>
+                        <ul class="nav_bar_level3">
+                            <li><a href="#none"><i class="fa fa-circle"></i><span>Meezao免费报表</span></a></li>
+                            <li><a href="#none"><i class="fa fa-circle"></i><span>Meezao付费报表</span></a></li>
+                            <li><a href="#none"><i class="fa fa-circle"></i><span>Meezao定制报表</span></a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+            <li><a href="#none"><span>M-CRM系统</span></a>
+                <ul class="nav_bar_level2">
+                    <li><a href="#none"><span>会员分组</span></a></li>
+                    <li><a href="#none"><span>分组管理</span></a></li>
+                    <li><a href="#none"><span>分组促销</span></a></li>
+                    <li><a href="#none"><span>会员分析图表</span></a></li>
+                </ul>
+            </li>
+            <li><a href="#none"><span>卡券管理系统</span></a>
+                <ul class="nav_bar_level2">
+                    <li><a href="#none"><span>卡券列表</span></a></li>
+                </ul>
+            </li>
+            <li><a href="#none"><span>核销系统</span></a>
+                <ul class="nav_bar_level2">
+                    <li><a href="#none"><span>网页核销</span></a></li>
+                    <li><a href="#none"><span>手机核销</span></a></li>
+                    <li><a href="#none"><span>核销记录</span></a></li>
+                </ul>
+            </li>
+            <li><a href="#none"><span>平台管理系统</span></a>
+                <ul class="nav_bar_level2">
+                    <li><a href="#none"><span>权限管理</span></a></li>
+                    <li><a href="#none"><span>品牌管理</span></a></li>
+                    <li><a href="#none"><span>系统消息</span></a></li>
+                    <li><a href="#none"><span>服务帮助</span></a></li>
+                </ul>
+            </li>
+        </ul>
+
+    </div>
+    <!--导航栏结束-->
+
+    <!--右侧内容开始-->
+    <div class="content clearfix">
+
+
+        <!--隐藏警告框标签开始-->
+        <div class="alert_hide_tag hide">
+            <div class="alert_whether_show"></div>
+            <div class="alert_tag_type"></div>
+            <div class="alert_tag_delay"></div>
+            <div class="alert_tag_content"></div>
+        </div>
+        <!--隐藏警告框标签结束-->
+
+
+        <!--右侧内容主体开始-->
+        <div class="content_main">
+            <div class="content_route"><a href="#none">首页</a>
+                <span class="content_route_pathname">>Meezao系统管理>权限管理>用户管理</span></div>
+
+            <!--主体内容开始-->
+            <div class="content_mb">
+                <h2 class="content_mb_title">发送列表</h2>
+
+                <!--警告框-范例开始-->
+                <div class="alert alert-example" role="alert">
+                    <button type="button" class="close" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <strong class="alert_content"></strong>
+                </div>
+                <!--警告框-范例结束-->
+
+
+                <!--自己的内容开始-->
+                <div class="content_mb_subject">
+                    <!--你可以在这里写你自己的内容了-->
+
+                    <!----------------导航条开始-------------------->
+                    <nav class="navbar navbar-default">
+                        <div class="navbar-header">
+                            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                                    data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                                <span class="sr-only">Toggle navigation</span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                            </button>
+                            <a class="navbar-brand" href="#">Screen</a>
+                        </div>
+
+                        <div class="text_div">当前剩余条数：<span>999999999999</span></div>
+                        <button class="btn btn-primary btn_create_message">创建短信</button>
+                        <button class="btn btn-default btn_download" disabled><a href="#">下载</a></button>
+                        <button class="btn btn-default btn_check" disabled>查看</button>
+                        <div class="datimepicker">
+                            <input type="text" value="" id="from">
+                            至
+                            <input type="text" value="" id="to">
+                        </div>
+                    </nav>
+                    <!----------------导航条结束-------------------->
+
+                    <!----------------发送列表表格开始-------------------->
+                    <div class="common_table">
+                        <table class="table table-bordered">
+                            <thead>
+                                <tr class="table_head">
+                                    <th class="send_time">发送时间</th>
+                                    <th class="group_send">
+                                        <div class="dropdown" data-id="1">
+                                            <button class="btn btn-default dropdown-toggle btn-dropdown" type="button"
+                                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                                                <span>群发</span>
+                                                <span class="caret"></span>
+                                            </button>
+                                            <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                                                <li><a href="#" data-id="1">群发</a></li>
+                                                <li><a href="#" data-id="2">验证</a></li>
+                                            </ul>
+                                        </div>
+                                    </th>
+                                    <th class="inner_content">内容</th>
+                                    <th class="state">状态</th>
+                                    <th class="send_number">发送条数</th>
+                                </tr>
+                            </thead>
+                            <tbody class="table_body">
+                                <tr>
+                                    <td>2016-5-17 11:03</td>
+                                    <td>群发</td>
+                                    <td class="content_td" data-name="具体内容具体内容具体内容具体内容具体内容具体内容具体内容具体内容具体内容具体内容具体内容具体内容
+                                    具体内容具体内容具体内容具体内容">
+                                        <p></p>
+                                        <div class="content_detail">
+                                            <h1>具体内容</h1>
+                                            <p></p>
+                                        </div>
+                                    </td>
+                                    <td>等待</td>
+                                    <td>99999999</td>
+                                </tr>
+                                <tr>
+                                    <td>2016-5-17 11:03</td>
+                                    <td>群发</td>
+                                    <td class="content_td" data-name="具体内容具体内容具体内容">
+                                        <p></p>
+                                        <div class="content_detail">
+                                            <h1>具体内容</h1>
+                                            <p></p>
+                                        </div>
+                                    </td>
+                                    <td>失败</td>
+                                    <td>99999999</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <!--自己的内容结束-->
+
+            </div>
+            <!--主体内容结束-->
+
+        </div>
+        <!--右侧内容主体结束-->
+
+
+    </div>
+    <!--右侧内容结束-->
+</div>
+<!--页面结束-->
+
+
+<!--尾部开始-->
+<div class="container-fluid foot">
+    <h2>Design by Meezao</h2>
+</div>
+<!--尾部结束-->
+
+
+<!--系统管理消息开始-->
+<div class="system_information" style="display: none">
+    <div class="system_information_header">
+        <h3>系统管理消息</h3>
+        <i class="fa fa-times"></i>
+    </div>
+    <div class="system_information_content">
+        系统将于2016年2月24日24:00-2016年2月27日3:00进行系统升级,届时系统停止使用,给您带来的不变请谅解!
+
+        升级内容:
+        PC核销-卡券部分(上线)
+        权限管理(上线)
+        <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+    </div>
+</div>
+<!--系统管理消息结束-->
+
+<!--模态框（创建短信）开始-->
+<div class="modal fade modal_create_message">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                        aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title">创建短信</h4>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <label>编辑发送内容</label>
+                    <textarea class="send_content" id="send_count_textarea"
+                              onkeyup="countText('send_count_textarea','send_count_span')"></textarea>
+                    <span class="prompt_span">注：单字节为70字节（已包含签名，无需编辑）</span>
+                    <div class="number_div">字数：<span id="send_count_span"></span></div>
+                    <p class="error_tips">*短信格式不正确</p>
+                </div>
+                <div class="form-group">
+                    <label>选择发送人员</label>
+                    <input type="radio" name="send" class="leading_input" checked>导入（格式.txt）
+                    <input type="radio" name="send" class="choose_group_input">选择组发送
+                </div>
+                <div class="form-group">
+                    <div class="leading_in_div">
+                        <div class="modal_import_box">
+                            <input type="file" id="modal_input_import" name="modal_input_import">
+                            <a class="btn btn-default modal_import_btn">导入</a>
+                        </div>
+                        <div class="btn-group" role="group" aria-label="...">
+                            <button type="button" class="btn btn-default btn_show_example">示例
+                                <div class="show_example_div">
+                                    <img src="images/show_example.png">
+                                </div>
+                            </button>
+                            <button type="button" class="btn btn-default btn_download"><a href="download_file/example.xlsx" >下载</a></button>
+                        </div>
+                        <p class="modal_import_tips">导入格式为.txt</p>
+                        <p class="modal_import_name">adsfwqegdef</p>
+                        <p class="error_show"></p>
+                    </div>
+                </div>
+                    <div class="form-group modal_filter_box">
+                        <div class="input-group">
+                            <div class="input-group-btn modal_filter_box group_range_choosediv">
+                                <div class="dropdown" data-id="">
+                                    <button type="button" class="btn btn-default btn-dropdown">
+                                        <span>请选择群组</span></button>
+                                    <button type="button" class="btn btn-default dropdown-toggle"
+                                            data-toggle="dropdown" aria-haspopup="true"
+                                            aria-expanded="false">
+                                        <span class="caret"></span>
+                                        <span class="sr-only">Toggle Dropdown</span>
+                                    </button>
+                                    <ul class="dropdown-menu">
+                                        <li><a href="#" data-id="1" data-name="group_ownset">自设群组</a></li>
+                                        <li><a href="#" data-id="2" data-name="group_weixin">微信群组</a></li>
+                                        <li><a href="#" data-id="3" data-name="group_elec">电子会员</a></li>
+                                        <li><a href="#" data-id="4" data-name="group_crm">CRM会员</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="input-group group_range_inputdiv">
+                                <div class="brand_input_div">
+                                    <input type="text" class="input-default brand_input group_range_input"
+                                           name="group_range_input">
+                                    <div class="group_range_hideinputbox hide">
+                                        <input type="hidden" class="group_range_hideinputnew" name="">
+                                    </div>
+                                </div>
+                                <!--<span class="caret"></span>-->
+                            </div>
+                        </div>
+                    </div>
+                    <!--群组名字模糊搜索结束-->
+                <p class="error_tips">*请选择发送人员</p>
+                <div class="form-group">
+                    <label>选择发送方式</label>
+                    <input type="radio" checked disabled><span class="send_right_away">立即发送</span>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <div class="send_number">发送人数：<span>9999</span></div>
+                <button type="button" class="btn btn-primary btn_send">发送</button>
+                <button type="button" class="btn btn-default btn_cancel" data-dismiss="modal">取消</button>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+<!--模态框（创建短信）结束-->
+
+</body>
+
+<!--全局js开始-->
+<script src="../../plugin_folder/jquery_v1.11.3/jquery-1.11.3.min.js"></script>
+<script src=../../plugin_folder/jquery-ui_v1.10.0/jquery-ui-1.10.0.custom.min.js></script>
+<script src="../../plugin_folder/bootstrap_v3.3.5/js/bootstrap.min.js"></script>
+<script src="../../plugin_folder/jquery.validate_v1.13.1/jquery.validate-1.13.1.js"></script>
+<script src="../../plugin_folder/less_v1.7.0/less.min.js"></script>
+<script src="../../common_folder/javascripts/base.js"></script>
+<script src="../../common_folder/javascripts/common_index.js"></script>
+<!--全局js结束-->
+
+
+<script src=../../plugin_folder/jquery-ui_v1.10.0/jquery.ui.datepicker.js></script>
+
+<script src="javascripts/send_list.js"></script>
+
+</html>

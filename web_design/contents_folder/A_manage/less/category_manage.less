@@ -1,0 +1,82 @@
+//引入全局less变量
+@import "../../../common_folder/less/PC_library";
+//后台路径
+//@import "../../MeeZao/B_New/common_folder/less/PC_library";
+
+
+html {
+  height: 100%;
+  body {
+    height: 100%;
+    font-size: 14px;
+    .wrp {
+      .content_mb_subject {
+        text-align: center;
+        .navbar {
+          .btn_add_level1{
+            background-color: #00FF00;
+            color:#fff;
+            float: right;
+            margin: 7px 20px;
+          }
+        }
+        .common_table{
+          .table{
+            .table_head{
+              .category{
+                width: 70%;
+              }
+              .operation{
+                width: 30%;
+              }
+            }
+            .table_body{
+              .menu_level1{
+                td:first-child{
+                  text-align: left;
+                  padding-left: 22%;
+                }
+              }
+              .menu_level2{
+                td:first-child{
+                  text-align: left;
+                  padding-left: 44%;
+                }
+              }
+              td {
+                .btn-group {
+                  .btn_add_level2 {
+                    background-color: rgba(69, 241, 96, 0.84);
+                    color: #fff;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  .modal,.modal_add_menu{
+    .modal-dialog{
+      .modal-content{
+        .modal-body{
+          .form-group{
+            position: relative;
+            .input_num_box{
+              position: absolute;
+              top:33px;
+              right: 8px;
+            }
+          }
+        }
+        .modal-footer{
+          .btn-default{
+            background-color: #111;
+            color: #fff;
+          }
+        }
+      }
+    }
+  }
+}

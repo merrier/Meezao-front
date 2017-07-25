@@ -1,0 +1,91 @@
+/* Less mobile_universal_register */
+/* +--------------------------------------------------------------------------
+// | Author: Merrier <953075999@qq.com> <http://> <Date:2016/7/27 10:27>
+// +--------------------------------------------------------------------------*/
+//引入全局less变量
+@import "../../../common_folder/less/Mobile_library";
+
+html {
+
+  body {
+
+
+    //内容开始
+    .page {
+      //background-image: url("../images/ajax-loader1.gif");
+      background-repeat: no-repeat;
+      background-size: 100% 100%;
+      background-attachment: fixed;
+
+      .main{
+
+        //卡券展示开始
+        .coupons_item{
+          position: relative;
+          .size(100%,5.5rem);
+          margin-bottom:1rem;
+          border:1px solid @color_border;
+          border-radius: 0.4rem;
+
+          .coupons_exclusive_logo{
+            display: none;
+            position: absolute;
+            top: 0.2rem;
+            right: -0.5rem;
+            width: 3rem;
+            height: 1.8rem;
+          }
+
+          .coupons_item_top{
+            .size(100%,4.4rem);
+            color:#ffffff;
+            background-color: #41b61a;
+            .border-top-radius(0.4rem);
+            .border_zigzag(0.9rem,0.5rem,#ffffff);
+
+            .coupons_top_main{
+              .size(100%,100%);
+              padding:0.8rem;
+
+              img.coupons_top_logo{
+                float: left;
+                .size(2.8rem,2.8rem);
+                max-height: 100%;
+                margin-right: 0.5rem;
+                border-radius: 1.4rem;
+              }
+              .coupons_top_title{
+                margin-bottom: 0.3rem;
+                font-size: 0.9rem;
+              }
+              .coupons_top_des{
+                font-size: 0.6rem;
+              }
+            }
+          }
+
+          .coupons_item_bottom{
+            padding: 0 0.8rem;
+            line-height: 1rem;
+            font-size: 0.55rem;
+            color:#707070;
+            background-color: #ffffff;
+            .border-bottom-radius(0.4rem);
+          }
+        }
+        //卡券展示结束
+
+        .coupons_item.coupons_exclusive_item .coupons_exclusive_logo{
+          display: block;
+        }
+
+      }
+
+      .footer{
+
+      }
+    }
+    //内容结束
+  }
+
+}

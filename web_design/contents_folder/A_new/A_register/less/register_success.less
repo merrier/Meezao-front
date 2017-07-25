@@ -1,0 +1,141 @@
+/* Less web_template */
+/* +--------------------------------------------------------------------------
+// | Author: Merrier <953075999@qq.com> <http://> <Date:2016/9/21 22:27>
+// +--------------------------------------------------------------------------*/
+//引入全局less变量
+@import "../../common/less/library";
+//后台路径
+//@import "../../MeeZao/B_New/common_folder/less/PC_library";
+
+html{
+
+  body{
+
+    .wrp{
+
+      .content{
+
+        .register_success{
+          display: flex;
+          justify-content:space-around;
+          align-items: center;
+          flex-direction: column;
+          height:~"calc(100vh - 80px)";
+          width:1000px;
+          margin: 0 auto;
+          color:#000000;
+
+          .reg_success_title{
+            flex-shrink: 0;
+            .size(100%,100px);
+            padding:30px 195px;
+            line-height:30px;
+            text-align: center;
+            background-color: #29cf66;
+            border-radius: 5px;
+
+            .img_icon_check{
+              float: left;
+              height:100%;
+              margin-right: 45px;
+            }
+            h3{
+              color:#ffffff;
+              font-family: "Microsoft Yahei", "微软雅黑";
+              font-size: 18px;
+              margin-bottom: 5px;
+            }
+            p{
+              color:#127135;
+              font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+              font-size: 12px;
+            }
+          }
+
+          .reg_success_main{
+            flex-shrink: 0;
+
+            h4{
+              margin-bottom: 40px;
+              color:#3c3c3c;
+              text-align: center;
+              font-family: "Microsoft Yahei", "微软雅黑";
+              font-size: 16px;
+            }
+            .success_main_process{
+              .clearfix;
+
+              .process_item{
+                height:80px;
+
+                img{
+                  display: inline-block;
+                  height:100%;
+                  padding: 15px 0;
+                  padding-right: 35px;
+                  border-right:2px solid #2bd948;
+                  vertical-align: middle;
+                }
+                p{
+                  display: inline-block;
+                  max-width:325px;
+                  margin-left: 30px;
+                  text-align: left;
+                  vertical-align: middle;
+                  line-height: 30px;
+                  color:#3c3c3c;
+                  font-family: "Microsoft Yahei", "微软雅黑";
+                  font-size: 14px;
+                  word-break: break-all;
+                  word-wrap: break-word;
+                }
+              }
+              .process_top{
+                .clearfix;
+
+                .process_item_first{
+                  float: left;
+                  margin-left: 60px;
+                }
+                .process_item_third{
+                  float:right;
+                }
+              }
+              .process_middle{
+                width:100%;
+                margin-top: -20px;
+              }
+
+              .process_footer{
+
+                .process_item_second{
+                  text-align: center;
+                }
+              }
+            }
+          }
+
+          .reg_process_opr{
+            flex-shrink: 0;
+
+            .btn_contact_service{
+              margin: 0 auto;
+              .size(450px,50px);
+              line-height: 50px;
+              font-size: 18px;
+              border-radius: 5px;
+              cursor: pointer;
+            }
+            p{
+              margin-top: 20px;
+              text-align: center;
+              font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+              font-size: 12px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+

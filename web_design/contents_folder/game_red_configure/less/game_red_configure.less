@@ -1,0 +1,447 @@
+//引入全局less变量
+@import "../../../common_folder/less/PC_library";
+//后台路径
+//@import "../../MeeZao/B_New/common_folder/less/PC_library";
+
+
+html {
+  height: 100%;
+  body {
+    height: 100%;
+    font-size: 14px;
+    .wrp {
+      .content_mb_subject {
+        .navbar-default{
+          .navbar-collapse{
+            padding-left: 0;
+            .navbar-nav{
+              .active{
+                a{
+                  background-color: #01b3fd;
+                  color: #FFF;
+                }
+              }
+            }
+          }
+      }
+        .main_configure_content{
+          margin-top: 20px;
+          border: 1px solid #01b3fd;
+          border-radius: 8px;
+          width: 100%;
+          padding: 20px;
+          .basic_configure_content{
+            width: 100%;
+            .basic_configure_left,.basic_configure_right{
+              min-height: 500px;
+              width: 50%;
+              float: left;
+              padding: 20px;
+              .error_message{
+                color: #FF4136;
+                font-size: 12px;
+                display: none;
+              }
+              .form-group{
+                margin-bottom: 30px;
+                position: relative;
+
+                .input-group{
+                  width: 85%;
+                  position: relative;
+
+
+                  .dropdown{
+
+                    .btn-dropdown{
+                      width:~"calc(100% - 43px)";
+                      margin-right: -4px;
+                      border-left: 0;
+                      border-right: 0;
+                      border-radius: 0;
+                    }
+                    .dropdown-toggle{
+                      width:42px;
+                      .border-left-radius(0);
+                    }
+                    .dropdown-menu {
+                      padding: 0;
+                      min-width: 100%;
+
+                      li {
+                        height: 30px;
+                        line-height: 30px;
+                        text-align: center;
+
+                        :hover {
+                          background-color: @color_blue;
+                        }
+
+                        a {
+                          padding: 0;
+                          line-height: 30px;
+                        }
+                      }
+
+                    }
+                  }
+                  .input-group-addon:first-child{
+                    width: 120px;
+                  }
+                  .form-control{
+                    z-index: 0;
+                  }
+                  .input_word_limit{
+                    padding-right: 55px;
+                  }
+                  .input_num_box{
+                    position: absolute;
+                    top:8px;
+                    right: 10px;
+                    z-index: 2;
+                  }
+                }
+              }
+
+              .prize_input_box{
+                //display: none;
+              }
+            }
+          }
+
+          .operation_confirm{
+            text-align: center;
+            .btn_cancel{
+              background-color: #333;
+              border: 1px solid #333;
+              color: #FFF;
+              margin-left: 50px;
+              &:hover{
+                background-color: #000;
+                border: 1px solid #000;
+              }
+            }
+          }
+        }
+
+        .game_frontpage,.game_main,.game_share{
+          display: none;
+          .basic_configure_left{
+            .form-group{
+              .control-label {
+                width: 150px;
+                padding: 0;
+                font-weight: normal;
+                text-align: left;
+                line-height: 36px;
+              }
+
+              .input_uppic_box{
+                position: relative;
+                width: 140px;
+                input{
+                  position: absolute;
+                  .size(153%,100%);
+                  top:0;
+                  left: -73px;
+                  cursor: pointer;
+                  opacity: 0;
+                }
+                .input_uppic_mask{
+                  position: absolute;
+                  .size(53%,100%);
+                  left: -73px;
+                  top: 0;
+                  z-index: 1;
+                  cursor: default;
+                }
+              }
+
+              .img_prompt {
+                margin-left: 50px;
+                line-height: 36px;
+                color: lightgrey;
+              }
+              .activity_detail{
+                display: block;
+                width: 85%;
+                height: 200px;
+                border: 1px solid #acacac;
+                border-radius: 6px;
+                resize: none;
+              }
+              .message_span{
+                position: absolute;
+                top:214px;
+                right: 16%;
+                z-index: 2;
+              }
+            }
+          }
+          .basic_configure_right{
+            height: 580px;
+            .right_show_box {
+              position: relative;
+              margin-top: 50px;
+              .size(240px, 440px);
+              padding: 0 15px;
+              padding-top: 65px;
+              .center_block;
+              .background_percent100("../images/right_show_bg.png");
+
+              .right_show_content {
+                position: relative;
+                height: 320px;
+                overflow-y: hidden;
+                background-size: 100% 100%;
+                background-image: url(../images/background.jpg);
+                text-align: center;
+                .logo{
+                  width: 110px;
+                  height: 30px;
+                  padding-top: 10px;
+                  display: block;
+                }
+                .header_img{
+                  width: 90%;
+                  margin: auto;
+                  height: 100px;
+                  //margin-top: 10px;
+                }
+                .red_back{
+                  width: 80%;
+                  height: 172px;
+                  margin: auto;
+                  margin-top: 10px;
+                  background-image: url(../images/red_back.png);
+                  background-size: 100% 100%;
+                  text-align: center;
+                  .coin{
+                    margin: auto;
+                    width: 36px;
+                    height: 36px;
+                    margin-top: 30px;
+                  }
+                  .join_activity{
+                    width: 100px;
+                    height: 30px;
+                    line-height: 30px;
+                    border-radius: 10px;
+                    background-color: #FFFF8E;
+                    color: #FF4136;
+                    margin: 30px auto 10px auto;
+                    //margin-top: 30px;
+                  }
+                  .activity_rule{
+                    color: #FFF;
+                    margin-top: 20px;
+                    font-size: 12px;
+                  }
+                }
+                .red_packet {
+                  width: 45%;
+                  margin-left: 5%;
+                  margin-top: 5%;
+                }
+                .help {
+                  width: 45%;
+                  margin-top: 5%;
+                }
+                .rank_list{
+                  width: 90%;
+                  height: 200px;
+                  margin: auto;
+                  margin-top: 10px;
+                  background-image: url(../images/img_c_bg.png);
+                  background-size: 100% 100%;
+                }
+                .activity_discipline{
+                  width: 20px;
+                  height: 70px;
+                  position: absolute;
+                  top:30px;
+                  right: 0;
+                  background-color: #ffff00;
+                  color: #FF4136;
+                  font-size: 12px;
+                  font-weight: bold;
+                  border-top-left-radius: 6px;
+                  border-bottom-left-radius: 6px;
+                }
+              }
+              .mask_black{
+                position: absolute;
+                top:50px;
+                width: 210px;
+                height: 335px;
+                overflow-y: auto;
+                background-color: #000;
+                opacity: 0.8;
+                display: none;
+                z-index: 2;
+              }
+              .activity_rules{
+                position: absolute;
+                top:100px;
+                left: 35px;
+                width: 170px;
+                height: 250px;
+                //overflow-y: auto;
+                background-color: #FFF;
+                display: none;
+                z-index: 3;
+                .header_img{
+                  width: 100%;
+                  height: 85px;
+                  background-size: 100% 100%;
+                  background-color: #FF4136;
+                }
+                .activity_rules_text{
+                  height: 165px;
+                  font-size: 12px;
+                  color: #ffbc00;
+                  text-align: left;
+                  padding: 10px;
+                  overflow-y: auto;
+                  h1,p{
+                    padding-bottom: 5px;
+                  }
+                }
+              }
+            }
+
+          }
+        }
+
+        .game_register{
+          display: none;
+          .basic_configure_left{
+            .form-group{
+              .control-label {
+                width: 150px;
+                padding: 0;
+                font-weight: normal;
+                text-align: left;
+                line-height: 36px;
+              }
+
+              .input_uppic_box{
+                position: relative;
+                width: 140px;
+                input{
+                  position: absolute;
+                  .size(153%,100%);
+                  top:0;
+                  left: -73px;
+                  cursor: pointer;
+                  opacity: 0;
+                }
+                .input_uppic_mask{
+                  position: absolute;
+                  .size(53%,100%);
+                  left: -73px;
+                  top: 0;
+                  z-index: 1;
+                  cursor: default;
+                }
+              }
+
+              .img_prompt {
+                margin-left: 50px;
+                line-height: 36px;
+                color: lightgrey;
+              }
+              .activity_detail{
+                display: block;
+                width: 85%;
+                height: 200px;
+                border: 1px solid #acacac;
+                border-radius: 6px;
+                resize: none;
+              }
+              .message_span{
+                position: absolute;
+                top:214px;
+                right: 16%;
+                z-index: 2;
+              }
+            }
+          }
+          .basic_configure_right{
+            .right_show_box {
+              position: relative;
+              margin-top: 50px;
+              .size(240px, 440px);
+              padding: 0 15px;
+              padding-top: 65px;
+              .center_block;
+              .background_percent100("../images/right_show_bg.png");
+
+              .right_show_content {
+                position: relative;
+                height: 320px;
+                overflow-y: auto;
+                background-size: 100% 100%;
+                background-image: url(../images/background.jpg);
+                text-align: center;
+                .logo {
+                  width: 110px;
+                  height: 30px;
+                  padding-top: 10px;
+                  display: block;
+                }
+                .register_input{
+                  width: 80%;
+                  margin: 10px auto;
+                  text-align: left;
+                  color: lightgrey;
+                  height: 30px;
+                }
+                .reg_gender_radio{
+                  width: 80%;
+                  margin: 10px auto;
+                  color: grey;
+                  height: 30px;
+                  padding: 0;
+                  text-align: center;
+                }
+                .reg_btn_getcode{
+                  float: right;
+                  width: 110px;
+                  height: 24px;
+                  line-height: 24px;
+                  font-size: 12px;
+                  font-weight: normal;
+                  text-align: center;
+                  text-decoration: none;
+                  text-shadow: none;
+                  color: #ff5365;
+                  background-color: #f6f6f6;
+                  border-color: #ddd;
+                  margin: 0 22px 10px 0;
+                  border-radius: 2px;
+                }
+
+                .form_btn_submit{
+                  width: 60px;
+                  //height: 30px;
+                  color: #ff5365;
+                  background-color: #feffa7;
+                  border: solid 1px #feffa7;
+                  border-radius: 2px;
+                  margin: auto;
+                  padding: 10px 0;
+                  font-size: 12px;
+                  text-align: center;
+                  text-indent: 2px;
+                  letter-spacing: 2px;
+                }
+
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

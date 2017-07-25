@@ -1,0 +1,632 @@
+/* CSS login */
+/* +--------------------------------------------------------------------------
+// | Author: Merrier <953075999@qq.com> <http://> <Date:2016/5/11 22:27>
+// +--------------------------------------------------------------------------*/
+/* less PC_library */
+/* +--------------------------------------------------------------------------
+// | Author: Merrier <953075999@qq.com> <http://> <Date:2016/5/11 22:27>
+// +--------------------------------------------------------------------------*/
+@font-face {
+  font-family: 'SourceHanSansCN-Medium';
+  src: url('../fonts/SourceHanSansCN/SourceHanSansCN-Medium.otf'), url('../fonts/SourceHanSansCN/SourceHanSansCN-Medium.TTF');
+}
+@font-face {
+  font-family: 'SourceHanSansCN-Normal';
+  src: url('../fonts/SourceHanSansCN/SourceHanSansCN-Normal.otf');
+}
+.font_yahei {
+  font-family: 'Microsoft Yahei', '微软雅黑';
+}
+.font_arial {
+  font-family: 'Arial';
+}
+.font_sitka {
+  font-family: 'Sitka';
+}
+.font_hei {
+  font-family: '黑体';
+}
+.center_block {
+  margin-left: auto;
+  margin-right: auto;
+}
+.content_box {
+  box-sizing: content-box;
+  -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+}
+.clearfix:after {
+  content: ".";
+  display: block;
+  height: 0;
+  clear: both;
+  visibility: hidden;
+}
+.caret {
+  border-top-width: 8px;
+  border-right-width: 8px;
+  border-left-width: 8px;
+}
+.btn_new_green {
+  display: inline-block;
+  width: 140px;
+  height: 40px;
+  text-align: center;
+  line-height: 40px;
+  font-family: SourceHanSansCN-Medium;
+  font-size: 16px;
+  color: #ffffff;
+  background-color: #2bd948;
+  box-shadow: 3px 3px 10px #99eda7, -3px 3px 10px #99eda7;
+}
+.btn_new_green:link {
+  color: #ffffff;
+  text-decoration: none;
+}
+.btn_new_green:hover {
+  color: #ffffff;
+  box-shadow: 5px 5px 10px #99eda7, -5px 5px 10px #99eda7;
+}
+.btn_new_blue {
+  display: inline-block;
+  width: 140px;
+  height: 40px;
+  text-align: center;
+  line-height: 40px;
+  font-family: SourceHanSansCN-Medium;
+  font-size: 16px;
+  color: #ffffff;
+  background-color: #00b6f6;
+  box-shadow: 3px 3px 10px #9ed0e3, -3px 3px 10px #9ed0e3;
+}
+.btn_new_blue:link {
+  color: #ffffff;
+  text-decoration: none;
+}
+.btn_new_blue:hover {
+  color: #ffffff;
+  box-shadow: 5px 5px 10px #9ed0e3, -5px 5px 10px #9ed0e3;
+}
+.btn_new_orange {
+  display: inline-block;
+  width: 140px;
+  height: 40px;
+  text-align: center;
+  line-height: 40px;
+  font-family: SourceHanSansCN-Medium;
+  font-size: 16px;
+  color: #ffffff;
+  background-color: #ff7800;
+  box-shadow: 3px 3px 10px #ffb97b, -3px 3px 10px #ffb97b;
+}
+.btn_new_orange:link {
+  color: #ffffff;
+  text-decoration: none;
+}
+.btn_new_orange:hover {
+  color: #ffffff;
+  box-shadow: 5px 5px 10px #ffb97b, -5px 5px 10px #ffb97b;
+}
+.btn_new_red {
+  display: inline-block;
+  height: 50px;
+  text-align: center;
+  line-height: 50px;
+  font-family: SourceHanSansCN-Medium;
+  font-size: 16px;
+  color: #ffffff;
+  background-color: #ff3d5a;
+  box-shadow: 3px 3px 10px #ffcad2, -3px 3px 10px #ffcad2;
+}
+.btn_new_red:link {
+  color: #ffffff;
+  text-decoration: none;
+}
+.btn_new_red:hover {
+  color: #ffffff;
+  box-shadow: 5px 5px 10px #ffcad2, -5px 5px 10px #ffcad2;
+}
+.btn_modal_close {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  text-align: center;
+  line-height: 35px;
+  right: 10px;
+  top: 5px;
+  font-size: 40px;
+  color: #00b6f6;
+  cursor: pointer;
+}
+.btn_modal_close:hover {
+  transform: rotateZ(90deg);
+  -webkit-transform: rotateZ(90deg);
+  -o-transform: rotateZ(90deg);
+  -moz-transform: rotateZ(90deg);
+  transform-origin: center center;
+  -webkit-transform-origin: center center;
+  -o-transform-origin: center center;
+  -moz-transform-origin: center center;
+  transition: 0.5s;
+  -webkit-transition: 0.5s;
+  -o-transition: 0.5s;
+}
+.btn_new_disable {
+  background-color: #eff4f7;
+  color: #8cabbd;
+  cursor: not-allowed;
+}
+.btn_new_disable:link {
+  color: #8cabbd;
+}
+.btn_new_disable:hover {
+  color: #8cabbd;
+}
+html body {
+  /*模态框开始*/
+  /*警告框开始*/
+  /*提示信息开始*/
+  /*统计数字提示信息开始*/
+  /*标签提示信息*/
+  /*黑色背景按钮*/
+  /*自动完成删除按钮*/
+}
+html body .navbar-default {
+  width: 100%;
+  height: 50px;
+  font-size: 16px;
+  margin-bottom: 0;
+  padding-right: 15px;
+}
+html body .navbar-default .navbar_subtips {
+  float: left;
+  margin-left: 15px;
+  line-height: 50px;
+  font-size: 15px;
+  color: #666;
+}
+html body .navbar-default .dropdown_filled {
+  margin-top: 8px;
+}
+html body .navbar-default .dropdown-menu {
+  padding: 0;
+  min-width: 100%;
+}
+html body .navbar-default .dropdown-menu li {
+  height: 30px;
+  line-height: 30px;
+  text-align: center;
+}
+html body .navbar-default .dropdown-menu li :hover {
+  background-color: #0096ff;
+}
+html body .navbar-default .dropdown-menu li a {
+  padding: 0;
+  line-height: 30px;
+}
+html body .navbar-default .navbar-brand {
+  font-family: 'Arial';
+  font-weight: bold;
+}
+html body .navbar-default .navbar-nav a {
+  height: 49px;
+}
+html body .navbar-default .btn-primary {
+  float: right;
+  height: 32px;
+  min-width: 70px;
+  padding: 0 10px;
+  margin-top: 9px;
+  line-height: 32px;
+  text-indent: 0;
+  letter-spacing: 0;
+}
+html body .navbar-default .navbar-form {
+  margin-right: 0;
+  padding-right: 0;
+}
+html body .navbar-default .navbar-form .input-group-btn .dropdown .btn-dropdown {
+  border-right: 0;
+  border-bottom-right-radius: 0;
+  border-top-right-radius: 0;
+}
+html body .navbar-default .navbar-form .input-group-btn .dropdown .dropdown-toggle {
+  border-right: 0;
+  border-radius: 0;
+  padding-left: 2px;
+  padding-right: 2px;
+}
+html body .navbar-default .navbar-form .input-group-btn .dropdown .dropdown-menu {
+  min-width: 100%;
+  padding: 0;
+}
+html body .navbar-default .navbar-form .input-group-btn .dropdown .dropdown-menu li {
+  height: 34px;
+  line-height: 34px;
+  text-align: center;
+}
+html body .navbar-default .navbar-form .input-group-btn .dropdown .dropdown-menu li :hover {
+  background-color: #0096ff;
+}
+html body .navbar-default .navbar-form .input-group-btn .dropdown .dropdown-menu li a {
+  padding: 0;
+  line-height: 34px;
+}
+html body .navbar-default .navbar-form .form-control {
+  width: 252px;
+  height: 34px;
+}
+html body .navbar-default .navbar-form .btn-search {
+  width: 70px;
+  height: 34px;
+}
+html body .common_table {
+  margin-top: 10px;
+  min-height: 300px;
+  text-align: center;
+}
+html body .common_table thead {
+  height: 49px;
+  font-size: 16px;
+  font-weight: bold;
+}
+html body .common_table thead th {
+  font-weight: bold;
+  text-align: center;
+  line-height: 49px;
+  margin: 0;
+  padding: 0;
+  border-bottom: none;
+}
+html body .common_table thead th .btn-default {
+  width: 100%;
+  height: 51px;
+  border: none;
+  padding: 0;
+  font-weight: bold;
+}
+html body .common_table thead th .btn-default span {
+  font-size: 16px;
+}
+html body .common_table thead th .btn-dropdown .caret {
+  margin-left: 4px;
+  border-top-width: 8px;
+  border-right-width: 8px;
+  border-left-width: 8px;
+}
+html body .common_table thead th .dropdown-menu {
+  min-width: 100%;
+  top: 100%;
+  padding: 0;
+}
+html body .common_table thead th .dropdown-menu a {
+  width: 100%;
+  height: 34px;
+  padding: 0;
+  line-height: 34px;
+  text-align: center;
+}
+html body .common_table thead th .dropdown-menu a:hover {
+  background-color: #0096ff;
+}
+html body .common_table tbody {
+  font-size: 12px;
+}
+html body .common_table tbody tr {
+  height: 49px;
+}
+html body .common_table tbody tr td {
+  vertical-align: middle;
+}
+html body .common_table tbody tr td .btn-group .btn {
+  text-indent: 0;
+  letter-spacing: 0;
+  font-size: 12px;
+}
+html body .common_table tbody tr td .btn_single {
+  width: 80%;
+}
+html body .dropdown-menu {
+  min-width: 100%;
+  padding: 0;
+}
+html body .dropdown-menu li {
+  height: 34px;
+  line-height: 34px;
+  text-align: center;
+}
+html body .dropdown-menu li :hover {
+  background-color: #0096ff;
+}
+html body .dropdown-menu li a {
+  padding: 0;
+  line-height: 34px;
+}
+html body .mb_subject_box {
+  width: 100%;
+  border-radius: 5px;
+  border: 1px solid #cccccc;
+}
+html body .content_modal {
+  color: #1c1c1c;
+}
+html body .modal-dialog {
+  width: 500px;
+  margin-top: 150px;
+  color: #1c1c1c;
+}
+html body .modal-dialog .modal-header .modal-title {
+  font-weight: bold;
+  font-size: 18px;
+}
+html body .modal-dialog .modal-body label {
+  font-weight: normal;
+}
+html body .modal-dialog .modal-body .checkbox label {
+  display: block;
+  margin-bottom: 5px;
+  min-width: 80px;
+}
+html body .modal-dialog .modal-body .checkbox label input {
+  width: 14px;
+  height: 14px;
+}
+html body .btn-primary {
+  min-width: 100px;
+  background-color: #0096ff;
+}
+html body .modal_reg_box {
+  position: relative;
+  width: 100%;
+  height: 30px;
+  margin-top: 15px;
+}
+html body .modal_reg_btn {
+  display: block;
+  float: right;
+  width: 100px;
+  height: 30px;
+  text-align: center;
+  line-height: 30px;
+  border: 1px solid #adadad;
+  border-radius: 5px;
+  color: #1c1c1c;
+  background-color: #ffffff;
+  box-sizing: content-box;
+  -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+}
+html body .modal_reg_btn:hover {
+  color: #1c1c1c;
+}
+html body .modal_reg_btn:focus {
+  color: #1c1c1c;
+}
+html body .modal_tips {
+  display: none;
+  font-size: 12px;
+  color: #ff0000;
+  line-height: 20px;
+}
+html body .reg_btn_mask {
+  display: none;
+  position: absolute;
+  width: 103px;
+  height: 33px;
+  right: -1px;
+  bottom: -3px;
+}
+html body .reg_btn_gray {
+  background-color: #afafaf;
+  color: #EEE;
+}
+html body .modal_code_random {
+  display: none;
+}
+html body .alert {
+  position: absolute;
+  height: 50px;
+  margin-top: 15px;
+  margin-bottom: 0;
+  z-index: 997;
+}
+html body .alert-example {
+  display: none;
+}
+html body .error_tips {
+  color: #ff0000;
+  font-size: 12px;
+  margin-bottom: 5px;
+  text-align: left;
+}
+html body .input_num_box {
+  position: absolute;
+  color: #1c1c1c;
+}
+html body .label_tips {
+  font-size: inherit;
+  color: #dcdcdc;
+}
+html body .btn-black {
+  background-color: #1c1c1c;
+  color: #ffffff;
+}
+html body .btn-black:hover {
+  background-color: #000;
+  color: #eee;
+}
+html body .btn-black:focus {
+  background-color: #000;
+  color: #eee;
+}
+html body .singleauto_choose_delete {
+  margin-left: 5px;
+  cursor: pointer;
+}
+@media (min-width: 768px) {
+  html body .content_mb_subject .navbar-default .navbar-form {
+    margin-right: 0;
+  }
+}
+html {
+  height: 100%;
+}
+html body.login {
+  height: 100%;
+  /*系统升级蒙版开始*/
+  /*系统升级蒙版结束*/
+}
+html body.login .update_bg {
+  display: block;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background-color: #000;
+  opacity: 0.7;
+  color: #ffffff;
+  z-index: 101;
+}
+html body.login .update_bg .update_box {
+  position: fixed;
+  width: 660px;
+  height: 160px;
+  top: 50%;
+  left: 50%;
+  margin-left: -330px;
+  margin-top: -80px;
+  text-align: center;
+}
+html body.login .update_bg .update_box h1 {
+  font-size: 40px;
+  font-weight: bold;
+  margin-bottom: 35px;
+  letter-spacing: 3px;
+}
+html body.login .update_bg .update_box .progress {
+  box-shadow: 0 0 10px #ffffff;
+  margin-bottom: 20px;
+}
+html body.login .update_bg .update_box .progress .progress-bar-danger {
+  background-color: #ff0000;
+  box-shadow: 0 0 10px #ffffff;
+}
+html body.login .update_bg .update_box p {
+  font-size: 20px;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+html body.login .wrp {
+  height: 100%;
+  min-width: 1600px;
+  padding: 0;
+}
+html body.login .wrp .login_left_part {
+  width: 80%;
+  height: 100%;
+  background-image: url("../images/login_left_bg.jpg");
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+  background-position: center center;
+  min-height: 900px;
+  float: left;
+}
+html body.login .wrp .login_right_part {
+  position: relative;
+  width: 20%;
+  height: 100%;
+  padding: 0 10px;
+  min-height: 900px;
+  background-color: #1c1c1c;
+  float: left;
+}
+html body.login .wrp .login_right_part .right_part_box {
+  width: 100%;
+  height: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+html body.login .wrp .login_right_part .right_part_box .right_part_title {
+  color: #ffffff;
+  font-family: 'Sitka';
+  font-size: 36px;
+  width: 100%;
+  text-align: center;
+  padding-top: 134px;
+  margin-bottom: 210px;
+}
+html body.login .wrp .login_right_part .right_part_box .input-group {
+  width: 100%;
+  height: 45px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 30px;
+  border-radius: 10px;
+}
+html body.login .wrp .login_right_part .right_part_box .input-group .input-group-addon {
+  background-color: #ffffff;
+}
+html body.login .wrp .login_right_part .right_part_box .input-group .form-control {
+  height: 45px;
+}
+html body.login .wrp .login_right_part .right_part_box .login_retrieve_password {
+  float: right;
+  font-size: 12px;
+  margin-bottom: 20px;
+  color: #ffffff;
+  text-decoration: underline;
+  cursor: pointer;
+}
+html body.login .wrp .login_right_part .right_part_box .login_retrieve_password:hover {
+  color: #ffffff;
+  text-decoration: underline;
+}
+html body.login .wrp .login_right_part .right_part_box .btn-info {
+  display: block;
+  width: 100%;
+  height: 40px;
+  margin-left: auto;
+  margin-right: auto;
+  text-indent: 10px;
+  letter-spacing: 10px;
+  padding: 0;
+  font-size: 18px;
+  line-height: 40px;
+  background-color: #0096ff;
+}
+html body.login .wrp .login_right_part .right_part_box .login_tips {
+  width: 100%;
+  height: auto;
+  margin-left: auto;
+  margin-right: auto;
+}
+html body.login .wrp .login_right_part .right_part_box .right_part_bottom {
+  color: #ffffff;
+  font-family: 'Arial';
+  position: absolute;
+  left: 0;
+  bottom: 30px;
+  font-size: 14px;
+  text-align: center;
+  width: 100%;
+  letter-spacing: 1px;
+}
+@media (max-width: 1600px) {
+  html .wrp {
+    height: 100%;
+    min-width: 1200px !important;
+  }
+  html .wrp .login_left_part {
+    min-height: 655px !important;
+  }
+  html .wrp .login_right_part {
+    min-height: 655px !important;
+  }
+  html .wrp .login_right_part .right_part_title {
+    padding-top: 95px !important;
+    margin-bottom: 135px !important;
+  }
+  html .wrp .login_right_part .right_part_bottom {
+    margin-top: 146px !important;
+  }
+}

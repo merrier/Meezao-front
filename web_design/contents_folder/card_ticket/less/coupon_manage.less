@@ -1,0 +1,265 @@
+//引入全局less变量
+@import "../../../common_folder/less/PC_library";
+//后台路径
+//@import "../../MeeZao/B_New/common_folder/less/PC_library";
+
+
+html {
+  height: 100%;
+  body {
+    height: 100%;
+    font-size: 14px;
+    .wrp {
+      .content_mb_subject {
+        .navbar-right{
+          .btn-dropdown{
+            width: 82px;
+          }
+        }
+        .common_table{
+          .table{
+            .table_head{
+              .kind{
+                width: 9.6%;
+              }
+              .name{
+                width: 11.3%;
+              }
+              .provide_way{
+                width: 11.3%;
+              }
+              .period_of_validity{
+                width: 18.1%;
+              }
+              .edit{
+                width: 11%;
+              }
+              .state{
+                width: 11%;
+              }
+              .stock{
+                width: 11.9%;
+              }
+              .operation{
+                width: 15.8%;
+              }
+            }
+            .table_body{
+              tr{
+                td{
+                  .btn-card-quantity{
+                    .size(75px,25px);
+                    line-height: 13px;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .modal_provide_way_choose{
+      .modal-dialog{
+        .size(350px,210px);
+        .modal-body{
+          padding: 20px;
+        }
+
+      }
+    }
+    .modal-footer{
+      .btn_cancel{
+        background-color: @color_black;
+        color: @color_white;
+      }
+    }
+    .modal_progress{
+      .progress{
+        width: 60%;
+        margin:auto;
+        margin-top: 320px;
+      }
+    }
+
+    .modal_rule_manage_orient,.modal_rule_manage_group{
+      .modal-dialog{
+        margin-top: 20px;
+        width: 960px;
+        .modal-content{
+          .modal-body{
+            padding: 20px 230px;
+            overflow: auto;
+            height: 500px;
+            .form-group{
+              .provide_way_input{
+                width: 18%;
+                display: block;
+                text-align: center;
+              }
+              .input-group{
+                .brand_input_div{
+                  width: 457px;
+                  height: 36px;
+                  border: 1px solid @color_border;
+                  .brand_input{
+                    width: 100%;
+                    height: 34px;
+                    border: none;
+                  }
+                  .brand_span{
+                    width: 457px;
+                    height: 30px;
+                    line-height: 20px;
+                    border: 1px solid #cccccc;
+                    position: relative;
+                    padding: 5px 62px;
+                    border-radius: 4px;
+                    text-align: center;
+                    background-color: @color_white;
+                    display: block;
+                    .float_right_single,.float_right_multiple{
+                      position: absolute;
+                      float: right;
+                      right: 20px;
+                      margin-top: 4px;
+                    }
+                  }
+                }
+              }
+              .input-group-btn{
+                .dropdown{
+                  .btn-dropdown{
+                    width: 88px;
+                    float: left;
+                  }
+                  .dropdown-toggle{
+                    padding: 6px 10px;
+                    float: left;
+                  }
+                  ul{
+                    min-width: 125px;
+                    top:34px;
+                  }
+                  .brand_input_div{
+                    width: 368px;
+                    margin-left: 126px;
+                    .brand_input{
+                      width: 100%;
+                      height: 34px;
+                    }
+                    .brand_span{
+                      width: 100%;
+                      height: 30px;
+                      font-size: 12px;
+                      line-height: 20px;
+                      border: 1px solid #cccccc;
+                      position: relative;
+                      padding: 5px 20px;
+                      border-radius: 4px;
+                      text-align: left;
+                      background-color: @color_blue;
+                      display: block;
+                      .float_right{
+                        position: absolute;
+                        float: right;
+                        right: 20px;
+                        margin-top: 4px;
+                      }
+                    }
+                  }
+                }
+
+
+              }
+            }
+            .error_show{
+              color: red;
+              margin-bottom: 10px;
+            }
+          }
+        }
+      }
+      .brand_span{
+        width: 100%;
+        height: 30px;
+        line-height: 20px;
+        border: 1px solid #cccccc;
+        position: relative;
+        padding: 5px 62px;
+        border-radius: 4px;
+        text-align: center;
+        background-color: @color_white;
+        display: block;
+        .float_right{
+          position: absolute;
+          float: right;
+          right: 20px;
+          margin-top: 4px;
+        }
+      }
+    }
+    .modal_create_message{
+      .modal-dialog{
+        width: 720px;
+        .modal-content{
+          .modal-body{
+            padding: 30px 50px;
+            height: 450px;
+            .form-group{
+              margin-top: 16px;
+              position: relative;
+              label{
+                display: block;
+              }
+              .send_target{
+                width: 300px;
+                text-align: center;
+              }
+              .send_right_away{
+                margin-left: 6px;
+              }
+              .send_content{
+                width: 600px;
+                height: 200px;
+                resize: none;
+              }
+              .prompt_span{
+                color: red;
+                font-size: 12px;
+                position: absolute;
+                top:200px;
+                left: 20px;
+              }
+              .number_div{
+                font-size: 12px;
+                position: absolute;
+                top:200px;
+                right: 20px;
+              }
+              .error_tips{
+                color: red;
+                font-size: 14px;
+                display: none;
+              }
+            }
+          }
+          .modal-footer{
+            position: relative;
+            .send_number{
+              width: 150px;
+              height: 32px;
+              line-height: 32px;
+              font-size: 14px;
+              border: 1px solid #ccc;
+              border-radius: 4px;
+              text-align: center;
+              position: absolute;
+              right: 220px;
+            }
+          }
+        }
+      }
+    }
+  }
+}

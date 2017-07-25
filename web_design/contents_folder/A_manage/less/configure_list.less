@@ -1,0 +1,216 @@
+//引入全局less变量
+@import "../../../common_folder/less/PC_library";
+//后台路径
+//@import "../../MeeZao/B_New/common_folder/less/PC_library";
+
+
+html {
+  height: 100%;
+  body {
+    height: 100%;
+    font-size: 14px;
+    .wrp {
+      .content_mb_subject {
+        .navbar {
+          .navbar-form {
+            .btn_search {
+              width: 70px;
+            }
+          }
+          .btn_check_collection{
+            margin-top: 8px;
+          }
+        }
+        .common_table{
+          .table{
+            .table_head{
+              .publish_time{
+                width: 20%;
+              }
+              .kind{
+                width: 16%;
+              }
+              .name{
+                width: 22%;
+              }
+              .link{
+                width: 24%;
+              }
+              .operation{
+                width: 18%;
+              }
+            }
+            .table_body{
+              .btn_un_collected{
+                background-color: #00b6f6;
+              }
+              .btn_collect_already{
+                background-color: lightgrey;
+              }
+            }
+          }
+        }
+      }
+      .custom_made_game_configure,.function_configure{
+        min-height: 800px;
+        text-align: center;
+        .configure_content{
+          margin:auto;
+          width: 40%;
+          .form-group{
+            position: relative;
+            text-align: left;
+            label{
+              display: block;
+              font-weight: normal;
+            }
+            .form-control{
+              width: 400px;
+            }
+            .input_num_box,.unit_span{
+              position: absolute;
+              top:32px;
+              left: 360px;
+            }
+            .game_price_input{
+              width: 340px;
+            }
+            .dropdown{
+              width: 400px;
+              .dropdown-toggle{
+                width: 400px;
+                height: 36px;
+                position: relative;
+                .caret{
+                  position: absolute;
+                  right: 20px;
+                  top:15px;
+                }
+              }
+              .dropdown-menu{
+                width: 100%;
+                text-align: center;
+                li{
+                  :hover{
+                    background-color: #0096ff;
+                  }
+                }
+              }
+            }
+            .checkbox_input{
+              margin-top: 15px;
+              margin-right: 10px;
+            }
+            #btn1,#btn2,#btn{
+              display: block;
+              float: left;
+              margin-top: 20px;
+            }
+            .img_name {
+              font-size: 14px;
+              color: #111;
+              text-align: center;
+              width: 200px;
+              height: 170px;
+              margin-left: 100px;
+              margin-top: 10px;
+              .upload_img {
+                width: 150px;
+                height: 150px;
+                border-radius: 4px;
+                margin-left: 20px;
+                background-color: #fff;
+              }
+              p {
+                margin: auto;
+              }
+            }
+
+          }
+          .form_group_ID{
+            position: relative;
+            margin-bottom: 36px;
+            .btn_check{
+              position: absolute;
+              top:70px;
+              right: 100px;
+              margin-bottom: 20px;
+            }
+            .btn_confirm{
+              position: absolute;
+              top:70px;
+              right: 30px;
+            }
+            .check_result{
+              font-size: 12px;
+              color: red;
+            }
+          }
+          .form_group_introduction{
+            label{
+              display: inline-block;
+            }
+            .btn_upload{
+              display: inline-block;
+            }
+            .edit_div{
+              width: 100%;
+              height: 260px;
+              margin-top: 20px;
+              border: 1px solid #ccc;
+              border-radius: 6px;
+            }
+          }
+          .form-submit{
+            text-align: center;
+            margin-top: 50px;
+            .btn_submit{
+              margin-right: 10px;
+            }
+          }
+        }
+      }
+    }
+    .modal{
+      .modal-dialog{
+        .modal-content{
+          .modal-footer{
+            .btn-default{
+              background-color: #111;
+              color: #fff;
+            }
+          }
+        }
+      }
+    }
+    .modal_preview{
+      .modal-dialog{
+        .modal-content{
+          .modal-body{
+            height: 300px;
+            overflow: auto;
+          }
+          .modal-footer{
+            .btn-default{
+              background-color: #111;
+              color: #fff;
+            }
+          }
+        }
+      }
+    }
+    .modal_group{
+      .modal-dialog{
+        .modal-content{
+          .modal-body{
+            margin-left: 30px;
+            input{
+              margin-right: 10px;
+              margin-bottom: 10px;
+            }
+          }
+        }
+      }
+    }
+  }
+}

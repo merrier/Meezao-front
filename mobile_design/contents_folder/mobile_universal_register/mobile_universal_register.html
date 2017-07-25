@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!--360 浏览器在读取到这个标签后，立即切换对应的极速核-->
+    <meta name="renderer" content="webkit">
+    <!--优先使用 IE 最新版本和 Chrome-->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <!--百度禁止转码-->
+    <meta http-equiv="Cache-Control" content="no-siteapp"/>
+    <!--缩放比例为1-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0,user-scalable=no">
+
+    <title>完整电子会员身份注册弹出页面</title>
+
+    <!--全局css开始-->
+    <link href="../../plugin_folder/jquery.mobile_v1.4.5/jquery.mobile-1.4.5.min.css" rel="stylesheet">
+    <link href="../../plugin_folder/font-awesome/font-awesome.min.css" rel="stylesheet">
+    <link href="../../common_folder/stylesheets/common_base.css" rel="stylesheet">
+    <link href="../../common_folder/less/Mobile_index.less" rel="stylesheet/less">
+    <!--全局css结束-->
+
+
+    <link href="less/mobile_universal_register.less" rel="stylesheet/less">
+
+
+</head>
+<body>
+
+<!--展示页面开始-->
+<div class="main">
+
+    <form class="universal_register_form" id="elec_register_form" action="" method="post">
+
+        <!--<p class="form_title">如果您微信昵称/性别是非真实信息,请注册电子会员成功后进行修改,以免造成身份认证错误!</p>-->
+
+        <label for="elec_reg_name" class="ui-hidden-accessible">姓名:</label>
+        <input type="text" name="elec_reg_name" id="elec_reg_name" placeholder="请填写真实姓名">
+
+        <!--<p class="form_always_tips">*请输入真实姓名,以免造成身份认证出现错误,影响后续对您的服务!</p>-->
+
+        <fieldset class="form_gender_radio" data-role="controlgroup">
+            <label for="gender_radio_male">男性</label>
+            <input type="radio" name="gender_radio" id="gender_radio_male" value="male" data-inline="true">
+            <label for="gender_radio_female">女性</label>
+            <input type="radio" name="gender_radio" id="gender_radio_female" value="female" data-inline="true">
+            <label for="gender_radio_unknown">未知</label>
+            <input type="radio" name="gender_radio" id="gender_radio_unknown" value="unknown" data-inline="true">
+        </fieldset>
+
+        <label for="elec_reg_phone" class="ui-hidden-accessible">手机号码:</label>
+        <input type="text" name="elec_reg_phone" id="elec_reg_phone" placeholder="请输入手机号码">
+
+        <div class="reg_box">
+            <a href="javascript:void(0);" data-role="button" class="reg_btn ui-shadow btn_shadow_gray" id="reg_btn_getcode" onclick="getCode(this)">获取验证码</a>
+
+            <div class="reg_btn_mask"></div>
+            <p class="error_tips reg_tips reg_tips_phone"></p>
+        </div>
+
+        <label for="elec_reg_code" class="ui-hidden-accessible">验证码:</label>
+        <input type="number" name="elec_reg_code" id="elec_reg_code" placeholder="请输入获得的验证码">
+
+        <button class="form_btn_submit btn_shadow_gray" type="submit">提交</button>
+
+    </form>
+
+    <p class="always_meezao_logo">Design by Meezao</p>
+
+</div>
+<!--展示页面结束-->
+
+</body>
+
+
+<!--全局js开始-->
+<script src="../../plugin_folder/jquery_v1.11.3/jquery-1.11.3.min.js"></script>
+<script src="../../plugin_folder/jquery.mobile_v1.4.5/jquery.mobile-1.4.5.min.js"></script>
+<script src="../../plugin_folder/less_v1.7.0/less.min.js"></script>
+<script src="../../common_folder/javascripts/base.js"></script>
+<script src="../../common_folder/javascripts/common_index.js"></script>
+<!--全局js结束-->
+
+
+
+</html>

@@ -1,0 +1,101 @@
+//引入全局less变量
+@import "../../../common_folder/less/PC_library";
+//后台路径
+//@import "../../MeeZao/B_New/common_folder/less/PC_library";
+
+html {
+
+  body {
+
+    .modal_preview{
+      .modal-dialog{
+        margin-top: 60px;
+        .coupon_preview{
+          margin: auto;
+          width: 320px;
+          height: 600px;
+          padding-left: 22px;
+          padding-right: 18px;
+          padding-top: 78px;
+          background: url("../images/phone_preview.png") no-repeat;
+          background-size: 100% 100%;
+
+
+          .coupon_preview_content{
+            width: 100%;
+            height: 450px;
+            overflow-y: auto;
+            overflow-x: hidden;
+            //卡券展示开始
+            .coupons_item{
+              position: relative;
+              .size(100%,120px);
+              margin:24px 0;
+              border:1px solid @color_border;
+              border-radius: 0.4rem;
+
+              .coupons_exclusive_logo{
+                display: none;
+                position: absolute;
+                top: 0.2rem;
+                right: -0.5rem;
+                width: 3rem;
+                height: 1.8rem;
+              }
+
+              .coupons_item_top{
+                .size(100%,75%);
+                color:#ffffff;
+                background-color: #41b61a;
+                .border-top-radius(6px);
+                background-image: -webkit-gradient(linear, 50% 0, 0 100%, from(transparent), color-stop(0.5, transparent), color-stop(0.5, #ffffff), to(#ffffff)), -webkit-gradient(linear, 50% 0, 100% 100%, from(transparent), color-stop(0.5, transparent), color-stop(0.5, #ffffff), to(#ffffff));
+                background-image: -moz-linear-gradient(50% 0 -45deg, transparent, transparent 50%, #ffffff 50%, #ffffff), -moz-linea;
+                background-size: 0.9rem 0.5rem;
+                background-repeat: repeat-x;
+                background-position: 0 100%;
+                .coupons_top_main{
+                  .size(100%,100%);
+                  padding: 20px 2px;
+
+                  img.coupons_top_logo{
+                    float: left;
+                    .size(40px,40px);
+                    max-height: 100%;
+                    margin-right: 6px;
+                    border-radius: 20px;
+                    //margin-top: 6px;
+                  }
+                  .coupon_message{
+                    float: left;
+                    width: 210px;
+                    .coupons_top_title{
+                      margin-bottom: 10px;
+                      font-size: 14px;
+                    }
+                    .coupons_top_des{
+                      font-size: 4px;
+                    }
+                  }
+
+                }
+              }
+
+              .coupons_item_bottom{
+                padding: 0 12px;
+                line-height: 28px;
+                font-size: 12px;
+                color:#707070;
+                background-color: #ffffff;
+                .border-bottom-radius(6px);
+              }
+            }
+            //卡券展示结束
+          }
+
+
+        }
+      }
+    }
+
+  }
+}

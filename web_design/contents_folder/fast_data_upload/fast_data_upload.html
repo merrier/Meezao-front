@@ -1,0 +1,612 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <!--360 浏览器在读取到这个标签后，立即切换对应的极速核-->
+    <meta name="renderer" content="webkit">
+    <!--优先使用 IE 最新版本和 Chrome-->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <!--百度禁止转码-->
+    <meta http-equiv="Cache-Control" content="no-siteapp"/>
+    <title>快速上传</title>
+
+    <!--全局css开始-->
+    <link href="../../plugin_folder/bootstrap_v3.3.5/css/bootstrap.min.css" rel="stylesheet"/>
+    <link href="../../plugin_folder/font-awesome/font-awesome.min.css" rel="stylesheet"/>
+    <link href="../../common_folder/stylesheets/common_base.css" rel="stylesheet"/>
+    <link href="../../common_folder/less/PC_index.less" rel="stylesheet/less"/>
+    <!--全局css结束-->
+
+    <link href="less/fast_data_upload.less" rel="stylesheet/less"/>
+
+</head>
+
+<body>
+
+
+<!--标题栏开始-->
+<div class="row header">
+    <h2>MEEZAO</h2>
+
+    <div class="toolbar">
+        <a href="" class="fa fa-envelope-o toolbar_information_center"><sup class="information_num"><i
+                class="fa fa-circle"></i></sup></a><!--
+         -->
+        <div class="toolbar_item">
+            <a href="#none" class="toolbar_person_information">
+                <i class="fa fa-circle"></i>
+                <span class="toolbar_user_name">萨达sdfsadf</span>
+            </a>
+            <ul class="toolbar_drop_menu">
+                <li class="toolopr_modify_password" data-toggle="modal" data-target=".modal_modify_password">修改密码</li>
+                <li class="toolopr_phone_solution" data-toggle="modal" data-target=".modal_phone_solution">手机号解绑</li>
+                <li class="toolopr_log_out">退出登录</li>
+            </ul>
+        </div>
+    </div>
+</div>
+<!--标题栏结束-->
+
+<!--页面开始-->
+<div class="container-fluid wrp">
+
+    <!--导航栏开始-->
+    <div class="nav_bar">
+        <ul class="nav_bar_level1">
+            <li><a href="#none"><span>全数据报表系统</span></a>
+                <ul class="nav_bar_level2">
+                    <li><a href="index.php/MeeZao/Plat/Fun/Form"><span>微官基础报表</span></a></li>
+                    <li><a href="#none"><span>官网基础报表</span></a></li>
+                    <li><a href="#none"><span>CRM报表</span></a></li>
+                    <li><a href="#none"><span>Meezao免费报表</span></a></li>
+                    <li><a href="#none"><span>Meezao付费报表</span></a></li>
+                </ul>
+            </li>
+            <li><a href="#none"><span>微信管理系统</span></a>
+                <ul class="nav_bar_level2">
+                    <li><a href="#none"><span>文案系统</span></a>
+                        <ul class="nav_bar_level3">
+                            <li><a href="#none"><i class="fa fa-circle"></i><span>创建文案</span></a></li>
+                            <li><a href="#none"><i class="fa fa-circle"></i><span>组合文案</span></a></li>
+                            <li><a href="#none"><i class="fa fa-circle"></i><span>文案列表</span></a></li>
+                            <li><a href="#none"><i class="fa fa-circle"></i><span>Meezao文案系统</span></a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#none"><span>微信平台管理系统</span></a>
+                        <ul class="nav_bar_level3">
+                            <li><a href="#none"><i class="fa fa-circle"></i><span>自定义菜单</span></a></li>
+                            <li><a href="#none"><i class="fa fa-circle"></i><span>自动回复管理</span></a></li>
+                            <li><a href="#none"><i class="fa fa-circle"></i><span>消息管理</span></a></li>
+                            <li><a href="#none"><i class="fa fa-circle"></i><span>素材管理</span></a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+            <li><a href="#none"><span>官网管理系统</span></a>
+                <ul class="nav_bar_level2">
+                    <li><a href="#none"><span>微信基础报表</span></a></li>
+                    <li><a href="#none"><span>微官网基础报表</span></a></li>
+                    <li><a href="#none"><span>会员分析报表</span></a>
+                        <ul class="nav_bar_level3">
+                            <li><a href="#none"><i class="fa fa-circle"></i><span>Meezao免费报表</span></a></li>
+                            <li><a href="#none"><i class="fa fa-circle"></i><span>Meezao付费报表</span></a></li>
+                            <li><a href="#none"><i class="fa fa-circle"></i><span>Meezao定制报表</span></a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+            <li><a href="#none"><span>M-CRM系统</span></a>
+                <ul class="nav_bar_level2">
+                    <li><a href="#none"><span>会员分组</span></a></li>
+                    <li><a href="#none"><span>分组管理</span></a></li>
+                    <li><a href="#none"><span>分组促销</span></a></li>
+                    <li><a href="#none"><span>会员分析图表</span></a></li>
+                </ul>
+            </li>
+            <li><a href="#none"><span>卡券管理系统</span></a>
+                <ul class="nav_bar_level2">
+                    <li><a href="#none"><span>卡券列表</span></a></li>
+                </ul>
+            </li>
+            <li><a href="#none"><span>核销系统</span></a>
+                <ul class="nav_bar_level2">
+                    <li><a href="#none"><span>网页核销</span></a></li>
+                    <li><a href="#none"><span>手机核销</span></a></li>
+                    <li><a href="#none"><span>核销记录</span></a></li>
+                </ul>
+            </li>
+            <li><a href="#none"><span>平台管理系统</span></a>
+                <ul class="nav_bar_level2">
+                    <li><a href="#none"><span>权限管理</span></a></li>
+                    <li><a href="#none"><span>品牌管理</span></a></li>
+                    <li><a href="#none"><span>系统消息</span></a></li>
+                    <li><a href="#none"><span>服务帮助</span></a></li>
+                </ul>
+            </li>
+        </ul>
+
+    </div>
+    <!--导航栏结束-->
+
+    <!--右侧内容开始-->
+    <div class="content clearfix">
+
+
+        <!--隐藏警告框标签开始-->
+        <div class="alert_hide_tag hide">
+            <div class="alert_whether_show"></div>
+            <div class="alert_tag_type"></div>
+            <div class="alert_tag_delay"></div>
+            <div class="alert_tag_content"></div>
+        </div>
+        <!--隐藏警告框标签结束-->
+
+
+        <!--右侧内容主体开始-->
+        <div class="content_main">
+            <div class="content_route"><a href="#none">首页</a>
+                <span class="content_route_pathname">>CRM系统>消费者管理</span></div>
+
+            <!--主体内容开始-->
+            <div class="content_mb">
+                <h2 class="content_mb_title">web端模板</h2>
+
+                <!--警告框-范例开始-->
+                <div class="alert alert-example" role="alert">
+                    <button type="button" class="close" aria-label="Close"><span aria-hidden="true">&times;</span>
+                    </button>
+                    <strong class="alert_content"></strong>
+                </div>
+                <!--警告框-范例结束-->
+
+
+                <!--自己的内容开始-->
+                <div class="content_mb_subject">
+
+                    <!--你可以在这里写你自己的内容了-->
+
+                    <div class="fast_main">
+
+                    <!--上传会员消费数据开始-->
+                        <div class="fast_main_box fast_main_consume" data-id="consume">
+
+                            <!--左侧上传文件开始-->
+                            <div class="fast_main_left">
+                                <div class="fast_left_upload fast_left_top">
+                                    <i class="fa fa-cloud-upload"></i>
+
+                                    <h3>上载会员消费数据</h3>
+
+                                    <p class="font_tips">文件大小不大于100M,文件格式为csv,xlsx</p>
+                                    <a class="btn_upload_trigger" href="javascript:void(0);">上载</a>
+                                </div>
+
+                                <div class="fast_left_upload fast_left_bottom">
+                                    <h5>会员消费数据已上传</h5>
+                                    <a class="left_bottom_btn btn_upload_next" href="javascript:void(0);">下一步<i
+                                            class="fa fa-chevron-right"></i></a>
+                                </div>
+
+                            </div>
+                            <!--左侧上传文件结束-->
+
+                            <!--右侧tips开始-->
+                            <div class="fast_main_right">
+                                <div class="fast_right_top">
+                                    <h4>什么是会员消费数据？</h4>
+
+                                    <p class="font_tips">会员消费数据是指从POS机或您的ERP系统里收集的会员消费记录，
+                                        您可任意选择6-12个月的销售数据上传。我们的系统会自动帮您完成多大72种会员消费模型分析，
+                                        并形成高价值会员，消费能力偏好，消费品牌偏好等精确会员分组，再需要一步，
+                                        您就可以使用精确定向营销功能。我们承诺您的数据仅供您使用。
+                                    </p>
+
+                                    <div class="right_top_btnbox">
+                                        <a class="right_top_btn btn_view_example" href="javascript:void(0);">查看样例<i
+                                                class="fa fa-chevron-right"></i></a>
+                                        <a class="right_top_btn btn_download_example" href="">下载样例<i
+                                                class="fa fa-chevron-right"></i></a>
+                                    </div>
+                                </div>
+                                <div class="fast_right_bottom">
+                                    <h4>会员消费数据上传需知</h4>
+                                    <ul class="font_tips">
+                                        <li>1、数据不能大于100M；</li>
+                                        <li>2、数据格式应为csv或xlsx并且数据时长至少为6个月；</li>
+                                        <li>3、数据列中必须包括会员号，消费金额，消费品牌或消费产品代码，及消费时间四项数据。</li>
+                                    </ul>
+                                    <a class="btn_online_service">在线客服</a>
+                                </div>
+                            </div>
+                            <!--右侧tips结束-->
+
+                        </div>
+                        <!--上传会员消费数据结束-->
+
+                        <!--上传会员联络数据开始-->
+                        <div class="fast_main_box fast_main_contact" style="display: none">
+
+                            <!--左侧上传文件开始-->
+                            <div class="fast_main_left">
+                                <div class="fast_left_upload fast_left_top">
+                                    <i class="fa fa-cloud-upload"></i>
+
+                                    <h3>上载会员联络数据</h3>
+
+                                    <p class="font_tips">文件大小不大于100M,文件格式为csv,xlsx</p>
+                                    <a class="btn_upload_trigger" href="javascript:void(0);">上载</a>
+                                </div>
+
+                                <div class="fast_left_upload fast_left_bottom">
+                                    <h5>会员联络数据已上传</h5>
+                                    <a class="left_bottom_btn btn_upload_next" href="javascript:void(0);">下一步<i
+                                            class="fa fa-chevron-right"></i></a>
+                                </div>
+
+                            </div>
+                            <!--左侧上传文件结束-->
+
+                            <!--右侧tips开始-->
+                            <div class="fast_main_right">
+                                <div class="fast_right_top">
+                                    <h4>什么是会员联络数据？</h4>
+
+                                    <p class="font_tips">我们仅需会员的一个手机号码，无需任何其他会员隐私数据，比如姓名、年龄等，
+                                        即可为您开启精确营销功能。仅需输入会员号码对应的手机号码，不需要更多信息，就可以开通精确定向营销功能。
+                                    </p>
+
+                                    <div class="right_top_btnbox">
+                                        <a class="right_top_btn btn_view_example" href="javascript:void(0);">查看样例<i
+                                                class="fa fa-chevron-right"></i></a>
+                                        <a class="right_top_btn btn_download_example" href="">下载样例<i
+                                                class="fa fa-chevron-right"></i></a>
+                                    </div>
+                                </div>
+                                <div class="fast_right_bottom">
+                                    <h4>会员联络数据上传需知</h4>
+                                    <ul class="font_tips">
+                                        <li>1、数据不能大于100M；</li>
+                                        <li>2、数据格式应为csv或xlsx；</li>
+                                        <li>3、数据列中必须包括会员号，消费金额，消费品牌或消费产品代码，及消费时间四项数据。</li>
+                                    </ul>
+                                    <a class="btn_online_service">在线客服</a>
+                                </div>
+                            </div>
+                            <!--右侧tips结束-->
+
+                        </div>
+                        <!--上传会员联络数据结束-->
+
+                        <!--上传品牌对应编码数据开始-->
+                        <div class="fast_main_box fast_main_brand" style="display: none">
+
+                            <!--左侧上传文件开始-->
+                            <div class="fast_main_left">
+                                <div class="fast_left_upload fast_left_top">
+                                    <i class="fa fa-cloud-upload"></i>
+
+                                    <h3>上载品牌对应编码数据</h3>
+
+                                    <p class="font_tips">文件大小不大于100M,文件格式为csv,xlsx</p>
+                                    <a class="btn_upload_trigger" href="javascript:void(0);">上载</a>
+                                </div>
+
+                                <div class="fast_left_upload fast_left_bottom">
+                                    <h5>没有品牌对应编码</h5>
+                                    <a class="left_bottom_btn btn_upload_next" href="javascript:void(0);">下一步<i
+                                            class="fa fa-chevron-right"></i></a>
+                                </div>
+
+                            </div>
+                            <!--左侧上传文件结束-->
+
+                            <!--右侧tips开始-->
+                            <div class="fast_main_right">
+                                <div class="fast_right_top">
+                                    <h4>什么是品牌对应编码数据？</h4>
+
+                                    <p class="font_tips">如果您的会员消费数据中对于品牌或者产品使用了编码系统，您可以把编码数据上传，
+                                        从而准确了解会员的品牌或者产品偏好。您在精确营销时可以准确发放会员喜爱的产品促销券，他肯定会回头的。
+                                    </p>
+
+                                    <div class="right_top_btnbox">
+                                        <a class="right_top_btn btn_view_example" href="javascript:void(0);">查看样例<i
+                                                class="fa fa-chevron-right"></i></a>
+                                        <a class="right_top_btn btn_download_example" href="">下载样例<i
+                                                class="fa fa-chevron-right"></i></a>
+                                    </div>
+                                </div>
+                                <div class="fast_right_bottom">
+                                    <h4>品牌对应编码数据上传需知</h4>
+                                    <ul class="font_tips">
+                                        <li>1、数据不能大于100M；</li>
+                                        <li>2、数据格式应为csv或xlsx；</li>
+                                        <li>3、数据列中必须包括品牌编号、品牌名称或者产品编号，产品名称任意两项数据。</li>
+                                    </ul>
+                                    <a class="btn_online_service">在线客服</a>
+                                </div>
+                            </div>
+                            <!--右侧tips结束-->
+
+                        </div>
+                        <!--上传品牌对应编码数据结束-->
+
+                        <!--上传品类对应编码数据开始-->
+                        <div class="fast_main_box fast_main_category" style="display: none;">
+
+                            <!--左侧上传文件开始-->
+                            <div class="fast_main_left">
+                                <div class="fast_left_upload fast_left_top">
+                                    <i class="fa fa-cloud-upload"></i>
+
+                                    <h3>上载品类对应编码数据</h3>
+
+                                    <p class="font_tips">文件大小不大于100M,文件格式为csv,xlsx</p>
+                                    <a class="btn_upload_trigger" href="javascript:void(0);">上载</a>
+                                </div>
+
+                                <div class="fast_left_upload fast_left_bottom">
+                                    <h5>没有品类对应编码</h5>
+                                    <a class="left_bottom_btn btn_upload_next" href="javascript:void(0);">下一步<i
+                                            class="fa fa-chevron-right"></i></a>
+                                </div>
+
+                            </div>
+                            <!--左侧上传文件结束-->
+
+                            <!--右侧tips开始-->
+                            <div class="fast_main_right">
+                                <div class="fast_right_top">
+                                    <h4>什么是品类对应编码数据？</h4>
+
+                                    <p class="font_tips">如果您的会员消费数据中对于品牌或者产品使用了编码系统，您可以把编码数据上传，
+                                        从而准确了解会员的品牌或者产品偏好。您在精确营销时可以准确发放会员喜爱的产品促销券，他肯定会回头的。
+                                    </p>
+
+                                    <div class="right_top_btnbox">
+                                        <a class="right_top_btn btn_view_example" href="javascript:void(0);">查看样例<i
+                                                class="fa fa-chevron-right"></i></a>
+                                        <a class="right_top_btn btn_download_example" href="">下载样例<i
+                                                class="fa fa-chevron-right"></i></a>
+                                    </div>
+                                </div>
+                                <div class="fast_right_bottom">
+                                    <h4>品类对应编码数据上传需知</h4>
+                                    <ul class="font_tips">
+                                        <li>1、数据不能大于100M；</li>
+                                        <li>2、数据格式应为csv或xlsx；</li>
+                                        <li>3、数据列中必须包括品牌编号、品牌名称或者产品编号，产品名称任意两项数据。</li>
+                                    </ul>
+                                    <a class="btn_online_service">在线客服</a>
+                                </div>
+                            </div>
+                            <!--右侧tips结束-->
+
+                        </div>
+                        <!--上传品类对应编码数据结束-->
+
+                        <!--开启精确营销开始-->
+                        <div class="fast_main_box fast_main_generate" style="display: none">
+
+                            <!--左侧上传文件开始-->
+                            <div class="fast_main_left">
+                                <div class="fast_left_upload fast_left_single">
+                                    <i class="fa fa-check-circle"></i>
+
+                                    <h3>恭喜，您已成功上传全部数据</h3>
+
+                                    <a class="btn_generate" href="javascript:void(0);">开启精确营销<i
+                                            class="fa fa-chevron-right"></i></a>
+                                </div>
+                            </div>
+                            <!--左侧上传文件结束-->
+
+                            <!--右侧tips开始-->
+                            <div class="fast_main_right">
+                                <div class="fast_right_top">
+                                    <h4>什么是营销组？</h4>
+
+                                    <p class="font_tips">营销组是根据用户在线下/线上不同行为，属性向线划分的人群聚类，根据聚类条件，
+                                        例如最爱购买BOSS品牌的营销组，可以对其进行卡券/短信等定向内容营销，同时可以对营销结果进行可视化的数据分析。
+                                    </p>
+
+                                </div>
+                                <div class="fast_right_bottom">
+                                    <h4>补充说明</h4>
+                                    <ul class="font_tips">
+                                        <li>1、至少需要上传消费、会员身份数据；</li>
+                                        <li>2、数据类型的丰富有助于计算过程的精确，且丰富的数据可以带来更多可分析象限，从而形成更多属性的营销组。</li>
+                                    </ul>
+                                    <a class="btn_online_service">在线客服</a>
+                                </div>
+                            </div>
+                            <!--右侧tips结束-->
+
+                        </div>
+                        <!--开启精确营销结束-->
+
+                    </div>
+
+
+                </div>
+                <!--自己的内容结束-->
+
+            </div>
+            <!--主体内容结束-->
+
+        </div>
+        <!--右侧内容主体结束-->
+
+
+    </div>
+    <!--右侧内容结束-->
+</div>
+<!--页面结束-->
+
+
+<!--模态框-上传文件开始-->
+<div class="modal fade modal_upload" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+
+            <div class="modal-body">
+                <span class="btn_modal_close" data-dismiss="modal">&times;</span>
+                <i class="fa fa-cloud-upload"></i>
+                <h5>请选择数据文件</h5>
+                <p class="data_file_name"></p>
+
+                <div class="modal_btnbox">
+                    <a class="modal_upload_btn btn_modal_browse" href="javascript:void(0);"
+                       onclick="$('#input_upload').click();">浏览</a>
+                    <a class="modal_upload_btn btn_modal_upload" href="javascript:void(0);">上传</a>
+
+                    <div class="input_upload_box">
+                        <input type="file" class="input_upload" id="input_upload_0" name="input_upload_1">
+                        <input type="file" class="input_upload" id="input_upload_1" name="input_upload_2">
+                        <input type="file" class="input_upload" id="input_upload_2" name="input_upload_3">
+                        <input type="file" class="input_upload" id="input_upload_3" name="input_upload_4">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--模态框-上传文件结束-->
+
+
+<!--模态框-上传传/计算进度开始-->
+<div class="modal fade modal_common_unclosed modal_upload_progress" tabindex="-1" role="dialog"
+     aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-body">
+                <img src="images/img_progress_title.png" class="img_progress_title"/>
+                <h5>因数据处理费时，请稍稍等待</h5>
+                <div class="modal_progress_box">
+                    <ul>
+                        <li>1、数据上传已完成</li>
+                        <li>2、数据存储/检查中......</li>
+                    </ul>
+                    <div class="modal_progress_bar">
+                        <div class="modal_progress modal_progress_active" style="width:30%;"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--模态框-上传/计算进度结束-->
+
+<!--模态框-生成组进度开始-->
+<div class="modal fade modal_common_unclosed modal_generate_group" tabindex="-1" role="dialog"
+     aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-body">
+                <img src="images/img_progress_title.png" class="img_progress_title"/>
+                <h5>因数据处理费时，请稍稍等待</h5>
+                <div class="modal_progress_box">
+                    <ul>
+                        <li>数据已上传完成，正在生成72个精确营销组......</li>
+                    </ul>
+                    <div class="modal_progress_bar">
+                        <div class="modal_progress modal_progress_active" style="width:30%;"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--模态框-生成组进度结束-->
+
+<!--模态框-上传错误操作提示开始-->
+<div class="modal fade modal_common_unclosed modal_opr_fail" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <!--<div class="modal-header">-->
+            <!--<h4 class="modal-title">操作提示</h4>-->
+            <!--</div>-->
+            <div class="modal-body">
+
+                <i class="fa fa-times"></i>
+                <p class="modal_opr_des">抱歉，出现上传数据错误</p>
+                <ul class="modal_opr_list">
+                    <li>错误类型：数据格式错误&nbsp;&nbsp;&nbsp;&nbsp;建议：查看日期数据格式</li>
+                    <!--<li>错误类型：数据格式错误&nbsp;&nbsp;&nbsp;&nbsp;建议：查看日期数据格式</li>-->
+                    <!--<li>错误类型：数据格式错误&nbsp;&nbsp;&nbsp;&nbsp;建议：查看日期数据格式</li>-->
+                    <!--<li>错误类型：数据格式错误&nbsp;&nbsp;&nbsp;&nbsp;建议：查看日期数据格式</li>-->
+                    <!--<li>错误类型：数据格式错误&nbsp;&nbsp;&nbsp;&nbsp;建议：查看日期数据格式</li>-->
+                </ul>
+
+                <div class="modal_opr_btnbox">
+                    <a class="modal_btn_again" href="javascript:void(0);">重新上传</a>
+                    <a class="modal_btn_service" href="javascript:void(0);">联系客服</a>
+                </div>
+
+            </div>
+            <!--<div class="modal-footer">-->
+            <!--</div>-->
+        </div>
+    </div>
+</div>
+<!--模态框-上传错误操作提示结束-->
+
+<!--模态框-数据分隔时间段设置开始-->
+<div class="modal fade modal_common_unclosed modal_finance_date" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">数据分隔时间段设置</h4>
+            </div>
+            <div class="modal-body">
+                <p>请设置财年，系统将按设置的财年时间段进行数据分隔，用户可按财年进行数据选择配置报表，财年选择按所选开始月1日（X月1日）。</p>
+
+                <div class="dropdown" data-id="0">
+                    <button class="btn btn-default dropdown-toggle btn-dropdown" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                        <span>请选择每年财年开始月份</span>
+                        <span class="caret"></span>
+                    </button>
+                    <ul class="dropdown-menu">
+                        <li><a href="javascript:void(0);" data-id="1">1月</a></li>
+                        <li><a href="javascript:void(0);" data-id="2">2月</a></li>
+                        <li><a href="javascript:void(0);" data-id="3">3月</a></li>
+                        <li><a href="javascript:void(0);" data-id="4">4月</a></li>
+                        <li><a href="javascript:void(0);" data-id="5">5月</a></li>
+                        <li><a href="javascript:void(0);" data-id="6">6月</a></li>
+                        <li><a href="javascript:void(0);" data-id="7">7月</a></li>
+                    </ul>
+                </div>
+                <p class="modal_tips">如需修改，请到数据上传管理-全部数据上传中修改</p>
+            </div>
+            <div class="modal-footer">
+                <a class="btn btn-primary">确认</a>
+            </div>
+        </div>
+    </div>
+</div>
+<!--模态框-数据分隔时间段设置结束-->
+
+
+
+<!--尾部开始-->
+<div class="container-fluid foot">
+    <h2>Design by Meezao</h2>
+</div>
+<!--尾部结束-->
+
+</body>
+
+<!--全局js开始-->
+<script src="../../plugin_folder/jquery_v1.11.3/jquery-1.11.3.min.js"></script>
+<script src="../../plugin_folder/bootstrap_v3.3.5/js/bootstrap.min.js"></script>
+<script src="../../plugin_folder/jquery.validate_v1.13.1/jquery.validate-1.13.1.js"></script>
+<script src="../../plugin_folder/less_v1.7.0/less.min.js"></script>
+<script src="../../common_folder/javascripts/base.js"></script>
+<script src="../../common_folder/javascripts/common_index.js"></script>
+<!--全局js结束-->
+
+
+<script src="javascripts/fast_data_upload.js"></script>
+
+
+</html>

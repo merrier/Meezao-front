@@ -1,0 +1,388 @@
+/* less PC_index */
+/* +--------------------------------------------------------------------------
+// | Author: Merrier <953075999@qq.com> <http://> <Date:2016/5/25 16:05>
+// +--------------------------------------------------------------------------*/
+
+//引入全局less变量
+@import "PC_library";
+
+html{
+
+  body{
+    font-size:16px;
+    font-family:hiragino sans gb,microsoft yahei,simsun;
+//    color:#fff;
+    -webkit-text-size-adjust:none;
+
+    //系统管理消息弹框开始
+    .system_information{
+      display: none;
+      position: fixed;
+      bottom:35px;
+      right:5px;
+      .size(350px,300px);
+      color:@color_black;
+      background-color: @color_white;
+      .box_shadow(10px);
+
+      .system_information_header{
+        width:100%;
+        padding: 20px;
+        height:50px;
+        font-size: 16px;
+        font-weight: bold;
+        border-bottom: 2px solid @color_border;
+
+        h3{
+          float: left;
+          font-weight: bold;
+        }
+        i{
+          float: right;
+          cursor: pointer;
+        }
+        .btn_view_more{
+          float: left;
+          margin-top: -4px;
+          margin-left: 10px;
+          padding: 3px 12px;
+          font-size: 12px;
+        }
+      }
+
+      .system_information_content{
+        .size(100%,250px);
+        font-size: 14px;
+        overflow-y: auto;
+        overflow-x: hidden;
+
+        ul{
+          width:100%;
+
+          li{
+            .size(100%,50px);
+            padding:5px 10px;
+            border-bottom: 2px dashed @color_border;
+
+            span{
+              display: inline-block;
+              vertical-align: middle;
+            }
+            i{
+              display: inline-block;
+              height: 100%;
+              vertical-align: middle;
+            }
+          }
+        }
+      }
+    }
+    //系统管理消息弹框结束
+
+
+    /*标题栏开始*/
+    .header{
+      position: fixed;
+      height:50px;
+      line-height:50px;
+      margin: 0;
+      width: 100%;
+      min-width: 1214px;
+      z-index:1001;
+
+      background: #404040; /* Old browsers */
+      background: -moz-linear-gradient(top,  #787878 0%, #333333 40%, #111111 100%); /* FF3.6-15 */
+      background: -webkit-linear-gradient(top,  #787878 0%, #333333 40%, #111111 100%); /* Chrome10-25,Safari5.1-6 */
+      background: linear-gradient(to bottom,  #787878 0%, #333333 40%, #111111 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+      filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#404040', endColorstr='#111111',GradientType=0 ); /* IE6-9 */
+
+      h2{
+        font-family: 'sans-serif';
+        font-size:28px;
+        font-weight: bold;
+        color:#ffffff;
+        margin-left:36px;
+        float:left;
+        height:100%;
+        line-height: 50px;
+      }
+      .toolbar{
+        float:right;
+        height:50px;
+
+        .toolbar_information_center{
+          height: 49px;
+          width:60px;
+          line-height: 50px;
+          text-align: center;
+          font-size: 20px;
+          color:#fff;
+          border-left: 1px solid #4e4e4e;
+          border-right: 1px solid #4e4e4e;
+
+          &:hover{
+            color:#0096ff;
+          }
+
+          &:focus{
+            color: #ffffff;
+            text-decoration: none;
+            //line-height: 45px;
+            //border-top: 4px solid #0096ff;
+            background-color: #00b6f6;
+          }
+
+          .information_num{
+            position: absolute;
+            left:2.9em;
+            top:1em;
+            color: #ff0000;
+            font-size: 12px;
+          }
+        }
+
+        .toolbar_item{
+          position: relative;
+          display:inline-block;
+          color:#fff;
+          min-width:110px;
+          vertical-align:top;
+
+          .toolbar_person_information{
+            display: block;
+            color:#fff;
+            padding: 0 15px;
+            height:50px;
+            line-height: 50px;
+            text-align: center;
+
+            &:focus{
+              color: #ffffff;
+              text-decoration: none;
+              //line-height: 45px;
+              //border-top: 4px solid #0096ff;
+              background-color: #0096ff;
+            }
+            i{
+              font-size: 12px;
+            }
+          }
+
+          .toolbar_drop_menu{
+            display:none;
+            position: absolute;
+            color:#8e8b8b;
+            text-align:center;
+            border:1px solid #c3c3c3;
+            border-bottom:0;
+            top: 50px;
+            left: 0;
+            right: 0;
+            z-index:998;
+
+            li{
+              display:block;
+              color:#1c1c1c;
+              padding:0 10px;
+              line-height:44px;
+              background:#fff;
+              border-bottom:1px solid #c3c3c3;
+              cursor: pointer;
+
+              &:hover{
+                color:#ffffff;
+                background-color:#0096ff;
+              }
+            }
+          }
+        }
+      }
+    }
+    //标题栏结束
+
+
+    //页面开始
+    .wrp{
+      //min-height: calc(100vh - 80px);
+      padding-bottom: 30px;
+      padding-top: 50px;
+      padding-left: 0;
+      padding-right: 0;
+      width: 100%;
+      clear: both;
+      z-index:10;
+
+      /*导航栏开始*/
+      .nav_bar{
+        position: fixed;
+        width:220px;
+        //height: calc(100% - 80px);
+        background-color:#1c1c1c;
+        font-size: 14px;
+        letter-spacing: 2px;
+        overflow-y: auto;
+        z-index: 2;
+
+        .nav_bar_current1{
+          background-color: #0096ff !important;
+          //color:#00b6f6 !important;
+          //line-height: 35px !important;
+          //border-top: 3px solid #0096ff !important;
+
+          &:hover{
+            color:#ffffff !important;
+          }
+        }
+
+        .nav_bar_level1{
+
+          li{
+
+            a{
+              display:block;
+              font-family: 'Microsoft Yahei','微软雅黑';
+              //font-weight: bold;
+              color:#f5f5f5;
+              background-color: #1c1c1c;
+              text-decoration:none;
+              padding-left:36px;
+              height:40px;
+              line-height:40px;
+              border-bottom:2px solid #5d5d5d;
+              position:relative;
+
+              &:hover{
+                color:#0096ff;
+              }
+
+              span{
+                display:inline-block;
+              }
+            }
+
+            .nav_bar_current2{
+              color:#00b6f6 !important;
+              //background-color: #1c1c1c !important;
+            }
+
+            .nav_bar_level2{
+              display: none;
+
+              li{
+
+                a{
+                  padding-left:50px;
+                  font-size:14px;
+                  background:#262626;
+                }
+
+                .nav_bar_level3{
+                  display: none;
+
+                  li{
+
+                    a{
+                      padding-left:50px;
+                      font-size:14px;
+                      background-color:#444;
+
+                      i{
+                        font-size:12px;
+                        margin-right: 5px;
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+      //导航栏结束
+
+
+      //右侧内容开始
+      /*主体内容*/
+      .content{
+        font-family: 'Microsoft Yahei', '微软雅黑';
+        height: 100%;
+        float: right;
+        //width: calc(100% - 220px);
+
+        .content_main{
+
+          .content_route{
+            font-size: 12px;
+            font-weight: bold;
+            height:50px;
+            line-height:50px;
+            color:#7f7f7f;
+            padding-left: 37px;
+
+            a{
+              color: #7f7f7f;
+            }
+          }
+
+          .content_mb{
+            background:#fff;
+            margin:0 27px;
+            min-width: 960px;
+            color: #000;
+
+            .content_mb_title{
+              height:40px;
+              line-height:40px;
+              font-size:14px;
+              font-weight: bold;
+              color:#fff;
+              background:#0096ff;
+              text-indent:10px;
+              margin:0px;
+              letter-spacing: 2px;
+              /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#0096ff+0,008ff3+15,007ad1+44,0071c1+62,0070c0+100 */
+              background: #0096ff; /* Old browsers */
+              background: -moz-linear-gradient(top,  #62beff 0%, #3faffe 44%, #0096ff 100%); /* FF3.6-15 */
+              background: -moz-linear-gradient(top,  #0096ff 0%, #008ff3 15%, #007ad1 44%, #0071c1 62%, #0070c0 100%); /* FF3.6-15 */
+              background: -webkit-linear-gradient(top,  #62beff 0%, #3faffe 44%, #0096ff 100%); /* Chrome10-25,Safari5.1-6 */
+              background: linear-gradient(to bottom,  #62beff 0%, #3faffe 30%, #0096ff 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+              filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0096ff', endColorstr='#0070c0',GradientType=0 ); /* IE6-9 */
+            }
+
+            .content_mb_subject{
+              margin: 15px 0;
+            }
+          }
+        }
+      }
+      //右侧内容结束
+    }
+    //页面结束
+
+
+    //尾部开始
+    .foot{
+      position: fixed;
+      bottom: 0;
+      height: 30px;
+      line-height: 30px;
+      background-color: #1c1c1c;
+      width: 100%;
+      clear: both;
+      min-width: 1214px;
+      z-index:1001;
+
+      h2{
+        font-family: Arial;
+        font-size:14px;
+        color:#ffffff;
+        margin-left:36px;
+        float:left;
+        height:100%;
+        line-height: 30px;
+      }
+    }
+    //尾部结束
+
+  }
+}

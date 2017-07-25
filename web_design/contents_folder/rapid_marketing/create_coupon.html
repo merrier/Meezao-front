@@ -1,0 +1,326 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <!--360 浏览器在读取到这个标签后，立即切换对应的极速核-->
+    <meta name="renderer" content="webkit">
+    <!--优先使用 IE 最新版本和 Chrome-->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <!--百度禁止转码-->
+    <meta http-equiv="Cache-Control" content="no-siteapp"/>
+    <title>快速营销-创建卡券</title>
+
+    <!--全局css开始-->
+    <link href="../../plugin_folder/bootstrap_v3.3.5/css/bootstrap.min.css" rel="stylesheet"/>
+    <link href="../../plugin_folder/font-awesome/font-awesome.min.css" rel="stylesheet"/>
+    <link href="../../common_folder/stylesheets/common_base.css" rel="stylesheet"/>
+    <link href="../../common_folder/less/PC_index.less" rel="stylesheet/less"/>
+    <!--全局css结束-->
+
+    <link href="less/create_coupon.less" rel="stylesheet/less" />
+
+</head>
+
+<body>
+
+
+<!--标题栏开始-->
+<div class="row header">
+    <h2>MEEZAO</h2>
+
+    <div class="toolbar">
+        <a href="" class="fa fa-envelope-o toolbar_information_center"><sup class="information_num"><i class="fa fa-circle"></i></sup></a><!--
+         --><div class="toolbar_item">
+        <a href="#none" class="toolbar_person_information">
+            <i class="fa fa-circle"></i>
+            <span class="toolbar_user_name">萨达sdfsadf</span>
+        </a>
+        <ul class="toolbar_drop_menu">
+            <li class="toolopr_modify_password" data-toggle="modal" data-target=".modal_modify_password">修改密码</li>
+            <li class="toolopr_phone_solution" data-toggle="modal" data-target=".modal_phone_solution">手机号解绑</li>
+            <li class="toolopr_log_out">退出登录</li>
+        </ul>
+    </div>
+    </div>
+</div>
+<!--标题栏结束-->
+
+<!--页面开始-->
+<div class="container-fluid wrp">
+
+    <!--导航栏开始-->
+    <div class="nav_bar">
+        <ul class="nav_bar_level1">
+            <li><a href="#none"><span>全数据报表系统</span></a>
+                <ul class="nav_bar_level2">
+                    <li><a href="index.php/MeeZao/Plat/Fun/Form"><span>微官基础报表</span></a></li>
+                    <li><a href="#none"><span>官网基础报表</span></a></li>
+                    <li><a href="#none"><span>CRM报表</span></a></li>
+                    <li><a href="#none"><span>Meezao免费报表</span></a></li>
+                    <li><a href="#none"><span>Meezao付费报表</span></a></li>
+                </ul>
+            </li>
+            <li><a href="#none"><span>微信管理系统</span></a>
+                <ul class="nav_bar_level2">
+                    <li><a href="#none"><span>文案系统</span></a>
+                        <ul class="nav_bar_level3">
+                            <li><a href="#none"><i class="fa fa-circle"></i><span>创建文案</span></a></li>
+                            <li><a href="#none"><i class="fa fa-circle"></i><span>组合文案</span></a></li>
+                            <li><a href="#none"><i class="fa fa-circle"></i><span>文案列表</span></a></li>
+                            <li><a href="#none"><i class="fa fa-circle"></i><span>Meezao文案系统</span></a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#none"><span>微信平台管理系统</span></a>
+                        <ul class="nav_bar_level3">
+                            <li><a href="#none"><i class="fa fa-circle"></i><span>自定义菜单</span></a></li>
+                            <li><a href="#none"><i class="fa fa-circle"></i><span>自动回复管理</span></a></li>
+                            <li><a href="#none"><i class="fa fa-circle"></i><span>消息管理</span></a></li>
+                            <li><a href="#none"><i class="fa fa-circle"></i><span>素材管理</span></a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+            <li><a href="#none"><span>官网管理系统</span></a>
+                <ul class="nav_bar_level2">
+                    <li><a href="#none"><span>微信基础报表</span></a></li>
+                    <li><a href="#none"><span>微官网基础报表</span></a></li>
+                    <li><a href="#none"><span>会员分析报表</span></a>
+                        <ul class="nav_bar_level3">
+                            <li><a href="#none"><i class="fa fa-circle"></i><span>Meezao免费报表</span></a></li>
+                            <li><a href="#none"><i class="fa fa-circle"></i><span>Meezao付费报表</span></a></li>
+                            <li><a href="#none"><i class="fa fa-circle"></i><span>Meezao定制报表</span></a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+            <li><a href="#none"><span>M-CRM系统</span></a>
+                <ul class="nav_bar_level2">
+                    <li><a href="#none"><span>会员分组</span></a></li>
+                    <li><a href="#none"><span>分组管理</span></a></li>
+                    <li><a href="#none"><span>分组促销</span></a></li>
+                    <li><a href="#none"><span>会员分析图表</span></a></li>
+                </ul>
+            </li>
+            <li><a href="#none"><span>卡券管理系统</span></a>
+                <ul class="nav_bar_level2">
+                    <li><a href="#none"><span>卡券列表</span></a></li>
+                </ul>
+            </li>
+            <li><a href="#none"><span>核销系统</span></a>
+                <ul class="nav_bar_level2">
+                    <li><a href="#none"><span>网页核销</span></a></li>
+                    <li><a href="#none"><span>手机核销</span></a></li>
+                    <li><a href="#none"><span>核销记录</span></a></li>
+                </ul>
+            </li>
+            <li><a href="#none"><span>平台管理系统</span></a>
+                <ul class="nav_bar_level2">
+                    <li><a href="#none"><span>权限管理</span></a></li>
+                    <li><a href="#none"><span>品牌管理</span></a></li>
+                    <li><a href="#none"><span>系统消息</span></a></li>
+                    <li><a href="#none"><span>服务帮助</span></a></li>
+                </ul>
+            </li>
+        </ul>
+
+    </div>
+    <!--导航栏结束-->
+
+    <!--右侧内容开始-->
+    <div class="content clearfix">
+
+
+        <!--隐藏警告框标签开始-->
+        <div class="alert_hide_tag hide">
+            <div class="alert_whether_show"></div>
+            <div class="alert_tag_type"></div>
+            <div class="alert_tag_delay"></div>
+            <div class="alert_tag_content"></div>
+        </div>
+        <!--隐藏警告框标签结束-->
+
+
+        <!--右侧内容主体开始-->
+        <div class="content_main">
+            <div class="content_route"><a href="#none">首页</a>
+                <span class="content_route_pathname">>CRM系统>消费者管理</span></div>
+
+            <!--主体内容开始-->
+            <div class="content_mb">
+
+                <!--警告框-范例开始-->
+                <div class="alert alert-example" role="alert">
+                    <button type="button" class="close" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <strong class="alert_content"></strong>
+                </div>
+                <!--警告框-范例结束-->
+
+
+                <!--自己的内容开始-->
+                <div class="content_mb_subject">
+
+                    <div class="modal_message_div" style="display: none;">1</div>
+
+                    <!--你可以在这里写你自己的内容了-->
+                    <div class="create_coupon">
+                        <div class="create_coupon_head">
+                            请在腾讯微信后台创建精确定向卡券
+                        </div>
+                        <div class="create_coupon_content">
+                            <div class="content_description">1、精确定向卡券必须在腾讯后台创建；</div>
+                            <div class="content_description">2、卡券创建需参考该群组关键偏好；</div>
+                            <div class="content_description">3、该定向卡券名称里最好标注关键词；</div>
+                            <div class="content_description">4、该卡券最好选择《折扣券》类型；</div>
+                        </div>
+                        <div class="create_coupon_bottom">
+                            <a class="btn_new_blue btn_create_coupon" href="javascript:void(0)">移至微信创建卡券</a>
+                            <a class="btn_view_example" href="javascript:void(0)">查看样例 ></a>
+                        </div>
+                    </div>
+
+                    <div class="create_coupon">
+                        <div class="create_coupon_head download_coupon_head">
+                            请在腾讯微信后台创建精确定向卡券
+                        </div>
+                        <div class="create_coupon_content download_coupon_content">
+                            <div class="content_description">1、将创建好的定向卡券下载并匹配到精确群组；</div>
+                            <div class="content_description">2、系统会自动匹配手机号码；</div>
+                            <div class="content_description">3、该定向卡券只能由本人领取；</div>
+                            <div class="content_description">4、改卡券只能在关注微信号之后才能领取；</div>
+                        </div>
+                        <div class="create_coupon_bottom">
+                            <a class="btn_new_green btn_download_coupon" href="javascript:void(0)" data-state="1">下载卡券</a>
+                        </div>
+                    </div>
+
+                    <!--新的主要内容结束-->
+
+                </div>
+                <!--自己的内容结束-->
+
+            </div>
+            <!--主体内容结束-->
+
+        </div>
+        <!--右侧内容主体结束-->
+
+
+    </div>
+    <!--右侧内容结束-->
+</div>
+<!--页面结束-->
+
+
+<!--模态框开始-->
+<div class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title">模态框题目</h4>
+            </div>
+            <div class="modal-body">
+
+            </div>
+            <div class="modal-footer">
+                <a class="btn btn-black" data-dismiss="modal">关闭</a>
+                <a class="btn btn-primary">确定</a>
+            </div>
+        </div>
+    </div>
+</div>
+<!--模态框结束-->
+
+<!--提示信息模态框开始-->
+<div class="modal fade modal_message" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-body">
+                <p>请复制卡券投放总表单（链接）</p>
+                <p class="link_p"><span>www.jyzx.bj.meezao.com</span>/1eytsn/2yuianh</p>
+                <p>卡券投放总表单（链接）：是定向券、群发券投放的统一表单。投放总表单不受卡券编辑时指定的分表单限制，
+                    不管卡券编辑时指定给哪个分表单，如果消费者通过投放总表单（链接）进入可以看到所有他（她）可以领取的卡券，
+                    即投放总表单（链接）上的卡券是所有分表单（链接）卡券的总和。</p>
+                <p>卡券投放总表单（链接）使用方法：您可以将此链接放到自定义菜单、文案超链接、关键词回复等所有位置，
+                    用户点击此链接可跳转进入总表单查看并领取卡券。</p>
+                <p>若需要查看投放总链接或其他卡券投放链接，可点击进入卡券系统-<a class="form_manage" href="http://www.baidu.com">表单管理</a>内查看。
+                </p>
+            </div>
+            <div class="modal-footer">
+                <a class="btn btn-black" data-dismiss="modal">关闭</a>
+            </div>
+        </div>
+    </div>
+</div>
+<!--提示信息模态框结束-->
+
+<!--模态框-上传传/计算进度开始-->
+<div class="modal fade modal_common_unclosed modal_download_progress" tabindex="-1" role="dialog"
+     aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-body">
+                <img src="images/download_icon.png" class="img_progress_title"/>
+                <h5>卡券拉取成功，但未选择群组不能进行营销，请选择群组!</h5>
+                <div class="modal_progress_box">
+                    <div class="modal_progress_bar">
+                        <div class="modal_progress modal_progress_active" style="width:100%;"></div>
+                    </div>
+                </div>
+                <div class="modal_btnbox">
+                    <a class="btn_new_blue btn_build_coupon" target="_blank" href="javascript:void(0);">创建卡券</a>
+                    <a class="btn_new_blue btn_choose_group" target="_blank" href="javascript:void(0);">选择群组</a>
+                    <a class="btn_new_green btn_again" target="_parent" href="javascript:void(0);">再试一下</a>
+                    <a class="btn_new_orange btn_online_service" target="_blank" href="javascript:void(0);">联系客服</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--模态框-上传/计算进度结束-->
+
+<!--<div class="modal fade modal_small modal_download_unavailable" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">-->
+    <!--<div class="modal-dialog" role="document">-->
+        <!--<div class="modal-content">-->
+            <!--<div class="modal-body">-->
+                <!--<span class="btn_modal_close" data-dismiss="modal">&times;</span>-->
+                <!--<h5>无可下载卡券,请到微信后台创建新卡券</h5>-->
+                <!--<div class="modal_btnbox">-->
+                    <!--<a class="modal_upload_btn btn_modal_build" href="javascript:void(0);">创建卡券</a>-->
+                <!--</div>-->
+            <!--</div>-->
+        <!--</div>-->
+    <!--</div>-->
+<!--</div>-->
+
+
+<!--尾部开始-->
+<div class="container-fluid foot">
+    <h2>Design by Meezao</h2>
+</div>
+<!--尾部结束-->
+
+
+
+
+
+</body>
+
+<!--全局js开始-->
+<script src="../../plugin_folder/jquery_v1.11.3/jquery-1.11.3.min.js"></script>
+<script src="../../plugin_folder/bootstrap_v3.3.5/js/bootstrap.min.js"></script>
+<script src="../../plugin_folder/jquery.validate_v1.13.1/jquery.validate-1.13.1.js"></script>
+<script src="../../plugin_folder/less_v1.7.0/less.min.js"></script>
+<script src="../../common_folder/javascripts/base.js"></script>
+<script src="../../common_folder/javascripts/common_index.js"></script>
+<!--全局js结束-->
+
+<script src="../../plugin_folder/jquery-ui_v1.10.0/jquery-ui.min.js"></script>
+<script src="../../plugin_folder/mCustomScroller_v1/js/jquery.mousewheel.min.js"></script>
+<script src="../../plugin_folder/mCustomScroller_v1/js/jquery.mCustomScrollbar.min.js"></script>
+
+
+<script src="javascripts/create_coupon.js"></script>
+
+
+</html>

@@ -1,0 +1,265 @@
+//引入全局less变量
+@import "../../../common_folder/less/PC_library";
+//后台路径
+//@import "../../MeeZao/B_New/common_folder/less/PC_library";
+
+html {
+  height: 100%;
+  body {
+    height: 100%;
+    font-size: 14px;
+    .wrp {
+      .content_mb_subject {
+        .navbar-default {
+          height: 100px;
+          .nav_top {
+            height: 50%;
+            border-bottom: 1px solid #e7e7e7;
+            .search_input {
+              width: 260px;
+              float: right;
+              margin-top: 8px;
+            }
+            .btn_search {
+              float: right;
+              margin: 8px 20px 0 20px;
+              width: 70px;
+            }
+            .btn_create{
+              margin-right: 20px;
+            }
+          }
+          .nav_bottom {
+            height: 50%;
+            position: relative;
+            .checkAll_checkbox{
+              position: absolute;
+              left: 20px;
+              top:14px;
+            }
+            .checkAll_p{
+              position: absolute;
+              left: 50px;
+              top:14px;
+            }
+            .btn_delete{
+              position: absolute;
+              left: 150px;
+              top:8px;
+              width: 70px;
+            }
+            .btn-group{
+              position: absolute;
+              right: 20px;
+              top:8px;
+              .btn_upload{
+                width: 70px;
+              }
+              .btn_brand_detail{
+                background-color: #44b549;
+                color: #fff;
+              }
+            }
+          }
+        }
+        .common_table{
+          .table{
+            thead{
+              .table_head{
+                .choice{
+                  width: 5%;
+                }
+                .brand,.first_word{
+                  width: 12%;
+                }
+                .kind{
+                  width: 51%;
+                }
+                .operation{
+                  width: 20%;
+                }
+              }
+            }
+            tbody{
+              td{
+                position: relative;
+                .brand_img{
+                  .size(40px,40px);
+                }
+                .btn_first_word{
+                  width: 70px;
+                }
+              }
+            }
+          }
+        }
+
+      }
+    }
+    .modal{
+      .modal-dialog{
+        .modal-content{
+          .modal-footer{
+            .btn-default{
+              background-color: #111;
+              color: #fff;
+            }
+          }
+        }
+      }
+    }
+    .modal_edit_brand,.modal_create_brand{
+      .modal-dialog{
+        margin-top: 20px;
+        .modal-content{
+          .modal-body{
+            padding: 20px;
+            height: 500px;
+            overflow: auto;
+            .form-group{
+              position: relative;
+              .error_tips,.error_tip{
+                font-size: 14px;
+                color: #ff0000;
+              }
+              #input1{
+                border:1px solid #0000FF;
+              }
+              #btn1{
+                display: block;
+                float: left;
+                margin-top: 20px;
+              }
+              .img_name{
+                font-size: 14px;
+                color: #111;
+                text-align: center;
+                width: 200px;
+                height: 170px;
+                margin-left: 100px;
+                margin-top: 10px;
+                .upload_img{
+                  width: 150px;
+                  height: 150px;
+                  border-radius: 4px;
+                  margin-left: 20px;
+                  background-color: #fff;
+                }
+                p{
+                  margin: auto;
+                }
+              }
+              .chinese_name,.english_name{
+                width: 300px;
+                margin-top: 12px;
+              }
+              .dropdown{
+                .dropdown-toggle{
+                  width: 140px;
+                }
+                .dropdown-menu{
+                  height: 120px;
+                  overflow: auto;
+                  li{
+                    :hover{
+                      background-color: #0096ff;
+                      color: #fff;
+                    }
+                  }
+                }
+              }
+              .first_word_input,.brand_choose_input{
+                position: absolute;
+                visibility: hidden;
+              }
+              .brand_choose_div{
+                width: 458px;
+                height: 130px;
+                border: 1px solid #c1c1c1;
+                border-radius: 4px;
+                margin-top: 30px;
+                padding: 20px;
+                .brand_choose_item{
+                  padding: 2px 10px;
+                  float: left;
+                  margin-right: 14px;
+                  line-height: 26px;
+                  border: 1px solid #c1c1c1;
+                  border-radius: 4px;
+                  text-align: center;
+                  position: relative;
+                  margin-top: 10px;
+                  i{
+                    position: absolute;
+                    right: -6px;
+                    top:-8px;
+                    .size(18px,18px);
+                    border-radius: 9px;
+                    border: 1px solid #c1c1c1;
+                    background-color: #fff;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+    .modal_upload{
+      .modal-dialog{
+        .modal-content{
+          .modal-body{
+            .form-group{
+              margin-top: 20px;
+              .error_p{
+                font-size: 14px;
+                color: #ff0000;
+                display: none;
+              }
+              .upload_file_input,.upload_img_input{
+                position: absolute;
+                visibility: hidden;
+              }
+              p{
+                margin: 10px 0;
+              }
+              .btn_batch_upload{
+                width: 84px;
+              }
+              .btn_show_example{
+                background-color: #44b549;
+                color: #fff;
+                position: relative;
+                .show_example_div{
+                  display: none;
+                  position: absolute;
+                  border: 1px solid #555;
+                  background-color: #fff;
+                  border-radius:4px ;
+                  .size(1000px,260px);
+                  overflow: auto;
+                  text-align: center;
+                  margin: 20px;
+                  right: -600px;
+                  img{
+                    .size(980px,240px);
+                    margin: auto;
+                  }
+                }
+              }
+              .btn_download{
+                background-color: #69340d;
+                color: #fff;
+                a{
+                  color: #fff;
+                }
+              }
+            }
+
+          }
+        }
+      }
+
+    }
+  }
+}

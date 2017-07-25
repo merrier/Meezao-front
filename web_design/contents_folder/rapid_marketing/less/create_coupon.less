@@ -1,0 +1,168 @@
+/* Less web_template */
+/* +--------------------------------------------------------------------------
+// | Author:Yangyue    createTime:2016/10/28
+// +--------------------------------------------------------------------------*/
+//引入全局less变量
+@import "../../../common_folder/less/PC_library";
+//后台路径
+//@import "../../MeeZao/B_New/common_folder/less/PC_library";
+
+html {
+
+  body {
+    background-color: #eff4f7;
+
+    .content {
+      background-color: #eff4f7;
+
+      .content_main {
+        font-family: SourceHanSansCN-Medium;
+        background-color: #eff4f7;
+
+        .content_mb {
+          background: #eff4f7 !important;
+
+          .content_mb_subject {
+
+            .create_coupon {
+              margin-bottom: 60px;
+
+              .create_coupon_head {
+                background-color: #ccf0fd;
+                font-size: 16px;
+                text-align: center;
+                padding: 14px;
+              }
+              .download_coupon_head{
+                background-color: #d5f7da;
+              }
+              .create_coupon_content {
+                padding:0 100px;
+                padding-top: 20px;
+                text-align: center;
+                font-family: "宋体";
+                font-size: 13px;
+                line-height: 35px;
+                background-color: #ffffff;
+
+                .content_description{
+                  display: inline-block;
+                  width: 36%;
+                  text-align: left;
+                }
+
+              }
+              .create_coupon_bottom {
+                position: relative;
+                padding:30px 0;
+                text-align: center;
+                background-color: #ffffff;
+
+
+                .btn_create_coupon{
+                  width:180px;
+                }
+                .btn_view_example {
+                  position: absolute;
+                  color: #f6941b;
+                  border-bottom: 1px solid #f6941b;
+                  margin-left: 40px;
+                  margin-top: 6px;
+                  font-family: SourceHanSansCN-Medium;
+                  font-size: 16px;
+                  text-decoration: none;
+                }
+              }
+            }
+
+          }
+        }
+
+
+      }
+    }
+
+    .modal_download_progress {
+      .modal-dialog {
+
+        .modal-body {
+          padding: 25px 70px;
+          text-align: center;
+
+          .img_progress_title {
+            width: 60px;
+            margin: 0 auto;
+            margin-bottom: 25px;
+          }
+
+          h5 {
+            margin: 0 -70px;
+            margin-bottom: 35px;
+            font-family: SourceHanSansCN-Medium;
+          }
+
+          .modal_progress_box {
+            text-align: left;
+
+            ul {
+              margin-bottom: 5px;
+              font-size: 16px;
+              line-height: 30px;
+            }
+            .modal_progress_bar {
+              position: relative;
+              height: 10px;
+              background-color: #ccd0d2;
+              border-radius: 5px;
+
+              .modal_progress {
+                position: absolute;
+                height: 100%;
+                left: 0;
+                background-color: #00b6f6;
+                border-radius: 5px;
+              }
+
+              .modal_progress_active {
+                //进度条动画效果
+                -webkit-animation: progress-bar-stripes 2s linear infinite;
+                -o-animation: progress-bar-stripes 2s linear infinite;
+                animation: progress-bar-stripes 2s linear infinite;
+                background-image: -webkit-linear-gradient(45deg, rgba(255, 255, 255, .15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, .15) 50%, rgba(255, 255, 255, .15) 75%, transparent 75%, transparent);
+                background-image: -o-linear-gradient(45deg, rgba(255, 255, 255, .15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, .15) 50%, rgba(255, 255, 255, .15) 75%, transparent 75%, transparent);
+                background-image: linear-gradient(45deg, rgba(255, 255, 255, .15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, .15) 50%, rgba(255, 255, 255, .15) 75%, transparent 75%, transparent);
+                -webkit-background-size: 25px 25px;
+                background-size: 25px 25px;
+              }
+            }
+          }
+
+          .modal_btnbox{
+            display: none;
+          }
+        }
+      }
+    }
+  }
+
+  .modal_message{
+    .modal-dialog{
+      .modal-content{
+        width: 600px;
+        .modal-body{
+          padding: 20px 30px;
+          p{
+            margin: 14px 0;
+            .form_manage{
+              color: #ff8a27;
+              text-decoration: underline;
+            }
+          }
+          .link_p{
+            font-size: 20px;
+          }
+        }
+      }
+    }
+  }
+}

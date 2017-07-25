@@ -1,0 +1,50 @@
+.content_mb_subject{
+    width: 100%;
+    height: 620px;
+    background: url("../images/background.jpg") no-repeat;
+    background-size: 100%;
+    position: relative;
+    margin: 0;
+}
+
+.qq_communicate{
+    position: absolute;
+    top:480px;
+    height: auto;
+    width: 100%;
+    text-align: center;
+    margin: auto;
+}
+
+.qq_communicate_first{
+    position: absolute;
+    left: 10%;
+}
+
+.qq_communicate_second{
+    position: absolute;
+    left: 43%;
+}
+
+.qq_communicate_third{
+    position: absolute;
+    left: 76%;
+}
+
+.custom_service_message{
+    bottom: 6%;
+    position: absolute;
+    text-align: center;
+    width: 100%;
+}
+
+.custom_service_message a{
+    color: #111;
+    margin-right: 50px;
+    text-decoration: none;
+}
+
+.custom_service_message a:hover{
+    color: #8085e8;
+}
+

@@ -1,0 +1,307 @@
+/* Less web_template */
+/* +--------------------------------------------------------------------------
+// | Author: Merrier <953075999@qq.com> <http://> <Date:2016/9/21 22:27>
+// +--------------------------------------------------------------------------*/
+/* less PC_library */
+/* +--------------------------------------------------------------------------
+// | Author: Merrier <953075999@qq.com> <http://> <Date:2016/5/11 22:27>
+// +--------------------------------------------------------------------------*/
+@font-face {
+  font-family: 'SourceHanSansCN-Medium';
+  src: url('../fonts/SourceHanSansCN/SourceHanSansCN-Medium.otf'), url('../fonts/SourceHanSansCN/SourceHanSansCN-Medium.TTF');
+}
+@font-face {
+  font-family: 'SourceHanSansCN-Normal';
+  src: url('../fonts/SourceHanSansCN/SourceHanSansCN-Normal.otf');
+}
+.font_yahei {
+  font-family: 'Microsoft Yahei', '微软雅黑';
+}
+.font_arial {
+  font-family: 'Arial';
+}
+.font_sitka {
+  font-family: 'Sitka';
+}
+.font_hei {
+  font-family: '黑体';
+}
+.center_block {
+  margin-left: auto;
+  margin-right: auto;
+}
+.content_box {
+  box-sizing: content-box;
+  -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+}
+.clearfix:after {
+  content: ".";
+  display: block;
+  height: 0;
+  clear: both;
+  visibility: hidden;
+}
+.caret {
+  border-top-width: 8px;
+  border-right-width: 8px;
+  border-left-width: 8px;
+}
+.btn_new_green {
+  display: inline-block;
+  width: 140px;
+  height: 40px;
+  text-align: center;
+  line-height: 40px;
+  font-family: SourceHanSansCN-Medium;
+  font-size: 16px;
+  color: #ffffff;
+  background-color: #2bd948;
+  box-shadow: 3px 3px 10px #99eda7, -3px 3px 10px #99eda7;
+}
+.btn_new_green:link {
+  color: #ffffff;
+  text-decoration: none;
+}
+.btn_new_green:hover {
+  color: #ffffff;
+  box-shadow: 5px 5px 10px #99eda7, -5px 5px 10px #99eda7;
+}
+.btn_new_blue {
+  display: inline-block;
+  width: 140px;
+  height: 40px;
+  text-align: center;
+  line-height: 40px;
+  font-family: SourceHanSansCN-Medium;
+  font-size: 16px;
+  color: #ffffff;
+  background-color: #00b6f6;
+  box-shadow: 3px 3px 10px #9ed0e3, -3px 3px 10px #9ed0e3;
+}
+.btn_new_blue:link {
+  color: #ffffff;
+  text-decoration: none;
+}
+.btn_new_blue:hover {
+  color: #ffffff;
+  box-shadow: 5px 5px 10px #9ed0e3, -5px 5px 10px #9ed0e3;
+}
+.btn_new_orange {
+  display: inline-block;
+  width: 140px;
+  height: 40px;
+  text-align: center;
+  line-height: 40px;
+  font-family: SourceHanSansCN-Medium;
+  font-size: 16px;
+  color: #ffffff;
+  background-color: #ff7800;
+  box-shadow: 3px 3px 10px #ffb97b, -3px 3px 10px #ffb97b;
+}
+.btn_new_orange:link {
+  color: #ffffff;
+  text-decoration: none;
+}
+.btn_new_orange:hover {
+  color: #ffffff;
+  box-shadow: 5px 5px 10px #ffb97b, -5px 5px 10px #ffb97b;
+}
+.btn_new_red {
+  display: inline-block;
+  height: 50px;
+  text-align: center;
+  line-height: 50px;
+  font-family: SourceHanSansCN-Medium;
+  font-size: 16px;
+  color: #ffffff;
+  background-color: #ff3d5a;
+  box-shadow: 3px 3px 10px #ffcad2, -3px 3px 10px #ffcad2;
+}
+.btn_new_red:link {
+  color: #ffffff;
+  text-decoration: none;
+}
+.btn_new_red:hover {
+  color: #ffffff;
+  box-shadow: 5px 5px 10px #ffcad2, -5px 5px 10px #ffcad2;
+}
+.btn_modal_close {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  text-align: center;
+  line-height: 35px;
+  right: 10px;
+  top: 5px;
+  font-size: 40px;
+  color: #00b6f6;
+  cursor: pointer;
+}
+.btn_modal_close:hover {
+  transform: rotateZ(90deg);
+  -webkit-transform: rotateZ(90deg);
+  -o-transform: rotateZ(90deg);
+  -moz-transform: rotateZ(90deg);
+  transform-origin: center center;
+  -webkit-transform-origin: center center;
+  -o-transform-origin: center center;
+  -moz-transform-origin: center center;
+  transition: 0.5s;
+  -webkit-transition: 0.5s;
+  -o-transition: 0.5s;
+}
+.btn_new_disable {
+  background-color: #eff4f7;
+  color: #8cabbd;
+  cursor: not-allowed;
+}
+.btn_new_disable:link {
+  color: #8cabbd;
+}
+.btn_new_disable:hover {
+  color: #8cabbd;
+}
+html body {
+  /*模态框开始*/
+}
+html body .wrp .content > div {
+  min-height: 100vh;
+}
+html body .modal-dialog {
+  width: 500px;
+  margin-top: 150px;
+  color: #1c1c1c;
+}
+html body .modal-dialog .modal-header .modal-title {
+  font-weight: bold;
+  font-size: 18px;
+}
+html body .modal-dialog .modal-body label {
+  font-weight: normal;
+}
+html body .modal-dialog .modal-body .checkbox label {
+  display: block;
+  margin-bottom: 5px;
+  min-width: 80px;
+}
+html body .modal-dialog .modal-body .checkbox label input {
+  width: 14px;
+  height: 14px;
+}
+html body .wrp .content .register_success {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: column;
+  height: calc(100vh - 80px);
+  width: 1000px;
+  margin: 0 auto;
+  color: #000000;
+}
+html body .wrp .content .register_success .reg_success_title {
+  flex-shrink: 0;
+  width: 100%;
+  height: 100px;
+  padding: 30px 195px;
+  line-height: 30px;
+  text-align: center;
+  background-color: #29cf66;
+  border-radius: 5px;
+}
+html body .wrp .content .register_success .reg_success_title .img_icon_check {
+  float: left;
+  height: 100%;
+  margin-right: 45px;
+}
+html body .wrp .content .register_success .reg_success_title h3 {
+  color: #ffffff;
+  font-family: "Microsoft Yahei", "微软雅黑";
+  font-size: 18px;
+  margin-bottom: 5px;
+}
+html body .wrp .content .register_success .reg_success_title p {
+  color: #127135;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 12px;
+}
+html body .wrp .content .register_success .reg_success_main {
+  flex-shrink: 0;
+}
+html body .wrp .content .register_success .reg_success_main h4 {
+  margin-bottom: 40px;
+  color: #3c3c3c;
+  text-align: center;
+  font-family: "Microsoft Yahei", "微软雅黑";
+  font-size: 16px;
+}
+html body .wrp .content .register_success .reg_success_main .success_main_process:after {
+  content: ".";
+  display: block;
+  height: 0;
+  clear: both;
+  visibility: hidden;
+}
+html body .wrp .content .register_success .reg_success_main .success_main_process .process_item {
+  height: 80px;
+}
+html body .wrp .content .register_success .reg_success_main .success_main_process .process_item img {
+  display: inline-block;
+  height: 100%;
+  padding: 15px 0;
+  padding-right: 35px;
+  border-right: 2px solid #2bd948;
+  vertical-align: middle;
+}
+html body .wrp .content .register_success .reg_success_main .success_main_process .process_item p {
+  display: inline-block;
+  max-width: 325px;
+  margin-left: 30px;
+  text-align: left;
+  vertical-align: middle;
+  line-height: 30px;
+  color: #3c3c3c;
+  font-family: "Microsoft Yahei", "微软雅黑";
+  font-size: 14px;
+  word-break: break-all;
+  word-wrap: break-word;
+}
+html body .wrp .content .register_success .reg_success_main .success_main_process .process_top:after {
+  content: ".";
+  display: block;
+  height: 0;
+  clear: both;
+  visibility: hidden;
+}
+html body .wrp .content .register_success .reg_success_main .success_main_process .process_top .process_item_first {
+  float: left;
+  margin-left: 60px;
+}
+html body .wrp .content .register_success .reg_success_main .success_main_process .process_top .process_item_third {
+  float: right;
+}
+html body .wrp .content .register_success .reg_success_main .success_main_process .process_middle {
+  width: 100%;
+  margin-top: -20px;
+}
+html body .wrp .content .register_success .reg_success_main .success_main_process .process_footer .process_item_second {
+  text-align: center;
+}
+html body .wrp .content .register_success .reg_process_opr {
+  flex-shrink: 0;
+}
+html body .wrp .content .register_success .reg_process_opr .btn_contact_service {
+  margin: 0 auto;
+  width: 450px;
+  height: 50px;
+  line-height: 50px;
+  font-size: 18px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+html body .wrp .content .register_success .reg_process_opr p {
+  margin-top: 20px;
+  text-align: center;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 12px;
+}

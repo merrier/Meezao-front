@@ -1,0 +1,2257 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <!--360 浏览器在读取到这个标签后，立即切换对应的极速核-->
+    <meta name="renderer" content="webkit">
+    <!--优先使用 IE 最新版本和 Chrome-->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <!--百度禁止转码-->
+    <meta http-equiv="Cache-Control" content="no-siteapp"/>
+    <title>卡券功能-会员卡</title>
+
+    <!--全局css开始-->
+    <link href="../../plugin_folder/bootstrap_v3.3.5/css/bootstrap.min.css" rel="stylesheet"/>
+    <link href="../../plugin_folder/font-awesome/font-awesome.min.css" rel="stylesheet"/>
+    <link href="../../common_folder/stylesheets/common_base.css" rel="stylesheet"/>
+    <link href="../../common_folder/less/PC_index.less" rel="stylesheet/less"/>
+    <!--全局css结束-->
+
+    <link href="../../plugin_folder/jquery-ui_v1.10.0/jquery-ui-1.10.0.custom.css" rel="stylesheet"/>
+    <link href="../../plugin_folder/jquery-ui_v1.10.0/jquery-ui-timepicker-addon.css" rel="stylesheet"/>
+
+    <!--<link href="css/base.css" rel="stylesheet" />-->
+    <link href="less/coupon_member_card.less" rel="stylesheet/less"/>
+    <!--<link href="less/coupon_function_setting.less" rel="stylesheet/less" />-->
+
+
+</head>
+
+<body>
+
+
+<!--标题栏开始-->
+<div class="row header">
+    <h2>MEEZAO</h2>
+
+    <div class="toolbar">
+        <a href="javascript:void(0);" class="fa fa-envelope-o toolbar_information_center"><sup class="information_num"><i
+                class="fa fa-circle"></i></sup></a><!--
+         -->
+        <div class="toolbar_item">
+            <a href="#none" class="toolbar_person_information">
+                <i class="fa fa-circle"></i>
+                <span class="toolbar_user_name">萨达sdfsadf</span>
+            </a>
+            <ul class="toolbar_drop_menu">
+                <li class="toolopr_modify_password" data-toggle="modal" data-target=".modal_modify_password">修改密码</li>
+                <li class="toolopr_phone_solution" data-toggle="modal" data-target=".modal_phone_solution">手机号解绑</li>
+                <li class="toolopr_log_out">退出登录</li>
+            </ul>
+        </div>
+    </div>
+</div>
+<!--标题栏结束-->
+
+<!--页面开始-->
+<div class="container-fluid wrp">
+
+    <!--导航栏开始-->
+    <div class="nav_bar">
+        <ul class="nav_bar_level1">
+            <li><a href="#none"><span>全数据报表系统</span></a>
+                <ul class="nav_bar_level2">
+                    <li><a href="index.php/MeeZao/Plat/Fun/Form"><span>微官基础报表</span></a></li>
+                    <li><a href="#none"><span>官网基础报表</span></a></li>
+                    <li><a href="#none"><span>CRM报表</span></a></li>
+                    <li><a href="#none"><span>Meezao免费报表</span></a></li>
+                    <li><a href="#none"><span>Meezao付费报表</span></a></li>
+                </ul>
+            </li>
+            <li><a href="#none"><span>微信管理系统</span></a>
+                <ul class="nav_bar_level2">
+                    <li><a href="#none"><span>文案系统</span></a>
+                        <ul class="nav_bar_level3">
+                            <li><a href="#none"><i class="fa fa-circle"></i><span>创建文案</span></a></li>
+                            <li><a href="#none"><i class="fa fa-circle"></i><span>组合文案</span></a></li>
+                            <li><a href="#none"><i class="fa fa-circle"></i><span>文案列表</span></a></li>
+                            <li><a href="#none"><i class="fa fa-circle"></i><span>Meezao文案系统</span></a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#none"><span>微信平台管理系统</span></a>
+                        <ul class="nav_bar_level3">
+                            <li><a href="#none"><i class="fa fa-circle"></i><span>自定义菜单</span></a></li>
+                            <li><a href="#none"><i class="fa fa-circle"></i><span>自动回复管理</span></a></li>
+                            <li><a href="#none"><i class="fa fa-circle"></i><span>消息管理</span></a></li>
+                            <li><a href="#none"><i class="fa fa-circle"></i><span>素材管理</span></a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+            <li><a href="#none"><span>官网管理系统</span></a>
+                <ul class="nav_bar_level2">
+                    <li><a href="#none"><span>微信基础报表</span></a></li>
+                    <li><a href="#none"><span>微官网基础报表</span></a></li>
+                    <li><a href="#none"><span>会员分析报表</span></a>
+                        <ul class="nav_bar_level3">
+                            <li><a href="#none"><i class="fa fa-circle"></i><span>Meezao免费报表</span></a></li>
+                            <li><a href="#none"><i class="fa fa-circle"></i><span>Meezao付费报表</span></a></li>
+                            <li><a href="#none"><i class="fa fa-circle"></i><span>Meezao定制报表</span></a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+            <li><a href="#none"><span>M-CRM系统</span></a>
+                <ul class="nav_bar_level2">
+                    <li><a href="#none"><span>会员分组</span></a></li>
+                    <li><a href="#none"><span>分组管理</span></a></li>
+                    <li><a href="#none"><span>分组促销</span></a></li>
+                    <li><a href="#none"><span>会员分析图表</span></a></li>
+                </ul>
+            </li>
+            <li><a href="#none"><span>卡券管理系统</span></a>
+                <ul class="nav_bar_level2">
+                    <li><a href="#none"><span>卡券列表</span></a></li>
+                </ul>
+            </li>
+            <li><a href="#none"><span>核销系统</span></a>
+                <ul class="nav_bar_level2">
+                    <li><a href="#none"><span>网页核销</span></a></li>
+                    <li><a href="#none"><span>手机核销</span></a></li>
+                    <li><a href="#none"><span>核销记录</span></a></li>
+                </ul>
+            </li>
+            <li><a href="#none"><span>平台管理系统</span></a>
+                <ul class="nav_bar_level2">
+                    <li><a href="#none"><span>权限管理</span></a></li>
+                    <li><a href="#none"><span>品牌管理</span></a></li>
+                    <li><a href="#none"><span>系统消息</span></a></li>
+                    <li><a href="#none"><span>服务帮助</span></a></li>
+                </ul>
+            </li>
+        </ul>
+
+    </div>
+    <!--导航栏结束-->
+
+    <!--右侧内容开始-->
+    <div class="content clearfix">
+
+
+        <!--隐藏警告框标签开始-->
+        <div class="alert_hide_tag hide">
+            <div class="alert_whether_show"></div>
+            <div class="alert_tag_type"></div>
+            <div class="alert_tag_delay"></div>
+            <div class="alert_tag_content"></div>
+        </div>
+        <!--隐藏警告框标签结束-->
+
+
+        <!--右侧内容主体开始-->
+        <div class="content_main">
+            <div class="content_route"><a href="#none">首页</a>
+                <span class="content_route_pathname">卡券功能</span></div>
+
+            <!--主体内容开始-->
+            <div class="content_mb">
+                <h2 class="content_mb_title">会员卡</h2>
+
+                <!--警告框-范例开始-->
+                <div class="alert alert-example" role="alert">
+                    <button type="button" class="close" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <strong class="alert_content"></strong>
+                </div>
+                <!--警告框-范例结束-->
+
+
+                <!--自己的内容开始-->
+                <div class="content_mb_subject">
+
+                    <!--你可以在这里写你自己的内容了-->
+
+                    <!--导航条开始-->
+                    <div id="js_add_step_head">
+                        <ul class="processor_bar grid_line">
+
+                            <li class="step grid_item size1of2 current">
+                                <h4>1 填写会员卡信息</h4>
+                            </li>
+
+                            <li class="no_extra step grid_item size1of2 next">
+                                <h4>2 功能设置</h4>
+                            </li>
+
+                        </ul>
+                    </div>
+                    <!--导航条结束-->
+
+                    <!--主要展示内容开始-->
+                    <div class="main_bd" id="js_main_content">
+
+                        <form class="js_editform" method="POST" action="">
+
+                            <!--填写会员卡信息开始-->
+                            <div class="group js_tab_content js_card_information" style="display: block">
+
+                            <!--左侧预览开始-->
+                            <div class="card_preview_area member_card affix-top" data-meezao-spy="affix" data-offset-top="170" data-offset-bottom="360">
+                                <div class="card_body" id="js_preview_area">
+                                    <div class="js_preview msg_card_section shop ">
+                                        <div class="shop_panel js_color_bg_preview js_background_pic_url_preview" style="background-color: rgb(16, 173, 97);">
+                                            <div class="mask"></div>
+                                            <div class="logo_area">
+                                                <span class="logo">
+                                                    <img id="js_logo_url_preview" src="">
+                                                </span>
+                                                <span id="js_brand_name_preview">蜜枣网内测</span>
+                                                <p class="card_name" id="js_title_preview">Meezao VIP</p>
+                                                <span class="qrcode"></span>
+                                            </div>
+                                            <div class="msg_area">
+                                                <span class="member_number">0268 8888 8888</span>
+                                                <span class="icon_info"></span>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="msg_card_cell member_extend_area" style="display:none;">
+
+                                        <div class="member_extend_item">
+                                            <div class="member_extend_title">积分</div>
+                                            <div class="member_extend_des js_title_color_preview" style="color: rgb(16, 173, 97);">100</div>
+                                        </div>
+                                    </div>
+
+                                    <div class="msg_card_cell quick_pay" id="js_wepay_item" style="display:none">
+                                        <a href="javascript:void(0);" class="btn_card_preview js_title_color_preview js_use_card_button" style="color: rgb(16, 173, 97);">使用</a>
+                                    </div>
+
+                                    <div class="msg_card_cell shop_detail last_cell">
+                                        <ul class="list">
+                                            <li class="msg_card_section">
+                                                <div class="li_panel" href="">
+                                                    <div class="li_content">
+                                                        <p>适用门店</p>
+                                                    </div>
+                                                    <span class="ic ic_go"></span>
+                                                </div>
+                                            </li>
+                                            <li class="msg_card_section last_li">
+                                                <div class="li_panel" href="">
+                                                    <div class="li_content">
+                                                        <p>公众号</p>
+                                                    </div>
+                                                    <span class="ic ic_go"></span>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+
+                                    <div class="msg_card_cell custom_detail">
+                                        <ul class="list" id="js_custom_url_preview">
+                                            <li class="msg_card_section meezao_msg_card_section_new">
+                                                <div class="li_panel">
+                                                    <div class="li_content">
+                                                        <p>
+                                                            <span class="supply_area">
+                                                                <span class="js_custom_url_tips_pre"></span>
+                                                                <span class="ic ic_go"></span>
+                                                            </span>
+                                                            <span class="js_custom_url_name_pre">自定义入口(选填)</span>
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li class="msg_card_section">
+                                                <div class="li_panel">
+                                                    <div class="li_content">
+                                                        <p>
+                                                            <span class="supply_area">
+                                                                <span class="js_custom_url_tips_pre"></span>
+                                                                <span class="ic ic_go"></span>
+                                                            </span>
+                                                            <span class="js_custom_url_name_pre">自定义入口(选填)</span>
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--左侧预览结束-->
+
+                            <!--右侧编辑开始-->
+                            <!--<form class="media_edit" id="js_editform_step1" novalidate="novalidate">-->
+                                <div class="media_edit_area" id="js_edit_area">
+                                    <div class="js_edit_content portable_editor to_left appmsg_editor">
+                                        <input type="hidden" name="type" value="10">
+                                        <input type="hidden" name="action" value="check_mod_member_detail">
+                                        <input type="hidden" name="card_id" value="p5A-ht7oQ9TkYyBhJdj6pVSwxYZA">
+                                        <input type="hidden" name="is_pay_card" value="0">
+                                        <div class="inner">
+
+                                            <div class="editor_section">
+                                                <h3 class="title">基本信息 </h3>
+
+                                                <div class="frm_control_group frm_card_extend js_card_input_item">
+                                                    <input type="hidden" name="is_global_editting" value="1">
+                                                    <input type="hidden" id="js_is_sns_card" value="" name="is_sns_card">
+                                                    <input type="hidden" value="1467180133" name="create_time">
+                                                    <label for="" class="frm_label">
+                                                        <strong class="title">商户</strong>
+                                                    </label>
+                                                    <div class="frm_controls input_submsg" id="js_brand_name_select">
+                                                        <div class="brand_item js_sublogo_item">
+                                                            <div class="brand_img">
+                                                                <img id="js_logo_url_preview_1" src="">
+                                                            </div>
+                                                            <span id="js_brand_name_preview_1" class="brand_name">蜜枣网内测</span>
+                                                        </div>
+                                                        <input type="hidden" id="js_sub_merchant_id" name="sub_merchant_id" value="">
+                                                    </div>
+                                                    <input type="hidden" name="brand_name" id="js_brand_name_hidden" value="蜜枣网内测">
+                                                    <input type="hidden" name="logo_url" id="js_logo_url_hidden" value="">
+                                                    <p class="frm_tips js_group_parent_orig_brand">如商户信息有变更，请在<a href="/merchant/cardapply?action=listmerchantinfo&amp;t=cardticket/apply_detail&amp;lang=zh_CN&amp;token=621313516">卡券商户资料</a>更新。
+                                                    </p>
+                                                </div>
+
+                                                <!--卡券封面开始-->
+                                                <div class="frm_control_group frm_card_extend js_card_input_item meezao_coupon_bg">
+                                                    <label for="" class="frm_label">
+                                                        <strong class="title">卡券封面</strong>
+                                                    </label>
+                                                    <div class="frm_controls frm_vertical_lh">
+                                                        <label class="frm_radio_label" for="checkbox1">
+                                                            <i class="icon_radio"></i>
+                                                            <span class="lbl_content">图片</span>
+                                                        <input type="radio" class="frm_radio js_add_cover_type" value="1" id="checkbox1">
+                                                        </label>
+                                                        <label class="frm_radio_label selected" for="checkbox2">
+                                                            <i class="icon_radio"></i>
+                                                            <span class="lbl_content">颜色</span>
+                                                            <input type="radio" name="" class="frm_radio js_add_cover_type" value="2" id="checkbox2" checked="checked">
+                                                        </label>
+
+
+                                                        <div class="frm_controls input_submsg js_add_cover_type_1" style="display: none;">
+                                                            <div class="upload_box" style="width:320px;">
+                                                                <input type="hidden" class="file_field" value="" name="background_pic_url" id="js_background_pic_url_hidden">
+                                                                <p class="upload_tips">请参照
+                                                                    <a href="/cgi-bin/readtemplate?t=cardticket/card_cover_tmpl&amp;type=info&amp;lang=zh_CN" title="" target="_blank">图片规范</a> 上传</p>
+                                                                <div class="upload_area webuploader-container">
+                                                                    <a class="btn btn_upload js_select_file webuploader-pick" id="js_background_pic_url" inited="1">上传图片</a>
+                                                                    <ul class="upload_file_box" style="display:none"></ul>
+                                                                    <div id="rt_rt" style="position: absolute; top: 0px; left: 0px; width: 106px; height: 32px; overflow: hidden; bottom: auto; right: auto;">
+                                                                        <input type="file" accept="image/bmp,image/png,image/jpeg,image/jpg" style="display: none;">
+                                                                        <label style="opacity: 0; width: 100%; height: 100%; display: block; cursor: pointer; background: rgb(255, 255, 255);"></label>
+                                                                    </div>
+                                                                </div>
+                                                                <div id="js_background_pic_url_preview" class="upload_preview">
+                                                                    <img />
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="frm_controls input_submsg js_add_cover_type_2" style="display: table-cell;">
+                                                            <div id="js_colorpicker" class="color_picker dropdown_menu">
+                                                                <a href="javascript:void(0);" class="btn dropdown_switch jsDropdownBt"><label class="jsBtLabel" style="background-color: rgb(16, 173, 97);">#10AD61</label>
+                                                                    <i class="arrow"></i>
+                                                                </a>
+                                                                <div class="dropdown_data_container jsDropdownList" style="display: none;">
+                                                                    <ul class="dropdown_data_list">
+                                                                        <li class="dropdown_data_item tr1td1">
+                                                                            <a href="javascript:void(0);" class="jsDropdownItem" data-value="#55BD47" data-index="0" data-name="#55BD47">#55BD47</a>
+                                                                        </li>
+
+                                                                        <li class="dropdown_data_item tr1td2">
+                                                                            <a href="javascript:void(0);" class="jsDropdownItem" data-value="#10AD61" data-index="1" data-name="#10AD61">#10AD61</a>
+                                                                        </li>
+
+                                                                        <li class="dropdown_data_item tr1td3">
+                                                                            <a href="javascript:void(0);" class="jsDropdownItem" data-value="#35A4DE" data-index="2" data-name="#35A4DE">#35A4DE</a>
+                                                                        </li>
+
+                                                                        <li class="dropdown_data_item tr1td4">
+                                                                            <a href="javascript:void(0);" class="jsDropdownItem" data-value="#3D78DA" data-index="3" data-name="#3D78DA">#3D78DA</a>
+                                                                        </li>
+
+                                                                        <li class="dropdown_data_item tr1td5">
+                                                                            <a href="javascript:void(0);" class="jsDropdownItem" data-value="#9058CB" data-index="4" data-name="#9058CB">#9058CB</a>
+                                                                        </li>
+
+                                                                        <li class="dropdown_data_item tr2td1">
+                                                                            <a href="javascript:void(0);" class="jsDropdownItem" data-value="#DE9C33" data-index="5" data-name="#DE9C33">#DE9C33</a>
+                                                                        </li>
+
+                                                                        <li class="dropdown_data_item tr2td2">
+                                                                            <a href="javascript:void(0);" class="jsDropdownItem" data-value="#EBAC16" data-index="6" data-name="#EBAC16">#EBAC16</a>
+                                                                        </li>
+
+                                                                        <li class="dropdown_data_item tr2td3">
+                                                                            <a href="javascript:void(0);" class="jsDropdownItem" data-value="#F9861F" data-index="7" data-name="#F9861F">#F9861F</a>
+                                                                        </li>
+
+                                                                        <li class="dropdown_data_item tr2td4">
+                                                                            <a href="javascript:void(0);" class="jsDropdownItem" data-value="#E75735" data-index="8" data-name="#E75735">#E75735</a>
+                                                                        </li>
+
+                                                                        <li class="dropdown_data_item tr2td5">
+                                                                            <a href="javascript:void(0);" class="jsDropdownItem" data-value="#D54036" data-index="9" data-name="#D54036">#D54036</a>
+                                                                        </li>
+
+                                                                    </ul>
+                                                                </div>
+                                                            </div>
+                                                            <span>
+                                                                <input type="hidden" value="#10AD61" name="color" id="js_color">
+                                                            </span>
+                                                        </div>
+                                                        <input type="hidden" value="2" name="background_type" id="js_background_type">
+                                                    </div>
+                                                </div>
+                                                <!--卡券封面结束-->
+
+                                                <!--会员卡标题开始-->
+                                                <div class="js_card_input_item frm_control_group frm_card_extend frm_normal">
+                                                    <label for="" class="frm_label">
+                                                        <strong class="title">会员卡标题</strong>
+                                                    </label>
+                                                    <span class="frm_input_box with_counter counter_in append">
+                                                        <input id="meezao_card_name" value="" name="title" type="text" target="#js_title_tip" data-maxlength="9" class="frm_input js_can_preview js_maxlength meezao_input_must meezao_input_validate">
+                                                        <span class="frm_input_append frm_counter"><span id="js_title_tip">0</span>/9</span>
+                                                    </span>
+                                                    <p class="frm_msg fail"><span class="frm_msg_content" style="display: inline;">会员卡名称不能为空且长度不超过9个汉字或18个英文字母</span></p>
+                                                    <p class="frm_tips"> 建议会员卡标题包含商户名或服务内容，如腾讯会员黄钻尊享卡 </p>
+                                                </div>
+                                                <!--会员卡标题结束-->
+
+                                                <!--有效期开始-->
+                                                <div class="frm_control_group frm_card_extend radio_item">
+                                                    <div class="frm_control radio_row">
+                                                        <label for="" class="frm_label">有效期</label>
+                                                        <div class="frm_controls frm_vertical_lh meezao_validity_time">
+                                                            <div class="radio_control_group ">
+                                                                <label class="frm_radio_label frm_radio_input" for="checkbox34">
+                                                                    <i class="icon_radio"></i>
+                                                                    <span class="lbl_content">固定日期</span>
+                                                                    <input type="radio" value="1" class="frm_radio js_validtime" id="checkbox34">
+                                                                </label>
+                                                                <div class="time_picker">
+                                                                    <div id="js_begin_time_container">
+                                                                        <div class="ta_date" id="div_js_dateRangeTitle0_from">
+                                                                            <input class="date_title" id="js_dateRangeTitle0_from" name="validtime_from" placeholder="开始时间" style="width:70px;"/>
+                                                                            <a class="opt_sel" id="js_dateRangeTrigger0_from" href="javascript:void(0);">
+                                                                                <i class="i_orderd"></i>
+                                                                            </a>
+                                                                        </div>
+                                                                        <span style="float: left;margin:0 10px;">至</span>
+                                                                        <div class="ta_date" id="div_js_dateRangeTitle0_to">
+                                                                            <input class="date_title" id="js_dateRangeTitle0_to" name="validtime_to" placeholder="结束时间" style="width:70px;"/>
+                                                                            <a class="opt_sel" id="js_dateRangeTrigger0_to" href="javascript:void(0);">
+                                                                                <i class="i_orderd"></i>
+                                                                            </a>
+                                                                        </div>
+                                                                        <label class="contrast" for="needCompare_1491790171872" style="display: none;">
+                                                                            <input type="checkbox" class="pc" name="needCompare_1491790171872" id="needCompare_1491790171872" value="1" disabled="disabled">对比</label>
+                                                                        <!--<div class="ta_date" id="div_compare_js_dateRangeTitle1" style="display: none;"><span name="dateCompare" id="js_dateRangeTitle1Compare" class="date_title"-->
+                                                                                <!--style="display: none;"></span> <a-->
+                                                                                <!--class="opt_sel" id="compare_trigger"-->
+                                                                                <!--href="javascript:void(0);"> <i class="i_orderd"></i> </a>-->
+                                                                        <!--</div>-->
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="radio_control_group frm_radio_input ">
+                                                                <label class="frm_radio_label selected" for="checkbox35">
+                                                                <i class="icon_radio"></i>
+                                                                    <span class="lbl_content">永久有效</span>
+                                                                <input type="radio" checked="" value="100" class="frm_radio js_validtime" id="checkbox35">
+                                                                </label>
+                                                            </div>
+                                                        </div>
+                                                        <input type="hidden" name="time_type" id="js_hidden_time_type" value="100">
+                                                        <input type="hidden" name="begin_time" id="js_hidden_begintime" value="">
+                                                        <input type="hidden" name="end_time" id="js_hidden_endtime" value=""></div>
+                                                </div>
+                                                <!--有效期结束-->
+
+                                                <div id="js_discount_time" class="frm_control frm_card_extend radio_item">
+                                                    <div class="frm_control radio_row">
+                                                        <label for="" class="frm_label">可用时段</label>
+                                                        <div class="frm_controls frm_vertical_lh meezao_available_time">
+                                                            <div class="radio_control_group">
+                                                                <label class="frm_radio_label frm_radio_input selected" for="checkbox16">
+                                                                    <i class="icon_radio"></i>
+                                                                    <span class="lbl_content">全部时段</span>
+                                                                    <input type="radio" value="all" class="frm_radio js_discounttype" id="checkbox16" checked="checked">
+                                                                </label>
+                                                            </div>
+                                                            <div class="radio_control_group frm_radio_input">
+                                                                <label class="frm_radio_label" for="checkbox17">
+                                                                    <i class="icon_radio"></i>
+                                                                    <span class="lbl_content">部分时段</span>
+                                                                    <input type="radio" value="part" class="frm_radio js_discounttype" id="checkbox17">
+                                                                </label>
+                                                                <div class="frm_controls frm_sub_range js_discount_select meezao_checkbox_box meezao_available_date" style="display: none;">
+                                                                    <label class="frm_radio_label"> 日期： </label>
+                                                                    <div class="meezao_part_time">
+                                                                    <label class="selected frm_checkbox_label" for="checkbox9">
+                                                                        <i class="icon_checkbox"></i>
+                                                                        <span class="lbl_content">周一</span>
+                                                                        <input type="checkbox" value="1" checked="checked" class="frm_checkbox" id="checkbox9">
+                                                                    </label>
+                                                                    <label class="selected frm_checkbox_label" for="checkbox10">
+                                                                        <i class="icon_checkbox"></i>
+                                                                        <span class="lbl_content">周二</span>
+                                                                        <input type="checkbox" value="2" checked="checked" class="frm_checkbox" id="checkbox10">
+                                                                    </label>
+                                                                    <label class="selected frm_checkbox_label" for="checkbox11">
+                                                                        <i class="icon_checkbox"></i>
+                                                                        <span class="lbl_content">周三</span>
+                                                                        <input type="checkbox" value="3" checked="checked" class="frm_checkbox" id="checkbox11">
+                                                                    </label>
+                                                                    <label class="selected frm_checkbox_label" for="checkbox12">
+                                                                        <i class="icon_checkbox"></i>
+                                                                        <span class="lbl_content">周四</span>
+                                                                        <input type="checkbox" value="4" checked="checked" class="frm_checkbox" id="checkbox12">
+                                                                    </label>
+                                                                    <label class="selected frm_checkbox_label" for="checkbox13">
+                                                                        <i class="icon_checkbox"></i>
+                                                                        <span class="lbl_content">周五</span>
+                                                                        <input type="checkbox" value="5" checked="checked" class="frm_checkbox" id="checkbox13">
+                                                                    </label>
+                                                                    <label class="selected frm_checkbox_label" for="checkbox14">
+                                                                        <i class="icon_checkbox"></i>
+                                                                        <span class="lbl_content">周六</span>
+                                                                        <input type="checkbox" value="6" checked="checked" class="frm_checkbox" id="checkbox14">
+                                                                    </label>
+                                                                    <label class="selected frm_checkbox_label" for="checkbox15">
+                                                                        <i class="icon_checkbox"></i>
+                                                                        <span class="lbl_content">周日</span>
+                                                                        <input type="checkbox" value="7" checked="checked" class="frm_checkbox" id="checkbox15">
+                                                                    </label>
+                                                                    </div>
+                                                                    <div class="frm_clear">
+                                                                        <a href="javascript:void(0);" class="js_add_time_period_first">添加时间段</a>
+                                                                    </div>
+                                                                    <div class="js_hour_range_container" style="display:none;">
+                                                                        <div class="control_group frm_msg_align">
+                                                                            <label class="frm_radio_label"> 时间: </label>
+                                                                            <span class="js_hour_range_list">
+                                                                                <span class="time_range js_hour_range meezao_time_range_new">
+                                                                                    <span class="frm_input_box frm_input_box_short">
+                                                                                        <input value="" name="" type="text" class="frm_input valid js_hour_start" placeholder="">
+                                                                                    </span>
+                                                                                    <span class=""> 至 </span>
+                                                                                    <span class="frm_input_box frm_input_box_short">
+                                                                                        <input value="" name="" type="text" class="frm_input valid js_hour_end" placeholder="">
+                                                                                    </span>
+                                                                                </span>
+                                                                            </span>
+                                                                            <a href="javascript:void(0);" class="time_range js_add_time_period">添加时间段</a>
+                                                                            <a href="javascript:void(0);" class="time_range js_del_time_period">删除时间段</a>
+                                                                        </div>
+                                                                        <p class="frm_msg fail js_time_period_interval_fail" style="display:none;">结束时间必须大于起始时间,且多个时间段不能重叠</p>
+                                                                        <p class="frm_msg fail js_time_period_fail" style="display:none;">请输入正确的时间格式</p>
+                                                                        <!--<p class="frm_tips">-->
+                                                                            <!--请使用24小时制输入时间，格式如11:00至14:30</p>-->
+                                                                        <p class="frm_tips">结束时间必须大于起始时间,且多个时间段不能重叠</p>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="frm_control_group frm_card_extend checkbox_row_group" id="js_member_privilege">
+                                                    <label for="" class="frm_label">会员卡优惠</label>
+                                                    <div class="frm_controls meezao_checkbox_box meezao_card_discount">
+                                                        <label class="frm_checkbox_label selected" for="js_supply_bonus">
+                                                            <i class="icon_checkbox"></i>
+                                                            <span class="lbl_content">积分优惠</span>
+                                                            <input name="supply_bonus" id="js_supply_bonus" type="checkbox" target="bonus_rules" value="1" checked="" class="frm_checkbox js_privilege">
+                                                            <i class="js_supply_bonus_ask icon_msg_mini ask" data-x="-140" data-toggle="tooltip" data-placement="bottom" title="积分有助于吸引用户成为忠实会员"></i>
+                                                        </label>
+                                                        <label class="frm_checkbox_label selected" for="js_supply_discount">
+                                                            <i class="icon_checkbox"></i>
+                                                            <span class="lbl_content">折扣优惠</span>
+                                                            <input type="checkbox" name="supply_discount" id="js_supply_discount" target="discount" value="1" checked="" class="frm_checkbox js_privilege">
+                                                        <i class="js_supply_discount_ask icon_msg_mini ask" data-x="-140" data-toggle="tooltip" data-placement="bottom" title="折扣优惠能够鼓励用户到店消费"></i>
+                                                        </label>
+                                                    </div>
+                                                </div>
+
+                                                <!--会员卡优惠-积分优惠开始-->
+                                                <div id="js_bonus_rule_detail">
+                                                    <!--消费送积分开始-->
+                                                    <div class="js_card_input_item frm_control_group frm_card_extend meezao_consumption_points">
+                                                        <label for="" class="frm_label">消费送积分</label>
+                                                        <div class="input_submsg multi_input">
+                                                            <span class="">
+                                                                <span class="">每消费</span>
+                                                                <span class="frm_input_box frm_input_box_short">
+                                                                    <input value="" name="cost_money_unit" type="text" class="frm_input meezao_input_validate" placeholder="">
+                                                                </span>
+                                                                <span class="">元，赠送</span>
+                                                                <span class="frm_input_box frm_input_box_short">
+                                                                    <input value="" id="js_increase_bonus" name="increase_bonus" type="text" class="frm_input meezao_input_validate" placeholder="">
+                                                                </span>
+                                                                <span class="frm_input_append">积分</span>
+                                                            </span>
+                                                        </div>
+                                                        <p class="frm_msg fail">
+                                                            <span for="cost_money_unit" class="frm_msg_content" style="display: inline;">消费金额和赠送积分只能大于0的整数</span>
+                                                        </p>
+                                                    </div>
+                                                    <!--消费送积分结束-->
+
+                                                    <!--单次上限开始-->
+                                                    <div class="js_card_input_item frm_control_group frm_card_extend meezao_single_upper_limit">
+                                                        <label for="" class="frm_label">单次上限<br>
+                                                            <span class="tips">(选填)</span>
+                                                        </label>
+                                                        <div class="input_submsg"><span class="frm_input_box">
+                                                            <input value="" name="max_increase_bonus" type="text" class="frm_input meezao_input_validate" placeholder="">            </span>
+                                                            <span class="input_sub_msg">积分</span>
+                                                        </div>
+                                                        <p class="frm_msg fail">
+                                                            <span for="max_increase_bonus" class="frm_msg_content" style="display: inline;">单次送积分上限只能是大于消费赠送积分</span>
+                                                        </p>
+                                                        <p class="frm_tips">请设置单次增加积分的上限，不填写表示无限制</p></div>
+                                                    <!--单次上限结束-->
+
+                                                    <!--激活送积分开始-->
+                                                    <div class="js_card_input_item frm_control_group frm_card_extend meezao_activation_integral" id="js_active_give_bonus">
+                                                        <label for="" class="frm_label">激活送积分<br>
+                                                            <span class="tips">(选填)</span>
+                                                        </label>
+                                                        <div class="input_submsg">
+                                                            <span class="frm_input_box">
+                                                                <input value="" name="init_bonus" type="text" class="frm_input meezao_input_validate" placeholder="">
+                                                            </span>
+                                                            <span class="input_sub_msg">积分</span>
+                                                        </div>
+                                                        <p class="frm_msg fail">
+                                                            <span for="init_bonus" class="frm_msg_content" style="display: inline;">激活送积分只能是大于0的整数</span>
+                                                        </p>
+                                                        <p class="frm_tips">请设置激活会员卡赠送的积分，不填写表示不赠送</p></div>
+                                                    <!--激活送积分结束-->
+
+                                                    <!--积分抵扣开始-->
+                                                    <div class="js_card_input_item frm_control_group frm_card_extend meezao_integral_deduction">
+                                                        <label for="" class="frm_label">积分抵扣</label>
+                                                        <div class="input_submsg multi_input">
+                                                            <span class="">
+                                                                <span class="">每使用</span>
+                                                                <span class="frm_input_box frm_input_box_short">
+                                                                    <input id="js_cost_bonus_unit" value="" name="cost_bonus_unit" type="text" class="frm_input meezao_input_validate" placeholder="">
+                                                                </span>
+                                                                <span class="">积分，抵扣</span>
+                                                                <span class="frm_input_box frm_input_box_short">
+                                                                    <input value="" name="reduce_money" type="text" class="frm_input meezao_input_validate" placeholder="">
+                                                                </span>
+                                                                <span class="frm_input_append">元</span>
+                                                            </span>
+                                                        </div>
+                                                        <p class="frm_msg fail" >
+                                                            <span for="reduce_money" class="frm_msg_content" style="display: inline;">积分只能填大于0的整数，金额大于0且只能到百分位</span>
+                                                        </p>
+                                                    </div>
+                                                    <!--积分抵扣结束-->
+
+                                                    <!--抵扣条件开始-->
+                                                    <div class="js_card_input_item frm_control_group frm_card_extend meezao_deduction_condition">
+                                                        <label for="" class="frm_label">抵扣条件<br>
+                                                            <span class="tips">(选填)</span>
+                                                        </label>
+                                                        <div class="input_submsg multi_input">
+                                                            <span class="">
+                                                                <span class="">订单满</span>
+                                                                <span class="frm_input_box frm_input_box_short">
+                                                                    <input value="" name="least_money_to_use_bonus" type="text" class="frm_input meezao_input_validate" placeholder="">
+                                                                </span>
+                                                                <span class="">元可用，单笔上限</span>
+                                                                <span class="frm_input_box frm_input_box_short">
+                                                                    <input value="" name="max_reduce_bonus" type="text" class="frm_input meezao_input_validate" placeholder="">
+                                                                </span>
+                                                                <span class="frm_input_append">积分</span>
+                                                            </span>
+                                                        </div>
+                                                        <p class="frm_msg fail">
+                                                            <span for="least_money_to_use_bonus" class="frm_msg_content" style="display: inline;">积分只能填大于0的整数，金额大于0且只能到百分位</span>
+                                                        </p>
+                                                    </div>
+                                                    <!--抵扣条件结束-->
+                                                </div>
+                                                <!--会员卡优惠-积分优惠结束-->
+
+                                                <!--享受折扣开始-->
+                                                <div class="js_card_input_item frm_control_group frm_card_extend" id="js_discount_item">
+                                                    <label for="" class="frm_label">
+                                                        <strong class="title">享受折扣</strong>
+                                                    </label>
+                                                    <div class="input_submsg">
+                                                        <span class="frm_input_box">
+                                                            <input value="" id="js_discount" name="discount" type="text" class="frm_input meezao_input_validate" placeholder="">
+                                                        </span>
+                                                        <span class="input_sub_msg">折</span>
+                                                    </div>
+                                                    <p class="frm_msg fail">
+                                                        <span for="js_discount" class="frm_msg_content" style="display: inline;">折扣额度只能是大于1且小于10的数字</span>
+                                                    </p>
+                                                    <p class="frm_tips">请填写1-9.9之间的数字，精确到小数点后1位</p></div>
+                                                <!--享受折扣结束-->
+
+                                            </div>
+
+
+                                            <div class="editor_section">
+                                                <h3 class="title group">会员卡详情</h3>
+
+                                                <!--特权说明开始-->
+                                                <div class="js_card_input_item frm_control_group frm_card_extend textarea_item meezao_privilege_specification">
+                                                    <label for="" class="frm_label"><strong class="title">特权说明</strong></label>
+                                                    <div class="frm_controls">
+                                                        <div id="js_prerogative_rule">
+                                                            <p class="meezao_activation_integral_show">激活成功即赠送<span>asdf</span>积分</p>
+                                                            <p class="meezao_consumption_points_show">每消费<span>10000</span>元，赠送<span>1</span>积分</p>
+                                                            <p class="meezao_single_upper_limit_show">单次赠送上限<span>asdf</span>积分<br /></p>
+                                                            <p class="meezao_integral_deduction_show">每使用<span>10000</span>积分，抵扣<span>1</span>元<span class="meezao_deduction_condition_show">，单笔使用上限<i style="font-style: normal;">11</i>积分</span></p>
+                                                        </div>
+                                                        <div class="frm_textarea_box">
+                                                            <textarea class="frm_textarea meezao_input_validate" name="prerogative" id="prerogative" placeholder="注：1、上文设置中，如已经填写“积分优惠”“折扣优惠”的内容，将会自动在用户会员卡详情展示，无需重复填写。2、建议填写其他特权，举例：100积分可兑换精美礼品；会员日可享受折上折优惠等"></textarea>
+                                                        </div>
+                                                    </div>
+                                                    <p class="frm_msg fail">
+                                                        <span for="prerogative" class="frm_msg_content" style="display: inline;">特权说明不能为空</span>
+                                                    </p>
+                                                </div>
+                                                <!--特权说明结束-->
+
+                                                <!--使用须知开始-->
+                                                <div class="js_card_input_item frm_control_group frm_card_extend textarea_item">
+                                                    <label for="" class="frm_label">
+                                                        <strong class="title">使用须知<br>
+                                                            <span class="tips">(选填)</span>
+                                                        </strong>
+                                                    </label>
+                                                    <div class="frm_controls">
+                                                        <p id="js_description_add_msg" class="frm_controls_text"></p>
+                                                        <div class="counter_wrp align_counter">
+                                                            <div class="frm_textarea_box with_counter counter_out">
+                                                                <textarea class="frm_textarea js_maxlength meezao_input_validate" target="#js_description_tip" data-maxlength="300" name="description" placeholder="注：1、上文设置中，如已经填写“积分优惠”“折扣优惠”的内容，将会自动在用户会员卡详情展示，无需重复填写。2、建议填写其他注意事项，举例：积分不支持兑换现金">测试没特权须知</textarea>
+                                                                <em class="frm_input_append frm_counter">
+                                                                    <span id="js_description_tip">7</span>/300
+                                                                </em>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <p class="frm_msg fail">
+                                                        <span for="description" class="frm_msg_content" style="display: inline;">使用须知长度不超过300个汉字</span>
+                                                    </p>
+                                                </div>
+                                                <!--使用须知结束-->
+
+                                                <!--图文介绍开始-->
+                                                <div id="" class="js_card_input_item frm_control frm_card_extend">
+                                                    <div class="card_article_hidebox hide">
+                                                        <input type="file" name="" class="card_article_hide_new">
+                                                        <input type="file" name="card_article_img[]" class="card_article_file_now">
+                                                    </div>
+
+                                                    <label for="" class="frm_label">图文介绍<br>
+                                                        <span class="tips">(选填)</span>
+                                                    </label>
+
+                                                    <div class="frm_controls" id="js_card_article">
+                                                        <div class="editor_with_demo">
+                                                            <div class="editor_box"><p class="mini_tips weak_text">
+                                                                图片建议尺寸：900像素 * 500像素，大小不超过2M，支持格式为png/jpg/bmp/jpeg。<br>至少上传1组图文，最多输入5000字</p>
+                                                                <div class="card_article_box">
+                                                                    <div class="js_card_article_preview_p">
+                                                                        <div class="card_article_toolbar js_article_toolbar">
+                                                                            <!--<a class="editor_item js_moveup">-->
+                                                                                <!--<i class="icon_card_arrowup"></i>-->
+                                                                            <!--</a>-->
+                                                                            <!--<a class="editor_item js_movedown">-->
+                                                                                <!--<i class="icon_card_arrowdown"></i>-->
+                                                                            <!--</a>-->
+                                                                            <a class="editor_item js_edit">
+                                                                                <i class="icon16_common edit_gray"></i>
+                                                                            </a>
+                                                                            <a class="editor_item js_delete">
+                                                                                <i class="icon_card_delete"></i>
+                                                                            </a>
+                                                                        </div>
+                                                                        <div class="js_card_article_preview">
+                                                                            <div class="js_ca_preview_new ca_preview" draggable="true" data-id="">
+                                                                                <img src="">
+                                                                                <div class="ca_preview_txt"></div>
+                                                                                <input type="file" name="" class="ca_preview_img hide">
+                                                                                <input type="text" name="" class="ca_preview_desc hide">
+                                                                            </div>
+                                                                            <div class="js_ca_preview ca_preview" draggable="true" data-id="1">
+                                                                                <img src="images/71.jpg">
+                                                                                <div class="ca_preview_txt">1www.baidu.com</div>
+                                                                                <input type="file" name="ca_preview_img1" class="ca_preview_img hide">
+                                                                                <input type="text" name="ca_preview_desc[]" class="ca_preview_desc hide">
+                                                                            </div>
+                                                                            <div class="js_ca_preview ca_preview" draggable="true" data-id="2">
+                                                                                <img src="images/topbar.png">
+                                                                                <div class="ca_preview_txt">2www.meezao.com</div>
+                                                                                <input type="file" name="ca_preview_img2" class="ca_preview_img hide">
+                                                                                <input type="text" name="ca_preview_desc[]" class="ca_preview_desc hide">
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="js_card_article_editor" style="display: none">
+                                                                        <div class="js_article_item">
+                                                                            <div class="card_article_img">
+                                                                                <a href="javascript:;" class="btn_card_image js_add_img_p">
+                                                                                    <span class="js_add_img"></span>
+                                                                                </a>
+                                                                                <img class="js_img_preview" src="" style="width:100%;">
+                                                                                <!--<input type="hidden" value="" class="js_img_hidden">-->
+                                                                                <div class="mask js_image_mask" style="display:none;"></div>
+                                                                            </div>
+                                                                            <div class="card_article_description">
+                                                                                <span class="frm_textarea_box with_counter counter_in append">
+                                                                                    <textarea class="frm_textarea js_maxlength js_desc valid" data-maxlength="5000" target="#js_image_text_hint" placeholder="图文内容建议上传商品、服务、环境等优质图片，并辅之以简单描述"></textarea>
+                                                                                <em class="frm_textarea_append frm_counter">
+                                                                                    <span id="js_image_text_hint">7</span>/5000
+                                                                                </em>
+                                                                                </span>
+                                                                            </div>
+                                                                            <div class="card_article_opr">
+                                                                                <a href="javascript:void(0);" class="btn btn_primary js_add_confirm">确定</a>
+                                                                                <a href="javascript:void(0);" class="btn btn_default js_add_cancel">取消</a>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="card_article_add js_card_article_add">
+                                                                        <span class="icon_article_add">
+                                                                            <a class="icon42_common add_gray"></a>
+                                                                        </span>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="editor_box_demo">
+                                                                <span class="demo_text">示例 <br>
+                                                                    图文内容建议上传商品、服务、环境等优质图片，并辅之以简单描述。
+                                                                </span>
+                                                                <a href="javascript:void(0);" title="" class="img_wrap js_img_wrap_preview" bigsrc="https://res.wx.qq.com/mpres/htmledition/images/pic/cardticket/card_description29bc6c.jpg">
+                                                                    <img src="images/card_thumb.jpg">
+                                                                </a>
+                                                                <!--<p class="tc">（点击图片可查看大图）</p>-->
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <p class="frm_msg fail" id="js_card_desc_fail">
+                                                        <span class="frm_msg_content">图片和描述都不能为空</span>
+                                                    </p>
+                                                </div>
+                                                <!--图文介绍结束-->
+
+                                            </div>
+
+                                            <!--商户介绍开始-->
+                                            <div class="editor_section js_editor_section meezao_merchant_introduction">
+                                                <h3 class="title js_editor_collapsor">商户介绍(选填)
+                                                    <a href="javascript:void(0);" data-open="1" class="editor_collapsor">展开</a>
+                                                </h3>
+                                                <div class="editor_collapse js_editor_collapse" style="display:block;">
+
+                                                    <div class="js_card_input_item frm_control_group frm_card_extend meezao_phone_number">
+                                                        <label for="" class="frm_label">
+                                                            <strong class="title">电话</strong>
+                                                        </label>
+                                                        <span class="frm_input_box">
+                                                            <input name="service_phone" value="" type="text" class="frm_input meezao_input_validate" placeholder="">
+                                                        </span>
+                                                        <p class="frm_msg fail">
+                                                            <span for="service_phone" class="frm_msg_content" style="display: inline;">请输入座机号或手机号，可加区号（如：020-88888888，最长不超过15位）</span>
+                                                        </p>
+                                                        <p class="frm_tips">手机或固话</p>
+                                                    </div>
+                                                    <div id="js_business_service" class="frm_control frm_card_extend">
+                                                        <label for="" class="frm_label">商户服务
+                                                            <br />
+                                                            <span class="tips"></span>
+                                                        </label>
+                                                        <div class="frm_controls frm_vertical_lh meezao_checkbox_box meezao_merchant_services">
+                                                            <label class="selected frm_checkbox_label" for="checkbox18">
+                                                                <i class="icon_checkbox"></i>
+                                                                <span class="lbl_content">免费WIFI</span>
+                                                                <input type="checkbox" value="0" checked="" class="frm_checkbox" id="checkbox18">
+                                                            </label>
+                                                            <label class="selected frm_checkbox_label" for="checkbox19">
+                                                                <i class="icon_checkbox"></i>
+                                                                <span class="lbl_content">可带宠物</span>
+                                                                <input type="checkbox" value="1" checked="" class="frm_checkbox" id="checkbox19">
+                                                            </label>
+                                                            <label class="selected frm_checkbox_label" for="checkbox20">
+                                                                <i class="icon_checkbox"></i>
+                                                                <span class="lbl_content">免费停车</span>
+                                                                <input type="checkbox" value="2" checked="" class="frm_checkbox" id="checkbox20">
+                                                            </label>
+                                                            <label class="frm_checkbox_label" for="checkbox21">
+                                                                <i class="icon_checkbox"></i>
+                                                                <span class="lbl_content">可外卖</span>
+                                                                <input type="checkbox" value="3" class="frm_checkbox" id="checkbox21">
+                                                            </label>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!--商户介绍结束-->
+
+                                            <!--入口开始-->
+                                            <div id="js_config_url_p">
+
+                                                <div class="editor_section edit_section_url js_appmsg_url_item meezao_js_appmsg_url_item_new">
+                                                    <h3 class="title js_card_title">
+                                                        <p>
+                                                            <span class="js_appmsg_url_intro">入口一</span>
+                                                            <a class="link js_delete_item" href="javascript:;">删除</a>
+                                                        </p>
+                                                    </h3>
+                                                    <div class="">
+                                                        <div class="frm_control_group frm_card_extend frm_normal">
+                                                            <label for="" class="frm_label">
+                                                                <strong class="title">入口名称</strong>
+                                                            </label>
+                                                            <span class="frm_input_box">
+                                                                <input type="text" data-maxlength="5" class="frm_input js_maxlength js_custom_url_name meezao_input_must meezao_input_validate">
+                                                            </span>
+                                                            <span class="tips"><span class="">0</span>/5</span>
+                                                            <p class="frm_msg fail">
+                                                                <span class="frm_msg_content">自定义入口名称最多只能输入5个中文</span>
+                                                            </p>
+                                                        </div>
+                                                        <div class="frm_control_group frm_normal frm_card_extend">
+                                                            <label for="" class="frm_label">
+                                                                <strong class="title">引导语
+                                                                    <span class="tips">(选填)</span>
+                                                                </strong>
+                                                            </label>
+                                                            <span class="frm_input_box">
+                                                                <input type="text" data-maxlength="6" class="frm_input js_maxlength js_custom_url_desc meezao_input_validate">
+                                                            </span>
+                                                            <span class="tips"><span class="">0</span>/6</span>
+                                                            <p class="frm_msg fail">
+                                                                <span class="frm_msg_content">自定义入口引导语最多只能输入6个中文</span>
+                                                            </p>
+                                                        </div>
+
+                                                        <div class="frm_control_group js_jump_url_p frm_card_extend">
+                                                            <label for="" class="frm_label">点击跳转</label>
+                                                            <div class="frm_controls frm_vertical_lh">
+                                                                <!--<label class="frm_radio_label" for="checkbox36">-->
+                                                                    <!--<i class="icon_radio"></i>-->
+                                                                    <!--<span class="lbl_content">图文消息</span>-->
+                                                                    <!--<input type="radio" data-v="1" name="js_jump_url_0" class="frm_radio js_jump_appmsg" id="checkbox36">-->
+                                                                <!--</label>-->
+                                                                <!--<label class="frm_radio_label" for="checkbox37">-->
+                                                                    <!--<i class="icon_radio"></i>-->
+                                                                    <!--<span class="lbl_content">卡券货架</span>-->
+                                                                    <!--<input type="radio" data-v="2" name="js_jump_url_0" class="frm_radio js_jump_card_shelf" id="checkbox37">-->
+                                                                <!--</label>-->
+
+                                                                <!--<label class="frm_radio_label" for="checkbox38">-->
+                                                                    <!--<i class="icon_radio"></i>-->
+                                                                    <!--<span class="lbl_content">小店货架</span>-->
+                                                                    <!--<input type="radio" data-v="3" name="js_jump_url_0" class="frm_radio js_jump_shop_shelf" id="checkbox38">-->
+                                                                <!--</label>-->
+
+                                                                <label class="frm_radio_label selected">
+                                                                    <i class="icon_radio"></i>
+                                                                    <span class="lbl_content">网页链接</span>
+                                                                    <input type="radio" data-v="4" checked="checked" class="frm_radio js_jump_custom_url">
+                                                                </label>
+                                                            </div>
+                                                        </div>
+
+                                                        <!--点击跳转具体内容开始-->
+                                                        <div class="js_appmsg_edit_item_p">
+
+                                                            <div class="appmsg_edit_item frm_card_extend">
+
+                                                                <label class="frm_label">
+                                                                    <strong class="title">网页链接</strong>
+                                                                </label>
+                                                                <div class="frm_controls">
+                                                                    <span class="frm_hint">http://</span>
+                                                                    <span class="frm_input_box url_box">
+			                                                            <input type="text" value="" class="frm_input js_link_url meezao_input_validate">
+		                                                            </span>
+                                                                </div>
+                                                                <p class="frm_msg fail">
+                                                                    <span class="frm_msg_content">自定义入口跳转链接不能为空</span>
+                                                                </p>
+                                                            </div>
+                                                        </div>
+                                                        <!--点击跳转具体内容结束-->
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!--入口结束-->
+
+
+                                            <!--添加自定义入口开始-->
+                                            <div class="tool_bar border" id="js_config_url_toolbar">
+                                                <a id="js_add_config_url" class="btn btn_default" href="javascript:;">添加自定义入口</a>
+                                                <div class="tips">可配置图文消息、货架、网页链接,用户可查看详情或领取更多卡券。</div>
+                                            </div>
+                                            <!--添加自定义入口结束-->
+                                        </div>
+                                    </div>
+                                </div>
+                            <!--</form>-->
+                            <!--右侧编辑结束-->
+
+                            <!--下一步按钮开始-->
+                            <div class="tool_bar border tc">
+                                <span id="js_nextstep" class="btn btn_input btn_default">
+                                    <a style="color:#000">下一步</a>
+                                </span>
+                            </div>
+                            <!--下一步按钮结束-->
+                            </div>
+                            <!--填写会员卡信息结束-->
+
+                            <!--功能设置开始-->
+                            <div class="group js_tab_content js_function_setting" style="display: block;">
+                            <!--<form id="js_editform_step2" novalidate="novalidate">-->
+                                <div class="media_edit_area" id="js_edit_area2">
+                                    <div class="js_edit_content portable_editor to_left appmsg_editor">
+                                        <div class="inner">
+                                            <div class="editor_section">
+                                                <h3 class="title">
+                                                    使用设置</h3>
+                                                <div class="frm_control_group frm_card_extend" id="js_share_type">
+                                                    <div class="frm_controls frm_vertical_lh">
+                                                        <label class="frm_checkbox_label selected" for="checkbox32">
+                                                            <i class="icon_checkbox"></i>
+                                                            <span class="lbl_content">用户可以分享领券链接</span>
+                                                            <input value="1" type="checkbox" checked="" class="frm_radio frm_checkbox" target="#js_hidden_can_share" id="checkbox32">
+                                                        </label>
+                                                        <label class="frm_checkbox_label selected" for="checkbox33">
+                                                            <i class="icon_checkbox"></i>
+                                                            <span class="lbl_content">用户需激活后才能使用</span>
+                                                            <input type="checkbox" checked="" class="frm_radio js_active_checkbox frm_checkbox" target="#js_hidden_must_activate" id="checkbox33">
+                                                        </label>
+                                                        <label class="frm_checkbox_label" for="checkbox44">
+                                                            <i class="icon_checkbox"></i>
+                                                            <span class="lbl_content">用户需绑定连接后使用</span>
+                                                            <input type="checkbox" checked="" class="frm_radio js_active_checkbox frm_checkbox" target="#js_hidden_must_link" id="checkbox44">
+                                                        </label>
+                                                    </div>
+                                                    <input type="hidden" name="can_give_friend" value="0" id="js_hidden_can_give_friend">
+                                                    <input type="hidden" name="can_share" value="1" id="js_hidden_can_share">
+                                                    <input type="hidden" name="must_activate" value="1" id="js_hidden_must_activate">
+                                                </div>
+
+                                                <div class="frm_control_group frm_card_extend" id="js_active_container">
+                                                    <label for="" class="frm_label">
+                                                        <strong class="title">激活信息</strong>
+                                                    </label>
+                                                    <div class="frm_controls">
+                                                        <div class="js_keywords">
+                                                            <div class="msg_row_area">
+                                                                <dl class="msg_row group first_msg_row">
+                                                                    <dt class="msg_row_title">必填信息</dt>
+                                                                    <dd class="msg_row_content">
+                                                                        <span class="" data-key="USER_FORM_INFO_FLAG_NAME" >手机号</span>
+                                                                        <!--<span class="" style="visibility: hidden;"></span>-->
+                                                                    </dd>
+                                                                </dl>
+                                                                <dl class="msg_row group last_msg_row">
+                                                                    <dt class="msg_row_title">激活信息</dt>
+                                                                    <dd class="msg_row_content">
+                                                                        <span class="">姓名</span>
+                                                                        <span class="">性别</span>
+                                                                        <span class="">生日</span>
+                                                                        <span class="">邮箱</span>
+                                                                        <span class="">详细地址</span>
+                                                                        <span class="">喜欢的电影</span>
+                                                                        <span class="">喜欢的食物</span>
+                                                                    </dd>
+                                                                </dl>
+                                                            </div>
+                                                            <div class="frm_control"> 不允许用户自主修改以上信息</div>
+                                                        </div>
+                                                        <div id="activeInformationNecessary" style="display: none;">
+                                                            USER_FORM_INFO_FLAG_MOBILE,USER_FORM_INFO_FLAG_NAME
+                                                        </div>
+                                                        <div id="activeInformationSelect" style="display: none;">
+                                                            USER_FORM_INFO_FLAG_SEX,USER_FORM_INFO_FLAG_IDCARD
+                                                        </div>
+                                                        <a class="btn btn_default" id="js_select_keywords">设置</a></div>
+                                                </div>
+
+                                                <div class="frm_control_group frm_card_extend" id="js_old_member_bind" style="display: none;">
+                                                    <label for="" class="frm_label">
+                                                        <strong class="title">老会员绑定</strong>
+                                                    </label>
+                                                    <div id="js_msg_old_member_bind">
+                                                        <div class="frm_control_group frm_card_extend js_msg_operate_content_item js_4_show">
+                                                            <label for="" class="frm_label">网页链接</label>
+                                                            <!--<div class="frm_controls">-->
+                                                            <span class="frm_input_box">
+                                                                <input name="msg_operation_url" type="text" class="frm_input js_msg_operate_link_url meezao_input_must meezao_input_validate" placeholder="">
+                                                            </span>
+                                                            <p class="frm_msg fail">
+                                                                <span for="notice" class="frm_msg_content" style="display: inline;">网页链接不能为空</span>
+                                                            </p>
+                                                            <!--</div>-->
+                                                        </div>
+                                                        <div class="frm_control_group frm_card_extend js_msg_operate_content_item js_1_show js_2_show js_4_show" style="display: block;margin-left: 7em;">
+                                                            <label for="" class="frm_label">介绍文字</label>
+                                                            <!--<div class="frm_controls">-->
+                                                            <span class="frm_input_box with_counter counter_in append">
+                                                            <input id="js_msg_old_member_bind_text" name="msg_operation_url_text" type="text" class="frm_input js_maxlength meezao_input_must meezao_input_validate" target="#js_old_member_bind_hint" data-maxlength="16" placeholder="">
+                                                                <span class="frm_input_append frm_counter">
+                                                                    <span id="js_old_member_bind_hint">0</span>/16
+                                                                </span>
+                                                            </span>
+                                                            <p class="frm_msg fail">
+                                                                <span for="notice" class="frm_msg_content" style="display: inline;">介绍文字不能为空且长度不超过16个汉字或32个英文字母</span>
+                                                            </p>
+                                                            <!--</div>-->
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <!--会员类目信息-->
+                                                <div class="frm_control_group frm_card_extend" id="js_member_container">
+                                                    <label for="" class="frm_label">
+                                                        <strong class="title">会员类目信息</strong>
+                                                    </label>
+                                                    <div class="frm_controls">
+                                                        <div class="js_keywords">
+                                                            <div class="msg_row_area">
+                                                                <dl class="msg_row group first_msg_row">
+                                                                    <dt class="msg_row_title">信息</dt>
+                                                                    <dd class="msg_row_content">
+                                                                        <span class="msg_row_name" data-key="FIELD_NAME_TYPE_COUPON">优惠券</span>
+                                                                        <span class="msg_row_input"><input type="text" value="" placeholder="请输入链接"></span>
+                                                                    </dd>
+                                                                </dl>
+                                                            </div>
+                                                        </div>
+                                                        <input type="text" id="member_category_information" value="FIELD_NAME_TYPE_LEVEL,FIELD_NAME_TYPE_COUPON" style="display: none;">
+                                                        <a class="btn btn_default" id="js_member_keywords">设置</a></div>
+                                                </div>
+                                                <!--会员类目信息-->
+
+                                                <div class="frm_control_group frm_card_extend row_item">
+                                                    <div class="radio_row" id="js_adv_dispose_method">
+                                                        <label for="" class="frm_label">核销方式</label>
+                                                        <div class="frm_controls frm_vertical_lh">
+                                                            <p class="frm_tips frm_tips_top js_frm_tips_consume_type" style="display:none;"></p>
+                                                            <div class="radio_control_group group js_consume_type_container_1" style="display: none;">
+                                                                <label class="frm_radio_label" for="checkbox3">
+                                                                    <i class="icon_radio"></i>
+                                                                    <span class="lbl_content">自助买单</span>
+                                                                    <input type="radio" value="1" class="frm_radio js_consume_type js_consume_type_1" id="checkbox3">
+                                                                    <p class="frm_tips js_dispose_method_tips js_dispose_method_tips_1" style="display: none;">
+                                                                        “自助买单”无需开发即可接入微信支付，消费者结账时点击“快速买单”输入金额，即可确认完成支付并使用优惠。当前收款商户号为“1260738401”，登录
+                                                                        <a href="https://pay.weixin.qq.com" target="_blank">支付平台</a> 可查询收入明细，详情参照
+                                                                        <a href="/cgi-bin/announce?action=getannouncement&amp;key=1461861451&amp;version=1&amp;lang=zh_CN&amp;platform=2" target="_blank">指引</a>
+                                                                    </p>
+                                                                </label>
+                                                            </div>
+                                                            <div class="radio_control_group group js_consume_type_container_5" style="display:none;">
+                                                                <label class="frm_radio_label disabled" for="checkbox4">
+                                                                    <i class="icon_radio"></i>
+                                                                    <span class="lbl_content">微信支付买单&nbsp;&nbsp;<a href="/merchant/cardmerchantprofile?action=list&amp;token=621313516&amp;lang=zh_CN#wxpay" class="js_open_wxpay" target="_blank">开通</a></span>
+                                                                    <input type="radio" value="5" disabled="" class="frm_radio js_consume_type js_consume_type_5" id="checkbox4">
+                                                                </label>
+                                                            </div>
+                                                            <div class="radio_control_group group">
+                                                                <label class="frm_radio_label selected" for="checkbox5">
+                                                                    <i class="icon_radio"></i>
+                                                                    <span class="lbl_content">用扫码核销</span>
+                                                                    <input type="radio" value="3" checked="" class="frm_radio js_consume_type js_consume_type_3" id="checkbox5">
+                                                                </label>
+                                                                <div class="js_dispose_method_sub js_dispose_method_sub_3" style="">
+                                                                    <div class="js_destroy_type">
+                                                                        <div class="frm_controls frm_grid">
+                                                                            <div class="radio_control_group group">
+                                                                                <label class="frm_radio_label" for="checkbox6">
+                                                                                    <i class="icon_radio"></i>
+                                                                                    <span class="lbl_content">仅卡号</span>
+                                                                                    <input type="radio" value="0" class="frm_radio" id="checkbox6">
+                                                                                    <p class="frm_tips">输码后可销券</p>
+                                                                                    <div class="frm_demo_img">
+                                                                                        <img src="images/dispose1.jpg" alt="">
+                                                                                    </div>
+                                                                                </label>
+                                                                            </div>
+                                                                            <div class="radio_control_group group">
+                                                                                <label class="frm_radio_label selected" for="checkbox7">
+                                                                                    <i class="icon_radio"></i>
+                                                                                    <span class="lbl_content">卡号和二维码</span>
+                                                                                    <input type="radio" checked="" value="2" class="frm_radio" id="checkbox7">
+                                                                                    <p class="frm_tips">扫码或输码后可销券</p>
+                                                                                    <div class="frm_demo_img">
+                                                                                        <img src="images/dispose2.jpg" alt="">
+                                                                                    </div>
+                                                                                </label>
+                                                                            </div>
+                                                                            <div class="radio_control_group group">
+                                                                                <label class="frm_radio_label" for="checkbox8">
+                                                                                    <i class="icon_radio"></i>
+                                                                                    <span class="lbl_content">卡号和条形码</span>
+                                                                                    <input type="radio" value="1" class="frm_radio" id="checkbox8">
+                                                                                    <p class="frm_tips">扫码或输码后可销券</p>
+                                                                                    <div class="frm_demo_img">
+                                                                                        <img src="images/dispose3.jpg" alt="">
+                                                                                    </div>
+                                                                                </label>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <input type="hidden" value="0" name="open_self_consume" id="js_hidden_dispose_method">
+                                                        <input type="hidden" value="2" name="code_type" id="js_hidden_code_type">
+                                                    </div>
+                                                </div>
+                                                <div class="js_card_input_item frm_control_group frm_card_extend frm_normal">
+                                                    <label for="" class="frm_label">
+                                                        <strong class="title">操作提示</strong>
+                                                    </label>
+                                                    <span class="frm_input_box with_counter counter_in append">
+                                                        <input name="notice" value="Meezao" type="text" data-maxlength="16" target="#js_notice_hint" class="frm_input js_can_preview js_maxlength meezao_input_must">
+                                                        <span class="frm_input_append frm_counter">
+                                                            <span id="js_notice_hint">3</span>/16
+                                                        </span>
+                                                    </span>
+                                                    <p class="frm_msg fail">
+                                                        <span for="notice" class="frm_msg_content" style="display: inline;">操作提示不能为空且长度不超过16个汉字或32个英文字母</span>
+                                                    </p>
+                                                    <p class="frm_tips">建议引导用户到店出示会员卡，由店员完成核销操作</p>
+                                                </div>
+                                                <div id="js_wechat_pay"></div>
+                                            </div>
+                                            <div class="editor_section">
+                                                <h3 class="title">
+                                                    服务信息
+                                                </h3>
+                                                <div class="frm_control_group frm_card_extend" id="js_add_shop_top_container">
+                                                    <label for="" class="frm_label">
+                                                        <strong class="title">适用门店</strong>
+                                                    </label>
+                                                    <div class="frm_controls radio_row">
+                                                        <p class="frm_tips frm_tips_top js_frm_tips_shop_top" style="display:none;">请选择带有“核销员”标记的门店后，该券支持买单核销。
+                                                            <a href="/merchant/entityshop?action=list&amp;lang=zh_CN&amp;token=621313516" target="_blank">设置门店</a>
+                                                            方便用户到店消费及买单。</p>
+                                                        <div class="radio_control_group group">
+                                                            <label class="frm_radio_label selected" for="checkbox27">
+                                                                <i class="icon_radio"></i>
+                                                                <span class="lbl_content">全部门店适用<span class="icon_payable js_icon_payable js_icon_payable_1" style="display:none">支持买单</span></span>
+                                                                <input type="radio" checked="" value="1" class="frm_radio js_shop_type" id="checkbox27">
+                                                            </label>
+                                                        </div>
+                                                        <div class="radio_control_group group" style="display: none;">
+                                                            <label class="frm_radio_label" for="checkbox28">
+                                                                <i class="icon_radio"></i>
+                                                                <span class="lbl_content">指定门店适用 <span class="icon_payable js_icon_payable js_icon_payable_2" style="display:none">支持买单</span></span>
+                                                                <input type="radio" value="2" class="frm_radio js_shop_type" id="checkbox28">
+                                                            </label>
+                                                            <div class="table_wrp" id="js_fix_shop" style="display: none;">
+                                                                <table class="table" cellspacing="0" id="js_shop_table">
+                                                                    <thead class="thead">
+                                                                    <tr>
+                                                                        <th class="table_cell store_name">
+                                                                            <div class="td_panel">门店名称</div>
+                                                                        </th>
+                                                                        <th class="table_cell store_adr">
+                                                                            <div class="td_panel">地址</div>
+                                                                        </th>
+                                                                        <th class="table_cell store_oper no_extra">
+                                                                            <div class="td_panel group">操作</div>
+                                                                        </th>
+                                                                    </tr>
+                                                                    </thead>
+                                                                    <tbody class="tbody" id="js_shop_list">
+                                                                    <tr data-id="289880646">
+                                                                        <td class="table_cell store_name store_can_pay">
+                                                                            <div class="td_panel">麦当劳(艺苑路店)<i class="ic_declarerer">核销员</i></div>
+                                                                        </td>
+                                                                        <td class="table_cell store_adr">
+                                                                            <div class="td_panel">艺苑路11 号</div>
+                                                                        </td>
+                                                                        <td class="table_cell store_oper no_extra">
+                                                                            <div class="td_panel group">
+                                                                                <a href="javascript:void(0);" class="dele js_delete_shop"></a>
+                                                                            </div>
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr data-id="289880647">
+                                                                        <td class="table_cell store_name store_can_pay">
+                                                                            <div class="td_panel">肯德基(学苑路店)<i class="ic_declarerer">核销员</i></div>
+                                                                        </td>
+                                                                        <td class="table_cell store_adr">
+                                                                            <div class="td_panel">学苑路11 号</div>
+                                                                        </td>
+                                                                        <td class="table_cell store_oper no_extra">
+                                                                            <div class="td_panel group">
+                                                                                <a href="javascript:void(0);" class="dele js_delete_shop"></a>
+                                                                            </div>
+                                                                        </td>
+                                                                    </tr>
+                                                                    </tbody>
+                                                                </table>
+                                                                <div class="table_foot"><a href="javascript:void(0);" id="js_add_shop">添加适用门店</a>
+                                                                    <div class="r" id="js_shop_pager"></div>
+                                                                </div>
+                                                                <input type="hidden" value="289880646" name="location_id_list" id="js_hidden_shop_id_list">
+                                                            </div>
+                                                        </div>
+                                                        <div class="radio_control_group last_radio_control_group" style="display: none;">
+                                                            <label class="frm_radio_label" for="checkbox29">
+                                                                <i class="icon_radio"></i> <span class="lbl_content">无指定门店</span>
+                                                                <input type="radio" value="3" class="frm_radio js_shop_type" id="checkbox29">
+                                                                <p class="frm_tips js_frm_tips_noshop_consume_type"></p>
+                                                            </label>
+                                                            <div id="js_nofix_shop" style="display: none;">
+                                                                <div class="sub_radio_control_group">
+                                                                    <label class="frm_radio_label frm_radio_db" for="checkbox30"> <i class="icon_radio"></i>
+                                                                        <span class="lbl_content">网上经营，无需到店消费</span>
+                                                                        <input type="radio" value="1" class="frm_radio js_noshop_type" id="checkbox30"> </label>
+                                                                    <label class="frm_radio_label frm_radio_db" for="checkbox31">
+                                                                        <i class="icon_radio"></i>
+                                                                        <span class="lbl_content">其他原因</span>
+                                                                        <input type="radio" value="3" class="frm_radio js_noshop_type" id="checkbox31"> </label>
+                                                                    <div class="js_noshop_sub" style="display: none;">
+                                                                        <div class="frm_control_group textarea_group">
+                                                                            <div class="frm_controls">
+                                                                                <div class="frm_textarea_box">
+                                                                                    <textarea type="text" name="" class="frm_textarea js_noshop_input" placeholder=""></textarea>
+                                                                                </div>
+                                                                                <span class="supply_msg js_noshop_num">0/50</span>
+                                                                            </div>
+                                                                            <p class="frm_tips">若无合理说明，微信可能驳回卡券申请</p>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <input type="hidden" value="" name="no_store_reason" id="js_hidden_noshop_reason">
+                                                            <input type="hidden" name="no_store_reason_type" id="js_hidden_noshop_reason_type">
+                                                        </div>
+                                                        <div class="radio_control_group group">
+                                                            <div class="js_shop_nosupport_wepay frm_multi_msg" style="display: none;"></div>
+                                                        </div>
+                                                        <p class="js_frm_tips_shop_notall_canpay frm_tips_strong" style="display:none;"></p>
+                                                        <input type="hidden" name="shop_type" value="1" id="js_hidden_shop_type">
+                                                        <input type="hidden" name="card_pay_money" value="0" id="js_hidden_card_pay_money">
+                                                        <input type="hidden" name="card_pay_store" value="1" id="js_hidden_card_pay_store">
+                                                    </div>
+                                                </div>
+
+                                                <div class="frm_control_group frm_card_extend" id="js_service_declaration">
+                                                    <label for="" class="frm_label">
+                                                        <strong class="title">服务声明</strong>
+                                                    </label>
+                                                    <div id="js_msg_service_declaration">
+                                                        <div class="frm_control_group frm_card_extend js_msg_operate_content_item js_4_show">
+                                                            <label for="" class="frm_label">网页链接</label>
+                                                            <!--<div class="frm_controls">-->
+                                                            <span class="frm_input_box">
+                                                                <input name="msg_operation_url" type="text" class="frm_input js_msg_operate_link_url meezao_input_must meezao_input_validate" placeholder="">
+                                                            </span>
+                                                            <p class="frm_msg fail">
+                                                                <span for="notice" class="frm_msg_content" style="display: inline;margin-left: 98px;">网页链接不能为空</span>
+                                                            </p>
+                                                            <!--</div>-->
+                                                        </div>
+                                                        <div class="frm_control_group frm_card_extend js_msg_operate_content_item js_1_show js_2_show js_4_show" style="display: block;margin-left: 7em;">
+                                                            <label for="" class="frm_label">介绍文字</label>
+                                                            <!--<div class="frm_controls">-->
+                                                            <span class="frm_input_box with_counter counter_in append">
+                                                            <input id="js_msg_service_declaration_text" name="msg_operation_url_text" type="text" class="frm_input js_maxlength meezao_input_must meezao_input_validate" target="#js_service_declaration_hint" data-maxlength="16" placeholder="">
+                                                                <span class="frm_input_append frm_counter">
+                                                                    <span id="js_service_declaration_hint">0</span>/16
+                                                                </span>
+                                                            </span>
+                                                            <p class="frm_msg fail">
+                                                                <span for="notice" class="frm_msg_content" style="display: inline;">介绍文字不能为空且长度不超过16个汉字或32个英文字母</span>
+                                                            </p>
+                                                            <!--</div>-->
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                            <div class="editor_section" id="js_msg_operate_container">
+                                                <h3 class="title">
+                                                    消息通知<i data-x="-138" id="js_msg_operate_tips" class="icon_msg_mini ask" data-toggle="tooltip" data-placement="bottom" title="卡券核销后，用户在卡包会收到消息通知"></i>
+                                                </h3>
+                                                <div id="js_msg_operate_contenttype" class="frm_control_group frm_card_extend msg_notification">
+                                                    <label for="" class="frm_label">内容设置</label>
+                                                    <div class="frm_controls frm_vertical_lh">
+                                                        <label class="frm_radio_label" for="checkbox22" style="display: none;"> <i class="icon_radio"></i><span class="lbl_content">图文消息</span>
+                                                            <input type="radio" value="1" class="frm_radio" id="checkbox22">
+                                                        </label>
+                                                        <label class="frm_radio_label selected" for="checkbox23">
+                                                            <i class="icon_radio"></i><span class="lbl_content">网页链接</span>
+                                                            <input type="radio" value="4" class="frm_radio" checked="" id="checkbox23"> </label>
+                                                        <label class="frm_radio_label" for="checkbox24" style="display: none;"> <i class="icon_radio"></i><span class="lbl_content">卡券</span>
+                                                            <input type="radio" value="5" class="frm_radio" id="checkbox24">
+                                                        </label>
+                                                        <label class="frm_radio_label" for="checkbox25" style="display: none;"> <i class="icon_radio"></i><span class="lbl_content">卡券货架</span>
+                                                            <input type="radio" value="2" class="frm_radio" id="checkbox25">
+                                                        </label>
+                                                        <label class="frm_radio_label" for="checkbox26"><i class="icon_radio"></i><span class="lbl_content">不设置</span>
+                                                            <input type="radio" value="0" class="frm_radio" id="checkbox26">
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                                <div id="js_msg_operate_content">
+                                                    <div class="frm_control_group frm_card_extend js_msg_operate_content_item js_1_show" style="display: none;">
+                                                        <label for="" class="frm_label">图文消息</label>
+                                                        <div class="frm_controls">
+                                                            <div class="frm_media_priview js_msg_operate_1_preview"></div>
+                                                            <a class="btn btn_default js_msg_operate_select_appmsg" href="javascript:;">选择图文消息</a></div>
+                                                    </div>
+                                                    <div class="frm_control_group frm_card_extend js_msg_operate_content_item js_4_show">
+                                                        <label for="" class="frm_label">网页链接</label>
+                                                        <!--<div class="frm_controls">-->
+                                                            <span class="frm_input_box">
+                                                                <input name="msg_operation_url" type="text" class="frm_input js_msg_operate_link_url meezao_input_must meezao_input_validate" placeholder="">
+                                                            </span>
+                                                            <p class="frm_msg fail">
+                                                                <span for="notice" class="frm_msg_content" style="display: inline;">网页链接不能为空</span>
+                                                            </p>
+                                                        <!--</div>-->
+                                                    </div>
+                                                    <div class="frm_control_group frm_card_extend js_msg_operate_content_item js_2_show" style="display: none;">
+                                                        <label for="" class="frm_label">卡券货架</label>
+                                                        <div class="frm_controls">
+                                                            <div class="frm_media_priview js_msg_operate_2_preview"></div>
+                                                            <a class="btn btn_default js_msg_operate_select_cardshelf" href="javascript:;">选择卡券货架</a></div>
+                                                    </div>
+                                                    <div class="frm_control_group frm_card_extend js_msg_operate_content_item js_5_show" style="display: none;">
+                                                        <label for="" class="frm_label">卡券</label>
+                                                        <div class="frm_controls">
+                                                            <div class="frm_media_priview js_msg_operate_5_preview"></div>
+                                                            <a class="btn btn_default js_msg_operate_select_cardticket" href="javascript:;">选择卡券</a></div>
+                                                    </div>
+                                                    <div class="frm_control_group frm_card_extend js_msg_operate_content_item js_1_show js_2_show js_4_show" style="display: block;">
+                                                        <label for="" class="frm_label">介绍文字</label>
+                                                        <!--<div class="frm_controls">-->
+                                                            <span class="frm_input_box with_counter counter_in append">
+                                                            <input id="js_msg_operation_url_text" name="msg_operation_url_text" type="text" class="frm_input js_maxlength meezao_input_must meezao_input_validate" target="#js_urltext_hint" data-maxlength="16" placeholder="">
+                                                                <span class="frm_input_append frm_counter">
+                                                                    <span id="js_urltext_hint">0</span>/16
+                                                                </span>
+                                                            </span>
+                                                            <p class="frm_msg fail">
+                                                                <span for="notice" class="frm_msg_content" style="display: inline;">介绍文字不能为空且长度不超过16个汉字或32个英文字母</span>
+                                                            </p>
+                                                        <!--</div>-->
+                                                    </div>
+                                                </div>
+                                                <div class="frm_control_group frm_card_extend" id="js_msg_operate_endtime_container">
+                                                    <label for="" class="frm_label">通知截止日期</label>
+                                                    <div class="frm_controls">
+                                                        <div class="time_picker">
+                                                            <div id="js_msg_operate_endtime_select">
+                                                                <div class="ta_date" id="div_js_dateRangeTitle0">
+                                                                    <!--<span class="date_title" id="js_dateRangeTitle0">2017-06-24</span>-->
+                                                                    <input class="date_title" id="js_dateRangeTitle0">
+                                                                    <a class="opt_sel" id="js_dateRangeTrigger0" href="javascript:void(0)">
+                                                                        <i class="i_orderd"></i>
+                                                                    </a>
+                                                                </div>
+                                                                <label class="contrast" for="needCompare_1491790171748" style="display: none;">
+                                                                    <input type="checkbox" class="pc" name="needCompare_1491790171748" id="needCompare_1491790171748" value="1" disabled="disabled">对比</label>
+                                                                <div class="ta_date" id="div_compare_js_dateRangeTitle0" style="display: none;"><span name="dateCompare" id="js_dateRangeTitle0Compare" class="date_title" style="display: none;"></span>
+                                                                    <a class="opt_sel" id="compare_trigger" href="javascript:void(0);"> <i class="i_orderd"></i> </a>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <input type="hidden" name="msg_operation_endtime" value="1498319999" id="js_msg_operate_endtime">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            <!--</form>-->
+                            <div class="tool_bar border tc">
+                                <span id="js_prevstep" class="btn btn_input btn_default">
+                                    <a style="color:#000;">上一步</a>
+                                </span>
+                                <span id="js_submit" class="btn btn_input btn_primary">
+                                    <a style="color:#fff;">提交审核</a>
+                                </span>
+                                <span id="js_preview" class="btn btn_input btn_default">
+                                    <a style="color:#000">预览</a>
+                                </span>
+                            </div>
+                        </div>
+                            <!--功能设置结束-->
+
+                        </form>
+                    </div>
+                    <!--主要展示内容结束-->
+
+                </div>
+                <!--自己的内容结束-->
+
+            </div>
+            <!--主体内容结束-->
+
+        </div>
+        <!--右侧内容主体结束-->
+
+
+    </div>
+    <!--右侧内容结束-->
+</div>
+<!--页面结束-->
+
+
+<!--设置激活信息模态框开始-->
+<div class="modal modal_setting_active">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <!--修改-->
+                <!--<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>-->
+                <a href="javascript:;" onclick="return false" class="icon16_opr closed pop_closed">关闭</a>
+                <!--修改-->
+                <h4 class="modal-title">设置激活信息</h4>
+            </div>
+            <div class="modal-body">
+                <div class="dialog_bd">
+                    <div>
+                        <div class="js_active_step" style="display: none;">
+                            <ul class="processor_bar grid_line">
+                                <li class="step grid_item size1of2 prev">
+                                    <h4>1 选择必填信息</h4>
+                                </li>
+                                <li class="no_extra step grid_item size1of2 current">
+                                    <h4>2 选择信息</h4>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="js_active_last">
+                            <div class="scope_area">
+                                <div class="unchoose_scope">
+                                    <div class="scope_hd">
+                                        <label>请选择信息</label>
+                                    </div>
+                                    <dl class="scope_list jsFromList">
+                                        <!--<dd class="required_fields"><span>手机号</span></dd>-->
+                                        <dd>
+                                            <p class="frm_msg fail jsFail" style="display:none"><span class="frm_msg_content" style="display: none;"></span></p>
+                                        </dd>
+                                        <div class="jsEmptyTip empty_tips dn" style="display: none;"></div>
+                                        <div class="js_dd_list">
+                                            <dd class="first_dd_list">
+                                                <a href="javascript:;" class="jsLevel father_menu   jsLevel1" data-id="1" data-name="个人信息" data-desc="" data-expand="0">
+                                                    <i class="jsToggle sub_icon show_sub_icon hide_sub_icon">-</i>
+                                                    <span class="item_name">个人信息</span>
+                                                </a>
+                                                <ul class="sub_scope_list" style="display: block;">
+                                                    <li>
+                                                        <a data-id="姓名" data-name="姓名" data-key="USER_FORM_INFO_FLAG_NAME" href="javascript:void(0);" class="jsLevel jsLevel2">姓名</a>
+                                                    </li>
+                                                    <li>
+                                                        <a data-id="性别" data-name="性别" data-key="USER_FORM_INFO_FLAG_SEX" href="javascript:void(0);" class="jsLevel jsLevel2">性别</a>
+                                                    </li>
+                                                    <li>
+                                                        <a data-id="生日" data-name="生日" data-key="USER_FORM_INFO_FLAG_BIRTHDAY" href="javascript:void(0);" class="jsLevel jsLevel2">生日</a>
+                                                    </li>
+                                                </ul>
+                                            </dd>
+                                            <dd>
+                                                <a href="javascript:;" class="jsLevel father_menu   jsLevel1" data-id="2" data-name="联系方式" data-desc="" data-expand="0">
+                                                    <i class="jsToggle sub_icon show_sub_icon hide_sub_icon">-</i>
+                                                    <span class="item_name">联系方式</span>
+                                                </a>
+                                                <ul class="sub_scope_list" style="display: block;">
+                                                    <li>
+                                                        <a data-id="手机号" data-name="手机号" data-key="USER_FORM_INFO_FLAG_MOBILE" href="javascript:void(0);" class="jsLevel jsLevel2">手机号</a>
+                                                    </li>
+                                                    <li>
+                                                        <a data-id="邮箱" data-name="邮箱" data-key="USER_FORM_INFO_FLAG_EMAIL" href="javascript:void(0);" class="jsLevel jsLevel2">邮箱</a>
+                                                    </li>
+                                                    <li>
+                                                        <a data-id="详细地址" data-name="详细地址" data-key="USER_FORM_INFO_FLAG_LOCATION" href="javascript:void(0);" class="jsLevel jsLevel2">详细地址</a>
+                                                    </li>
+                                                </ul>
+                                            </dd>
+                                            <dd>
+                                                <a href="javascript:;" class="jsLevel father_menu   jsLevel1" data-id="3" data-name="教育与工作信息" data-desc="" data-expand="0">
+                                                    <i class="jsToggle sub_icon show_sub_icon hide_sub_icon">-</i>
+                                                    <span class="item_name">教育与工作信息</span>
+                                                </a>
+                                                <ul class="sub_scope_list" style="display: block;">
+                                                    <li>
+                                                        <a data-id="学历" data-name="学历" data-key="USER_FORM_INFO_FLAG_BACKGRO" href="javascript:void(0);" class="jsLevel jsLevel2">学历</a>
+                                                    </li>
+                                                    <li>
+                                                        <a data-id="行业" data-name="行业" data-key="USER_FORM_INFO_FLAG_INDUSTRY" href="javascript:void(0);" class="jsLevel jsLevel2">行业</a>
+                                                    </li>
+                                                    <li>
+                                                        <a data-id="收入" data-name="收入" data-key="USER_FORM_INFO_FLAG_INCOME" href="javascript:void(0);" class="jsLevel jsLevel2">收入</a>
+                                                    </li>
+                                                </ul>
+                                            </dd>
+                                            <dd>
+                                                <a href="javascript:;" class="jsLevel father_menu   jsLevel1" data-id="4" data-name="其它信息" data-desc="" data-expand="0">
+                                                    <i class="jsToggle sub_icon show_sub_icon hide_sub_icon">-</i>
+                                                    <span class="item_name">其它信息</span>
+                                                </a>
+                                                <ul class="sub_scope_list" style="display: block;">
+                                                    <li>
+                                                        <a data-id="爱好" data-name="爱好" data-key="USER_FORM_INFO_FLAG_HABIT" href="javascript:void(0);" class="jsLevel jsLevel2">爱好</a>
+                                                    </li>
+                                                </ul>
+                                            </dd>
+                                        </div>
+                                    </dl>
+                                </div>
+                                <div class="opr_btn">
+                                    <!--<a href="javascript:;" class="btn btn_default jsAdd">添加</a>-->
+                                    <a href="javascript:void(0);" class="btn btn_default jsNecessary">必填</a>
+                                    <a href="javascript:void(0);" class="btn btn_default jsSelect">选填</a>
+                                </div>
+                                <div class="choosed_scope">
+                                    <div class="scope_hd">
+                                        <label>激活信息<a class="add_active" href="javascript:void(0);">手动添加</a></label>
+                                    </div>
+                                    <dl class="scope_list addToList">
+                                        <dd><span class="listHead">必填信息</span></dd>
+                                        <dd>
+                                            <ul class="selected_scope_list jsToList jsToNecessary">
+                                                <!--<li class="selected_scope_item jsItem " data-name="手机号" data-id="手机号" data-desc="">-->
+                                                    <!--<span class="item_name">手机号</span>-->
+                                                    <!--<a href="javascript:;" class="as_scope_del jsClose" data-id="手机号" data-name="手机号">手机号(必填)</a>-->
+                                                <!--</li>-->
+
+                                            </ul>
+                                        </dd>
+                                    </dl>
+                                    <dl class="scope_list addToList">
+                                        <dd><span class="listHead">选填信息</span></dd>
+                                        <dd>
+                                            <ul class="selected_scope_list jsToList jsToSelect">
+                                                <!--<li class="selected_scope_item jsItem " data-name="姓名" data-id="姓名" data-desc="">-->
+                                                    <!--<span class="item_name">姓名</span>-->
+                                                    <!--<a href="javascript:;" class="as_scope_del jsClose" data-id="姓名" data-name="姓名">姓名(选填)</a>-->
+                                                <!--</li>-->
+
+                                                <li class="js_before_stub"></li>
+                                            </ul>
+                                        </dd>
+                                    </dl>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="js_can_modify_wrap selector_extend">
+                            <label for="_checkbox_1" class="frm_checkbox_label">
+                                <i class="icon_checkbox"></i>
+                                <input type="checkbox" class="frm_checkbox" name="can_modify" id="_checkbox_1">
+                                <span class="lbl_content">允许用户自主修改以上信息</span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <div class="popover pos_center">
+                    <div class="popover_inner">
+                        <div class="js_no_more" style="display: none;">最多可添加5个自定义信息</div>
+                        <div class="popover_content jsPopOverContent">
+                            <h4 class="popover_title">请输入自定义信息的名称</h4>
+                            <span class="frm_input_box">
+                                <input type="text" data-maxlength="7" target="#js_active_name_0"
+                                       class="frm_input js_name js_maxlength">
+                            </span>
+                            <span class="frm_hint"><span id="js_active_name_0">0</span>/7</span>
+                        </div>
+                        <div class="popover_bar">
+                            <!--<a href="javascript:void(0);" class="btn btn_primary jsPopoverBt">确定</a>-->
+                            <a href="javascript:void(0);" class="btn btn_primary jsPopoverBt handAddNecessary">必填</a>
+                            <a href="javascript:void(0);" class="btn btn_primary jsPopoverBt handAddSelect">选填</a>
+                            <a href="javascript:void(0);" class="btn btn_default jsPopoverBt">取消</a>
+                        </div>
+                    </div>
+                    <i class="popover_arrow popover_arrow_out"></i>
+                    <i class="popover_arrow popover_arrow_in"></i>
+                </div>
+                <div class="js_wrong_tips">
+
+                </div>
+            </div>
+            <div class="modal-footer">
+                <a class="btn btn-primary btn_input btn_input_active">确定</a>
+            </div>
+        </div>
+    </div>
+</div>
+<!--设置激活信息模态框结束-->
+
+<!--设置会员类目信息模态框开始-->
+<div class="modal modal_setting_member_category">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <!--修改-->
+                <!--<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>-->
+                <a href="javascript:;" onclick="return false" class="icon16_opr closed pop_closed">关闭</a>
+                <h4 class="modal-title">设置会员类目信息</h4>
+                <!--修改-->
+            </div>
+            <div class="modal-body">
+                <div class="dialog_bd">
+                    <div>
+                        <div class="js_active_last">
+                            <div class="scope_area">
+                                <div class="unchoose_scope">
+                                    <div class="scope_hd">
+                                        <label>请选择信息</label>
+                                    </div>
+                                    <dl class="scope_list jsFromList">
+                                        <dd>
+                                            <p class="frm_msg fail jsFail" style="display:none"><span class="frm_msg_content" style="display: none;"></span></p>
+                                        </dd>
+                                        <div class="jsEmptyTip empty_tips dn" style="display: none;"></div>
+                                        <div class="js_dd_list">
+                                            <dd class="first_dd_list">
+                                                <!--<a href="javascript:;" class="jsLevel father_menu   jsLevel1" data-id="1" data-name="个人信息" data-desc="" data-expand="0">-->
+                                                    <!--<i class="jsToggle sub_icon show_sub_icon hide_sub_icon">-</i>-->
+                                                    <!--<span class="item_name">个人信息</span>-->
+                                                <!--</a>-->
+                                                <ul class="sub_scope_list" style="display: block;">
+                                                    <li>
+                                                        <a data-id="等级" data-name="等级" data-key="FIELD_NAME_TYPE_LEVEL" href="javascript:void(0);" class="jsLevel jsLevel2">等级</a>
+                                                    </li>
+                                                    <li>
+                                                        <a data-id="优惠券" data-name="优惠券" data-key="FIELD_NAME_TYPE_COUPON" href="javascript:void(0);" class="jsLevel jsLevel2 disabled">优惠券</a>
+                                                    </li>
+                                                    <li>
+                                                        <a data-id="印花" data-name="印花" data-key="FIELD_NAME_TYPE_STAMP" href="javascript:void(0);" class="jsLevel jsLevel2">印花</a>
+                                                    </li>
+                                                    <li>
+                                                        <a data-id="折扣" data-name="折扣" data-key="FIELD_NAME_TYPE_DISCOUNT" href="javascript:void(0);" class="jsLevel jsLevel2">折扣</a>
+                                                    </li>
+                                                    <li>
+                                                        <a data-id="成就" data-name="成就" data-key="FIELD_NAME_TYPE_ACHIEVEMEN" href="javascript:void(0);" class="jsLevel jsLevel2">成就</a>
+                                                    </li>
+                                                    <li>
+                                                        <a data-id="里程" data-name="里程" data-key="FIELD_NAME_TYPE_MILEAGE" href="javascript:void(0);" class="jsLevel jsLevel2">里程</a>
+                                                    </li>
+                                                    <li>
+                                                        <a data-id="焦点" data-name="焦点" data-key="FIELD_NAME_TYPE_SET_POINTS" href="javascript:void(0);" class="jsLevel jsLevel2">焦点</a>
+                                                    </li>
+                                                    <li>
+                                                        <a data-id="次数" data-name="次数" data-key="FIELD_NAME_TYPE_TIMS" href="javascript:void(0);" class="jsLevel jsLevel2">次数</a>
+                                                    </li>
+                                                </ul>
+                                            </dd>
+                                        </div>
+                                    </dl>
+                                </div>
+                                <div class="opr_btn">
+                                    <a href="javascript:;" class="btn btn_default jsAdd">添加</a>
+                                    <!--<a href="javascript:void(0);" class="btn btn_default jsNecessary">必填</a>-->
+                                    <!--<a href="javascript:void(0);" class="btn btn_default jsSelect">选填</a>-->
+                                </div>
+                                <div class="choosed_scope">
+                                    <!--<div class="scope_hd">-->
+                                        <!--<label>激活信息<a class="add_active" href="javascript:void(0);">手动添加</a></label>-->
+                                    <!--</div>-->
+                                    <dl class="scope_list addToList">
+                                        <dd>
+                                            <ul class="selected_scope_list jsToList">
+                                                <li class="selected_scope_item jsItem " data-name="优惠券" data-id="优惠券" data-desc="" data-link="" data-key="FIELD_NAME_TYPE_COUPON">
+                                                    <span class="item_name">优惠券</span>
+                                                    <!--<a href="javascript:void(0);" class="as_scope_del jsClose" data-id="优惠券" data-name="优惠券" data-key="FIELD_NAME_TYPE_COUPON">优惠券</a>-->
+                                                </li>
+                                            </ul>
+                                        </dd>
+                                    </dl>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="js_can_modify_wrap selector_extend">
+                            <label for="_checkbox_1" class="frm_checkbox_label" style="visibility: hidden;">
+                                <i class="icon_checkbox"></i>
+                                <input type="checkbox" class="frm_checkbox" name="can_modify">
+                                <span class="lbl_content">允许用户自主修改以上信息</span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <div class="popover pos_center">
+                    <div class="popover_inner">
+                        <div class="js_no_more" style="display: none;">最多可添加5个自定义信息</div>
+                        <div class="popover_content jsPopOverContent">
+                            <h4 class="popover_title">请输入自定义信息的名称</h4>
+                            <span class="frm_input_box">
+                                <input type="text" data-maxlength="7" target="#js_active_name_1"
+                                       class="frm_input js_name js_maxlength">
+                            </span>
+                            <span class="frm_hint"><span id="js_active_name_1">0</span>/7</span>
+                        </div>
+                        <div class="popover_bar">
+                            <a href="javascript:void(0);" class="btn btn_primary jsPopoverBt">确定</a>&nbsp;<a href="javascript:void(0);" class="btn btn_default jsPopoverBt">取消</a>
+                        </div>
+                    </div>
+                    <i class="popover_arrow popover_arrow_out"></i>
+                    <i class="popover_arrow popover_arrow_in"></i>
+                </div>
+                <div class="js_wrong_tips">
+
+                </div>
+            </div>
+            <div class="modal-footer">
+                <a class="btn btn-primary btn_input btn_input_active">确定</a>
+            </div>
+        </div>
+    </div>
+</div>
+<!--设置会员类目信息模态框结束-->
+
+<!--选择门店模态框开始-->
+<div class="modal modal_choose_store">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title">选择门店</h4>
+            </div>
+            <div class="modal-body">
+                <div class="dialog_bd">
+                    <div class="js_shop_popup_container">
+                        <script type="text/html" id="js_select_shop_tips">
+                            <div class="info_section">
+                                <p class="info_title">选择核销员所在的门店</p>
+                                <p class="info_content">指定核销员所在的门店后，核销员仅可以核销适用于该门店的卡券，方便核销后数据跟踪。</p>
+                            </div>
+                            <div class="info_section">
+                                <p class="info_title">不指定门店核销</p>
+                                <p class="info_content">核销员可核销公众号的所有卡券</p>
+                            </div>
+                        </script>
+                        <script type="text/html" id="js_select_shop_shopnametips">
+
+                            <div class="info_section">
+                                <p class="info_title">微信买单</p>
+                                <p class="info_content">已配备核销员的门店，支持使用微信买单功能。</p>
+                            </div>
+
+                        </script>
+
+                        <div class="sub_title_bar">
+
+                    <span class="frm_input_box search append">
+                    <a href="javascript:void(0);" class="js_search frm_input_append"><i class="icon16_common search_gray">搜索</i>&nbsp;</a>
+                    <input type="text" placeholder="输入门店名称" value="" class="frm_input js_keyword">
+                    </span>
+
+                        </div>
+                        <!--<table class="table" cellspacing="0">-->
+                            <!--<thead class="thead">-->
+                            <!--<tr>-->
+                                <!--<th class="table_cell opr">-->
+                                    <!--<div class="td_panel">-->
+
+                                        <!--<div class="frm_controls">-->
+                                            <!--<label class="frm_checkbox_label" for="checkbox49">-->
+                                                <!--<i class="icon_checkbox"></i>-->
+                                                <!--<input type="checkbox" class="js_select_all frm_checkbox" id="checkbox49">-->
+                                            <!--</label>-->
+                                        <!--</div>-->
+
+                                    <!--</div>-->
+                                <!--</th>-->
+                                <!--<th class="table_cell store_name">-->
+                                    <!--<div class="td_panel">门店名称 <i class="icon_msg_mini ask js_shopname_tips" style=""></i></div>-->
+
+                                <!--</th>-->
+                                <!--<th class="table_cell store_address no_extra"><div class="td_panel">地址</div></th>-->
+                            <!--</tr>-->
+                            <!--</thead>-->
+                            <!--<tbody class="tbody js_shop_body">-->
+                            <!--<tr>-->
+                                <!--<td class="table_cell opr"><div class="td_panel">-->
+                                    <!--<label class="frm_checkbox_label selected" for="checkbox48">-->
+                                        <!--<i class="icon_checkbox"></i>-->
+                                        <!--<input type="checkbox" checked="" data-id="289880646" value="289880646" class="frm_checkbox" id="checkbox48">-->
+                                    <!--</label>-->
+                                <!--</div></td>-->
+                                <!--<td class="table_cell store_name  store_can_pay"><div class="td_panel">-->
+                                    <!--麦当劳(艺苑路店)-->
+                                    <!--<i class="ic_declarerer">核销员</i>-->
+                                <!--</div></td>-->
+                                <!--<td class="table_cell store_address"><div class="td_panel">艺苑路11 号</div></td>-->
+                            <!--</tr>-->
+                            <!--<tr>-->
+                                <!--<td class="table_cell opr"><div class="td_panel">-->
+                                    <!--<label class="frm_checkbox_label selected" for="checkbox48">-->
+                                        <!--<i class="icon_checkbox"></i>-->
+                                        <!--<input type="checkbox" checked="" data-id="289880646" value="289880646" class="frm_checkbox" id="checkbox48">-->
+                                    <!--</label>-->
+                                <!--</div></td>-->
+                                <!--<td class="table_cell store_name  store_can_pay"><div class="td_panel">-->
+                                    <!--麦当劳(学苑路店)-->
+                                    <!--<i class="ic_declarerer">核销员</i>-->
+                                <!--</div></td>-->
+                                <!--<td class="table_cell store_address"><div class="td_panel">艺苑路11 号</div></td>-->
+                            <!--</tr>-->
+                            <!--</tbody>-->
+                        <!--</table>-->
+                        <p class="dialog_ft_desc">
+                            已选<span class="js_selected_count mini_tips">1</span>家，共<span class="js_all_count">1</span>家
+                        </p>
+
+                        <div class="table_oper_btm group">
+
+                            <div class="js_pagebar tr r"></div>
+                        </div>
+
+                    </div></div>
+
+            </div>
+            <div class="modal-footer">
+                <a class="btn btn-primary btn_input btn_store_ensure">确定</a>
+            </div>
+        </div>
+    </div>
+</div>
+<!--选择门店模态框结束-->
+
+
+<!--选择图片模态框开始-->
+<!--<div class="modal modal_img_dialog">-->
+    <!--<div class="modal-dialog dialog">-->
+        <!--<div class="modal-content">-->
+            <!--<div class="modal-header">-->
+                <!--<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>-->
+                <!--<h4 class="modal-title">选择图片</h4>-->
+            <!--</div>-->
+            <!--<div class="modal-body">-->
+                <!--<div class="dialog_bd">-->
+                    <!--<div class="img_pick_panel inner_container_box side_l cell_layout">-->
+                        <!--<div class="inner_side">-->
+                            <!--<div class="group_list">-->
+                                <!--<div class="inner_menu_box">-->
+                                    <!--<dl class="inner_menu js_group">-->
+                                        <!--<dd id="js_group0" class="inner_menu_item js_groupitem selected" data-groupid="0">-->
+                                            <!--<a href="javascript:;" class="inner_menu_link" title="全部图片" onclick="return false">-->
+                                                <!--<strong>全部图片</strong>-->
+                                                <!--&lt;!&ndash;<em class="num">(<span>103</span>)</em>&ndash;&gt;-->
+                                            <!--</a>-->
+                                        <!--</dd>-->
+                                    <!--</dl>-->
+                            <!--</div>-->
+                        <!--</div>-->
+                    <!--</div>-->
+                    <!--<div class="inner_main">-->
+                        <!--<div class="img_pick_area">-->
+                            <!--<div class="sub_title_bar in_dialog">-->
+                                <!--<div class="upload_box r align_right">-->
+                                    <!--<span class="upload_area webuploader-container">-->
+                                        <!--<a id="js_imageupload" class="btn btn_primary js_imageupload webuploader-pick" data-groupid="">-->
+                                            <!--本地上传-->
+                                        <!--</a>-->
+                                        <!--<ul class="upload_file_box" style="display:none">-->
+
+                                        <!--</ul>-->
+                                        <!--<div id="rt_rt_1" style="position: absolute; top: 0px; left: 0px; width: 106px; height: 32px; overflow: hidden; bottom: auto; right: auto;">-->
+                                            <!--<input type="file" multiple="multiple" accept="image/bmp,image/png,image/jpeg,image/jpg,image/gif" style="display: none;">-->
+                                            <!--<label style="opacity: 0; width: 100%; height: 100%; display: block; cursor: pointer; background: rgb(255, 255, 255);">-->
+
+                                            <!--</label>-->
+                                        <!--</div>-->
+                                    <!--</span>-->
+                                <!--</div>-->
+                                <!--&lt;!&ndash;<div class="img_water_tips mini_tips icon_after r weak_text">&ndash;&gt;-->
+                                    <!--&lt;!&ndash;<span class="js_water">已关闭图片水印</span>&ndash;&gt;-->
+                                    <!--&lt;!&ndash;<i class="js_water_tips icon_msg_mini ask"></i>&ndash;&gt;-->
+                                <!--&lt;!&ndash;</div>&ndash;&gt;-->
+                            <!--</div>-->
+                            <!--<div class="img_pick_area_inner">-->
+                                <!--<div class="img_pick">-->
+                                    <!--<i class="icon_loading_small white js_loading" style="display: none;"></i>-->
+                                    <!--<ul class="group js_list img_list">-->
+
+                                        <!--<li class="img_item js_imageitem js_imageitem_new" data-id="" data-url="" data-oristatus="" data-format="">-->
+                                            <!--<label class="frm_checkbox_label img_item_bd">-->
+
+                                                <!--<div class="pic_box">-->
+                                                    <!--<img class="pic js_pic" data-src="" src="" style="height:115px;">-->
+                                                <!--</div>-->
+
+                                                <!--<span class="lbl_content"></span>-->
+                                                <!--<div class="selected_mask">-->
+                                                    <!--<div class="selected_mask_inner"></div>-->
+                                                    <!--<div class="selected_mask_icon"></div>-->
+                                                <!--</div>-->
+                                            <!--</label>-->
+                                        <!--</li>-->
+
+                                        <!--<li class="img_item js_imageitem" data-id="" data-url="" data-oristatus="0" data-format="">-->
+                                            <!--<label class="frm_checkbox_label img_item_bd">-->
+
+                                                <!--<div class="pic_box">-->
+                                                    <!--<img class="pic js_pic" data-src="" src="images/71.jpg" style="height:115px;">-->
+                                                <!--</div>-->
+
+                                                <!--<span class="lbl_content">sadf.jpg</span>-->
+                                                <!--<div class="selected_mask">-->
+                                                    <!--<div class="selected_mask_inner"></div>-->
+                                                    <!--<div class="selected_mask_icon"></div>-->
+                                                <!--</div>-->
+                                            <!--</label>-->
+                                        <!--</li>-->
+                                        <!--<li class="img_item js_imageitem" data-id="" data-url="" data-oristatus="0" data-format="">-->
+                                            <!--<label class="frm_checkbox_label img_item_bd">-->
+
+                                                <!--<div class="pic_box">-->
+                                                    <!--<img class="pic js_pic" data-src="" src="images/71.jpg" style="height:115px;">-->
+                                                <!--</div>-->
+
+                                                <!--<span class="lbl_content">sadf.jpg</span>-->
+                                                <!--<div class="selected_mask">-->
+                                                    <!--<div class="selected_mask_inner"></div>-->
+                                                    <!--<div class="selected_mask_icon"></div>-->
+                                                <!--</div>-->
+                                            <!--</label>-->
+                                        <!--</li>-->
+                                        <!--<li class="img_item js_imageitem" data-id="" data-url="" data-oristatus="0" data-format="">-->
+                                            <!--<label class="frm_checkbox_label img_item_bd">-->
+
+                                                <!--<div class="pic_box">-->
+                                                    <!--<img class="pic js_pic" data-src="" src="images/71.jpg" style="height:115px;">-->
+                                                <!--</div>-->
+
+                                                <!--<span class="lbl_content">sadf.jpg</span>-->
+                                                <!--<div class="selected_mask">-->
+                                                    <!--<div class="selected_mask_inner"></div>-->
+                                                    <!--<div class="selected_mask_icon"></div>-->
+                                                <!--</div>-->
+                                            <!--</label>-->
+                                        <!--</li>-->
+                                        <!--<li class="img_item js_imageitem" data-id="" data-url="" data-oristatus="0" data-format="">-->
+                                            <!--<label class="frm_checkbox_label img_item_bd">-->
+
+                                                <!--<div class="pic_box">-->
+                                                    <!--<img class="pic js_pic" data-src="" src="images/71.jpg" style="height:115px;">-->
+                                                <!--</div>-->
+
+                                                <!--<span class="lbl_content">sadf.jpg</span>-->
+                                                <!--<div class="selected_mask">-->
+                                                    <!--<div class="selected_mask_inner"></div>-->
+                                                    <!--<div class="selected_mask_icon"></div>-->
+                                                <!--</div>-->
+                                            <!--</label>-->
+                                        <!--</li>-->
+                                        <!--<li class="img_item js_imageitem" data-id="" data-url="" data-oristatus="0" data-format="">-->
+                                            <!--<label class="frm_checkbox_label img_item_bd">-->
+
+                                                <!--<div class="pic_box">-->
+                                                    <!--<img class="pic js_pic" data-src="" src="images/71.jpg" style="height:115px;">-->
+                                                <!--</div>-->
+
+                                                <!--<span class="lbl_content">sadf.jpg</span>-->
+                                                <!--<div class="selected_mask">-->
+                                                    <!--<div class="selected_mask_inner"></div>-->
+                                                    <!--<div class="selected_mask_icon"></div>-->
+                                                <!--</div>-->
+                                            <!--</label>-->
+                                        <!--</li>-->
+                                        <!--<li class="img_item js_imageitem" data-id="" data-url="" data-oristatus="0" data-format="">-->
+                                            <!--<label class="frm_checkbox_label img_item_bd">-->
+
+                                                <!--<div class="pic_box">-->
+                                                    <!--<img class="pic js_pic" data-src="" src="images/71.jpg" style="height:115px;">-->
+                                                <!--</div>-->
+
+                                                <!--<span class="lbl_content">sadf.jpg</span>-->
+                                                <!--<div class="selected_mask">-->
+                                                    <!--<div class="selected_mask_inner"></div>-->
+                                                    <!--<div class="selected_mask_icon"></div>-->
+                                                <!--</div>-->
+                                            <!--</label>-->
+                                        <!--</li>-->
+                                        <!--<li class="img_item js_imageitem" data-id="" data-url="" data-oristatus="0" data-format="">-->
+                                            <!--<label class="frm_checkbox_label img_item_bd">-->
+
+                                                <!--<div class="pic_box">-->
+                                                    <!--<img class="pic js_pic" data-src="" src="images/71.jpg" style="height:115px;">-->
+                                                <!--</div>-->
+
+                                                <!--<span class="lbl_content">sadf.jpg</span>-->
+                                                <!--<div class="selected_mask">-->
+                                                    <!--<div class="selected_mask_inner"></div>-->
+                                                    <!--<div class="selected_mask_icon"></div>-->
+                                                <!--</div>-->
+                                            <!--</label>-->
+                                        <!--</li>-->
+                                        <!--<li class="img_item js_imageitem" data-id="" data-url="" data-oristatus="0" data-format="">-->
+                                            <!--<label class="frm_checkbox_label img_item_bd">-->
+
+                                                <!--<div class="pic_box">-->
+                                                    <!--<img class="pic js_pic" data-src="" src="images/71.jpg" style="height:115px;">-->
+                                                <!--</div>-->
+
+                                                <!--<span class="lbl_content">sadf.jpg</span>-->
+                                                <!--<div class="selected_mask">-->
+                                                    <!--<div class="selected_mask_inner"></div>-->
+                                                    <!--<div class="selected_mask_icon"></div>-->
+                                                <!--</div>-->
+                                            <!--</label>-->
+                                        <!--</li>-->
+                                        <!--<li class="img_item js_imageitem" data-id="" data-url="" data-oristatus="0" data-format="">-->
+                                            <!--<label class="frm_checkbox_label img_item_bd">-->
+
+                                                <!--<div class="pic_box">-->
+                                                    <!--<img class="pic js_pic" data-src="" src="images/71.jpg" style="height:115px;">-->
+                                                <!--</div>-->
+
+                                                <!--<span class="lbl_content">sadf.jpg</span>-->
+                                                <!--<div class="selected_mask">-->
+                                                    <!--<div class="selected_mask_inner"></div>-->
+                                                    <!--<div class="selected_mask_icon"></div>-->
+                                                <!--</div>-->
+                                            <!--</label>-->
+                                        <!--</li>-->
+                                        <!--<li class="img_item js_imageitem" data-id="" data-url="" data-oristatus="0" data-format="">-->
+                                            <!--<label class="frm_checkbox_label img_item_bd">-->
+
+                                                <!--<div class="pic_box">-->
+                                                    <!--<img class="pic js_pic" data-src="" src="images/71.jpg" style="height:115px;">-->
+                                                <!--</div>-->
+
+                                                <!--<span class="lbl_content">sadf.jpg</span>-->
+                                                <!--<div class="selected_mask">-->
+                                                    <!--<div class="selected_mask_inner"></div>-->
+                                                    <!--<div class="selected_mask_icon"></div>-->
+                                                <!--</div>-->
+                                            <!--</label>-->
+                                        <!--</li>-->
+                                        <!--<li class="img_item js_imageitem" data-id="" data-url="" data-oristatus="0" data-format="">-->
+                                            <!--<label class="frm_checkbox_label img_item_bd">-->
+
+                                                <!--<div class="pic_box">-->
+                                                    <!--<img class="pic js_pic" data-src="" src="images/71.jpg" style="height:115px;">-->
+                                                <!--</div>-->
+
+                                                <!--<span class="lbl_content">sadf.jpg</span>-->
+                                                <!--<div class="selected_mask">-->
+                                                    <!--<div class="selected_mask_inner"></div>-->
+                                                    <!--<div class="selected_mask_icon"></div>-->
+                                                <!--</div>-->
+                                            <!--</label>-->
+                                        <!--</li>-->
+
+
+
+                                    <!--</ul>-->
+                                <!--</div>-->
+
+                                <!--&lt;!&ndash;分页开始&ndash;&gt;-->
+                                <!--&lt;!&ndash;<div class="js_pagebar">&ndash;&gt;-->
+                                    <!--&lt;!&ndash;<div class="pagination" id="wxPagebar_1492670696639">&ndash;&gt;-->
+                                        <!--&lt;!&ndash;<span class="page_nav_area">&ndash;&gt;-->
+                                        <!--&lt;!&ndash;<a href="javascript:void(0);" class="btn page_first" style="display: none;"></a>&ndash;&gt;-->
+                                        <!--&lt;!&ndash;<a href="javascript:void(0);" class="btn page_prev" style="display: none;">&ndash;&gt;-->
+                                            <!--&lt;!&ndash;<i class="arrow"></i>&ndash;&gt;-->
+                                        <!--&lt;!&ndash;</a>&ndash;&gt;-->
+                                            <!--&lt;!&ndash;<span class="page_num">&ndash;&gt;-->
+                                            <!--&lt;!&ndash;<label>1</label>&ndash;&gt;-->
+                                                <!--&lt;!&ndash;<span class="num_gap">/</span>&ndash;&gt;-->
+                                            <!--&lt;!&ndash;<label>11</label>&ndash;&gt;-->
+                                            <!--&lt;!&ndash;</span>&ndash;&gt;-->
+                                            <!--&lt;!&ndash;<a href="javascript:void(0);" class="btn page_next"><i class="arrow"></i></a>&ndash;&gt;-->
+                                            <!--&lt;!&ndash;<a href="javascript:void(0);" class="btn page_last" style="display: none;"></a>&ndash;&gt;-->
+                                        <!--&lt;!&ndash;</span>&ndash;&gt;-->
+                                        <!--&lt;!&ndash;<span class="goto_area">&ndash;&gt;-->
+                                            <!--&lt;!&ndash;<input type="text">&ndash;&gt;-->
+                                            <!--&lt;!&ndash;<a href="javascript:void(0);" class="btn page_go">跳转</a>&ndash;&gt;-->
+                                        <!--&lt;!&ndash;</span>&ndash;&gt;-->
+                                    <!--&lt;!&ndash;</div>&ndash;&gt;-->
+                                <!--&lt;!&ndash;</div>&ndash;&gt;-->
+
+                                <!--&lt;!&ndash;分页结束&ndash;&gt;-->
+                            <!--</div>-->
+                        <!--</div>-->
+                    <!--</div>-->
+                        <!--<p class="dialog_ft_desc">已选<span class="js_selected">0</span>个，可选1个</p>-->
+                    <!--</div>-->
+                <!--</div>-->
+            <!--</div>-->
+            <!--<div class="modal-footer dialog_ft">-->
+                <!--<span class="btn btn_input js_btn_p btn_primary btn_disabled">-->
+                    <!--<button class="js_btn" data-index="0">确定</button>-->
+                <!--</span>-->
+                <!--<span class="btn btn_default btn_input js_btn_p" data-dismiss="modal">-->
+                    <!--<button class="js_btn" data-index="1">取消</button>-->
+                <!--</span>-->
+            <!--</div>-->
+        <!--</div>-->
+    <!--</div>-->
+<!--</div>-->
+<!--选择图片模态框结束-->
+
+<!--弹出框-创建分组开始-->
+<div class="popover  pos_center" style="top: 707.5px; left: 227.5px;">
+    <div class="popover_inner">
+        <div class="popover_content jsPopOverContent"><div class="popover_edit">
+            <label for="" class="frm_label">创建分组</label>
+
+            <div class="frm_controls">
+                <span class="frm_input_box">
+                    <input type="text" class="frm_input js_name" value="">
+                </span>
+
+                <p class="frm_tips"></p>
+
+                <p class="frm_msg fail">
+                    <span class="frm_msg_content">填错了！！！！</span>
+                </p>
+            </div>
+        </div>
+        </div>
+        <div class="popover_bar">
+            <a href="javascript:void(0);" class="btn btn_primary jsPopoverBt">确定</a>&nbsp;<a href="javascript:void(0);" class="btn btn_default jsPopoverBt">取消</a>
+        </div>
+    </div>
+    <i class="popover_arrow popover_arrow_out"></i>
+    <i class="popover_arrow popover_arrow_in"></i>
+</div>
+<!--弹出框-创建分组结束-->
+
+<!--尾部开始-->
+<div class="container-fluid foot">
+    <h2>Design by Meezao</h2>
+</div>
+<!--尾部结束-->
+
+
+</body>
+
+<!--全局js开始-->
+<script src="../../plugin_folder/jquery_v1.11.3/jquery-1.11.3.min.js"></script>
+<script src="../../plugin_folder/jquery-ui_v1.10.0/jquery-ui-1.10.0.custom.min.js"></script>
+<script src=../../plugin_folder/jquery-ui_v1.10.0/jquery-ui-timepicker-addon.js></script>
+<script src="../../plugin_folder/bootstrap_v3.3.5/js/bootstrap.min.js"></script>
+<script src="../../plugin_folder/jquery.validate_v1.13.1/jquery.validate-1.13.1.js"></script>
+<script src="../../plugin_folder/less_v1.7.0/less.min.js"></script>
+<script src="../../common_folder/javascripts/base.js"></script>
+<script src="../../common_folder/javascripts/common_index.js"></script>
+<!--全局js结束-->
+
+<script src="javascripts/coupon_member_card.js"></script>
+
+</html>

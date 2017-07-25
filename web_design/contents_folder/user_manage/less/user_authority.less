@@ -1,0 +1,375 @@
+/* CSS user_authority */
+/* +--------------------------------------------------------------------------
+// | Author: Mooncake <1246343419@qq.com> <http://> <Date:2016/5/16 20:35>
+// +--------------------------------------------------------------------------*/
+//引入全局less变量
+@import "../../../common_folder/less/PC_library";
+//后台路径
+//@import "../../MeeZao/B_New/common_folder/less/PC_library";
+
+html {
+  height: 100%;
+  body.user_authority{
+    height:100%;
+    font-size: 14px;
+    .float_right{
+      float: right;
+      line-height: 30px;
+      margin-right: 10px;
+    }
+    .brand_input_div{
+      position: relative;
+      border: 1px solid @color_border;
+      width: 234px;
+      height: 30px;
+      .brand_input{
+        position: absolute;
+      }
+      .brand_span{
+        width: 100%;
+        height: 30px;
+        line-height: 30px;
+        border: 1px solid @color_border;
+        position: absolute;
+        border-radius: 4px;
+        margin-top: -1px;
+        text-align: center;
+      }
+    }
+
+    .wrp {
+      width: 100%;
+
+      .user_authority_head {
+        width: 100%;
+        height: 50px;
+        .font_yahei;
+        margin-top: 15px;
+
+        .navbar-default{
+
+          .navbar-brand{
+            .font_arial;
+            font-weight: bold;
+          }
+
+        }
+      }
+      .user_authority_table{
+
+        .table_head{
+
+          .create_time{
+            width: 18.6%;
+            .btn{
+              font-size: 16px;
+            }
+          }
+          .binding_number{
+            width: 15.6%;
+            .btn{
+              font-size: 16px;
+            }
+          }
+          .account{
+            width: 12.5%;
+          }
+          .belongto_department{
+            width: 10.2%;
+          }
+
+          .state{
+            width: 10.7%;
+            .btn{
+              font-size: 16px;
+            }
+          }
+
+          .authority_group{
+            width: 13.1%;
+          }
+          .operation{
+            width: 19.3%;
+          }
+
+        }
+        .table_body{
+
+          tr{
+
+            td{
+
+              .btn-group{
+                .size(135px,25px);
+                .btn-default{
+                  .size(45px,25px);
+                  text-align: center;
+                  padding: 0;
+                }
+              }
+            }
+          }
+        }
+      }
+      .user_authority_footer{
+        float: right;
+        ul.pagination{
+          width: 350px;
+          height: 35px;
+          li{
+            a{
+              padding: 6px 20px;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  //模态框样式修改
+  .user_register,.user_edit{
+    .modal-dialog{
+      margin: auto;
+      margin-top: 30px;
+      width: 960px;
+      .modal-content{
+        width: 960px;
+        .modal-body{
+          height: 536px;
+          padding-top: 26px;
+          .body_left{
+            float: left;
+            width: 50%;
+            .form-group{
+              .input-group{
+                width: 350px;
+                height: 30px;
+                margin-bottom: 10px;
+                .input-sm{
+                  padding: 2px;
+                  padding-left: 10px;
+                }
+                .input-default{
+                  padding: 2px;
+                  padding-left: 10px;
+                  width: 235px;
+                  height: 30px;
+                  margin-top: -1px;
+                }
+                .input-group-addon{
+                  padding: 0;
+                  width:80px;
+                }
+                .dropdown-toggle{
+                  width: 36px;
+                }
+              }
+              label{
+                margin-left: 40px;
+              }
+            }
+            .brand_choose{
+
+            }
+            .mask{
+              background-color: @color_white;
+              width: 175px;
+              height: 40px;
+              position: relative;
+              top: -34px;
+              left: -6px;
+            }
+          }
+          .body_right{
+            float: right;
+            width:50%;
+            padding-left: 5%;
+            height: 100%;
+            border-left:1px solid @color_border;
+            .brand_input_div{
+              width:290px;
+            }
+            .mask{
+              background-color: white;
+              width: 170px;
+              height: 35px;
+              position: relative;
+              top: -35px;
+            }
+            label{
+              margin-left: 40px;
+            }
+            .form-group{
+              .input-group{
+                margin-bottom: 10px;
+                .input-default{
+                  padding: 2px;
+                  padding-left: 10px;
+                  width: 288px;
+                  height: 30px;
+                  margin-top: -1px;
+                }
+              }
+            }
+
+            .nav_bar{
+              width: 100%;
+              min-height: 80%!important;
+              height: 80%!important;
+              background-color: @color_white;
+              overflow: auto;
+              margin-top: -35px;
+              display: none;
+              ul{
+                li{
+                    :hover{
+                      color: @color_white;
+
+                  }
+                }
+              }
+              .menu_left{
+                float: left;
+                margin-left: 10%;
+                width: 20%;
+              }
+              .menu_right{
+                float: right;
+                width:60%;
+                margin-right: 10%;
+                .nav_bar_current1{
+                  border-top:none !important;
+                  :hover{
+                    color: #00b6f6;
+                  }
+                }
+                .menu_level2{
+                  padding-left: 50px;
+
+                }
+                .menu_level3{
+                  padding-left: 60px;
+                }
+              }
+              .menu_state{
+                width: 34px;
+                height: 30px;
+                line-height: 30px;
+                background-color: @color_blue;
+                color: #fff;
+                margin: 19px 20px 0px 20px;
+                border-radius: 2px;
+                text-align: center;
+              }
+              .menu_state_close{
+                width: 34px;
+                height: 30px;
+                line-height: 30px;
+                background-color: red;
+                color: #fff;
+                margin: 19px 20px 0px 20px;
+                border-radius: 2px;
+                text-align: center;
+              }
+            }
+          }
+        }
+        .modal-footer{
+          padding: 25px;
+          .btn-default{
+            background-color: @color_black;
+            color: @color_white;
+          }
+        }
+
+      }
+    }
+    .authority_mould{
+      width: 100%;
+      height: 500px;
+      color: @color_white;
+      background-color: @color_white;
+      overflow: auto;
+      .authority_detail_body{
+        overflow:auto;
+        .authority_detail_level1 span{
+          display:inline-block;
+        }
+        .hide_state{
+          width: 34px;
+          height: 30px;
+          line-height: 30px;
+          background-color: red;
+          color: #fff;
+          border-radius: 2px;
+          text-align: center;
+        }
+        .show_state{
+          width: 34px;
+          height: 30px;
+          line-height: 30px;
+          background-color: #0096ff;
+          color: #fff;
+          border-radius: 2px;
+          text-align: center;
+
+        }
+        .authority_detail_menu{
+          display: block;
+          font-family: 'Microsoft Yahei','微软雅黑';
+          font-weight: bold;
+          color: #f5f5f5;
+          background-color: #1c1c1c;
+          text-decoration: none;
+          width:60%;
+          height: 50px;
+          padding-left: 10%;
+          line-height: 50px;
+          border-bottom: 1px solid #4e4e4e;
+          position: relative;
+          margin-left: 10%;
+        }
+        .authority_detail_level2 span{
+          display:inline-block;
+        }
+        .menu_level2{
+          display: block;
+          font-family: 'Microsoft Yahei','微软雅黑';
+          font-weight: bold;
+          color: #f5f5f5;
+          background-color: #262626;
+          text-decoration: none;
+          width:60%;
+          height: 50px;
+          line-height: 50px;
+          border-bottom: 1px solid #4e4e4e;
+          position: relative;
+          margin-left: 10%;
+          padding-left: 15%;
+        }
+
+        .menu_current{
+          background-color: #1c1c1c;
+          color: #00b6f6 !important;
+        }
+
+        .menu_level3{
+          display: block;
+          font-family: 'Microsoft Yahei','微软雅黑';
+          font-weight: bold;
+          color: #f5f5f5;
+          background-color: #262626;
+          text-decoration: none;
+          width:60%;
+          height: 50px;
+          line-height: 50px;
+          border-bottom: 1px solid #4e4e4e;
+          position: relative;
+          margin-left: 10%;
+          padding-left: 20%;
+        }
+      }
+    }
+
+  }
+}

@@ -1,0 +1,353 @@
+/* CSS interaction_center */
+/* +--------------------------------------------------------------------------
+// | Author: Merrier <953075999@qq.com> <http://> <Date:2016/5/20 22:27>
+// +--------------------------------------------------------------------------*/
+//引入全局less变量
+@import "../../../common_folder/less/PC_library";
+//后台路径
+//@import "../../MeeZao/B_New/common_folder/less/PC_library";
+@import "../../../common_folder/less/library_platform_module";
+
+html {
+  body {
+
+    //模版互动与定制互动的模块列表
+    .navbar-default {
+
+      .dropdown {
+        float: right;
+        margin-top: 8px;
+      }
+    }
+
+    //模版列表的表格开始
+    .template_list_table {
+      thead {
+        .th_activity_name {
+          width: 15.5%;
+        }
+
+        .th_plugin_name {
+          width: 14.5%;
+        }
+
+        .th_template_name {
+          width: 13%;
+        }
+
+        .th_sort {
+          width: 8%;
+        }
+
+        .th_state {
+          width: 8%;
+        }
+
+        .th_activity_time {
+          width: 16%;
+        }
+
+        .th_opr {
+          width: 23%;
+        }
+
+      }
+
+      tbody {
+
+        tr {
+
+          td {
+
+            .btn-group {
+
+              .btn {
+                .size(50px, 25px);
+                .border-radius(5px);
+                padding: 0;
+                line-height: 25px;
+                margin: 2px;
+              }
+
+              .btn:first-child:not(:last-child) {
+                .border-right-radius(5px);
+              }
+
+              .btn:last-child:not(:first-child) {
+                .border-left-radius(5px);
+              }
+
+              .btn:not(:first-child):not(:last-child):not(.dropdown-toggle) {
+                border-radius: 5px;
+              }
+
+              .btn_link_box {
+                display: none;
+                position: absolute;
+                top: 30px;
+                right: 30px;
+                min-width: 270px;
+                padding: 5px;
+                word-break: break-all;
+                text-align: left;
+                color: #1c1c1c;
+                border: 1px solid @color_border;
+                background-color: #ffffff;
+                z-index: 1;
+                cursor: text;
+              }
+            }
+          }
+        }
+
+      }
+    }
+    //模版列表的表格结束
+
+    //模态框-互动相关开始
+    .modal_interaction {
+
+      .modal-lg {
+
+        width: 960px;
+
+        form {
+
+          .modal-body {
+
+            width: 350px;
+            .center_block;
+            margin-top: 40px;
+            padding:0;
+
+            img {
+              min-width: 100%;
+              margin-bottom: 40px;
+            }
+
+            .temlistmodal_input_box {
+
+              position: relative;
+              .clearfix();
+              border: 1px solid @color_border;
+              border-radius: 5px;
+              margin-bottom: 35px;
+
+              .input-group-addon {
+                float: left;
+                .size(90px, 30px);
+                border: 0;
+                padding: 0;
+                line-height: 30px;
+                border-radius: 0;
+                vertical-align: top;
+              }
+
+              .temlistmodal_activity_input {
+                float: left;
+                .size(257px, 30px);
+                padding: 4px;
+                border: 0;
+              }
+
+              .input_num_box {
+                right: 5px;
+                top: 4px;
+              }
+
+              .error_show {
+                position: absolute;
+                bottom:-26px;
+                left:0;
+              }
+            }
+
+            //插件名称开始
+            .temlistmodal_plugin_inputbox {
+
+              .form-group{
+                margin-bottom: 0;
+              }
+
+              .temlistmodal_plugin_namemask {
+                display: none;
+                position: absolute;
+                .size(100%, 100%);
+                top: 0;
+                left: 0;
+                background-color: #000;
+                opacity: 0.4;
+                cursor: not-allowed;
+                z-index: 1;
+              }
+
+              .plugin_input_div {
+                float: left;
+                .size(227px, 30px);
+                line-height: 30px;
+                text-align: center;
+                .clearfix();
+
+                .temlistmodal_plugin_input {
+                  float: left;
+                  .size(227px, 30px);
+                  padding: 4px;
+                  border: 0;
+                }
+              }
+
+              .dropdown-toggle {
+                float: right;
+                .size(30px, 30px);
+                border-left: 1px solid @color_border;
+              }
+
+              .dropdown-menu {
+                left: 90px;
+                width: 260px;
+              }
+
+              .plugin_hideinput {
+                position: absolute;
+                .size(150px, 30px);
+                top: -35px;
+                left: 0;
+                border: 0;
+              }
+
+              .plugin_input_mask {
+                position: absolute;
+                .size(150px, 30px);
+                top: -35px;
+                left: 0;
+                background-color: @color_white;
+              }
+
+            }
+            //插件名称结束
+
+            //活动时间开始
+            .temlistmodal_activity_timebox {
+              font-size: 14px;
+              border: 0;
+
+              .temlistmodal_activity_time {
+                display: block;
+                padding-left: 15px;
+              }
+
+              input {
+                .size(163px, 30px);
+                padding: 5px;
+                border: 1px solid @color_border;
+                border-radius: 5px;
+              }
+            }
+            //活动时间结束
+          }
+        }
+      }
+
+    }
+    //模态框-互动相关结束
+
+    //游戏核销表格开始
+    .game_check_table{
+
+      thead {
+        .th_game_name {
+          width: 25%;
+        }
+
+        .th_phone_number {
+          width: 13%;
+        }
+
+        .th_game_record {
+          width: 12%;
+        }
+
+        .th_whether_checked {
+          width: 12%;
+        }
+
+        .th_check_time {
+          width: 21%;
+        }
+
+        .th_opr {
+          width: 17%;
+        }
+      }
+
+
+
+      tbody {
+
+        tr {
+
+          td {
+
+            .btn-group {
+
+              .btn {
+                .size(50px, 25px);
+                .border-radius(5px);
+                padding: 0;
+                line-height: 25px;
+                margin: 2px;
+              }
+
+              .btn:first-child:not(:last-child) {
+                .border-right-radius(5px);
+              }
+
+              .btn:last-child:not(:first-child) {
+                .border-left-radius(5px);
+              }
+
+              .btn:not(:first-child):not(:last-child):not(.dropdown-toggle) {
+                border-radius: 5px;
+              }
+
+              .btn_link_box {
+                display: none;
+                position: absolute;
+                top: 30px;
+                right: 30px;
+                min-width: 270px;
+                padding: 5px;
+                word-break: break-all;
+                text-align: left;
+                color: #1c1c1c;
+                border: 1px solid @color_border;
+                background-color: #ffffff;
+                z-index: 1;
+                cursor: text;
+              }
+            }
+          }
+        }
+
+      }
+
+    }
+    //游戏核销表格结束
+
+
+
+
+    //改变模态框默认z-index开始
+    #ui-timepicker-div {
+      z-index: 1051;
+    }
+    //改变模态框默认z-index结束
+    @media (min-width: 768px) {
+      .navbar-form {
+        margin-right: 0;
+      }
+    }
+
+  }
+}
+

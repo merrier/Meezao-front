@@ -1,0 +1,438 @@
+/* CSS authority_list */
+/* +--------------------------------------------------------------------------
+// | Author: Mooncake <1246343419@qq.com> <http://> <Date:2016/5/16 20:35>
+// +--------------------------------------------------------------------------*/
+//引入全局less变量
+@import "../../../common_folder/less/PC_library";
+//后台路径
+//@import "../../MeeZao/B_New/common_folder/less/PC_library";
+
+html {
+  height: 100%;
+  body.authority_list{
+    height:100%;
+    font-size: 14px;
+    color: @color_black;
+    .wrp {
+      width: 100%;
+      .mask_hide{
+        height: 300px;
+        width: 100%;
+        display: none;
+      }
+      //.authority_list_head {
+      //  width: 100%;
+      //  height: 50px;
+      //  .font_yahei;
+      //  margin-top: 15px;
+      //  .navbar-default{
+      //    height: 48px;
+      //    padding-right: 20px;
+      //    .navbar-brand{
+      //      .font_arial;
+      //      font-weight: bold;
+      //    }
+      //    .create_authority{
+      //      float:right;
+      //      margin-top: 8px;
+      //      padding: 0;
+      //      background-color:@color_blue;
+      //      color: @color_white;
+      //      .size(70px,32px);
+      //    }
+      //
+      //    .navbar-form{
+      //      margin-top: 0;
+      //      margin-right: 0;
+      //      .input-group-btn{
+      //        .btn{
+      //          padding: 5px 8px;
+      //          margin-top:8px;
+      //        }
+      //        .dropdown-menu{
+      //          float:left;
+      //          min-width: 100%;
+      //          li{
+      //            :hover{
+      //              background-color: @color_blue;
+      //            }
+      //          }
+      //
+      //        }
+      //      }
+      //
+      //      .form-control{
+      //        .size(252px,32px);
+      //        margin-top:8px;
+      //      }
+      //      .search{
+      //        .size(70px,32px);
+      //        margin-top: 8px;
+      //        margin-left: 10px;
+      //      }
+      //
+      //    }
+      //
+      //  }
+      //}
+      .authority_list_table{
+
+          .create_time_second{
+            width: 23.3%;
+          }
+          .group_name,.authority_detail{
+            width: 25%;
+          }
+          .operation_second{
+            width: 26.7%;
+          }
+
+        }
+        .table_body{
+
+          tr{
+
+            td{
+
+
+                .btn-default{
+                  .size(135px,25px);
+                  line-height: 10px;
+                }
+
+            }
+          }
+        }
+      }
+      .authority_list_footer{
+        float: right;
+        ul.pagination{
+          width: 350px;
+          height: 35px;
+          li{
+            a{
+              padding: 6px 20px;
+            }
+          }
+        }
+      }
+
+    }
+    //模态框样式修改
+    .create_authority_modal{
+      .modal-dialog{
+        margin: auto;
+        margin-top: 30px;
+        width: 960px;
+        .modal-content{
+          width: 960px;
+          .modal-header{
+            .btn-default{
+              float: right;
+              margin-right: 40px;
+              margin-top: -26px;
+              height: 30px;
+              line-height: 16px;
+            }
+          }
+          .modal-body{
+            height: 536px;
+            padding-top: 26px;
+            .body_left{
+              float: left;
+              width: 50%;
+              .form-group{
+                #count_title {
+                  position: absolute;
+                  top: 32px;
+                  left: 380px;
+                }
+                .input-group{
+                  width: 350px;
+                  margin-bottom: 20px;
+                  .input-sm{
+                    padding: 2px;
+                    padding-left: 10px;
+                  }
+                  .input-group-addon{
+                    padding: 0;
+                    width:80px;
+                  }
+                  .dropdown-toggle{
+                    width: 36px;
+                  }
+                }
+                label{
+                  margin-left: 40px;
+                }
+              }
+            }
+            .body_right{
+              float: right;
+              width:50%;
+              padding-left: 5%;
+              height: 100%;
+              border-left:1px solid @color_border;
+
+              .authority_mould{
+                width: 100%;
+                height: 500px;
+                color: @color_white;
+                background-color: @color_white;
+                overflow: auto;
+                .authority_detail_body{
+                  overflow:auto;
+                  .authority_detail_level1 span{
+                    display:inline-block;
+                  }
+                  .hide_state{
+                    width: 34px;
+                    height: 30px;
+                    line-height: 30px;
+                    background-color: red;
+                    color: #fff;
+                    border-radius: 2px;
+                    text-align: center;
+                  }
+                  .show_state{
+                    width: 34px;
+                    height: 30px;
+                    line-height: 30px;
+                    background-color: #0096ff;
+                    color: #fff;
+                    border-radius: 2px;
+                    text-align: center;
+
+                  }
+                  .authority_detail_menu{
+                    display: block;
+                    font-family: 'Microsoft Yahei','微软雅黑';
+                    font-weight: bold;
+                    color: #f5f5f5;
+                    background-color: #1c1c1c;
+                    text-decoration: none;
+                    width:60%;
+                    height: 50px;
+                    padding-left: 10%;
+                    line-height: 50px;
+                    border-bottom: 1px solid #4e4e4e;
+                    position: relative;
+                    margin-left: 10%;
+                  }
+                  .authority_detail_level2 span{
+                    display:inline-block;
+                  }
+                  .menu_level2{
+                    display: block;
+                    font-family: 'Microsoft Yahei','微软雅黑';
+                    font-weight: bold;
+                    color: #f5f5f5;
+                    background-color: #262626;
+                    text-decoration: none;
+                    width:60%;
+                    height: 50px;
+                    line-height: 50px;
+                    border-bottom: 1px solid #4e4e4e;
+                    position: relative;
+                    margin-left: 10%;
+                    padding-left: 15%;
+                  }
+
+                  .menu_current{
+                    background-color: #1c1c1c;
+                    color: #00b6f6 !important;
+                  }
+
+                  .menu_level3{
+                    display: block;
+                    font-family: 'Microsoft Yahei','微软雅黑';
+                    font-weight: bold;
+                    color: #f5f5f5;
+                    background-color: #262626;
+                    text-decoration: none;
+                    width:60%;
+                    height: 50px;
+                    line-height: 50px;
+                    border-bottom: 1px solid #4e4e4e;
+                    position: relative;
+                    margin-left: 10%;
+                    padding-left: 20%;
+                  }
+                }
+              }
+
+              .nav_bar{
+                width: 100%;
+                min-height: 90%!important;
+                height: 90%!important;
+                background-color: @color_white;
+                overflow: auto;
+                ul{
+                  li{
+                    :hover{
+                      color: @color_white;
+
+                    }
+                  }
+                }
+                .menu_left{
+                  float: left;
+                  margin-left: 10%;
+                  width: 20%;
+                }
+                .menu_right{
+                  float: right;
+                  width:60%;
+                  margin-right: 10%;
+                  .nav_bar_current1{
+                    border-top:none !important;
+                    :hover{
+                      color: #00b6f6;
+                    }
+                  }
+                  .menu_level2{
+                    padding-left: 50px;
+
+                  }
+                  .menu_level3{
+                    padding-left: 60px;
+                  }
+                }
+                .menu_state{
+                  width: 34px;
+                  height: 30px;
+                  line-height: 30px;
+                  background-color: @color_blue;
+                  color: #fff;
+                  margin: 19px 20px 0px 20px;
+                  border-radius: 2px;
+                  text-align: center;
+                }
+                .menu_state_close{
+                  width: 34px;
+                  height: 30px;
+                  line-height: 30px;
+                  background-color: red;
+                  color: #fff;
+                  margin: 19px 20px 0px 20px;
+                  border-radius: 2px;
+                  text-align: center;
+                }
+              }
+            }
+          }
+          .modal-footer{
+            padding: 25px;
+            .btn-default{
+              background-color: @color_black;
+              color: @color_white;
+            }
+          }
+
+        }
+      }
+
+
+    }
+  }
+
+  .check_authority_detail{
+    position: absolute;
+    width: 268px;
+    height: 300px;
+    overflow: auto;
+    border: 1px solid @color_border;
+    border-radius: 4px;
+    background-color: @color_white;
+    z-index: 22;
+    overflow:auto;
+    display: none;
+    .check_head{
+      height: 38px;
+      line-height: 38px;
+      border-bottom: 1px solid @color_border;
+      font-size: 16px;
+      font-weight: bold;
+      text-align: left;
+      margin-left: 20px;
+    }
+    .authority_detail_body{
+      margin-top: 20px;
+      margin-left: 20px;
+      .authority_detail_level1 span{
+        display:inline-block;
+      }
+      .hide_state{
+        width: 34px;
+        height: 30px;
+        line-height: 30px;
+        background-color: red;
+        color: #fff;
+        border-radius: 2px;
+        text-align: center;
+      }
+      .show_state{
+        width: 34px;
+        height: 30px;
+        line-height: 30px;
+        background-color: #0096ff;
+        color: #fff;
+        border-radius: 2px;
+        text-align: center;
+      }
+      .authority_detail_menu{
+        display: block;
+        font-family: 'Microsoft Yahei','微软雅黑';
+        font-weight: bold;
+        color: #f5f5f5;
+        background-color: #1c1c1c;
+        text-decoration: none;
+        width:70%;
+        height: 50px;
+        padding-left: 8%;
+        line-height: 50px;
+        border-bottom: 1px solid #4e4e4e;
+        position: relative;
+        margin-left: 6%;
+      }
+      .authority_detail_level2 span{
+        display:inline-block;
+      }
+      .menu_level2{
+        display: block;
+        font-family: 'Microsoft Yahei','微软雅黑';
+        font-weight: bold;
+        color: #f5f5f5;
+        background-color: #262626;
+        text-decoration: none;
+        width:70%;
+        height: 50px;
+        line-height: 50px;
+        border-bottom: 1px solid #4e4e4e;
+        position: relative;
+        margin-left: 6%;
+        padding-left: 12%;
+      }
+
+      .menu_current{
+        background-color: #1c1c1c;
+        color: #00b6f6 !important;
+      }
+
+      .menu_level3{
+        display: block;
+        font-family: 'Microsoft Yahei','微软雅黑';
+        font-weight: bold;
+        color: #f5f5f5;
+        background-color: #262626;
+        text-decoration: none;
+        width:70%;
+        height: 50px;
+        line-height: 50px;
+        border-bottom: 1px solid #4e4e4e;
+        position: relative;
+        margin-left: 6%;
+        padding-left: 16%;
+      }
+    }
+  }

@@ -1,0 +1,80 @@
+/* Less web_template */
+/* +--------------------------------------------------------------------------
+// | Author: Merrier <953075999@qq.com> <http://> <Date:2016/9/21 22:27>
+// +--------------------------------------------------------------------------*/
+//引入全局less变量
+@import "../../../common_folder/less/PC_library";
+//后台路径
+//@import "../../MeeZao/B_New/common_folder/less/PC_library";
+
+html {
+  height: 100%;
+  body{
+    .header{
+      .toolbar{
+        .wechat_authority{
+          height: 49px!important;
+          width: 60px!important;
+          line-height: 50px;
+          text-align: center;
+          font-size: 16px;
+          color: #fff;
+          //border-left: 1px solid #4e4e4e;
+          padding-left: 15px;
+          padding-right: 15px;
+          cursor: pointer;
+          i{
+            margin-right: 6px;
+          }
+          .fa-times-circle{
+            color: #FF4136;
+          }
+          .fa-check-circle{
+            color: #00a300;
+          }
+        }
+      }
+    }
+    .modal_wechat_authority_discription,.modal_re_wechat_authority_discription{
+      .modal-dialog{
+        width: 700px;
+        margin-top: 100px;
+        .modal-content{
+          .modal-body{
+            overflow-y: auto;
+            height: 400px;
+
+            p{
+              margin: 10px;
+            }
+            table.authority_function{
+              tr{
+                td{
+                  text-align: center;
+                  font-size: 14px;
+                }
+                .check{
+                  width: 10%;
+                  .fa-close{
+                    color: #FF4136;
+                  }
+                  .fa-check{
+                    color: #00a300;
+                  }
+                }
+                .authority_name{
+                  width: 30%;
+                }
+                .authority_discription{
+                  text-align: left;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+}
+

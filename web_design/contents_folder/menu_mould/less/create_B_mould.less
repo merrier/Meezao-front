@@ -1,0 +1,102 @@
+//引入全局less变量
+@import "../../../common_folder/less/PC_library";
+//后台路径
+//@import "../../MeeZao/B_New/common_folder/less/PC_library";
+
+
+html {
+  height: 100%;
+  body {
+    height: 100%;
+    font-size: 14px;
+    margin: 0;
+    padding: 0;
+    .wrp {
+      .content_mb_subject {
+        .navbar {
+          .navbar-form {
+            .btn_add_level1{
+              background-color: rgba(69, 241, 96, 0.84);
+              color: #fff;
+            }
+            .mould_name_input{
+              width: 260px;
+              height: 34px;
+              margin: 0 10px;
+            }
+            .btn_save{
+              margin: 0;
+            }
+          }
+        }
+        .common_table{
+          .table{
+            .table_head{
+              .menu_name{
+                width: 80%;
+              }
+              .operation{
+                width: 20%;
+              }
+            }
+            .table_body{
+              font-size: 14px;
+              .menu_level1{
+                td:first-child{
+                  text-align: left;
+                  padding-left: 18%;
+                }
+              }
+              .menu_level2{
+                td:first-child{
+                  text-align: left;
+                  padding-left: 36%;
+                }
+              }
+              .menu_level3{
+                td:first-child{
+                  text-align: left;
+                  padding-left: 54%;
+                }
+              }
+              td{
+                .btn-group{
+                  .btn_add_level2,.btn_add_level3{
+                    background-color: rgba(69, 241, 96, 0.84);
+                    color: #fff;
+                  }
+                  .btn_delete{
+                    background-color: #f90000;
+                    color: #fff;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+    .modal,.modal_edit_menu{
+      .modal-dialog{
+        margin-top: 30px;
+        .modal-content{
+          .modal-body{
+            padding: 20px 40px;
+            .form-group{
+              .error_tips{
+                color: red;
+                font-size: 12px;
+              }
+            }
+          }
+          .modal-footer{
+            .btn-default{
+              background-color: #111;
+              color: #fff;
+            }
+          }
+        }
+      }
+    }
+  }
+}

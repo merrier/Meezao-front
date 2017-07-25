@@ -1,0 +1,614 @@
+/* Less group_management */
+/* +--------------------------------------------------------------------------
+// | Author: Merrier <953075999@qq.com> <http://> <Date:2016/5/11 22:27>
+// +--------------------------------------------------------------------------*/
+//引入全局less变量
+@import "../../../common_folder/less/PC_library";
+//后台路径
+//@import "../../MeeZao/B_New/common_folder/less/PC_library";
+
+html{
+
+  body{
+
+    .content_mb_subject{
+      .col-md-2{
+        float: left;
+        width: 16.66666667%;
+      }
+
+      .col-md-4{
+        float: left;
+        width: 33.33333333%;
+      }
+
+      //导航条开始
+      .nav_top{
+        .border-bottom-radius(0);
+      }
+      //导航条结束
+
+      //标签页导航条开始
+      .nav_tablist{
+        .border-top-radius(0);
+
+        .nav-tabs{
+          display: inline-block;
+          height: 30px;
+          margin-top: 10px;
+          padding-left: 15px;
+          border: 0;
+
+          li{
+
+            a{
+              padding: 0;
+              .size(90px,30px);
+              margin-right: 10px;
+              line-height: 28px;
+              text-align: center;
+              font-size: 14px;
+              color: @color_black;
+              border: 1px solid #ccc;
+              border-radius: 5px;
+              background-color: #EEEEEE;
+            }
+          }
+          .active{
+
+            a{
+              background-color: @color_white;
+            }
+          }
+        }
+
+        .navbar-form{
+          display: none;
+        }
+      }
+      //标签页导航条结束
+
+      //标签页内容开始
+      .tab-content{
+        margin-top: 15px;
+        border: 1px solid @color_border;
+        border-radius: 5px;
+        .clearfix;
+
+        //标签页内容-黑名单开始
+        .tabbox_blacklist{
+          margin: 0;
+          padding: 10px;
+
+          .group_blacklist_box{
+            .clearfix;
+            margin-bottom:85px;
+            margin-right: 0;
+            margin-left: 0;
+
+            .group_blacklist{
+              margin: 5px 0;
+              padding: 0 5px;
+
+              .group_blacklist_detail{
+                height:100px;
+                padding: 10px;
+                border-radius: 5px;
+                .box_shadow(10px);
+                .font_hei;
+
+                img{
+                  float: left;
+                  .size(12%,auto);
+                  margin-right: 3%;
+                }
+                h3{
+                  float: left;
+                  width:70%;
+                  .font_hei;
+                  margin-bottom: 10px;
+                  font-size: 17px;
+                  font-weight: bold;
+                }
+                p{
+                  float: left;
+                  width:70%;
+                  font-size: 12px;
+                  line-height: 20px;
+                }
+                .blacklist_logo_weixin{
+                  position: absolute;
+                  width:25px;
+                  top: 10px;
+                  right:10px;
+                  margin-bottom: 0;
+                }
+                .blacklist_logo_vip{
+                  position: absolute;
+                  top: 38px;
+                  right: 17px;
+                  font-size: 14px;
+                }
+                .blacklist_logo_storage{
+                  position: absolute;
+                  width:22px;
+                  bottom: 10px;
+                  right:10px;
+                  margin-bottom: 0;
+                }
+                .fa-times{
+                  position: absolute;
+                  top: -4px;
+                  right: 0;
+                  .size(20px,20px);
+                  border: 1px solid #ccc;
+                  border-radius: 10px;
+                  text-align: center;
+                  line-height: 18px;
+                  font-size: 15px;
+                  background-color: @color_white;
+                  cursor: pointer;
+                }
+              }
+            }
+          }
+        }
+        //标签页内容-黑名单结束
+
+        //标签页内容-群组相关开始
+        .tabbox_group{
+          margin: 0;
+          margin-top: 10px;
+          padding:10px;
+
+          .group_common_box{
+            margin-bottom: 45px;
+            .clearfix();
+
+            //群组通用列表项开始
+            .group_common{
+              margin: 10px 0;
+              font-size: 12px;
+              .font_yahei;
+              text-align: left;
+
+              .fa-times{
+                position: absolute;
+                top: -7px;
+                right: 8px;
+                .size(20px,20px);
+                border: 1px solid #ccc;
+                border-radius: 10px;
+                text-align: center;
+                line-height: 18px;
+                font-size: 15px;
+                background-color: @color_white;
+                cursor: pointer;
+              }
+              img{
+                width: 100%;
+              }
+              .group_number{
+                position: absolute;
+                bottom: 37px;
+                left: 15%;
+                padding: 1px 3px;
+                border: 2px solid #b3d465;
+                border-left-width:5px;
+              }
+              .group_name{
+                .size(100%,25px);
+                margin-left: 5px;
+                margin-top: 5px;
+                word-break: break-all;
+                word-wrap: break-word;
+              }
+            }
+            //群组通用列表项结束
+
+            //自设群组添加群组按钮开始
+            .group_ownset{
+              margin: 10px 0;
+              font-size: 12px;
+
+              .group_ownset_btn{
+                display: block;
+                width:100%;
+                .font_yahei;
+                border:1px dashed @color_black;
+                cursor: pointer;
+
+                img{
+                  width:100%;
+                  visibility: hidden;
+                }
+                .fa-plus{
+                  position: absolute;
+                  top: 45%;
+                  left: 50%;
+                  margin-left: -18px;
+                  margin-top: -22.5px;
+                  font-size: 45px;
+                  color:#e5e5e5;
+                }
+                p{
+                  position: absolute;
+                  top: 65%;
+                  left: 50%;
+                  margin-left: -24px;
+                  font-size: 12px;
+                  color: #000000;
+                }
+              }
+            }
+            //自设群组添加群组按钮结束
+          }
+        }
+        //标签页内容-群组相关结束
+      }
+      //标签页内容结束
+    }
+
+    //模态框开始
+
+    //模态框-选择添加群组方式开始
+    .modal_addgroup_choose{
+
+      .modal-dialog{
+        width:350px;
+      }
+    }
+    //模态框-选择添加群组方式结束
+
+    //模态框-系统外数据导入开始
+    .modal_addgroup_import{
+
+      .modal-dialog{
+        width:350px;
+
+        .modal-body{
+
+          .group_name_inputbox{
+            margin-bottom: 15px;
+
+            .modal_group_name{
+              .size(90px,30px);
+              padding: 0;
+              line-height: 28px;
+              text-align: center;
+            }
+
+            .modal_input_groupname{
+              .size(230px,30px);
+              .border-right-radius(5px);
+            }
+
+            .input_num_box{
+              top:5px;
+              right:5px;
+              z-index:2;
+            }
+          }
+
+
+          .modal_import_box{
+            position: relative;
+            float: left;
+            .size(80px,30px);
+            margin-right: 10px;
+
+            #modal_input_import{
+              position: absolute;
+              .size(200%,100%);
+              left: -100%;
+              top: 0;
+              opacity: 0;
+              cursor: pointer;
+            }
+            .modal_import_btn{
+              .size(100%,100%);
+              padding: 0;
+              line-height: 30px;
+              text-align: center;
+              .word_space(0);
+            }
+          }
+          .btn-group{
+            .btn_show_example{
+              background-color: #44b549;
+              color: #fff;
+              position: relative;
+              height: 30px;
+              line-height: 16px;
+              .show_example_div{
+                display: none;
+                position: absolute;
+                border: 1px solid #555;
+                background-color: #fff;
+                border-radius:4px ;
+                .size(340px,150px);
+                overflow: auto;
+                text-align: center;
+                margin: 20px;
+                left: -145px;
+                img{
+                  .size(320px,120px);
+                  margin: auto;
+                }
+              }
+            }
+            .btn_download{
+              background-color: #69340d;
+              color: #fff;
+              height: 30px;
+              line-height: 16px;
+              a{
+                color: #fff;
+              }
+            }
+          }
+          .modal_import_tips{
+            vertical-align: bottom;
+            line-height: 6px;
+            color: #c9c9c9;
+            font-size: 12px;
+            margin-top: 10px;
+          }
+          .modal_import_name{
+            color:#ff0000;
+            font-size:14px;
+            margin-top: 25px;
+          }
+        }
+      }
+
+
+    }
+    //模态框-系统外数据导入结束
+
+
+    //模态框-筛选建组开始
+    .modal_addgroup_filter{
+
+      .modal-dialog{
+        width: 960px;
+
+        .modal-body{
+
+
+          .error_tips{
+            display: none;
+          }
+
+
+          #modal_filter_form{
+            width: 350px;
+            .center_block;
+
+            .modal_filter_box{
+              .clearfix();
+              margin-bottom: 15px;
+
+              .group_input_div{
+
+                .filter_actions_input{
+                  .size(240px,30px);
+                  border-left: 0;
+                  .border-left-radius(0);
+                }
+                .singleauto_choose_span{
+                  position: relative;
+                  display: block;
+                  width: 240px;
+                  height: 30px;
+                  padding: 3px 0;
+                  text-align: center;
+                  line-height: 20px;
+                  font-size: 0.8em;
+                  border: 1px solid #cccccc;
+                  background-color: #ffffff;
+
+                  .singleauto_choose_deletenew{
+                    margin-left: 10px;
+                    cursor: pointer;
+                  }
+                }
+                .caret{
+                  position: absolute;
+                  right: 8px;
+                  bottom: 10px;
+                  color: #afafad;
+                }
+                .filter_input_mask{
+                  position: absolute;
+                  .size(100%,100%);
+                  top: 0;
+                  left: 0;
+                  background-color: #000000;
+                  opacity: .4;
+                  cursor: not-allowed;
+                  z-index:2;
+                }
+              }
+              .dropdown-toggle{
+                .size(30px,30px);
+                line-height: 30px;
+                padding: 0;
+                color: #afafad;
+                .border-left-radius(0);
+              }
+            }
+
+            .modal_filter_actions{
+              position: relative;
+
+              .actions_choose_mask{
+                position: absolute;
+                top:0;
+                left: 0;
+                .size(350px,30px);
+                background-color: rgba(0,0,0,.4);
+                cursor:not-allowed;
+                z-index:2;
+              }
+
+              .actions_li_new{
+                display: none;
+              }
+            }
+
+            .input-group-btn{
+              display: block;
+
+              .dropdown{
+                .clearfix();
+
+                .btn-dropdown{
+                  .size(320px,30px);
+                  padding:0;
+                  padding-left: 10px;
+                  line-height: 30px;
+                  text-align: left;
+                  .border-right-radius(0);
+                }
+
+                .dropdown-menu{
+                  width:350px;
+                  max-height: 180px;
+                  padding: 0;
+                  overflow: auto;
+
+                  li{
+                    height: 30px;
+                    line-height: 30px;
+                    text-align: center;
+
+                    a{
+                      padding: 0;
+                      line-height: 30px;
+
+                      &:hover{
+                        background-color: @color_blue;
+                      }
+                    }
+                  }
+                }
+              }
+            }
+
+            .group_range_choosediv{
+              float: left;
+              width:110px;
+
+              .dropdown{
+
+                .btn-dropdown{
+                  width: 90px;
+                  padding:0;
+                  text-align: center;
+                  border-right: 0;
+                }
+                .dropdown-toggle{
+                  width:20px;
+                  .border-right-radius(0);
+                }
+                .dropdown-menu{
+                  width:110px;
+                  min-width: 110px;
+                }
+              }
+            }
+
+
+            .group_range_inputdiv{
+              float: left;
+              .clearfix;
+
+              .group_range_input{
+                .size(240px,30px);
+                border-left: 0;
+                .border-left-radius(0);
+              }
+              .brand_span{
+                position: relative;
+                display: block;
+                .size(240px,30px);
+                padding: 3px 0;
+                text-align: center;
+                line-height: 20px;
+                font-size: 0.8em;
+                border: 1px solid #cccccc;
+                border-radius: 4px;
+                background-color: @color_white;
+
+                .float_right_multiple{
+                  position: absolute;
+                  float: right;
+                  right: 3px;
+                  margin-top: 4px;
+                  cursor: pointer;
+                }
+              }
+              .caret{
+                position: absolute;
+                top:12px;
+                right:8px;
+                color:#afafad;
+              }
+            }
+
+            .group_name_inputbox{
+              .size(350px,30px);
+
+              #filter_input_groupname{
+                .size(240px,30px);
+                .border-right-radius(4px);
+              }
+              .input_num_box{
+                top: 4px;
+                right: 4px;
+                z-index: 2;
+              }
+            }
+
+
+
+          }
+        }
+        .modal-footer{
+
+          .modal_footer_num{
+            display: inline-block;
+            margin-right: 30px;
+
+            span{
+              display: inline-block;
+              .size(120px,30px);
+              margin:0 5px;
+              line-height: 30px;
+              text-align: center;
+              font-size: 14px;
+              color: #ff0000;
+              border: 1px solid @color_border;
+            }
+          }
+        }
+      }
+
+
+    }
+    //模态框-筛选建组结束
+
+    //模态框结束
+  }
+}
+
+//jquery-ui改变文字字体大小开始
+.ui-widget{
+  font-size: 0.8em;
+}
+//jquery-ui改变文字字体大小结束
+
+.tab-content>div{
+  display: none;
+}

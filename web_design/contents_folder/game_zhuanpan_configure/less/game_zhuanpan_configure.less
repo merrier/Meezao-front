@@ -1,0 +1,347 @@
+//引入全局less变量
+@import "../../../common_folder/less/PC_library";
+//后台路径
+//@import "../../MeeZao/B_New/common_folder/less/PC_library";
+
+
+html {
+  height: 100%;
+  body {
+    height: 100%;
+    font-size: 14px;
+    .wrp {
+      .content_mb_subject {
+
+        .game_zhuanpan_configure{
+          border: 1px solid @color_border;
+          min-height: 800px;
+          width: 100%;
+          border-radius: 4px;
+          padding-top: 20px;
+
+          //配置页面主内容开始
+          .game_zhuanpan_content{
+            .clearfix;
+
+            //左侧主配置页面开始
+            .main_content_left{
+              float: left;
+              width: 60%;
+              padding-left: 20px;
+              padding-bottom: 20px;
+              border-right: 1px solid @color_border;
+
+              .form-group{
+                margin-bottom: 30px;
+                position: relative;
+
+                .control-label{
+                  width: 150px;
+                  padding: 0;
+                  font-weight: normal;
+                  text-align: left;
+                  line-height: 36px;
+                }
+                .input_uppic_box{
+                  position: relative;
+                  width: 140px;
+
+                  input{
+                    position: absolute;
+                    .size(153%,100%);
+                    top:0;
+                    left: -73px;
+                    cursor: pointer;
+                    opacity: 0;
+                  }
+                  .input_uppic_mask{
+                    position: absolute;
+                    .size(53%,100%);
+                    left: -73px;
+                    top: 0;
+                    z-index: 1;
+                    cursor: default;
+                  }
+                }
+                .img_prompt{
+                  margin-left: 50px;
+                  line-height: 36px;
+                  color: lightgrey;
+                }
+                .input-group{
+                  width: 85%;
+                  position: relative;
+
+                  .dropdown{
+
+                    .btn-dropdown{
+                      width:~"calc(100% - 43px)";
+                      margin-right: -4px;
+                      border-left: 0;
+                      border-right: 0;
+                      border-radius: 0;
+                    }
+                    .dropdown-toggle{
+                      width:42px;
+                      .border-left-radius(0);
+                    }
+                    .dropdown-menu {
+                      padding: 0;
+                      min-width: 100%;
+
+                      li {
+                        height: 30px;
+                        line-height: 30px;
+                        text-align: center;
+
+                        :hover {
+                          background-color: @color_blue;
+                        }
+
+                        a {
+                          padding: 0;
+                          line-height: 30px;
+                        }
+                      }
+
+                    }
+                  }
+                  .input-group-addon:first-child{
+                    width: 120px;
+                  }
+                  .form-control{
+                    z-index: 0;
+                  }
+                  .input_word_limit{
+                    padding-right: 55px;
+                  }
+                  .input_num_box{
+                    position: absolute;
+                    top:8px;
+                    right: 10px;
+                    z-index: 2;
+                  }
+                }
+                .editor_div{
+                  width: 85%;
+                  height: 200px;
+                  border: 1px solid #acacac;
+                  border-radius: 6px;
+                }
+                .activity_detail{
+                  display: block;
+                  width: 85%;
+                  height: 200px;
+                  border: 1px solid #acacac;
+                  border-radius: 6px;
+                  resize: none;
+                }
+                .message_span{
+                  position: absolute;
+                  top:214px;
+                  right: 16%;
+                  z-index: 2;
+                }
+              }
+
+            }
+            //左侧主配置页面结束
+
+            //右侧展示页面开始
+            .main_content_right{
+              float: right;
+              width: 40%;
+
+              //主显示页面和助力页面开始
+              .right_show_box{
+                .size(220px,440px);
+                padding:0 15px;
+                padding-top:65px;
+                .center_block;
+                .background_percent100("../images/right_show_bg.png");
+
+                .right_show_content{
+                  position: relative;
+                  height:320px;
+                  overflow-y: auto;
+                  background-color: @color_white;
+
+                  .show_bg{
+                    display: none;
+                    position: absolute;
+                    .size(100%,100%);
+                  }
+                  .show_mask_black{
+                    display: none;
+                    position: absolute;
+                    .size(100%,100%);
+                    background-color: #000;
+                    opacity: 0.75;
+                    z-index: 1;
+                  }
+                  .show_rules_box{
+                    display: none;
+                    position: absolute;
+                    .size(90%,260px);
+                    left: 50%;
+                    top: 50%;
+                    margin-left: -45%;
+                    margin-top: -130px;
+                    z-index: 2;
+                  }
+                  .show_turntable_box{
+                    position: relative;
+                    overflow: hidden;
+                    width: 170px;
+                    margin: 10px auto;
+
+                    .show_turntable_lotterynum,.show_turntable_neednum{
+                      display: none;
+                      -webkit-text-size-adjust: none;
+                      font-size: 10px;
+                      text-align: center;
+                      margin-bottom: 5px;
+                    }
+                    .show_btn{
+                      display: block;
+                      .size(80px,25px);
+                      background-color: #5fcbd4;
+                      color: #ffffff;
+                      text-align: center;
+                      line-height: 25px;
+                      border-radius: 6px;
+                      font-size: 12px;
+                      cursor: pointer;
+                    }
+                    .show_btn_myprize{
+                      float: left;
+                    }
+                    .show_btn_share{
+                      float: right;
+                    }
+                    .show_turntable_actdes{
+                      float: right;
+                      -webkit-text-size-adjust: none;
+                      font-size: 10px;
+                      cursor: pointer;
+                    }
+                  }
+                  .show_turntable_bgbox{
+                    height:170px;
+
+                    .show_turntable_bg{
+                      display: none;
+                      .size(170px,170px);
+                      margin: 0 auto;
+                    }
+                    .show_turntable_pointer{
+                      display: none;
+                      position: absolute;
+                      width: 62px;
+                      height: 77px;
+                      left: 50%;
+                      top: 44px;
+                      margin-left: -31px;
+                    }
+                  }
+                  .show_turntable_prize{
+                    margin-bottom: 10px;
+                    border-radius: 5px;
+                    overflow: hidden;
+
+                    .show_turntable_prizetitle {
+                      .size(70px,25px);
+                      line-height: 25px;
+                      text-align: center;
+                      font-size: 13px;
+                      background-color: #fe6c64;
+                      color: #ffffff;
+                      border-bottom-right-radius: 5px;
+                    }
+                    .show_turntable_prizemain {
+                      width: 95%;
+                      .center_block;
+                      word-wrap: break-word;
+                    }
+                  }
+                }
+              }
+              //主显示页面和助力页面结束
+
+              //分享页面开始
+              .right_show_share{
+                margin-top:600px;
+
+                .right_show_content{
+                  padding:5px;
+
+                  .show_share_title{
+                    display: none;
+                    margin-bottom: 2px;
+                    line-height: 18px;
+                  }
+                  .show_share_logo{
+                    display: none;
+                    float: left;
+                    .size(45px,45px);
+                    border: 0;
+                  }
+                  .show_share_desbox{
+                    word-wrap: break-word;
+                    height: 50px;
+
+                    .show_share_des{
+                      display: table-cell;
+                      float: right;
+                      vertical-align: middle;
+                      font-size: 12px;
+                      width: 125px;
+                      margin-bottom: 0;
+                      line-height: 16px;
+                      color: #999;
+                      word-wrap: break-word;
+                    }
+                  }
+                }
+              }
+              //分享页面结束
+
+              //助力页面开始
+              .right_show_help{
+                margin-top: 50px;
+
+                .right_show_content{
+
+                  .show_turntable_box{
+
+                    .show_btn_help{
+                      display: none;
+                      float: left;
+                    }
+                    .show_btn_goplay{
+                      float: right;
+                    }
+                    .show_btn_goplayonly{
+                      float: none;
+                      .center_block;
+                    }
+                  }
+                }
+                //助力页面结束
+              }
+            }
+            //右侧展示页面结束
+          }
+          //配置页面主内容结束
+
+          //保存和充值按钮开始
+          .game_zhuanpan_opr{
+            margin:30px auto;
+            text-align: center;
+          }
+          //保存和充值按钮结束
+        }
+      }
+    }
+  }
+}

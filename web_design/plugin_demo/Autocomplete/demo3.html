@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>多选</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="../../plugin_folder/jquery-ui_v1.10.0/jquery-ui-1.10.0.custom.css" rel="stylesheet"/>
+</head>
+<body>
+
+<div class="ui-widget">
+    <label for="tags">编程语言：</label>
+    <input id="tags" size="50">
+</div>
+
+<script src="../../plugin_folder/jquery_v1.11.3/jquery-1.11.3.min.js"></script>
+<script src="../../plugin_folder/jquery-ui_v1.10.0/jquery-ui-1.10.0.custom.min.js"></script>
+
+<script>
+    $(function() {
+        var availableTags = [
+            "ActionScript",
+            "AppleScript",
+            "Asp",
+            "BASIC",
+            "C",
+            "C++",
+            "Clojure",
+            "COBOL",
+            "ColdFusion",
+            "Erlang",
+            "Fortran",
+            "Groovy",
+            "Haskell",
+            "Java",
+            "JavaScript",
+            "Lisp",
+            "Perl",
+            "PHP",
+            "Python",
+            "Ruby",
+            "Scala",
+            "Scheme"
+        ];
+        function split( val ) {
+            return val.split( /,\s*/ );
+        }
+        function extractLast( term ) {
+            return split( term ).pop();
+        }
+
+        $( "#tags" )
+        // 当选择一个条目时不离开文本域
+                .bind( "keydown", function( event ) {
+                    if ( event.keyCode === $.ui.keyCode.TAB &&
+                            $( this ).data( "ui-autocomplete" ).menu.active ) {
+                        event.preventDefault();
+                    }
+                })
+                .autocomplete({
+                    minLength: 0,
+                    source: function( request, response ) {
+                        // 回到 autocomplete，但是提取最后的条目
+                        response( $.ui.autocomplete.filter(
+                                availableTags, extractLast( request.term ) ) );
+                    },
+                    focus: function() {
+                        // 防止在获得焦点时插入值
+                        return false;
+                    },
+                    select: function( event, ui ) {
+                        var terms = split( this.value );
+                        // 移除当前输入
+                        terms.pop();
+                        // 添加被选项
+                        terms.push( ui.item.value );
+                        // 添加占位符，在结尾添加逗号+空格
+                        terms.push( "" );
+                        this.value = terms.join( ", " );
+                        return false;
+                    }
+                });
+    });
+</script>
+
+</body>
+</html>

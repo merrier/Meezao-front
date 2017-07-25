@@ -1,0 +1,295 @@
+/* Less web_template */
+/* +--------------------------------------------------------------------------
+// | Author: Merrier <953075999@qq.com> <http://> <Date:2016/9/21 22:27>
+// +--------------------------------------------------------------------------*/
+//引入全局less变量
+@import "../../../common_folder/less/PC_library";
+//后台路径
+//@import "../../MeeZao/B_New/common_folder/less/PC_library";
+
+html{
+
+  body{
+
+    .content_mb_subject{
+
+      .content_new_title{
+        height:50px;
+        font-family: SourceHanSansCN-Medium;
+        font-size: 16px;
+        color: #1c1c1c;
+        line-height: 50px;
+        margin-bottom: 25px;
+
+        ul{
+          li{
+            float: left;
+            margin-right: 90px;
+            padding:0 5px;
+            cursor: pointer;
+            &:hover{
+              color:#00aaff;
+              border-bottom: 4px solid #00aaff;
+            }
+          }
+          li.group_level1_active{
+            color:#00aaff;
+            border-bottom: 4px solid #00aaff;
+          }
+        }
+      }
+
+
+      .content_new_main{
+
+        .rapid_marketing_box{
+          padding-left: 55px;
+
+          .marketing_group_list{
+            .clearfix;
+
+            li{
+              position: relative;
+
+              .line{
+                display: none;
+                position: absolute;
+                width:2px;
+                margin-left: -46px;
+                left:0;
+                top:19px;
+                bottom:-19px;
+                background-color: #dbe5eb;
+              }
+              .dot{
+                position: absolute;
+                .size(20px,20px);
+                margin-left: -55px;
+                left: 0;
+                top: -1px;
+              }
+              h3{
+                font-family: SourceHanSansCN-Medium;
+                font-size: 18px;
+                margin-bottom: 20px;
+              }
+            }
+
+            .marketing_group_item1{
+
+              .dot{
+                background: url(../images/marketing_list_dot1.png) no-repeat 0 0;
+              }
+              .marketing_calculate_type{
+                max-height: 110px;
+                margin-bottom: 20px;
+                margin-left: -30px;
+                overflow-y: auto;
+
+                span{
+                  display: inline-block;
+                  .size(140px,30px);
+                  margin-bottom: 10px;
+                  margin-left: 30px;
+                  text-align: center;
+                  line-height: 30px;
+                  font-size: 12px;
+                  font-family: "宋体";
+                  background-color: #eee;
+                  box-shadow: 3px 3px 3px #ccc;
+                  cursor: pointer;
+
+                  &:hover{
+                    background-color: #00b6f6;
+                    color: #ffffff;
+                  }
+                }
+                span.group_level2_active{
+                  background-color: #00b6f6;
+                  color: #ffffff;
+                }
+              }
+            }
+
+            .marketing_group_item2{
+              display: none;
+
+              .dot{
+                display:none;
+                background: url(../images/marketing_list_dot2.png) no-repeat 0 0;
+              }
+              .marketing_detail_type{
+                max-height: 300px;
+                margin-bottom: 20px;
+                margin-left: -25px;
+                overflow-y: auto;
+
+                li{
+                  position: relative;
+                  float: left;
+                  display: inline-block;
+                  .size(136px,140px);
+                  padding: 0 5px;
+                  padding-top:15px;
+                  margin-left: 25px;
+                  margin-bottom: 20px;
+                  cursor: pointer;
+
+                  &:hover{
+                    background-color: #ccf0fd;
+                  }
+
+                  img{
+                    display: block;
+                    .size(85px,70px);
+                    margin: 0 auto;
+                    margin-bottom: 10px;
+                  }
+                  p{
+                    font-size: 12px;
+                    font-family: "宋体";
+                    text-align: center;
+                    word-break: break-all;
+                    word-wrap: break-word;
+                  }
+                  span{
+                    position: absolute;
+                    top:65px;
+                    left: 30px;
+                    font-family: SourceHanSansCN-Medium;
+                    font-size: 14px;
+                    color: #ffffff;
+                  }
+                }
+
+                li.group_level3_active{
+                  background-color: #ccf0fd;
+                }
+              }
+
+              .marketing_detail_oprbox{
+                display: none;
+                position: absolute;
+                width:280px;
+                top:0;
+                background-color: #ffffff;
+                box-shadow: 10px 10px 40px #b7eafc, -10px 10px 40px #b7eafc;
+
+                >div{
+                  position: relative;
+                  .size(100%,100%);
+                  padding: 50px 0 25px 0;
+
+                  p{
+                    text-align: center;
+                    font-family: SourceHanSansCN-Medium;
+                    font-size: 16px;
+                    line-height: 23px;
+
+                    span{
+                      color:#f72239;
+                    }
+                  }
+                  a{
+                    display: block;
+                    margin: 0 auto;
+                    margin-top: 20px;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+
+    }
+
+    //模态框-未开通渠道开始
+    .modal_open_service{
+
+      .modal-footer{
+
+        .btn_open_sms{
+          float: left;
+          width:160px;
+        }
+        .btn_open_smswx{
+          float:right;
+          width:255px;
+        }
+      }
+    }
+    //模态框-未开通渠道结束
+  }
+}
+
+@media screen and (min-width:1500px) {
+  html{
+
+    body{
+
+      .content_mb_subject{
+
+        .content_new_main{
+
+          .rapid_marketing_box{
+
+            .marketing_group_list{
+
+              .marketing_group_item1{
+
+                .marketing_calculate_type{
+                  max-height: 143px;
+                  margin-bottom: 26px;
+                  margin-left: -39px;
+
+                  span{
+                    width: 182px;
+                    height: 39px;
+                    margin-bottom: 13px;
+                    margin-left: 39px;
+                    line-height: 39px;
+                    font-size: 15px;
+                  }
+                }
+              }
+
+              .marketing_group_item2{
+
+                .marketing_detail_type{
+                  max-height: 390px;
+                  margin-bottom: 26px;
+                  margin-left: -32px;
+
+                  li{
+                    width: 176px;
+                    height: 172px;
+                    padding: 0 6.5px;
+                    padding-top: 19.5px;
+                    margin-left: 32.5px;
+                    margin-bottom: 26px;
+
+                    img{
+                      width: 110.5px;
+                      height: 91px;
+                      margin-bottom: 13px;
+                    }
+                    p{
+                      font-size: 16px;
+                    }
+                    span{
+                      top: 84.5px;
+                      left: 39px;
+                      font-size: 17px;
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+

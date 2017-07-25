@@ -1,0 +1,31 @@
+{
+  "VIP_message":[
+    {"name":"name","value":"刘一"},
+    {"name":"id_card","value":"131102199309023614"},
+    {"name":"open_date","value":"2015-01-01"},
+    {"name":"phone_number","value":"13161635704"},
+    {"name":"card_number","value":"123456789"},
+    {"name":"email","value":"meezao2015@163.com"},
+    {"name":"postcode","value":"100876"},
+    {"name":"address","value":"北京市海淀区西土城路8号"}
+  ],
+  "wx_message":[
+    {"name":"nickname","value":"liuyi89111"},
+    {"name":"address","value":"北京海淀区"},
+    {"name":"concern_time","value":"2012-02-01"},
+    {"name":"sex","value":"男"},
+    {"name":"fan_status","value":"僵尸粉丝"}
+  ],
+  "wx_ele_message":[
+    {"name":"nickname","value":"liuyi89222"},
+    {"name":"address","value":"北京海淀区"},
+    {"name":"concern_time","value":"2012-02-01"},
+    {"name":"sex","value":"男"},
+    {"name":"fan_status","value":"僵尸粉丝"},
+    {"name":"card_number","value":"11103285"},
+    {"name":"card_name","value":"刘大仙"},
+    {"name":"card_sex","value":"男"},
+    {"name":"card_postcode","value":"100080"},
+    {"name":"usual_address","value":"北京市朝阳区"}
+  ]
+}

@@ -1,0 +1,583 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <!--360 浏览器在读取到这个标签后，立即切换对应的极速核-->
+    <meta name="renderer" content="webkit">
+    <!--优先使用 IE 最新版本和 Chrome-->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <!--百度禁止转码-->
+    <meta http-equiv="Cache-Control" content="no-siteapp"/>
+    <title>rfm-分组</title>
+
+    <!--全局css开始-->
+    <link href="../../plugin_folder/bootstrap_v3.3.5/css/bootstrap.min.css" rel="stylesheet"/>
+    <link href="../../plugin_folder/font-awesome/font-awesome.min.css" rel="stylesheet"/>
+    <link href="../../common_folder/stylesheets/common_base.css" rel="stylesheet"/>
+    <link href="../../common_folder/less/PC_index.less" rel="stylesheet/less"/>
+    <!--全局css结束-->
+
+    <link href=../../plugin_folder/jquery-ui_v1.10.0/jquery.ui.datepicker.css rel="stylesheet"/>
+    <link href="../../plugin_folder/jquery-ui_v1.10.0/jquery-ui-1.10.0.custom.css" rel="stylesheet"/>
+
+    <link href="less/rfm_group.less" rel="stylesheet/less"/>
+
+</head>
+
+<body>
+
+
+<!--标题栏开始-->
+<div class="row header">
+    <h2>MEEZAO</h2>
+
+    <div class="toolbar">
+        <a href="" class="fa fa-envelope-o toolbar_information_center"><sup class="information_num"><i
+                class="fa fa-circle"></i></sup></a><!--
+         -->
+        <div class="toolbar_item">
+            <a href="#none" class="toolbar_person_information">
+                <i class="fa fa-circle"></i>
+                <span class="toolbar_user_name">萨达sdfsadf</span>
+            </a>
+            <ul class="toolbar_drop_menu">
+                <li class="toolopr_modify_password" data-toggle="modal" data-target=".modal_modify_password">修改密码</li>
+                <li class="toolopr_phone_solution" data-toggle="modal" data-target=".modal_phone_solution">手机号解绑</li>
+                <li class="toolopr_log_out">退出登录</li>
+            </ul>
+        </div>
+    </div>
+</div>
+<!--标题栏结束-->
+
+<!--页面开始-->
+<div class="container-fluid wrp">
+
+    <!--导航栏开始-->
+    <div class="nav_bar">
+        <ul class="nav_bar_level1">
+            <li><a href="#none"><span>全数据报表系统</span></a>
+                <ul class="nav_bar_level2">
+                    <li><a href="index.php/MeeZao/Plat/Fun/Form"><span>微官基础报表</span></a></li>
+                    <li><a href="#none"><span>官网基础报表</span></a></li>
+                    <li><a href="#none"><span>CRM报表</span></a></li>
+                    <li><a href="#none"><span>Meezao免费报表</span></a></li>
+                    <li><a href="#none"><span>Meezao付费报表</span></a></li>
+                </ul>
+            </li>
+            <li><a href="#none"><span>微信管理系统</span></a>
+                <ul class="nav_bar_level2">
+                    <li><a href="#none"><span>文案系统</span></a>
+                        <ul class="nav_bar_level3">
+                            <li><a href="#none"><i class="fa fa-circle"></i><span>创建文案</span></a></li>
+                            <li><a href="#none"><i class="fa fa-circle"></i><span>组合文案</span></a></li>
+                            <li><a href="#none"><i class="fa fa-circle"></i><span>文案列表</span></a></li>
+                            <li><a href="#none"><i class="fa fa-circle"></i><span>Meezao文案系统</span></a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#none"><span>微信平台管理系统</span></a>
+                        <ul class="nav_bar_level3">
+                            <li><a href="#none"><i class="fa fa-circle"></i><span>自定义菜单</span></a></li>
+                            <li><a href="#none"><i class="fa fa-circle"></i><span>自动回复管理</span></a></li>
+                            <li><a href="#none"><i class="fa fa-circle"></i><span>消息管理</span></a></li>
+                            <li><a href="#none"><i class="fa fa-circle"></i><span>素材管理</span></a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+            <li><a href="#none"><span>官网管理系统</span></a>
+                <ul class="nav_bar_level2">
+                    <li><a href="#none"><span>微信基础报表</span></a></li>
+                    <li><a href="#none"><span>微官网基础报表</span></a></li>
+                    <li><a href="#none"><span>会员分析报表</span></a>
+                        <ul class="nav_bar_level3">
+                            <li><a href="#none"><i class="fa fa-circle"></i><span>Meezao免费报表</span></a></li>
+                            <li><a href="#none"><i class="fa fa-circle"></i><span>Meezao付费报表</span></a></li>
+                            <li><a href="#none"><i class="fa fa-circle"></i><span>Meezao定制报表</span></a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+            <li><a href="#none"><span>M-CRM系统</span></a>
+                <ul class="nav_bar_level2">
+                    <li><a href="#none"><span>会员分组</span></a></li>
+                    <li><a href="#none"><span>分组管理</span></a></li>
+                    <li><a href="#none"><span>分组促销</span></a></li>
+                    <li><a href="#none"><span>会员分析图表</span></a></li>
+                </ul>
+            </li>
+            <li><a href="#none"><span>卡券管理系统</span></a>
+                <ul class="nav_bar_level2">
+                    <li><a href="#none"><span>卡券列表</span></a></li>
+                </ul>
+            </li>
+            <li><a href="#none"><span>核销系统</span></a>
+                <ul class="nav_bar_level2">
+                    <li><a href="#none"><span>网页核销</span></a></li>
+                    <li><a href="#none"><span>手机核销</span></a></li>
+                    <li><a href="#none"><span>核销记录</span></a></li>
+                </ul>
+            </li>
+            <li><a href="#none"><span>平台管理系统</span></a>
+                <ul class="nav_bar_level2">
+                    <li><a href="#none"><span>权限管理</span></a></li>
+                    <li><a href="#none"><span>品牌管理</span></a></li>
+                    <li><a href="#none"><span>系统消息</span></a></li>
+                    <li><a href="#none"><span>服务帮助</span></a></li>
+                </ul>
+            </li>
+        </ul>
+
+    </div>
+    <!--导航栏结束-->
+
+    <!--右侧内容开始-->
+    <div class="content clearfix">
+
+
+        <!--隐藏警告框标签开始-->
+        <div class="alert_hide_tag hide">
+            <div class="alert_whether_show"></div>
+            <div class="alert_tag_type"></div>
+            <div class="alert_tag_delay"></div>
+            <div class="alert_tag_content"></div>
+        </div>
+        <!--隐藏警告框标签结束-->
+
+
+        <!--右侧内容主体开始-->
+        <div class="content_main">
+            <div class="content_route"><a href="#none">首页</a>
+                <span class="content_route_pathname">>CRM系统>rfm分组</span></div>
+
+            <!--主体内容开始-->
+            <div class="content_mb">
+                <h2 class="content_mb_title">RFM分组</h2>
+
+                <!--警告框-范例开始-->
+                <div class="alert alert-example" role="alert">
+                    <button type="button" class="close" aria-label="Close"><span aria-hidden="true">&times;</span>
+                    </button>
+                    <strong class="alert_content"></strong>
+                </div>
+                <!--警告框-范例结束-->
+
+
+                <!--自己的内容开始-->
+                <div class="content_mb_subject">
+
+                    <!--你可以在这里写你自己的内容了-->
+
+                    <!--新的标题开始-->
+                    <div class="content_new_title">
+                        <ul>
+                            <li class="group_level1_active" data-id="1">RFM分组</li>
+                        </ul>
+                    </div>
+                    <!--新的标题结束-->
+
+                    <!--主要内容开始-->
+                    <div class="content_new_main">
+
+                        <div class="rfm_group_box" data-box-id="1">
+
+                        <ul class="rfm_group_list">
+
+                            <li class="rfm_group_item rfm_group_item1">
+                                <i class="line"></i>
+                                <i class="dot"></i>
+                                <h3>第一步：请选择数据源</h3>
+
+                                <p class="rfm_group_tips">建议参考（年）：R=60；F（平均）=4；M（品均）=400</p>
+
+                                <div class="rfm_group_details single_autocomplete_dropdown">
+
+                                    <div class="btn-dropdown btn-group singauto_dropdown" data-id="0">
+                                        <button type="button" class="btn btn-default">选择</button>
+                                        <button type="button" class="btn btn-default dropdown-toggle"
+                                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                            <span class="fa fa-chevron-down"></span>
+                                        </button>
+
+                                        <ul class="dropdown-menu">
+                                            <li><a href="javascript:void(0);" data-id="1" data-name="group_market">商城</a></li>
+                                            <li><a href="javascript:void(0);" data-id="2" data-name="group_category">类目</a></li>
+                                            <li><a href="javascript:void(0);" data-id="3" data-name="group_brand">品牌</a></li>
+                                        </ul>
+                                    </div>
+
+                                    <div class="btn-group input-group singauto_input_box">
+                                        <input type="text"
+                                               class="input-default singauto_input"
+                                               name="singauto_input">
+                                        <div class="group_range_hideinputbox singauto_hideinputbox hide">
+                                            <input type="hidden" class="singauto_range_hideinputnew" name="">
+                                        </div>
+                                        <button type="button" class="btn btn-default dropdown-toggle"
+                                                data-toggle="dropdown" aria-haspopup="true"
+                                                aria-expanded="false">
+                                            <span class="fa fa-chevron-down"></span>
+                                        </button>
+                                    </div>
+
+                                </div>
+
+                            </li>
+
+                            <li class="rfm_group_item rfm_group_item2">
+                                <i class="line"></i>
+                                <i class="dot"></i>
+                                <h3>第二步：F、M数据时间段</h3>
+
+                                <div class="rfm_group_details">
+
+                                    <div class="btn_date_group btn-group">
+
+                                        <input type="text" id="from" name="timeFrom">
+                                        <button type="button" class="btn btn-default dropdown-toggle"
+                                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                            <span class="fa fa-chevron-down"></span>
+                                        </button>
+
+                                    </div>
+
+                                    <span>-</span>
+
+
+                                    <div class="btn_date_group btn-group">
+
+                                        <input type="text" id="to" name="timeTo">
+                                        <button type="button" class="btn btn-default dropdown-toggle"
+                                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                            <span class="fa fa-chevron-down"></span>
+                                        </button>
+
+                                    </div>
+                                </div>
+                            </li>
+
+                            <li class="rfm_group_item rfm_group_item3">
+                                <i class="line"></i>
+                                <i class="dot"></i>
+                                <h3>第三步：选择并填写域值（至少选择一项）</h3>
+
+                                <div class="rfm_group_details">
+
+                                    <div class="rfm_domain_box rfm_domain_R">
+
+                                        <div class="domain_mask"></div>
+
+                                        <i class="fa fa-square-o rfm_checkbox"></i>
+
+                                        <input type="number" maxlength="3" name="domainRLeft" class="domain_R_left domain_left_number">
+
+                                        <div class="btn-dropdown btn-group" data-id="0">
+                                            <button type="button" class="btn btn-default domain_left_signal">&lt;</button>
+                                            <button type="button" class="btn btn-default dropdown-toggle"
+                                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                <span class="fa fa-chevron-down"></span>
+                                            </button>
+
+                                            <ul class="dropdown-menu">
+                                                <li><a href="javascript:void(0);" data-id="1">&lt;</a></li>
+                                                <li><a href="javascript:void(0);" data-id="2">≤</a></li>
+                                            </ul>
+                                        </div>
+
+                                        <input type="text" readonly value="R" class="domain_text">
+
+                                        <div class="btn-dropdown btn-group" data-id="0">
+                                            <button type="button" class="btn btn-default domain_right_signal">&lt;</button>
+                                            <button type="button" class="btn btn-default dropdown-toggle"
+                                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                <span class="fa fa-chevron-down"></span>
+                                            </button>
+
+                                            <ul class="dropdown-menu">
+                                                <li><a href="javascript:void(0);" data-id="1">&lt;</a></li>
+                                                <li><a href="javascript:void(0);" data-id="2">=</a></li>
+                                                <li><a href="javascript:void(0);" data-id="3">≤</a></li>
+                                            </ul>
+                                        </div>
+
+                                        <input type="number" maxlength="3" name="domainRRight" class="domain_R_right domain_right_number">
+                                    </div>
+
+                                    <p class="rfm_group_tips">R：最近一次购买距现在的时间（天），建议参考具体项的回购周期。</p>
+
+                                    <div class="rfm_domain_box rfm_domain_F">
+
+                                        <div class="domain_mask"></div>
+
+                                        <i class="fa fa-square-o rfm_checkbox"></i>
+
+                                        <input type="number" maxlength="3" name="domainFLeft" class="domain_F_left domain_left_number">
+
+                                        <div class="btn-dropdown btn-group" data-id="0">
+                                            <button type="button" class="btn btn-default domain_left_signal">&lt;</button>
+                                            <button type="button" class="btn btn-default dropdown-toggle"
+                                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                <span class="fa fa-chevron-down"></span>
+                                            </button>
+
+                                            <ul class="dropdown-menu">
+                                                <li><a href="javascript:void(0);" data-id="1">&lt;</a></li>
+                                                <li><a href="javascript:void(0);" data-id="2">≤</a></li>
+                                            </ul>
+                                        </div>
+
+                                        <input type="text" readonly value="F" class="domain_text">
+
+                                        <div class="btn-dropdown btn-group" data-id="0">
+                                            <button type="button" class="btn btn-default domain_right_signal">&lt;</button>
+                                            <button type="button" class="btn btn-default dropdown-toggle"
+                                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                <span class="fa fa-chevron-down"></span>
+                                            </button>
+
+                                            <ul class="dropdown-menu">
+                                                <li><a href="javascript:void(0);" data-id="1">&lt;</a></li>
+                                                <li><a href="javascript:void(0);" data-id="2">=</a></li>
+                                                <li><a href="javascript:void(0);" data-id="3">≤</a></li>
+                                            </ul>
+                                        </div>
+
+                                        <input type="number" maxlength="3" name="domainFRight" class="domain_F_right domain_right_number">
+                                    </div>
+
+                                    <p class="rfm_group_tips">F：所选时间段内，所选项的购买次数（次数是按天合并）。</p>
+
+                                    <div class="rfm_domain_box rfm_domain_M">
+
+                                        <div class="domain_mask"></div>
+
+                                        <i class="fa fa-square-o rfm_checkbox"></i>
+
+                                        <input type="number" maxlength="3" name="domainMLeft" class="domain_M_left domain_left_number">
+
+                                        <div class="btn-dropdown btn-group" data-id="0">
+                                            <button type="button" class="btn btn-default domain_left_signal">&lt;</button>
+                                            <button type="button" class="btn btn-default dropdown-toggle"
+                                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                <span class="fa fa-chevron-down"></span>
+                                            </button>
+
+                                            <ul class="dropdown-menu">
+                                                <li><a href="javascript:void(0);" data-id="1">&lt;</a></li>
+                                                <li><a href="javascript:void(0);" data-id="2">≤</a></li>
+                                            </ul>
+                                        </div>
+
+                                        <input type="text" readonly value="M" class="domain_text">
+
+                                        <div class="btn-dropdown btn-group" data-id="0">
+                                            <button type="button" class="btn btn-default domain_right_signal">&lt;</button>
+                                            <button type="button" class="btn btn-default dropdown-toggle"
+                                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                <span class="fa fa-chevron-down"></span>
+                                            </button>
+
+                                            <ul class="dropdown-menu">
+                                                <li><a href="javascript:void(0);" data-id="1">&lt;</a></li>
+                                                <li><a href="javascript:void(0);" data-id="3">=</a></li>
+                                                <li><a href="javascript:void(0);" data-id="4">≤</a></li>
+                                            </ul>
+                                        </div>
+
+                                        <input type="number" maxlength="3" name="domainMRight" class="domain_M_right domain_right_number">
+                                    </div>
+
+                                    <p class="rfm_group_tips">M：所选时间段内，所选项的平均金额（金额按订单合并）。</p>
+
+                                </div>
+                            </li>
+                        </ul>
+
+                        <div class="rfm_btn_box">
+                            <a class="btn btn_search" href="javascript:void(0);">开始查询</a>
+                            <p class="rfm_error_tips">请选择数据源</p>
+                        </div>
+
+                    </div>
+                    <!--主要内容结束-->
+
+                    </div>
+                </div>
+                <!--自己的内容结束-->
+
+            </div>
+            <!--主体内容结束-->
+
+        </div>
+        <!--右侧内容主体结束-->
+
+
+    </div>
+    <!--右侧内容结束-->
+</div>
+<!--页面结束-->
+
+
+<!--模态框开始-->
+<div class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                        aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title">模态框题目</h4>
+            </div>
+            <div class="modal-body">
+
+            </div>
+            <div class="modal-footer">
+                <a class="btn btn-black" data-dismiss="modal">关闭</a>
+                <a class="btn btn-primary">确定</a>
+            </div>
+        </div>
+    </div>
+</div>
+<!--模态框结束-->
+
+
+<!--模态框-查询范围展示开始-->
+<div class="modal fade modal_search_origin" tabindex="-1" role="dialog"
+     aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                        aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title">查询范围确认</h4>
+            </div>
+            <div class="modal-body">
+
+                <h5>您选择的查询范围如下所示，请确认无误后点击确认按钮进行查询</h5>
+
+                <p class="modal_search_show" data-name="singauto_label">
+                    <label>数据源：</label>
+                    <span>asdfasdf</span>
+                </p>
+                <p class="modal_search_show" data-name="date">
+                    <label>F、M时间段：</label>
+                    <span>asdfasdf</span>
+                </p>
+                <p class="modal_search_show" data-name="domain_R">
+                    <label>最近一次消费距现在的时间（天）：</label>
+                    <span>asdfasdf</span>
+                </p>
+                <p class="modal_search_show" data-name="domain_F">
+                    <label>所选时间段内，购买次数（次）：</label>
+                    <span>asdfasdf</span>
+                </p>
+                <p class="modal_search_show" data-name="domain_M">
+                    <label>所选时间段内，购买平均金额（元）：</label>
+                    <span>asdfasdf</span>
+                </p>
+            </div>
+            <div class="modal-footer">
+                <a class="btn btn-black" data-dismiss="modal">关闭</a>
+                <a class="btn btn-primary">确认</a>
+            </div>
+        </div>
+    </div>
+</div>
+<!--模态框-查询范围展示结束-->
+
+
+<!--模态框-查询中开始-->
+<div class="modal fade modal_common_unclosed modal_searching" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">系统查询中，请您耐心等候</h4>
+            </div>
+            <div class="modal-body">
+
+                <div class="progress">
+                    <div class="progress-bar progress-bar-success progress-bar-striped active" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0">
+                        0%
+                    </div>
+                </div>
+
+                <p>系统查询中，请不要关闭此页面，查询过程大概需要十几秒钟的时间...</p>
+            </div>
+        </div>
+    </div>
+</div>
+<!--模态框-查询中结束-->
+
+
+<!--模态框-查询结果开始-->
+<div class="modal fade modal_search_result" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" data-keyboard="false" data-backdrop="static">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">查询结果</h4>
+            </div>
+            <div class="modal-body">
+
+                <ul>
+                    <li>会员分值3分（100分）</li>
+                </ul>
+
+                <div class="modal_right">
+                    <input type="text" maxlength="22" class="search_result" name="searchResult" placeholder="请输入组名称">
+                </div>
+            </div>
+            <div class="modal-footer">
+                <a class="btn btn-default" data-dismiss="modal">取消</a>
+                <a class="btn btn-primary">确认生成</a>
+            </div>
+        </div>
+    </div>
+</div>
+<!--模态框-查询结果结束-->
+
+
+<!--模态框-已有进程在查询中开始-->
+<div class="modal fade modal_common_unclosed modal_searching_" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">系统查询中</h4>
+            </div>
+            <div class="modal-body">
+                <p>您已经有进程在查询中，请不要重复查询，否则将影响查询进度</p>
+            </div>
+            <div class="modal-footer">
+                <a class="btn btn-default" data-dismiss="modal">关闭</a>
+            </div>
+        </div>
+    </div>
+</div>
+<!--模态框-已有进程在查询中结束-->
+
+
+
+<!--尾部开始-->
+<div class="container-fluid foot">
+    <h2>Design by Meezao</h2>
+</div>
+<!--尾部结束-->
+
+
+</body>
+
+<!--全局js开始-->
+<script src="../../plugin_folder/jquery_v1.11.3/jquery-1.11.3.min.js"></script>
+<script src="../../plugin_folder/bootstrap_v3.3.5/js/bootstrap.min.js"></script>
+<script src="../../plugin_folder/jquery.validate_v1.13.1/jquery.validate-1.13.1.js"></script>
+<script src="../../plugin_folder/less_v1.7.0/less.min.js"></script>
+<script src="../../common_folder/javascripts/base.js"></script>
+<script src="../../common_folder/javascripts/common_index.js"></script>
+<!--全局js结束-->
+
+<script src=../../plugin_folder/jquery-ui_v1.10.0/jquery-ui-1.10.0.custom.min.js></script>
+<script src=../../plugin_folder/jquery-ui_v1.10.0/jquery.ui.datepicker.js></script>
+
+
+<script src="javascripts/rfm_group.js"></script>
+
+
+</html>

@@ -1,0 +1,323 @@
+/* Less web_template */
+/* +--------------------------------------------------------------------------
+// | Author: Merrier <953075999@qq.com> <http://> <Date:2016/9/21 22:27>
+// +--------------------------------------------------------------------------*/
+//引入全局less变量
+@import "../../../common_folder/less/PC_library";
+//后台路径
+//@import "../../MeeZao/B_New/common_folder/less/PC_library";
+
+html{
+
+  body{
+
+    .content_mb_subject{
+
+      .content_new_title{
+        height: 50px;
+        font-size: 16px;
+        color: #1c1c1c;
+        line-height: 50px;
+        margin-bottom: 25px;
+
+        ul{
+
+          li{
+            float: left;
+            margin-right: 90px;
+            padding: 0 5px;
+            cursor: pointer;
+          }
+          li.group_level1_active{
+            color: #00aaff;
+            border-bottom: 4px solid #00aaff;
+          }
+        }
+      }
+
+        .rfm_group_box{
+          display: flex;
+          display: -webkit-flex;
+          justify-content: space-between;
+          align-items: center;
+          padding-left: 55px;
+
+          .rfm_group_list{
+            width:425px;
+            .clearfix;
+
+            .rfm_group_item{
+              position: relative;
+
+              .rfm_group_tips{
+                font-size: 12px;
+                color:#aaa;
+                margin-bottom: 20px;
+              }
+
+              .rfm_group_details{
+                padding-left: 40px;
+                margin-bottom: 20px;
+
+                .input-group{
+                  display: inline-block;
+                  margin-left: 10px;
+                }
+
+                input{
+                  float: left;
+                  //padding: 5px;
+                  padding-left:12px;
+                  height:34px;
+                  color:#000;
+                  line-height: 34px;
+                }
+
+                //.dropdown-toggle{
+                //  bord
+                //}
+              }
+
+              .line{
+                //display: none;
+                position: absolute;
+                width:2px;
+                margin-left: -46px;
+                left:0;
+                top:19px;
+                bottom:-19px;
+                background-color: #dbe5eb;
+              }
+              .dot{
+                position: absolute;
+                .size(20px,20px);
+                margin-left: -55px;
+                left: 0;
+                top: -1px;
+                background: url(../images/marketing_list_dot1.png) no-repeat 0 0;
+
+              }
+              h3{
+                //font-family: SourceHanSansCN-Medium;
+                font-size: 18px;
+                margin-bottom: 20px;
+              }
+            }
+
+            .rfm_group_item1{
+
+              .rfm_group_tips{
+                display: none;
+              }
+
+              input{
+                border-right:0;
+                border-top-right-radius: 0;
+                border-bottom-right-radius: 0;
+              }
+
+              //带有下拉选择的模糊搜索单选开始
+              .single_autocomplete_dropdown{
+
+                .singauto_dropdown{
+                  float: left;
+
+                  .dropdown-toggle {
+                    border-bottom-right-radius: 0;
+                    border-top-right-radius: 0;
+                  }
+                }
+
+                .singauto_input_box{
+                  margin-left:0;
+
+                  .singauto_input{
+                    .border-left-radius(0);
+                  }
+
+                  .singauto_span{
+                    //display: inline-block;
+                    position: absolute;
+                    top:0;
+                    left:0;
+                    bottom: 0;
+                    width:~"calc(100% - 40px)";
+                    padding: 5px 10px;
+                    text-align: center;
+                    background-color: #ffffff;
+                    color: #111;
+                    border: 1px solid #ccc;
+                    border-right: 0;
+                    z-index:2;
+
+                    .float_right_single{
+                      position: absolute;
+                      float: right;
+                      right: 10px;
+                      margin-top: 2px;
+                      cursor: pointer;
+                    }
+                  }
+                }
+              }
+              //带有下拉选择的模糊搜索单选结束
+
+            }
+
+            .rfm_group_item2{
+              //display: none;
+
+              input{
+                width:100px;
+                border-right:0;
+                border-top-right-radius: 0;
+                border-bottom-right-radius: 0;
+              }
+
+              .dot{
+                //display:none;
+              }
+
+            }
+
+            .rfm_group_item3{
+
+              .rfm_domain_box{
+                position: relative;
+                margin-bottom: 5px;
+                .clearfix;
+
+                .domain_mask{
+                  display: none;
+                  position: absolute;
+                  top:0;
+                  bottom:0;
+                  left:0;
+                  width:36%;
+                  z-index:2;
+                  cursor:not-allowed;
+                }
+
+                input{
+                  display: inline-block;
+                  max-width:60px;
+                  padding:0;
+                  margin-right: 10px;
+                  text-align: center;
+                  font-size: 14px;
+                  border: 1px solid #ccc;
+                  -webkit-border-radius: 3px;
+                  -moz-border-radius: 3px;
+                  border-radius: 3px;
+                }
+
+                .btn-group{
+                  margin-right: 10px;
+                }
+
+                .domain_text{
+                  width:45px;
+                }
+
+                .rfm_checkbox{
+                  float: left;
+                  margin-left: -30px;
+                  font-size: 20px;
+                  line-height: 34px;
+                  color: #00AEE4;
+                  cursor: pointer;
+                }
+                .btn-group{
+                  float: left;
+                }
+
+              }
+
+              .dot{
+                //display:none;
+              }
+            }
+          }
+
+          .rfm_btn_box{
+
+            .btn_search{
+              padding: 10px 35px;
+              margin-right: 200px;
+              color: #fff;
+              font-size: 16px;
+              background-color: #00b6f6;
+              box-shadow: 3px 3px 10px #9ed0e3, -3px 3px 10px #9ed0e3;
+            }
+            .rfm_error_tips{
+              display: none;
+              color:#f00;
+              font-size: 14px;
+              width: 145px;
+              text-align: center;
+              margin-top: 10px;
+            }
+          }
+
+        }
+    }
+
+    //模态框-查询范围展示开始
+    .modal_search_origin{
+
+      .modal-dialog{
+        width:600px;
+      }
+
+      .modal-body{
+        padding:30px;
+
+        h5{
+          font-size: 16px;
+          font-weight: bold;
+          margin-bottom:15px;
+        }
+
+        .modal_search_show{
+          display: none;
+
+          label{
+            width:300px;
+          }
+        }
+      }
+
+    }
+    //模态框-查询范围展示结束
+
+    //模态框-查询结果开始
+    .modal_search_result{
+
+      .modal-body{
+        height:150px;
+
+        ul{
+          float:left;
+          .size(50%,120px);
+          border-right: 2px solid #aaa;
+          overflow-y: auto;
+        }
+        .modal_right{
+          float:right;
+          width:50%;
+          text-align: center;
+
+          input{
+            color:#000;
+            text-align: center;
+          }
+        }
+      }
+    }
+
+    //模态框-查询结果结束
+  }
+}
+
+
+

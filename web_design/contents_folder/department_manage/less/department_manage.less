@@ -1,0 +1,120 @@
+//引入全局less变量
+@import "../../../common_folder/less/PC_library";
+//后台路径
+//@import "../../MeeZao/B_New/common_folder/less/PC_library";
+
+
+html {
+  height: 100%;
+  body {
+    height: 100%;
+    font-size: 14px;
+    .error {
+      color: red;
+      font-size: 12px;
+      display: block;
+    }
+    .wrp {
+      .content_mb_subject {
+        .navbar-default {
+          .navbar-right{
+            .btn_search{
+              width: 70px;
+            }
+            .search_input{
+              width: 300px;
+              border-radius: 4px;
+            }
+          }
+          .btn-group{
+            float: right;
+            margin-right: 10px;
+            margin-top: 8px;
+            .btn_batch_upload{
+              width: 84px;
+            }
+            .btn_show_example{
+              background-color: #44b549;
+              color: #fff;
+              position: relative;
+              .show_example_div{
+                display: none;
+                position: absolute;
+                border: 1px solid #555;
+                background-color: #fff;
+                border-radius:4px ;
+                .size(320px,250px);
+                overflow: auto;
+                text-align: center;
+                margin: 20px;
+                left: -145px;
+                img{
+                  .size(280px,300px);
+                  margin: auto;
+                }
+              }
+            }
+            .btn_download{
+              background-color: #69340d;
+              color: #fff;
+              a{
+                color: #fff;
+              }
+            }
+          }
+
+        }
+        .common_table{
+          .table{
+            .table_head{
+              .create_time{
+                width: 25%;
+              }
+              .department_chinesee{
+                width: 30%;
+              }
+              .department_english{
+                width: 30%;
+              }
+              .operation{
+                width: 15%;
+              }
+            }
+            td{
+              .btn_edit{
+                width: 70px;
+              }
+            }
+          }
+        }
+      }
+    }
+    .modal{
+      .modal-body{
+        //.upload_btns{
+        //  background-color: #00a81c;
+        //  color: #fff;
+        //  .size(120px,32px);
+        //  border: none;
+        //  border-radius: 4px;
+        //  text-align: center;
+        //  line-height: 32px;
+        //  input{
+        //    display: none;
+        //  }
+        //}
+        .error_prompt{
+          color: red;
+          font-size: 12px;
+          display: none;
+        }
+      }
+      .modal-footer{
+        .btn-default{
+          background-color: #111;
+          color: #fff;
+        }
+      }
+    }
+  }
+}

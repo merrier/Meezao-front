@@ -1,0 +1,23 @@
+@charset "utf-8";
+/* CSS Document */
+*{
+	margin:0px;
+	padding:0px;
+}
+
+.l{
+	float:left;
+}
+.r{
+	float:right;
+}
+img{
+	max-width:100%;
+	height:auto;
+}
+.hide{
+	display:none;
+}
+p{
+	margin-bottom:5px;
+}

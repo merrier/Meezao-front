@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>在线计算器</title>
+    <!--<link rel="stylesheet" type="text/css" href="css/calcStyle.css">-->
+    <script src="../../plugin_folder/jquery_v1.11.3/jquery-1.11.3.min.js"></script>
+
+    <!--<script src="js/calcjs.js"></script>-->
+    <style>
+
+        /***** reset *****/
+        html, body, h1, h2, h3, h4, h5, h6, div, dl, dt, dd, ul, ol, li, p, blockquote, pre, hr, figure, table, caption, th, td, form, fieldset, legend, input, button, textarea, menu {
+            margin: 0;
+            padding: 0;
+        }
+
+        html, body, fieldset, img, iframe, abbr {
+            border: 0;
+        }
+
+        h1, h2, h3, h4, h5, h6, small {
+            font-size: 100%;
+        }
+
+        textarea {
+            overflow: auto;
+            resize: none;
+        }
+
+        a, button {
+            cursor: pointer;
+        }
+
+        h1, h2, h3, h4, h5, h6, em, strong, b {
+            font-weight: bold;
+        }
+
+        del, ins, u, s, a, a:hover {
+            text-decoration: none;
+        }
+
+        body,h1, h2, h3, h4, h5, h6, textarea, input, button, select, keygen, legend {
+            font: 20px/24px "Microsoft YaHei", \5b8b\4f53;
+            color: #1b1b1b;
+            outline: 0;
+        }
+
+        textarea, input, img {
+            border: none;
+        }
+
+        body {
+            background: #f2f2f2;
+        }
+
+        a, a:hover {
+            color: #525252;
+        }
+
+        body {
+            background-color:#eee;
+        }
+
+        /*calculator*/
+
+
+
+        .calculator {
+            margin:50px auto;
+            width:565px;
+            height:697px;
+            background-color:#666;
+            border-radius:2px;
+            -moz-border-radius: 10px;
+            -webkit-border-radius: 10px;
+        }
+        .view {
+            margin:15px 10px;
+            padding-right:10px;
+            width:535px;
+            font-size:40px;
+            line-height:55px;
+            direction:rtl;
+            box-shadow:0 0 3px 2px #dadada inset;
+        }
+
+        .button {
+            margin-top:40px;
+            margin-left:10px;
+            padding-top:5px;
+            padding-left:5px;
+            overflow:hidden;
+        }
+
+        .button button {
+            margin-bottom:10px;
+            margin-right:8px;
+            width:93px;
+            height:68px;
+            border:1px solid #fcaeaf;
+            border-radius:5px;
+            -moz-border-radius: 5px;
+            -webkit-border-radius: 5px;
+        }
+
+        .button button:hover {
+            box-shadow:0 0 1px 1px #ffff00;
+            border:1px solid #fff;
+        }
+
+        .number {
+            width:330px;
+            float:left;
+        }
+
+
+        .number, .operator {
+            margin-top:15px;
+        }
+
+        .mem button {
+            background:#bffab1;
+        }
+
+        .ctrl{
+            text-align: right;
+        }
+
+        .ctrl button {
+            background:#d3261f;
+            color:#fff;
+        }
+
+        .number button {
+            background-color:#BDD8EE;
+            font-size:35px;
+        }
+
+        .operator button {
+            background-color:#DEC8B8;
+            font-size:30px;
+        }
+
+        .button .add {
+            float:left;
+            margin-right:13px;
+            height:146px;
+        }
+
+        .button .equal {
+            background:#8B743F;
+            color:#fff;
+        }
+    </style>
+</head>
+<body>
+<div class="calculator">
+    <label>
+        <input id="view" class="view" type="text" maxlength="20" />
+    </label>
+    <div class="button">
+        <div class="ctrl">
+            <button id="AC" class="AC">清屏</button>
+        </div>
+        <div class="number">
+            <button id="b7">7</button>
+            <button id="b8">8</button>
+            <button id="b9">9</button>
+            <button id="b4">4</button>
+            <button id="b5">5</button>
+            <button id="b6">6</button>
+            <button id="b1">1</button>
+            <button id="b2">2</button>
+            <button id="b3">3</button>
+            <button id="b0">0</button>
+            <button id="b00">00</button>
+            <button id="dot">.</button>
+        </div>
+        <div class="operator">
+            <button id="percent">%</button>
+            <button id="squareRoot">√￣</button>
+            <button id="multiply">×</button>
+            <button id="division">÷</button>
+            <button id="add" class="add">+</button>
+            <button id="minus">-</button>
+            <button id="equal" class="equal">=</button>
+        </div>
+    </div>
+</div>
+</body>
+<script>
+    /**
+     * Created by KevinJing on 2015/7/5.
+     */
+
+    $(document).ready(function(){
+        funInitializer();                           //初始化值。
+
+
+        $('.number button').click(function(){       //点击数字，获取数字字符串。
+            var str1='';
+            str1=$(this).text();
+            funStrNum(str1);
+
+        });
+
+        $('.operator button').click(function(){        //点击运算符。
+            var operator=$(this).attr('id');
+            funOperator(operator);
+        });
+
+        $('#AC').click(function(){                      //初始化事件。
+            funInitializer();
+        });
+
+        $('#backSpace').click(function(){               //退格事件。
+            funBackSpace();
+        });
+
+        $(window).keypress(function(event){             //处理键盘输入字符
+            var str1='';
+            var eve=event.keyCode;
+            str1=String.fromCharCode(eve);
+            if(str1.match(/[0-9\.]+/)){                   //输入数字调用数字字符串函数。
+                funStrNum(str1);
+            }else if(str1.match(/[\+\-\*\/]+/) || event.keyCode==13){
+                //输入运算符，调用运算函数，并传递运算符参数。
+                var operator='';
+                switch(str1){
+                    case '+':
+                        operator='add';
+                        break;
+                    case '-':
+                        operator='minus';
+                        break;
+                    case '*':
+                        operator='multiply';
+                        break;
+                    case '/':
+                        operator='division';
+                        break;
+                    default:
+                        operator='equal';
+                        break;
+                }
+                funOperator(operator);
+            }
+        });
+
+        $(window).keydown(function(event){              //处理键盘输入退格键(键值为8)和删除（初始化）键（键值为46）
+            if(event.keyCode==8){
+                funBackSpace();
+            }else if(event.keyCode==46){
+                funInitializer();
+            }
+        });
+
+        function funStrNum(str1){                        //获取输入的字符串。
+            if (oldOperator=='equal' || oldOperator=='squareRoot'){      //如果输入数字之前的所存运算符为等号或根号，则初始化计算器。
+                funInitializer();
+            }
+            strNumOn=true;
+            switch(str1){                               //判断输入字符，处理异常。
+                case '0':                               //输入0时，如果数字符串为空，则赋值为0，如果字符串不为0，则累加赋值，为0则跳过。
+                    if(strNum==''){
+                        strNum=str1;
+                    }else if(strNum!='0'){
+                        strNum=strNum+str1;
+                    }
+                    break;
+                case '.':
+                    if(strNum==''){                     //输入.时，如果.为首个输入字符，则在前面自动加0；
+                        strNum='0.';
+                    }else if(!strNum.match(/\.+/)){     //如果不为空，且如果里面没有.时，把点加在后面。如果里面有点，则跳过。
+                        strNum=strNum+str1;
+                    }
+                    break;
+                default:                                //输入1-9，直接赋值。
+                    if (strNum=='0'){
+                        strNum='';
+                    }
+                    strNum=strNum+str1;
+                    break;
+            }
+
+            for(var i=0;i<strNum.length;i++){
+                console.log('长：'+strNum.length+'--第'+(i+1)+'个字符为：'+strNum[i]);
+            }
+
+            $('#view').val(strNum);
+
+
+
+
+            /* //旧写法：逻辑没有理顺，导致异常处理起来困难。
+             if(str1!='.' || !strNum.match(/\.+/)){                              //旧小数点只能输入一次。
+             strNum=strNum+str1;
+             console.log('内'+strNum.length+'加'+strNum+'加'+strNum.charAt(0));
+             }else if(str1=='.'){
+
+
+             }
+
+             console.log('外'+strNum.length+'加'+strNum+'加'+strNum.charAt(0));
+
+             if(strNum.length=2 && strNum.charAt(0)=='0' && strNum.charAt(1)!='.'){
+             strNum=strNum.charAt(1);
+             }else if(strNum.length=2 && strNum.charAt(0)=='0' && strNum.charAt(1)=='.'){
+             strNum='0.';
+             }
+
+
+             $('#view').val(strNum); */
+        }
+
+        function funInitializer(){                       //初始化函数(内部的变量为全局变量)
+            num1=null;                                   //数字1和数字2初始化
+            num2=null;
+            strNum='';                                   //输入的数字字符串初始化
+            strNumOn=false;                              //+-*/运算符的开关。
+            oldOperator=null;                            //运算符存储器初始化
+            $('#view').val('0');
+        }
+
+        function funBackSpace (){                       //退格函数:将当前字符串最后一位删除，并重新显示。
+            var str1='';
+            for(var i=0;i<strNum.length-1;i++){         //如果运算后点退格，因为strNum='',所以会初始化计算器。
+                str1=str1+strNum[i];
+            }
+            strNum=str1;
+            if (strNum.length==0){
+                funInitializer();
+            }else{
+                $('#view').val(strNum);
+            }
+
+        }
+
+        function funOperator (o){                   //运算函数。
+            num1=Number(strNum);                    //字符串转为数字。
+            if(strNumOn==true || o=='squareRoot'){
+                if(num2==null){
+                    num2=num1;                      //如仅输入了一个数字，则将第一个数字存入第二个数字。
+                    oldOperator=o;                   //存储运算符，运算符在下一次点击运算符或等号时进行运算。
+                }else if(oldOperator!='equal'&& o!='squareRoot') {
+                    switch (oldOperator){           //运算选择
+                        case 'add':                 //加法。
+                            num2=num2+num1;
+                            break;
+                        case 'minus':               //减法。
+                            num2=num2-num1;
+                            break;
+                        case 'multiply':            //乘法。
+                            num2=num2*num1;
+                            break;
+                        case 'division':            //除法。
+                            num2=num2/num1;
+                            break;
+                        default:
+                            break;
+                    }
+                }
+                if (o=='squareRoot'){               //开平方根
+                    num2=Math.sqrt(num2);
+                }
+                $('#view').val(num2);               //输出结果
+                strNumOn=false;                     //关闭运算符操作，否则仅更新存储运算符，开平方除外。。
+            }
+            oldOperator=o;                          //点击运算符时，始终更新运算符存储。
+            strNum='';
+        }
+    });
+
+</script>
+</html>

@@ -1,0 +1,171 @@
+//引入全局less变量
+@import "../../../common_folder/less/PC_library";
+//后台路径
+//@import "../../MeeZao/B_New/common_folder/less/PC_library";
+
+
+html {
+  height: 100%;
+  body {
+    height: 100%;
+    font-size: 14px;
+    margin: 0;
+    padding: 0;
+    .wrp {
+      .content_mb_subject {
+        form{
+          width: 100%;
+          margin-top: 20px;
+          overflow: hidden;
+          .form_body{
+            width: 100%;
+            height: 1000px;
+            .form_left{
+              width: 50%;
+              padding: 0 20px;
+              float: left;
+              .form-group{
+                label{
+                  font-weight: normal;
+                }
+                padding-right:30px;
+                .input-group{
+                  .brand_input_div{
+                    height: 36px;
+                    .brand_input{
+                      width: 100%;
+                      height: 100%;
+                    }
+                    .brand_span{
+                      width: 100%;
+                      height: 100%;
+                      line-height: 20px;
+                      border: 1px solid #cccccc;
+                      position: relative;
+                      padding: 5px 62px;
+                      border-radius: 4px;
+                      text-align: center;
+                      background-color: #ffffff;
+                      display: block;
+                      .float_right_single{
+                        position: absolute;
+                        float: right;
+                        right: 20px;
+                        margin-top: 4px;
+                      }
+                    }
+                  }
+                }
+                .code_pattern_input{
+                  position: absolute;
+                  visibility: hidden;
+                  width: 40px;
+                }
+                .dropdown{
+                  width: 100%;
+                  .dropdown-toggle{
+                    width: 100%;
+                    height: 36px;
+                    position: relative;
+                    text-align: center;
+                    .choose_span{
+                      position: absolute;
+                      top:8px;
+                      left: 40%;
+                    }
+                    .caret{
+                      position: absolute;
+                      right: 3%;
+                      top:14px
+                    }
+                  }
+                  .dropdown-menu{
+                    width: 100%;
+                    li{
+                      :hover{
+                        background-color: #0096ff;
+                        color: #fff;
+                      }
+                    }
+                  }
+                }
+              }
+            }
+            .form_right{
+              width: 50%;
+              height: 100%;
+              padding:0 20px;
+              float: right;
+              .form-group {
+                label {
+                  font-weight: normal;
+                  display: block;
+                }
+                padding-right: 30px;
+                .input-group {
+                  .brand_input_div {
+                    height: 36px;
+                    .brand_input {
+                      width: 100%;
+                      height: 100%;
+                    }
+                    .brand_span {
+                      width: 100%;
+                      height: 100%;
+                      line-height: 20px;
+                      border: 1px solid #cccccc;
+                      position: relative;
+                      padding: 5px 62px;
+                      border-radius: 4px;
+                      text-align: center;
+                      background-color: #ffffff;
+                      display: block;
+                      .float_right_single {
+                        position: absolute;
+                        float: right;
+                        right: 20px;
+                        margin-top: 4px;
+                      }
+                    }
+                  }
+                }
+                #from,#to{
+                  width: 47%;
+                  height: 36px;
+                  text-align: center;
+                }
+                .group_message_input{
+                  width: 45%;
+                }
+                .message_div{
+                  width: 45%;
+                  background-color: lightgrey;
+                  color:#333;
+                  text-align: center;
+                  display: inline-block;
+                  margin-left: 8%;
+                }
+                .electric_checkbox{
+                  margin-right: 2%;
+                }
+                .crm_checkbox{
+                  margin: 0 2% 0 10%;
+                }
+              }
+            }
+          }
+
+          .form_submit{
+            width: 100%;
+            display: block;
+            margin-top: 40px;
+            text-align: center;
+            button{
+              margin: auto;
+            }
+          }
+        }
+      }
+    }
+  }
+}

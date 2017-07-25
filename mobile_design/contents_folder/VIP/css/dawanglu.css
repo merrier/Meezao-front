@@ -1,0 +1,32 @@
+.mask_code{
+    position: absolute;
+    top:0;
+    left: 0;
+    z-index: 2;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.8);
+    text-align: center;
+    /*display: none;*/
+}
+
+.two_dimension_code{
+    width: 10rem;
+    height: 10rem;
+    margin: auto;
+    margin-top: 26%;
+    margin-bottom: 10%;
+}
+
+.text{
+    font-size: 0.9rem;
+    line-height: 36px;
+    font-family: "Microsoft Yahei", "微软雅黑";
+    color: #FFF;
+}
+
+.chance{
+    color: #FF0000;
+    font-size: 1.1rem;
+    font-weight: bold;
+}

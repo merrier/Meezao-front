@@ -1,0 +1,349 @@
+//引入全局less变量
+@import "../../../common_folder/less/PC_library";
+//后台路径
+//@import "../../MeeZaoB_New/common_folder/less/PC_library";
+
+@color_border_details:#5d5d5d;
+
+
+html {
+
+  body {
+
+    .wrp {
+      .content_mb_subject {
+        //导航条开始
+        .navbar-default {
+
+          .form_details_modulesname{
+            position: absolute;
+            right:120px;
+            top:7px;
+
+            .details_modules_name{
+              width:300px;
+            }
+            .input_num_box{
+              position: absolute;
+              right:7px;
+              top:6px;
+            }
+          }
+
+          .btn_change_name{
+            position: absolute;
+            right:60px;
+            top:7px;
+          }
+
+          .nav_btn_configure{
+            position: absolute;
+            right: 8px;
+            top: 6px;
+            font-size: 35px;
+            cursor: pointer;
+          }
+
+          //详情配置开始
+          .form_details_configure{
+            position: absolute;
+            top: 50px;
+            right: 0;
+            .size(300px,400px);
+            color:#ffffff;
+            font-size: 14px;
+            background-color: #414141;
+            z-index:4;
+
+            .form_configure_top{
+              .size(100%,360px);
+              border-bottom: 1px solid @color_border_details;
+
+              .form_configure_list{
+
+                >li{
+                  position: relative;
+                  height:35px;
+                  color:#aaa;
+                  background-color: #545454;
+                  overflow: hidden;
+                  border-bottom: 1px solid @color_border_details;
+
+
+                  .config_list_title{
+                    height:35px;
+                    padding: 0 15px;
+                    line-height: 35px;
+                    cursor: not-allowed;
+
+                    >.fa{
+                      margin-right:8px;
+                    }
+                    .error_message{
+                      display: none;
+                      color:#ff0000;
+                    }
+                  }
+
+                  .config_list_main{
+                    height:220px;
+                    padding:10px;
+                    background-color: #535353;
+
+                    //提示内容开始
+                    .config_main_tips{
+                      color:#ee3333;
+                      font-size: 12px;
+                    }
+                    //提示内容结束
+
+                    //时间段选择开始
+                    .datimepicker{
+
+                      input{
+                        width: 125px;
+                        text-align: center;
+                      }
+                    }
+                    //时间段选择结束
+
+                    //带有下拉的时间段选择开始
+                    .dropdown_timesection_box{
+
+                      .dropdown_timesection{
+
+                        label{
+                          font-size: 13px;
+                          font-weight: normal;
+                        }
+                        .dropdown{
+                          display: inline-block;
+
+                          .btn-dropdown{
+                            .size(180px,23px);
+                            font-size: 13px;
+                          }
+                          .dropdown-toggle{
+                            height:23px;
+                          }
+                          .dropdown-menu{
+
+                            li{
+                              height:23px;
+                              a{
+                                line-height:23px;
+                              }
+                            }
+                          }
+
+                          .dropdown_timesection_mask{
+                            position: absolute;
+                            .size(100%,100%);
+                            top:0;
+                            background-color: rgba(255,255,255,.1);
+                            z-index:2;
+                            cursor: not-allowed;
+                          }
+                        }
+                      }
+                    }
+                    //带有下拉的时间段选择结束
+
+                    //带有下拉选择的模糊搜索单选开始
+                    .single_autocomplete_dropdown{
+                      display: block;
+
+                      .dropdown-toggle{
+                        .size(20px,30px)!important;
+                        padding:0;
+                        margin-top: -1px;
+                        color:#afafad;
+                        .border-left-radius(0);
+                        .border-right-radius(0);
+                      }
+
+                      .singauto_dropdown{
+                        display: block;
+                        float:left;
+                        width:30%;
+
+                        .dropdown{
+
+                          .btn-dropdown{
+                            width:~'calc(100% - 20px)';
+                            padding:0;
+                            margin-right: 0;
+                            text-align: center;
+                            font-size: 14px;
+                            border-right: 0;
+                            .border-right-radius(0);
+                          }
+                          .dropdown-menu{
+                            max-height:180px;
+                            overflow: auto;
+                          }
+                        }
+                      }
+
+                      .singauto_input_box{
+                        float: left;
+                        width:70%;
+
+                        .dropdown-toggle{
+                          //margin-top: -1px;
+                        }
+
+                        .singauto_input{
+                          height:30px;
+                          width:~"calc(100% - 20px)";
+                          border-radius:0;
+                          border-right: 0;
+                          border-left: 0;
+                        }
+                        .singauto_span{
+                          display: inline-block;
+                          position: relative;
+                          width:~"calc(100% - 20px)";
+                          padding: 5px 22px;
+                          text-align: center;
+                          background-color: #ffffff;
+                          color: #111;
+
+                          .float_right_single{
+                            position: absolute;
+                            float: right;
+                            right: 20px;
+                            margin-top: 4px;
+                            cursor: pointer;
+                          }
+                        }
+                      }
+                    }
+                    //带有下拉选择的模糊搜索单选结束
+
+                    .activity_input_div{
+                      height: 32px;
+                      .activity_input{
+                        width: 100%;
+                        height: 32px;
+                        border: 1px solid #acacac;
+                      }
+                      .brand_span{
+                        max-width: 100%;
+                        width: 100%;
+                        height: 100%;
+                        line-height: 20px;
+                        border: 1px solid #cccccc;
+                        position: relative;
+                        padding: 5px 22px;
+                        border-radius: 4px;
+                        text-align: center;
+                        background-color: @color_white;
+                        display: block;
+                        color: #111;
+                        .float_right_single{
+                          position: absolute;
+                          float: right;
+                          right: 20px;
+                          margin-top: 4px;
+                        }
+                      }
+                    }
+
+                    h5{
+                      margin-bottom: 10px;
+                    }
+
+                    .dropdown{
+                      line-height: 30px;
+
+                      .btn-dropdown{
+                        .size(250px,30px);
+                        padding: 0;
+                        padding-left: 10px;
+                        margin-right: -5px;
+                        border-bottom-right-radius: 0;
+                        border-top-right-radius: 0;
+                      }
+                      .dropdown-toggle{
+                        .size(30px,30px);
+                        padding: 0;
+                        color: #afafad;
+                        border-bottom-left-radius: 0;
+                        border-top-left-radius: 0;
+                      }
+                      .dropdown-menu{
+                        max-height: 95px;
+                        overflow-y: auto;
+                      }
+                    }
+                  }
+                }
+
+
+                li.config_item_hascon{
+                  color:#ddd;
+                  background-color: #414141;
+
+                  .config_list_title{
+                    cursor: pointer;
+                  }
+                }
+
+
+                li.config_item_now{
+                  height:220px;
+                  color:#ffffff;
+
+                  .config_list_title{
+                    background-color: #303030;
+                    border-left:4px solid #e39749;
+                  }
+                }
+
+
+              }
+            }
+
+            .form_configure_bottom{
+              .size(100%,40px);
+              line-height: 40px;
+              text-align: center;
+
+              a{
+                .size(149.5px,40px);
+                color:#ffffff;
+                cursor: pointer;
+
+                &:hover{
+                  color:#ccc;
+                }
+              }
+
+              .btn_set_default{
+                float:left;
+                background-color: #13a8ed;
+              }
+              .btn_restore_default{
+                float: right;
+              }
+            }
+          }
+          //详情配置结束
+        }
+        //导航条结束
+
+        //报表展示开始
+        .form_main{
+
+          .form_gridly{
+            min-height: 300px;
+          }
+        }
+        //报表展示结束
+      }
+    }
+
+  }
+}
+

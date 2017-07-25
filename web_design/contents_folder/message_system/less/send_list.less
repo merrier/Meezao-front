@@ -1,0 +1,398 @@
+//引入全局less变量
+@import "../../../common_folder/less/PC_library";
+//后台路径
+//@import "../../MeeZao/B_New/common_folder/less/PC_library";
+
+html {
+  height: 100%;
+  body {
+    height: 100%;
+    font-size: 14px;
+    .wrp {
+      .content_mb_subject {
+        .navbar-default {
+          .text_div{
+            float:right;
+            margin-top: 14px;
+          }
+          .btn_create_message{
+            float: right;
+            margin-right: 20px;
+          }
+          .btn_check,.btn_download{
+            float: right;
+            margin: 8px 10px 0 0;
+            width: 70px;
+          }
+          .datimepicker{
+            float: right;
+            margin: 10px 10px 0 0;
+            #from,#to{
+              width: 140px;
+              text-align: center;
+            }
+          }
+        }
+        .common_table{
+          .table{
+            .table_head{
+              .send_time{
+                width: 22%;
+              }
+              .group_send{
+                width: 10%;
+              }
+              .inner_content{
+                width: 38%;
+              }
+              .state{
+                width: 10%;
+              }
+              .send_number{
+                width: 20%;
+              }
+            }
+            .table_body{
+              tr{
+                td{
+                  position: relative;
+                  .content_detail{
+                    position: absolute;
+                    .size(100%,150px);
+                    overflow: auto;
+                    border: 1px solid #ccc;
+                    background-color: #fff;
+                    display: none;
+                    z-index: 2;
+                    h1{
+                      border-bottom: 1px solid #ccc;
+                      height: 36px;
+                      line-height: 36px;
+                      text-align: left;
+                      padding-left: 20px;
+                      font-size: 16px;
+                      font-weight: bold;
+                    }
+                    p{
+                      padding: 20px 30px;
+                      text-align: left;
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+    .modal_create_message{
+      .modal-dialog {
+        width: 720px;
+        margin-top: 50px;
+        .modal-content {
+          .modal-body {
+            padding: 30px 50px;
+            height: 450px;
+            overflow: auto;
+            .modal_filter_box{
+              .clearfix();
+              margin-bottom: 15px;
+              display: none;
+              .group_input_div{
+                position: relative;
+                .size(350px,30px);
+                padding: 0;
+                line-height: 30px;
+                text-align: left;
+                border: 1px solid @color_border;
+                border-radius: 4px;
+
+                .filter_actions_input{
+                  position: absolute;
+                  .size(348px,28px);
+                  border: 0;
+                }
+                .singleauto_choose_span{
+                  position: absolute;
+                  .size(100%,30px);
+                  line-height: 30px;
+                  border-radius: 4px;
+                  margin-top: -1px;
+                  text-align: center;
+
+                  .singleauto_choose_deletenew{
+                    margin-left: 10px;
+                    cursor: pointer;
+                  }
+                }
+                .caret{
+                  position: absolute;
+                  right: 8px;
+                  bottom: 10px;
+                  color: #afafad;
+                }
+                .filter_input_mask{
+                  position: absolute;
+                  .size(100%,100%);
+                  top: 0;
+                  left: 0;
+                  background-color: #000000;
+                  opacity: .4;
+                  cursor: not-allowed;
+                  z-index:2;
+                }
+              }
+              .dropdown-toggle{
+                .size(30px,30px);
+                line-height: 30px;
+                padding: 0;
+                color: #afafad;
+                .border-left-radius(0);
+              }
+            }
+
+            .input-group-btn{
+              display: block;
+
+              .dropdown{
+                .clearfix();
+
+                .btn-dropdown{
+                  .size(320px,30px);
+                  padding:0;
+                  padding-left: 10px;
+                  line-height: 30px;
+                  text-align: left;
+                  .border-right-radius(0);
+                }
+
+                .dropdown-menu{
+                  width:350px;
+                  max-height: 180px;
+                  padding: 0;
+                  overflow: auto;
+
+                  li{
+                    height: 30px;
+                    line-height: 30px;
+                    text-align: center;
+
+                    a{
+                      padding: 0;
+                      line-height: 30px;
+
+                      &:hover{
+                        background-color: @color_blue;
+                      }
+                    }
+                  }
+                }
+              }
+            }
+
+            .group_range_choosediv{
+              float: left;
+              width:110px;
+
+              .dropdown{
+
+                .btn-dropdown{
+                  width: 90px;
+                  padding:0;
+                  text-align: center;
+                  border-right: 0;
+                }
+                .dropdown-toggle{
+                  width:20px;
+                  .border-right-radius(0);
+                }
+                .dropdown-menu{
+                  width:110px;
+                  min-width: 110px;
+                }
+              }
+            }
+
+
+            .group_range_inputdiv{
+              float: left;
+
+              .group_range_input{
+                .size(240px,30px);
+                border-left: 0;
+                .border-left-radius(0);
+              }
+              .brand_span{
+                position: relative;
+                display: block;
+                .size(240px,30px);
+                padding: 3px 0;
+                text-align: center;
+                line-height: 20px;
+                font-size: 0.8em;
+                border: 1px solid #cccccc;
+                border-radius: 4px;
+                background-color: @color_white;
+
+                .float_right_multiple{
+                  position: absolute;
+                  float: right;
+                  right: 3px;
+                  margin-top: 4px;
+                  cursor: pointer;
+                }
+              }
+              .caret{
+                position: absolute;
+                top:12px;
+                right:8px;
+                color:#afafad;
+              }
+            }
+
+            .group_name_inputbox{
+              .size(350px,30px);
+
+              #filter_input_groupname{
+                .size(240px,30px);
+                .border-right-radius(4px);
+              }
+              .input_num_box{
+                top: 4px;
+                right: 4px;
+                z-index: 2;
+              }
+            }
+            .error_tips {
+              color: red;
+              font-size: 12px;
+              display: none;
+            }
+            .form-group {
+              margin-top: 16px;
+              position: relative;
+              label {
+                display: block;
+              }
+              .send_right_away {
+                margin-left: 6px;
+              }
+              .send_content {
+                width: 600px;
+                height: 200px;
+                resize: none;
+              }
+              .prompt_span {
+                color: red;
+                font-size: 12px;
+                position: absolute;
+                top: 200px;
+                left: 20px;
+              }
+              .number_div {
+                font-size: 12px;
+                position: absolute;
+                top: 200px;
+                right: 20px;
+              }
+              .error_tips {
+                color: red;
+                font-size: 14px;
+                display: none;
+              }
+              .leading_in_div {
+                display: block;
+                min-height: 32px;
+                width: 100%;
+                .modal_import_box {
+                  position: relative;
+                  float: left;
+                  .size(80px, 34px);
+                  margin-right: 10px;
+                  margin-top: 8px;
+                  #modal_input_import {
+                    position: absolute;
+                    .size(200%, 100%);
+                    left: -100%;
+                    top: 0;
+                    opacity: 0;
+                    cursor: pointer;
+                  }
+                  .modal_import_btn {
+                    .size(100%, 100%);
+                    padding: 0;
+                    line-height: 30px;
+                    text-align: center;
+                    .word_space(0);
+                  }
+                }
+                .modal_import_tips {
+                  vertical-align: bottom;
+                  line-height: 6px;
+                  color: #c9c9c9;
+                  font-size: 12px;
+                  margin-top: 10px;
+                }
+                .modal_import_name {
+                  color: #333;
+                  font-size: 14px;
+                  margin-top: 25px;
+                  display: none;
+                }
+                .btn-group {
+                  margin-right: 10px;
+                  margin-top: 8px;
+                  .btn_show_example {
+                    background-color: #44b549;
+                    color: #fff;
+                    position: relative;
+                    .show_example_div {
+                      display: none;
+                      position: absolute;
+                      border: 1px solid #555;
+                      background-color: #fff;
+                      border-radius: 4px;
+                      .size(250px, 150px);
+                      overflow: auto;
+                      text-align: center;
+                      margin: 20px;
+                      img {
+                        .size(240px, 144px);
+                        margin: auto;
+                      }
+                    }
+                  }
+                  .btn_download {
+                    background-color: #69340d;
+                    color: #fff;
+                    a {
+                      color: #fff;
+                    }
+                  }
+                }
+              }
+            }
+          }
+          .modal-footer{
+            position: relative;
+            .send_number{
+              width: 150px;
+              height: 32px;
+              line-height: 32px;
+              font-size: 14px;
+              border: 1px solid #ccc;
+              border-radius: 4px;
+              text-align: center;
+              position: absolute;
+              right: 220px;
+            }
+            .btn_cancel{
+              background-color: #111;
+              color:#fff;
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,232 @@
+/* less document_management */
+/* +--------------------------------------------------------------------------
+// | Author: Merrier <953075999@qq.com> <http://> <Date:2016/5/11 22:27>
+// +--------------------------------------------------------------------------*/
+//引入全局less变量
+@import "../../../common_folder/less/PC_library";
+//后台路径
+//@import "../../MeeZao/B_New/common_folder/less/PC_library";
+
+html {
+  body {
+
+    font-size: 14px;
+
+    //用于存储选择和排序的隐藏div开始
+    .sindoc_choose_hidebox{
+      display: none;
+    }
+    //用于存储选择和排序的隐藏div结束
+
+
+    //导航条开始
+    .navbar-default {
+      .size(100%, 50px);
+      font-size: 16px;
+      margin-bottom: 0;
+
+      .navbar-right {
+        margin-right: 0;
+
+        .form-group {
+          position: relative;
+
+          .input_word_limit{
+            width: 250px;
+          }
+
+          .input_num_box{
+            right: 5px;
+            top: 7px;
+          }
+        }
+      }
+    }
+    //导航条结束
+
+
+    //单文案列表的表格开始
+    .sindoc_list_table{
+      thead{
+        .th_choice{
+          width:5%;
+        }
+
+        .th_order{
+          width:5%;
+        }
+
+        .th_title{
+          width:30%;
+        }
+
+        .th_create_time{
+          width:10%;
+        }
+
+        .th_send_time{
+          width:10%;
+        }
+
+        .th_combination_state{
+          width:10%;
+        }
+
+        .th_mask{
+          width:5%;
+        }
+
+        .th_opr{
+          width:25%;
+        }
+      }
+
+
+
+
+      tbody{
+        .td_tr_id{
+          display: none;
+        }
+
+        .td_choice_checkbox{
+          .size(20px,20px);
+          cursor: pointer;
+        }
+
+        .btn-group>.btn:first-child{
+          .border-left-radius(10px);
+        }
+
+        .btn-group>.btn:last-child{
+          .border-right-radius(10px);
+        }
+
+        .td_title_box{
+          position: relative;
+
+          .td_title_link{
+            display: none;
+            position: absolute;
+            border: 1px solid @color_border;
+            padding:10px 40px;
+            background-color: @color_white;
+            z-index: 1;
+          }
+        }
+
+        .td_order{
+
+          .td_order_input{
+            display: none;
+            width:35px;
+            .center_block();
+            text-align: center;
+            border: 1px solid @color_border;
+          }
+        }
+      }
+    }
+    //单文案列表的表格结束
+
+
+    //多文案列表的表格开始
+    .muldoc_list_table {
+      thead {
+        .th_title {
+          width: 30%;
+        }
+
+        .th_create_time {
+          width: 17%;
+        }
+
+        .th_send_time {
+          width: 17%;
+        }
+
+        .th_combination_state {
+          width: 14%;
+        }
+
+        .th_opr {
+          width: 22%;
+        }
+      }
+    }
+    //多文案列表的表格结束
+
+
+    //发送列表的表格开始
+    .send_list_table {
+      thead {
+        .th_title {
+          width: 32%;
+        }
+
+        .th_send_time {
+          width: 17%;
+        }
+
+        .th_send_type {
+          width: 17%;
+        }
+
+        .th_send_state {
+          width: 17%;
+        }
+
+        .th_opr {
+          width: 17%;
+        }
+      }
+    }
+    //发送列表的表格结束
+
+
+    //模态框开始
+    .modal{
+
+      .modal-body{
+
+        .form-group{
+
+          label{
+
+            margin-bottom: 20px;
+          }
+
+        }
+
+        .checkbox{
+
+          label{
+
+            display: block;
+            margin-bottom: 5px;
+            min-width: 80px;
+
+            input{
+
+              .size(14px,14px);
+            }
+          }
+        }
+      }
+
+    }
+
+    //模态框结束
+
+
+
+
+    @media (min-width: 768px) {
+      .navbar-form {
+        margin-right: 0;
+      }
+    }
+
+  }
+}
+

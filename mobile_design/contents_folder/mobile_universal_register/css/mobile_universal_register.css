@@ -1,0 +1,245 @@
+/* Less mobile_universal_register */
+/* +--------------------------------------------------------------------------
+// | Author: Merrier <953075999@qq.com> <http://> <Date:2016/7/27 10:27>
+// +--------------------------------------------------------------------------*/
+/* less PC_library */
+/* +--------------------------------------------------------------------------
+// | Author: Merrier <953075999@qq.com> <http://> <Date:2016/5/11 22:27>
+// +--------------------------------------------------------------------------*/
+.font_yahei {
+  font-family: 'Microsoft Yahei', '微软雅黑';
+}
+.font_arial {
+  font-family: arial, sans-serif;
+}
+.font_sitka {
+  font-family: 'Sitka';
+}
+.font_hei {
+  font-family: '黑体';
+}
+.center_block {
+  margin-left: auto;
+  margin-right: auto;
+}
+.content_box {
+  box-sizing: content-box;
+  -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+}
+.clearfix:after {
+  content: ".";
+  display: block;
+  height: 0;
+  clear: both;
+  visibility: hidden;
+}
+.caret {
+  border-top-width: 8px;
+  border-right-width: 8px;
+  border-left-width: 8px;
+}
+.btn_shadow_gray {
+  color: #333;
+  background-color: #eeeeee;
+  border: 1px solid #ccc;
+  border-bottom: 1px solid #bbb;
+  border-radius: 2px;
+}
+.btn_shadow_orange {
+  color: #333;
+  background-color: #eeeeee;
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #ffe9a6), color-stop(100%, #ffc107));
+  background-image: -webkit-linear-gradient(top #ffe9a6, #ffc107);
+  background-image: -moz-linear-gradient(top, #ffe9a6, #ffc107);
+  background-image: -ms-linear-gradient(top, #ffe9a6, #ffc107);
+  background-image: -o-linear-gradient(top, #ffe9a6, #ffc107);
+  background-image: linear-gradient(top #ffe9a6, #ffc107);
+  border: 1px solid #ccc;
+  border-bottom: 1px solid #bbb;
+  border-radius: 2px;
+}
+* {
+  text-shadow: none;
+}
+/*消除jquery.mobile的text-shadow影响*/
+* {
+  box-sizing: border-box;
+}
+html body {
+  text-shadow: none;
+  /*提示信息开始*/
+  /*统计数字提示信息开始*/
+  /*标签提示信息*/
+  /*黑色背景按钮*/
+  /*自动完成删除按钮*/
+}
+html body .error_tips {
+  color: #ff0000;
+  font-size: 0.5rem;
+  margin-bottom: 5px;
+  text-align: left;
+}
+html body .input_num_box {
+  position: absolute;
+  color: #1c1c1c;
+}
+html body .label_tips {
+  font-size: inherit;
+  color: #dcdcdc;
+}
+html body .btn-black {
+  background-color: #1c1c1c;
+  color: #ffffff;
+}
+html body .btn-black:hover {
+  background-color: #000;
+  color: #eee;
+}
+html body .btn-black:focus {
+  background-color: #000;
+  color: #eee;
+}
+html body .singleauto_choose_delete {
+  margin-left: 5px;
+  cursor: pointer;
+}
+html body .ui-popup-container .ui-btn {
+  font-size: 0.6rem;
+  font-weight: normal;
+}
+html body .ui-popup-container .ui-btn.ui-btn-active {
+  background-color: #7f7f7f;
+}
+html body .page {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-image: url(../images/background.jpg);
+  background-size: 100%;
+}
+html body .page .reg_tips_new {
+  display: none;
+}
+html body .page .ui-btn.ui-btn-active {
+  background-color: #f6f6f6;
+  border-color: #ddd;
+  color: #333;
+  text-shadow: 0 1px 0 #f3f3f3;
+}
+html body .page .reg_tips {
+  position: absolute;
+  margin-top: 0.2rem;
+  color: #feffa7;
+  font-size: 0.6rem;
+  z-index: 4;
+}
+html body .page .ui-input-text {
+  margin: 1.2rem 0;
+}
+html body .page .ui-input-text:last-child {
+  margin-top: 1.2rem;
+}
+html body .page .universal_register_form {
+  margin-left: auto;
+  margin-right: auto;
+  margin: 1rem 0;
+  margin-top: 2rem;
+}
+html body .page .universal_register_form .reg_gender_fieldset {
+  position: relative;
+}
+html body .page .universal_register_form .reg_gender_fieldset .ui-corner-all {
+  font-size: 0.65rem;
+  font-weight: 400;
+  padding: 0.5rem 1rem;
+}
+html body .page .universal_register_form .reg_gender_fieldset .ui-corner-all:after {
+  background-color: transparent;
+  background-image: none;
+}
+html body .page .universal_register_form .reg_gender_fieldset .fa-sort {
+  position: absolute;
+  right: 9px;
+  top: 0.9rem;
+  color: #3f3f3f;
+  font-size: 0.8rem;
+}
+html body .page .universal_register_form .reg_form_title {
+  margin-bottom: -0.5rem;
+  font-size: 0.6rem;
+}
+html body .page .universal_register_form .reg_gender_radio .ui-radio {
+  display: inline-block;
+}
+html body .page .universal_register_form .reg_gender_radio .ui-radio label {
+  border: 0;
+  font-size: 0.75rem;
+  font-weight: normal;
+}
+html body .page .universal_register_form .reg_gender_radio .ui-radio label:after {
+  margin-left: 1px;
+}
+html body .page .universal_register_form input {
+  text-align: center;
+}
+html body .page .universal_register_form .form_always_tips {
+  font-size: 0.6rem;
+  color: #ff0000;
+}
+html body .page .universal_register_form .reg_box {
+  position: relative;
+}
+html body .page .universal_register_form .reg_box:after {
+  content: ".";
+  display: block;
+  height: 0;
+  clear: both;
+  visibility: hidden;
+}
+html body .page .universal_register_form .reg_box .reg_btn_getcode {
+  float: right;
+  width: 4.5rem;
+  height: 1.5rem;
+  padding: 0.3rem;
+  margin: -0.5rem 0;
+  line-height: 0.8rem;
+  font-size: 0.6rem;
+  font-weight: normal;
+  text-align: center;
+  text-decoration: none;
+  text-shadow: none;
+  color: #ff5365;
+}
+html body .page .universal_register_form .reg_box .reg_btn_getcode.reg_btn_gray {
+  color: #333 !important;
+  text-shadow: none !important;
+  background-image: none !important;
+  box-shadow: none !important;
+}
+html body .page .universal_register_form .reg_box .reg_btn_mask {
+  display: none;
+  position: absolute;
+  width: 4.8rem;
+  height: 2rem;
+  right: 0;
+  bottom: -0.7rem;
+}
+html body .page .universal_register_form .form_btn_submit {
+  margin: 2rem 0;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0.5rem 0;
+  font-size: 0.6rem;
+  text-align: center;
+  text-indent: 2px;
+  letter-spacing: 2px;
+}
+html body .page .universal_register_form .btn_style {
+  color: #ff5365;
+  background-color: #feffa7;
+  border: solid 1px #feffa7;
+  border-radius: 2px;
+}

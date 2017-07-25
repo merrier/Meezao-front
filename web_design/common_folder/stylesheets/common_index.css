@@ -1,0 +1,451 @@
+@charset "utf-8";
+/* CSS index */
+/* +--------------------------------------------------------------------------
+// | Author: Merrier <953075999@qq.com> <http://> <Date:2016/5/9 21:24>
+// +--------------------------------------------------------------------------*/
+html{
+    height: 100%;
+}
+
+body{
+    height: 100%;
+    font-size:16px;
+    font-family:hiragino sans gb,microsoft yahei,simsun;/*改动*/
+    color:#fff;
+    -webkit-text-size-adjust:none;
+}
+
+/*改动*/
+a:hover{
+    text-decoration:none;
+}
+
+.wrp{
+    min-height: 100%;
+    width: 100%;
+    padding: 0;
+    position: relative;
+    clear: both;
+    padding-bottom: 30px;
+    padding-top: 50px;
+    z-index:10;
+}
+
+
+/*header开始*/
+.header{
+    height:50px;
+    line-height:50px;
+    margin: 0;
+    width: 100%;
+    position: absolute;
+    min-width: 1214px;
+    z-index:100;
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#404040+0,383838+14,1c1c1c+45,111111+63,111111+100 */
+    /*background: #404040; /!* Old browsers *!/*/
+    /*background: -moz-linear-gradient(top,  #404040 0%, #383838 14%, #1c1c1c 45%, #111111 63%, #111111 100%); /!* FF3.6-15 *!/*/
+    /*background: -webkit-linear-gradient(top,  #404040 0%,#383838 14%,#1c1c1c 45%,#111111 63%,#111111 100%); /!* Chrome10-25,Safari5.1-6 *!/*/
+    /*background: linear-gradient(to bottom,  #404040 0%,#383838 14%,#1c1c1c 45%,#111111 63%,#111111 100%); /!* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ *!/*/
+    /*filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#404040', endColorstr='#111111',GradientType=0 ); /!* IE6-9 *!/*/
+
+    background: #404040; /* Old browsers */
+    background: -moz-linear-gradient(top,  #787878 0%, #333333 40%, #111111 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(top,  #787878 0%, #333333 40%, #111111 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom,  #787878 0%, #333333 40%, #111111 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#404040', endColorstr='#111111',GradientType=0 ); /* IE6-9 */
+}
+.header h2{
+    font-family: 'Sitka';
+    font-size:28px;
+    font-weight: bold;
+    color:#ffffff;
+    margin-left:36px;
+    float:left;
+    height:100%;
+    line-height: 50px;
+}
+.toolbar{
+    float:right;
+    height:50px;
+}
+
+
+.toolbar_item{
+    position: relative;
+    display:inline-block;
+    color:#fff;
+    min-width:110px;
+    vertical-align:top;
+}
+
+.toolbar_person_information:focus,.toolbar_information_center:focus{
+    color: #00b6f6;
+    text-decoration: none;
+    line-height: 45px;
+    border-top: 4px solid #0096ff;
+    background-color: #1c1c1c;
+ }
+
+.toolbar_information_center{
+    height: 49px;
+    width:60px;
+    line-height: 50px;
+    text-align: center;
+    font-size: 20px;
+    color:#fff;
+    border-left: 1px solid #4e4e4e;
+    border-right: 1px solid #4e4e4e;
+}
+
+.toolbar_information_center:hover,.toolbar_person_information:hover{
+    color:#0096ff;
+}
+
+.toolbar_person_information{
+    display: block;
+    color:#fff;
+    padding: 0 15px;
+    height:50px;
+    line-height: 50px;
+    text-align: center;
+}
+
+.toolbar_person_information>i{
+    font-size: 12px;
+}
+
+.toolbar_drop_menu{
+    display:none;
+    position: absolute;
+    color:#8e8b8b;
+    text-align:center;
+    border:1px solid #c3c3c3;
+    border-bottom:0;
+    top: 50px;
+    left: 0;
+    right: 0;
+    z-index:998;
+}
+.toolbar_drop_menu li{
+    display:block;
+    color:#1c1c1c;
+    padding:0 10px;
+    line-height:44px;
+    background:#fff;
+    border-bottom:1px solid #c3c3c3;
+    cursor: pointer;
+}
+
+.toolbar_drop_menu li:hover{
+    background-color:#0096ff;
+}
+
+
+/*中间主体开始*/
+.main{
+    width: 100%;
+}
+
+
+/*左侧黑色背景开始*/
+.nav_bar_bg{
+    width: 220px;
+    position: absolute;
+    left: 0;
+    z-index: 0;
+    top: 50px;
+    bottom: 0;
+    background-color: #1c1c1c;
+}
+/*左侧黑色背景结束*/
+
+
+/*左侧导航栏开始*/
+.nav_bar{
+    width:220px;
+    float:left;
+    height: 100%;
+    background-color:#1c1c1c;
+    font-size: 14px;
+    letter-spacing: 2px;
+    position: relative;
+    z-index: 2;
+}
+
+.nav_bar ul  li a{
+    display:block;
+    font-family: 'Microsoft Yahei','微软雅黑';
+    font-weight: bold;
+    color:#f5f5f5;
+    background-color: #1c1c1c;
+    text-decoration:none;
+    padding-left:36px;
+    height:50px;
+    line-height:50px;
+    border-bottom:1px solid #4e4e4e;
+    position:relative;
+}
+
+.nav_bar ul.nav_bar_level2 li a{
+    background:#262626;
+}
+.nav_bar ul.nav_bar_level3 li a{
+    background:#262626;
+}
+
+
+.menu_logo{
+    font-size:16px;
+}
+
+.nav_bar a:hover{
+    color:#0096ff;
+}
+
+.nav_bar_level1 a span{
+    display:inline-block;
+}
+
+.menu_drop{
+    position:absolute;
+    right:10px;
+    top:10px;
+}
+.nav_bar .nav_bar_level2 a{
+    padding-left:50px;
+    font-size:14px;
+}
+.nav_bar .nav_bar_level3 a{
+    padding-left:50px;
+    font-size:14px;
+}
+
+.nav_bar .nav_bar_level3 a i{
+    font-size:12px;
+    margin-right: 5px;
+}
+
+.nav_bar_level2,.nav_bar_level3{
+    display:none;
+}
+.nav_bar_current1{
+    color:#00b6f6 !important;
+    line-height: 45px !important;
+    border-top: 4px solid #0096ff !important;
+}
+.nav_bar_current2{
+    color:#00b6f6 !important;
+    background-color: #1c1c1c !important;
+}
+
+
+
+
+/*主体内容*/
+.content{
+    font-family: 'Microsoft Yahei', '微软雅黑';
+    height: 100%;
+    float: right;
+    width: calc(100% - 220px);
+}
+.content_route{
+    font-size: 12px;
+    font-weight: bold;
+    height:50px;
+    line-height:50px;
+    color:#7f7f7f;
+    padding-left: 37px;
+}
+
+.content_route>a{
+    color: #7f7f7f;
+}
+
+.content_mb{
+    background:#fff;
+    margin:0 27px;
+    min-width: 960px;
+    color: #000;
+}
+.content_mb .content_mb_title{
+    height:40px;
+    line-height:40px;
+    font-size:14px;
+    font-weight: bold;
+    color:#fff;
+    background:#0096ff;
+    text-indent:10px;
+    margin:0px;
+    letter-spacing: 2px;
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#0096ff+0,008ff3+15,007ad1+44,0071c1+62,0070c0+100 */
+    background: #0096ff; /* Old browsers */
+    background: -moz-linear-gradient(top,  #0096ff 0%, #008ff3 15%, #007ad1 44%, #0071c1 62%, #0070c0 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(top,  #0096ff 0%,#008ff3 15%,#007ad1 44%,#0071c1 62%,#0070c0 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom,  #0096ff 0%,#008ff3 15%,#007ad1 44%,#0071c1 62%,#0070c0 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0096ff', endColorstr='#0070c0',GradientType=0 ); /* IE6-9 */
+}
+
+.content_mb_subject{
+    margin: 15px 0;
+}
+
+/*底部*/
+.foot{
+    height: 30px;
+    line-height: 30px;
+    background-color: #1c1c1c;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    clear: both;
+    min-width: 1214px;
+}
+
+.foot h2{
+    font-family: Arial;
+    font-size:14px;
+    color:#ffffff;
+    margin-left:36px;
+    float:left;
+    height:100%;
+    line-height: 30px;
+}
+
+
+/*模态框开始*/
+.content_modal{
+    color:#1c1c1c;
+}
+
+.modal-dialog{
+    width:500px;
+    margin-top:150px;
+    color: #1c1c1c;
+}
+
+.modal-title{
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.modal-body label{
+    font-weight: normal;
+
+}
+
+.btn-primary{
+    width:100px;
+    background-color: #0096ff;
+    text-indent: 5px;
+    letter-spacing: 5px;
+}
+
+.modal_reg_box{
+    position: relative;
+    width:100%;
+    height:30px;
+    margin-top: 15px;
+}
+
+.modal_reg_btn{
+    display: block;
+    float: right;
+    width:100px;
+    height:30px;
+    text-align: center;
+    line-height: 30px;
+    border: 1px solid #adadad;
+    border-radius: 5px;
+    color: #1c1c1c;
+    background-color: #ffffff;
+    box-sizing: content-box;
+    -webkit-box-sizing: content-box;
+    -moz-box-sizing: content-box;
+}
+
+.modal_reg_btn:hover{
+    color: #1c1c1c;
+}
+
+.modal_reg_btn:focus{
+    color: #1c1c1c;
+}
+
+.modal_tips{
+    display: none;
+    font-size: 12px;
+    color: #ff0000;
+    line-height: 20px;
+}
+
+.reg_btn_mask{
+    display: none;
+    position: absolute;
+    width:103px;
+    height:33px;
+    right:-1px;
+    bottom: -3px;
+}
+
+.reg_btn_gray{
+    background-color: #afafaf;
+    color: #EEE;
+}
+
+.modal_code_random{
+    display: none;
+}
+
+/*警告框开始*/
+.alert{
+    position: absolute;
+    height:50px;
+    width:calc(100% - 274px);
+    margin-top: 15px;
+    margin-bottom: 0;
+    z-index:997;
+}
+
+.alert-example{
+    display: none;
+}
+
+/*提示信息开始*/
+.error_tips{
+    color: #ff0000;
+    font-size: 12px;
+}
+
+/*统计数字提示信息开始*/
+.input_num_box{
+    position: absolute;
+    color: #1c1c1c;
+}
+
+/*标签提示信息*/
+.label_tips{
+    font-size: inherit;
+    color: #dcdcdc;
+}
+
+/*黑色背景按钮*/
+.btn-black{
+    background-color: #1c1c1c;
+    color: #ffffff;
+}
+
+.btn-black:hover{
+    background-color: #000;
+    color:#eee;
+}
+
+.btn-black:focus{
+    background-color: #000;
+    color:#eee;
+}
+
+/*自动完成删除按钮*/
+.singleauto_choose_delete{
+    margin-left: 5px;
+    cursor: pointer;
+}

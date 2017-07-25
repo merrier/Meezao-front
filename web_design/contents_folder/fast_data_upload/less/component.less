@@ -1,0 +1,774 @@
+/* Less fast_data_upload */
+/* +--------------------------------------------------------------------------
+// | Author: Merrier <953075999@qq.com> <http://> <Date:2016/9/21 22:27>
+// +--------------------------------------------------------------------------*/
+//引入全局less变量
+@import "../../../common_folder/less/PC_library";
+//后台路径
+//@import "../../MeeZao/B_New/common_folder/less/PC_library";
+
+html{
+
+  body{
+
+    a{
+
+      &:link{
+        text-decoration: none;
+      }
+    }
+
+    .font_tips{
+      font-family: '宋体';
+      font-size: 12px;
+      color:#95a0a7;
+    }
+
+    .content_mb_subject{
+      margin:0;
+      padding:15px 0;
+      background-color: #eff4f7;
+
+      .fast_main{
+        width:900px;
+        margin:20px auto;
+        .clearfix;
+
+        //通用样式开始
+        .fast_main_box{
+
+          >div{
+            .size(425px,600px);
+            .clearfix;
+          }
+
+          .fast_main_left{
+            position: relative;
+            float:left;
+            border:1px solid #ccdae2;
+
+            .fast_left_upload{
+              text-align: center;
+
+              .fa-cloud-upload{
+                font-size: 35px;
+                margin-bottom: 10px;
+              }
+              h3{
+                margin-bottom: 10px;
+                font-family: SourceHanSansCN-Medium;
+                font-size: 18px;
+                color:#254558;
+              }
+              .btn_upload_trigger{
+                display: block;
+                .size(140px,40px);
+                margin: 15px auto;
+                font-family: SourceHanSansCN-Medium;
+                font-size: 16px;
+                color:#ffffff;
+                line-height: 40px;
+                cursor: pointer;
+              }
+            }
+
+            .fast_left_single{
+              position: absolute;
+              width:222px;
+              top:50%;
+              left:50%;
+              margin-top: -100px;
+              margin-left: -100px;
+            }
+
+            .fast_left_top{
+              position: absolute;
+              width:222px;
+              top:43%;
+              left:50%;
+              margin-top: -100px;
+              margin-left: -100px;
+            }
+            .fast_left_bottom{
+              position: absolute;
+              width:222px;
+              top:88%;
+              left:50%;
+              margin-top: -100px;
+              margin-left: -100px;
+
+              h5{
+                margin-bottom: 10px;
+                font-family: SourceHanSansCN-Medium;
+                font-size: 16px;
+                color:#16043f;
+              }
+              .left_bottom_btn{
+                display: inline-block;
+                position: relative;
+                width:63px;
+                padding: 0 2px;
+                text-align: left;
+                font-family: SourceHanSansCN-Medium;
+                font-size: 16px;
+                color:#16043f;
+                border-bottom-style:solid;
+                border-bottom-width:1px;
+
+                &:hover{
+
+                  .fa-chevron-right{
+                    right:-1px;
+                  }
+                }
+
+                .fa-chevron-right{
+                  position: absolute;
+                  right:1px;
+                  bottom:4px;
+                  font-size: 12px;
+                }
+              }
+            }
+          }
+
+          .fast_main_right{
+            float: right;
+
+            >div{
+              position: relative;
+              height:280px;
+
+              h4{
+                margin-bottom: 25px;
+                font-family: SourceHanSansCN-Medium;
+                font-size: 16px;
+                text-align: center;
+                color:#254558;
+              }
+
+              .font_tips{
+                line-height: 25px;
+                text-align: left;
+              }
+            }
+
+            .fast_right_top{
+              padding: 30px;
+              padding-top: 45px;
+              margin-bottom: 40px;
+              background-color: #ffffff;
+              border-top-width: 4px;
+              border-top-style: solid;
+
+              .right_top_btnbox{
+                position: absolute;
+                width:50%;
+                bottom:30px;
+                left:25%;
+
+                .right_top_btn{
+                  position: relative;
+                  width:78px;
+                  padding:0 3px;
+                  text-align: left;
+                  font-family: SourceHanSansCN-Medium;
+                  font-size: 16px;
+                  border-bottom-style: solid;
+                  border-bottom-width: 1px;
+
+                  &:hover{
+
+                    .fa-chevron-right{
+                      right:-1px;
+                    }
+                  }
+                  .fa-chevron-right{
+                    position: absolute;
+                    right:1px;
+                    bottom:4px;
+                    font-size: 12px;
+                  }
+                }
+                .btn_view_example{
+                  float: left;
+                }
+                .btn_download_example{
+                  float: right;
+                }
+              }
+
+            }
+            .fast_right_bottom{
+              padding: 35px 40px;
+              background-color: #ffffff;
+              border-top-width: 4px;
+              border-top-style: solid;
+
+              .btn_online_service{
+                position: absolute;
+                .size(140px,40px);
+                bottom:30px;
+                left:50%;
+                margin-left: -70px;
+                text-align: center;
+                font-family: SourceHanSansCN-Medium;
+                font-size: 16px;
+                line-height: 40px;
+                color: #ffffff;
+                background-color: #000;
+                cursor: pointer;
+              }
+            }
+          }
+        }
+        //通用样式结束
+
+        //上传会员消费数据开始
+        .fast_main_consume{
+
+          .fast_main_left{
+            background-color: #dbe5eb;
+
+            .fast_left_upload{
+
+              .fa-cloud-upload{
+                color:#96b8cc;
+              }
+              .btn_upload_trigger{
+                background-color: #00b6f6;
+                box-shadow: 3px 3px 10px #9ed0e3, -3px 3px 10px #9ed0e3;
+
+                &:hover{
+                  box-shadow: 5px 5px 10px #9ed0e3, -5px 5px 10px #9ed0e3;
+                }
+              }
+            }
+          }
+
+          .fast_main_right{
+
+            .fast_right_top{
+              padding-top: 25px;
+              border-top-color: #00aaff;
+
+              .right_top_btn{
+                color:#00b6f6;
+                border-bottom-color: #00b6f6;
+              }
+            }
+            .fast_right_bottom{
+              border-top-color: #2bd948;
+
+              .btn_online_service{
+                background-color: #2bd948;
+                box-shadow: 3px 3px 10px #99eda7, -3px 3px 10px #99eda7;
+
+                &:hover{
+                  box-shadow: 5px 5px 10px #99eda7, -5px 5px 10px #99eda7;
+                }
+              }
+            }
+          }
+        }
+        //上传会员消费数据结束
+
+        //上传会员联络数据开始
+        .fast_main_contact{
+
+          .fast_main_left{
+            background-color: #dbf1e5;
+
+            .fast_left_upload{
+
+              .fa-cloud-upload{
+                color:#84d7aa;
+              }
+              .btn_upload_trigger{
+                background-color: #2bd948;
+                box-shadow: 3px 3px 10px #b0eabf, -3px 3px 10px #b0eabf;
+
+                &:hover{
+                  box-shadow: 5px 5px 10px #b0eabf, -5px 5px 10px #b0eabf;
+                }
+              }
+            }
+          }
+
+          .fast_main_right{
+
+            .fast_right_top{
+              border-top-color: #2bd948;
+
+              .right_top_btn{
+                color:#2bd948;
+                border-bottom-color: #2bd948;
+              }
+            }
+            .fast_right_bottom{
+              border-top-color: #00b6f6;
+
+              .btn_online_service{
+                background-color: #00b6f6;
+                box-shadow: 3px 3px 10px #7bd9fa, -3px 3px 10px #7bd9fa;
+
+                &:hover{
+                  box-shadow: 5px 5px 10px #7bd9fa, -5px 5px 10px #7bd9fa;
+                }
+              }
+            }
+          }
+        }
+        //上传会员消费数据结束
+
+        //上传品牌对应编码数据开始
+        .fast_main_brand{
+
+          .fast_main_left{
+            background-color: #e6e6f7;
+
+            .fast_left_upload{
+
+              .fa-cloud-upload{
+                color:#b0b0e4;
+              }
+              .btn_upload_trigger{
+                background-color: #996efa;
+                box-shadow: 3px 3px 10px #c5c7eb, -3px 3px 10px #c5c7eb;
+
+                &:hover{
+                  box-shadow: 5px 5px 10px #c5c7eb, -5px 5px 10px #c5c7eb;
+                }
+              }
+            }
+
+            .fast_left_bottom{
+
+            }
+          }
+
+          .fast_main_right{
+
+            .fast_right_top{
+              border-top-color: #996efa;
+
+              .right_top_btn{
+                color:#996efa;
+                border-bottom-color: #996efa;
+              }
+            }
+            .fast_right_bottom{
+              border-top-color: #ff7800;
+
+              .btn_online_service{
+                background-color: #ff7800;
+                box-shadow: 3px 3px 10px #ffb97b, -3px 3px 10px #ffb97b;
+
+                &:hover{
+                  box-shadow: 5px 5px 10px #ffb97b, -5px 5px 10px #ffb97b;
+                }
+              }
+            }
+          }
+        }
+        //上传品牌对应编码数据结束
+
+        //上传品类对应编码数据开始
+        .fast_main_category{
+
+          .fast_main_left{
+            background-color: #dce7f1;
+
+            .fast_left_upload{
+
+              .fa-cloud-upload{
+                color:#a9c6e0;
+              }
+              .btn_upload_trigger{
+                background-color: #3172b9;
+                box-shadow: 3px 3px 10px #aac5e1, -3px 3px 10px #aac5e1;
+
+                &:hover{
+                  box-shadow: 5px 5px 10px #aac5e1, -5px 5px 10px #aac5e1;
+                }
+              }
+            }
+
+            .fast_left_bottom{
+
+            }
+          }
+
+          .fast_main_right{
+
+            .fast_right_top{
+              border-top-color: #3172b9;
+
+              .right_top_btn{
+                color:#3172b9;
+                border-bottom-color: #3172b9;
+              }
+            }
+            .fast_right_bottom{
+              border-top-color: #996efa;
+
+              .btn_online_service{
+                background-color: #996efa;
+                box-shadow: 3px 3px 10px #e5dafe, -3px 3px 10px #e5dafe;
+
+                &:hover{
+                  box-shadow: 5px 5px 10px #e5dafe, -5px 5px 10px #e5dafe;
+                }
+              }
+            }
+          }
+        }
+        //上传品类对应编码数据结束
+
+        //开启精确营销开始
+        .fast_main_generate{
+
+          .fast_main_left{
+            border:0;
+            background-color: #eff4f7;
+
+            .fast_left_upload{
+              width:234px;
+              margin-left: -117px;
+
+              .fa-check-circle{
+                .size(40px,40px);
+                color:#2bd948;
+                font-size: 45px;
+                margin-bottom: 20px;
+              }
+              h3{
+                margin-bottom: 40px;
+              }
+              .btn_generate{
+                display: inline-block;
+                position: relative;
+                width:112px;
+                padding: 0 2px;
+                text-align: left;
+                font-family: SourceHanSansCN-Medium;
+                font-size: 16px;
+                color:#16043f;
+                border-bottom-style:solid;
+                border-bottom-width:1px;
+
+                &:hover{
+
+                  .fa-chevron-right{
+                    right:-1px;
+                  }
+                }
+
+                .fa-chevron-right{
+                  position: absolute;
+                  right:1px;
+                  bottom:4px;
+                  font-size: 12px;
+                }
+              }
+
+            }
+
+          }
+
+          .fast_main_right{
+
+            .fast_right_top{
+              border-top-color: #00b6f6;
+
+            }
+            .fast_right_bottom{
+              border-top-color: #2bd948;
+
+              .btn_online_service{
+                background-color: #2bd948;
+                box-shadow: 3px 3px 10px #a2eeaf, -3px 3px 10px #a2eeaf;
+
+                &:hover{
+                  box-shadow: 5px 5px 10px #a2eeaf, -5px 5px 10px #a2eeaf;
+                }
+              }
+            }
+          }
+        }
+        //开启精确营销结束
+      }
+    }
+
+
+    //模态框-上传文件、模态框上传/计算进度和模态框生成组进度通用样式开始
+    .modal_small,.modal_upload_progress,.modal_generate_group{
+
+      .modal-dialog{
+        width:700px;
+
+        .modal-body{
+          position: relative;
+          height:200px;
+          padding: 40px 105px;
+          padding-bottom: 65px;
+          text-align: center;
+
+          .fa{
+            margin-bottom: 25px;
+            font-size: 32px;
+            color:#00b6f6;
+          }
+          h5{
+            font-family: SourceHanSansCN-Medium;
+            font-size: 18px;
+            color:#254558;
+          }
+        }
+      }
+
+
+    }
+    //模态框-上传文件和模态框上传/计算进度通用样式结束
+
+    //模态框-上传/计算进度开始
+    .modal_upload_progress,.modal_generate_group{
+      .modal-dialog{
+
+        .modal-body{
+          padding: 40px 95px;
+
+          .img_progress_title{
+            width:40px;
+            margin: 0 auto;
+            margin-bottom: 25px;
+          }
+
+          h5{
+            margin-bottom: 55px;
+          }
+
+          .modal_progress_box{
+            text-align: left;
+
+            ul{
+              margin-bottom: 5px;
+              font-size: 16px;
+              line-height: 30px;
+            }
+            .modal_progress_bar{
+              position: relative;
+              height:10px;
+              background-color: #ccd0d2;
+              border-radius: 5px;
+
+              .modal_progress{
+                position: absolute;
+                height:100%;
+                left:0;
+                background-color: #00b6f6;
+                border-radius: 5px;
+              }
+
+              .modal_progress_active{   //进度条动画效果
+                -webkit-animation: progress-bar-stripes 2s linear infinite;
+                -o-animation: progress-bar-stripes 2s linear infinite;
+                animation: progress-bar-stripes 2s linear infinite;
+                background-image: -webkit-linear-gradient(45deg,rgba(255,255,255,.15) 25%,transparent 25%,transparent 50%,rgba(255,255,255,.15) 50%,rgba(255,255,255,.15) 75%,transparent 75%,transparent);
+                background-image: -o-linear-gradient(45deg,rgba(255,255,255,.15) 25%,transparent 25%,transparent 50%,rgba(255,255,255,.15) 50%,rgba(255,255,255,.15) 75%,transparent 75%,transparent);
+                background-image: linear-gradient(45deg,rgba(255,255,255,.15) 25%,transparent 25%,transparent 50%,rgba(255,255,255,.15) 50%,rgba(255,255,255,.15) 75%,transparent 75%,transparent);
+                -webkit-background-size: 25px 25px;
+                background-size: 25px 25px;
+              }
+            }
+          }
+        }
+      }
+    }
+    //模态框-上传/计算进度结束
+
+
+    //模态框-上传文件开始
+    .modal_small{
+
+      .modal-body{
+
+        .data_file_name{
+          margin:10px;
+          font-family: "宋体";
+          font-size: 12px;
+          color:#777;
+        }
+        .times-icon{
+          margin-top: 1rem;
+        }
+        .message-VIP{
+          margin-top: 1rem;
+          font-size: 17px;
+          text-align: left;
+        }
+        .fail-message{
+          margin-top:-1rem ;
+        }
+        .lanch-success{
+          margin-top: 1rem;
+        }
+        .contact-service{
+          margin-top:1rem ;
+        }
+
+        .modal_btnbox{
+          position: absolute;
+          .size(350px,40px);
+          bottom:65px;
+
+          .modal_upload_btn{
+            .size(140px,40px);
+            font-family: SourceHanSansCN-Medium;
+            font-size: 16px;
+            color:#ffffff;
+            line-height: 40px;
+          }
+
+          .btn_modal_browse{
+            float: left;
+            background-color: #2bd948;
+            box-shadow: 3px 3px 10px #99eda7, -3px 3px 10px #99eda7;
+
+            &:hover{
+              box-shadow: 5px 5px 10px #99eda7, -5px 5px 10px #99eda7;
+            }
+          }
+
+          .btn_modal_complete{
+            position: absolute;
+            top:1rem;
+            background-color: #2bd948;
+            box-shadow: 3px 3px 10px #99eda7, -3px 3px 10px #99eda7;
+
+            &:hover{
+              box-shadow: 5px 5px 10px #99eda7, -5px 5px 10px #99eda7;
+            }
+          }
+          .btn_modal_connect{
+            position: absolute;
+            top: 26px;
+            background-color: #2bd948;
+            box-shadow: 3px 3px 10px #99eda7, -3px 3px 10px #99eda7;
+
+            &:hover{
+              box-shadow: 5px 5px 10px #99eda7, -5px 5px 10px #99eda7;
+            }
+          }
+          .btn_modal_build{
+            position: absolute;
+
+            background-color: #00b6f6;
+            box-shadow: 3px 3px 10px #9ed0e3, -3px 3px 10px #9ed0e3;
+
+            &:hover{
+              box-shadow: 5px 5px 10px #9ed0e3, -5px 5px 10px #9ed0e3;
+            }
+          }
+
+
+
+
+          .btn_modal_upload{
+            float: right;
+            background-color: #00b6f6;
+            box-shadow: 3px 3px 10px #9ed0e3, -3px 3px 10px #9ed0e3;
+
+            &:hover{
+              box-shadow: 5px 5px 10px #9ed0e3, -5px 5px 10px #9ed0e3;
+            }
+          }
+          .input_upload{
+            display: none;
+          }
+        }
+
+
+      }
+    }
+    //模态框-上传文件结束
+
+
+
+    //模态框-上传错误操作提示开始
+    .modal_opr_fail{
+
+      .modal-dialog{
+        width:560px;
+
+        .modal-body{
+          padding:30px;
+
+          .fa{
+            display: block;
+            .size(40px,40px);
+            .center_block;
+            margin-bottom: 15px;
+            font-size: 25px;
+            font-weight: 200;
+            color: #ffffff;
+            text-align: center;
+            line-height: 40px;
+            background-color: #ff0000;
+            border-radius: 20px;
+          }
+          .modal_opr_des{
+            margin-bottom: 10px;
+            text-align: center;
+            font-family: SourceHanSansCN-Medium;
+            font-size: 18px;
+          }
+          .modal_opr_list{
+            max-height: 100px;
+            overflow-y: auto;
+            margin-bottom: 30px;
+            line-height: 25px;
+            color:#777;
+            text-align: center;
+          }
+          .modal_opr_btnbox{
+            width:70%;
+            .center_block;
+            .clearfix;
+
+            a{
+              .size(140px,40px);
+              text-align: center;
+              line-height: 40px;
+              color: #ffffff;
+              font-family: SourceHanSansCN-Medium;
+            }
+            .modal_btn_again{
+              float: left;
+              background-color: #00b6f6;
+              box-shadow: 3px 3px 10px #9ed0e3, -3px 3px 10px #9ed0e3;
+
+              &:hover{
+                box-shadow: 5px 5px 10px #9ed0e3, -5px 5px 10px #9ed0e3;
+              }
+            }
+            .modal_btn_service{
+              float: right;
+              background-color: #2bd948;
+              box-shadow: 3px 3px 10px #99eda7, -3px 3px 10px #99eda7;
+
+              &:hover{
+                box-shadow: 5px 5px 10px #99eda7, -5px 5px 10px #99eda7;
+              }
+            }
+          }
+        }
+      }
+
+
+    }
+    //模态框-上传错误操作提示结束
+  }
+}
+
+

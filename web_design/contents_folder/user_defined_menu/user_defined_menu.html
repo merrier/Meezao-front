@@ -1,0 +1,2200 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <!--360 浏览器在读取到这个标签后，立即切换对应的极速核-->
+    <meta name="renderer" content="webkit">
+    <!--优先使用 IE 最新版本和 Chrome-->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <!--百度禁止转码-->
+    <meta http-equiv="Cache-Control" content="no-siteapp"/>
+    <title>新的首页</title>
+
+    <!--全局css开始-->
+    <link href="../../plugin_folder/bootstrap_v3.3.5/css/bootstrap.min.css" rel="stylesheet"/>
+    <link href="../../plugin_folder/font-awesome/font-awesome.min.css" rel="stylesheet"/>
+    <link href="../../common_folder/stylesheets/common_base.css" rel="stylesheet"/>
+    <link href="../../common_folder/less/PC_index.less" rel="stylesheet/less"/>
+    <!--全局css结束-->
+
+    <link href="stylesheets/demo.css" rel="stylesheet"/>
+    <link href="stylesheets/meezao.css" rel="stylesheet"/>
+    <link href="stylesheets/base.css" rel="stylesheet"/>
+    <link href="stylesheets/d_menu.css" rel="stylesheet"/>
+    <link href="stylesheets/men.css" rel="stylesheet"/>
+    <link href="stylesheets/pic.css" rel="stylesheet"/>
+
+    <script type="text/javascript">
+        function dele_messge() {
+            $('.edit_area.js_editorArea').text('');
+            $(".img_p_div").hide();
+            $(".MsgSend_img_box").hide();
+            $(".MsgSend_img_box .imag_src").remove();
+            $(".MsgSend_media_box").show();
+            $(".MsgSend_box").hide();
+            $("#urlText").val('');
+            $(".js_tab_navs .tab_appmsg").trigger('click');
+//            $('li.current .sub_pre_menu_box').hide();
+
+//            $(".js_imgArea").find(".MsgSend_media_box").show();
+
+
+        }
+        function get_menu_date(data) {
+            dele_messge();
+
+            $.ajax({
+                type: "POST",
+                url: "{:U('getMenuData')}",
+                data: data,
+                dataType: "json",
+                success: function (data) {
+                    console.log("success-----------");
+                    console.info(data);
+                    console.log("success-----------");
+                    var title = data.zhu_name;
+                    var type_name = data.type_name;
+                    var type = data.type;
+                    var pid = data.pid;
+                    var id = data.id;
+                    $('.js_menu_name').val(title);
+                    $('.image_src').remove();
+                    if (type) {
+                        if (pid == '0') {
+//                            $('.sub_pre_menu_box').hide();
+                        }
+                        if (type == 'view') {
+
+                            var url = data.url;
+                            $("#js_url").trigger("click");
+                            $("#urlText").val(url);
+                        } else if (type == 'click') {
+                            $("#js_sendMsg").trigger("click");
+                            $(".tab_" + type_name).trigger("click");
+
+                            if (type_name == 'text') {
+                                var type_value = data.type_value;
+                                $('.edit_area.js_editorArea').text(type_value);
+                            } else if (type_name == 'img') {
+                                var pic_url = data.pic_url;
+                                $(".MsgSend_img_box .imag_src").remove();
+                                $(".MsgSend_img_box").prepend("<div class='imag_src' >" + "<img class='img_app' src=" + pic_url + ">" + "</div>");
+                                $(".MsgSend_img_box").show();
+                                $(".js_imgArea").find(".MsgSend_media_box").hide();
+                                $(".MsgSend_box").hide();
+                                $(".fade").hide();
+                            } else if (type_name == 'appmsg') {
+//                                alert('aa');
+                                if(data.news_type=="L"){
+                                    var article_name = data.article_name;
+                                    var thumb_pic_url = data.thumb_pic_url;
+                                    var div = '<div class="MsgSend_box">' +
+                                            '<div class="blockLeft"><p>' + article_name + '</p>' +
+                                            '<img src="' + thumb_pic_url + '" class="tuwen_img"></div>' +
+                                            '<a href="#none" class="del_MsgSend">删除</a>';
+                                }else{
+                                    var div='<div class="MsgSend_box"><div class="blockLeft"><div class="appmsg_content">';
+                                    for(var i=0;i<data.info.length;i++){
+                                        if(i==0){
+                                            div+='<div class="cover_appmsg_item"> <h4 class="appmsg_title js_title">'
+                                                    +'<a href="#" class="" target="_blank">'+data.info[i].article_name+'</a> </h4>'
+                                                    +'<div class="appmsg_thumb_wrp" style="background: url(\''+data.info[i].thumb_pic_url+'\')"></div> </div>';
+                                        }else{
+                                            div+='<div class="appmsg_item"> <div class="appmsg_thumb_wrp" style="background: url(\''+data.info[i].thumb_pic_url+'\')"></div> '
+                                                    +'<h4 class="appmsg_title js_title" name="69"> <a href="#" class="appmsg_t_a" target="_blank">'+data.info[i].article_name+'</a> </h4> </div>';
+                                        }
+                                    }
+                                    div+='</div></div><a href="#none" class="del_MsgSend">删除</a></div>';
+
+                                }
+                                $(".jsMsgSendTab .MsgSend_box").remove();
+                                $('.js_appmsgArea .jsMsgSendTab').prepend(div);
+                                $(".js_appmsgArea .MsgSend_media_box").hide();
+                                $(".fade").hide();
+                            }
+                        } else {
+
+                            $(".jsMsgSendTab .MsgSend_box").remove();
+
+                            $("#js_sendMsg").trigger("click");
+                            $(".tab_img").trigger("click");
+                            var src = data.src;
+                            $(".MsgSend_img_box").prepend("<div class='imag_src' >" + "<img class='img_app' src=" + src + ">" + "</div>");
+                            $(".MsgSend_img_box").show();
+                            $(".js_imgArea").find(".MsgSend_media_box").hide();
+                            $(".fade").hide();
+                        }
+                    } else {
+                        $("#js_sendMsg").trigger("click");
+                        $(".tab_appmsg").trigger("click");
+                        $(".jsMsgSendTab .MsgSend_box").remove();
+
+                        $(".fade").hide();
+                    }
+                    /*alert(data.id);*/
+                },
+                error: function (data) {
+                    console.log("error-----------");
+                    console.log(data);
+                }
+            });
+        }
+        function send_wx_menu_date(id, menu_name, menu_type, type, key, pid, name, t) {
+
+            var d = {
+                "id": id, "menu_name": menu_name, "menu_type": menu_type,
+                "type": type, "pid": pid, "name": name
+            };
+            d[t] = key;
+            console.info('dddddddddddddddddddddddd');
+            console.info(d);
+            /*ajax发送相关数据*/
+            $.ajax({
+                type: "POST",
+                url: "{:U('ajaxData')}",
+                data: d,
+                dataType: "json",
+                success: function (data) {
+                    console.log("success-----send_wx_menu_date------");
+                    console.info(data);
+                    get_menu_date({'id':id});
+                    $(".fade").hide();
+//                    $("#" + id).attr('data_id', data.data_id)
+                },
+                error: function (data) {
+                    console.log("error-----send_wx_menu_date------");
+                    console.log(data);
+
+                }
+            });
+        }
+        function submit_form() {
+//            $("#file_form").submit();
+
+            /* e.preventDefault();*/
+            var fd = new FormData($("#file_form")[0]);
+            console.info(fd);
+            $.ajax({
+                url: "{:U('uploadMyImg')}",
+                type: 'POST',
+                data: fd,
+//                dataType: 'JSON',
+                cache: false,
+                processData: false,
+                contentType: false,
+                success: function (data) {
+                    console.info('success=======uploadMyImg');
+                    console.info(data);
+                    if(data.msg){
+                        data.id;
+                        var id = $(".menu_form_area").attr("data-id");//与菜单相对应的内容
+                        var menu_name = $(".js_menu_name").val();//子菜单名称
+                        var menu_type = $(".js_radio").find(":checked").attr("name");
+                        var type = $("#editDiv").find(".selected").attr("data-tooltip");
+                        var media_id = data.id;
+                        var pid = $("#" + id).parents(".jslevel1").attr("id");
+                        var name = $("#" + id).parents(".jslevel1").find(".js_l1Title").text();
+                        send_wx_menu_date(id, menu_name, menu_type, type, media_id, pid, name, 'media_id')
+                    }else{
+                        alert('上传自定义菜单图片完成');
+                    }
+                },
+                error: function (e) {
+                    console.info('error=======uploadMyImg');
+
+                    console.info(e)
+
+                }
+            })
+        }
+        //下面用于图片上传预览功能
+        function setImagePreview(avalue) {
+            var docObj = document.getElementById("doc");
+            var imgObjPreview = document.getElementById("preview");
+            if (docObj.files && docObj.files[0]) {
+//火狐下，直接设img属性
+                imgObjPreview.style.display = 'inline-block';
+                imgObjPreview.style.width = '80px';
+                imgObjPreview.style.height = '80px';
+//imgObjPreview.src = docObj.files[0].getAsDataURL();
+//火狐7以上版本不能用上面的getAsDataURL()方式获取，需要一下方式
+                imgObjPreview.src = window.URL.createObjectURL(docObj.files[0]);
+                $(".MsgSend_media_box").eq(1).hide();
+                $(".img_p_div").show();
+                $("#submit_btn_id").click();
+            }
+            else {
+//IE下，使用滤镜
+                docObj.select();
+//var imgSrc = document.selection.createRange().text;
+                var localImagId = document.getElementById("localImag");
+//必须设置初始大小
+                localImagId.style.width = "80px";
+                localImagId.style.height = "80px";
+//图片异常的捕捉，防止用户修改后缀来伪造图片
+                try {
+                    localImagId.style.filter = "progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod=scale)";
+                    localImagId.filters.item("DXImageTransform.Microsoft.AlphaImageLoader").src = imgSrc;
+                }
+                catch (e) {
+                    alert("您上传的图片格式不正确，请重新选择!");
+                    return false;
+                }
+                imgObjPreview.style.display = 'none';
+                document.selection.empty();
+            }
+            return true;
+        }
+
+    </script>
+</head>
+
+<body class="d_menu">
+
+
+<!--标题栏开始-->
+<div class="row header">
+    <h2>MEEZAO</h2>
+
+    <div class="toolbar">
+        <a href="" class="fa fa-envelope-o toolbar_information_center"><sup class="information_num"><i
+                class="fa fa-circle"></i></sup></a><!--
+         -->
+        <div class="toolbar_item">
+            <a href="#none" class="toolbar_person_information">
+                <i class="fa fa-circle"></i>
+                <span class="toolbar_user_name">萨达sdfsadf</span>
+            </a>
+            <ul class="toolbar_drop_menu">
+                <li class="toolopr_modify_password" data-toggle="modal" data-target=".modal_modify_password">修改密码</li>
+                <li class="toolopr_phone_solution" data-toggle="modal" data-target=".modal_phone_solution">手机号解绑</li>
+                <li class="toolopr_log_out">退出登录</li>
+            </ul>
+        </div>
+    </div>
+</div>
+<!--标题栏结束-->
+
+<!--页面开始-->
+<div class="container-fluid wrp">
+
+    <!--导航栏开始-->
+    <div class="nav_bar">
+        <ul class="nav_bar_level1">
+            <li><a href="#none"><span>全数据报表系统</span></a>
+                <ul class="nav_bar_level2">
+                    <li><a href="index.php/MeeZao/Plat/Fun/Form"><span>微官基础报表</span></a></li>
+                    <li><a href="#none"><span>官网基础报表</span></a></li>
+                    <li><a href="#none"><span>CRM报表</span></a></li>
+                    <li><a href="#none"><span>Meezao免费报表</span></a></li>
+                    <li><a href="#none"><span>Meezao付费报表</span></a></li>
+                </ul>
+            </li>
+            <li><a href="#none"><span>微信管理系统</span></a>
+                <ul class="nav_bar_level2">
+                    <li><a href="#none"><span>文案系统</span></a>
+                        <ul class="nav_bar_level3">
+                            <li><a href="#none"><i class="fa fa-circle"></i><span>创建文案</span></a></li>
+                            <li><a href="#none"><i class="fa fa-circle"></i><span>组合文案</span></a></li>
+                            <li><a href="#none"><i class="fa fa-circle"></i><span>文案列表</span></a></li>
+                            <li><a href="#none"><i class="fa fa-circle"></i><span>Meezao文案系统</span></a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#none"><span>微信平台管理系统</span></a>
+                        <ul class="nav_bar_level3">
+                            <li><a href="#none"><i class="fa fa-circle"></i><span>自定义菜单</span></a></li>
+                            <li><a href="#none"><i class="fa fa-circle"></i><span>自动回复管理</span></a></li>
+                            <li><a href="#none"><i class="fa fa-circle"></i><span>消息管理</span></a></li>
+                            <li><a href="#none"><i class="fa fa-circle"></i><span>素材管理</span></a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+            <li><a href="#none"><span>官网管理系统</span></a>
+                <ul class="nav_bar_level2">
+                    <li><a href="#none"><span>微信基础报表</span></a></li>
+                    <li><a href="#none"><span>微官网基础报表</span></a></li>
+                    <li><a href="#none"><span>会员分析报表</span></a>
+                        <ul class="nav_bar_level3">
+                            <li><a href="#none"><i class="fa fa-circle"></i><span>Meezao免费报表</span></a></li>
+                            <li><a href="#none"><i class="fa fa-circle"></i><span>Meezao付费报表</span></a></li>
+                            <li><a href="#none"><i class="fa fa-circle"></i><span>Meezao定制报表</span></a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+            <li><a href="#none"><span>M-CRM系统</span></a>
+                <ul class="nav_bar_level2">
+                    <li><a href="#none"><span>会员分组</span></a></li>
+                    <li><a href="#none"><span>分组管理</span></a></li>
+                    <li><a href="#none"><span>分组促销</span></a></li>
+                    <li><a href="#none"><span>会员分析图表</span></a></li>
+                </ul>
+            </li>
+            <li><a href="#none"><span>卡券管理系统</span></a>
+                <ul class="nav_bar_level2">
+                    <li><a href="#none"><span>卡券列表</span></a></li>
+                </ul>
+            </li>
+            <li><a href="#none"><span>核销系统</span></a>
+                <ul class="nav_bar_level2">
+                    <li><a href="#none"><span>网页核销</span></a></li>
+                    <li><a href="#none"><span>手机核销</span></a></li>
+                    <li><a href="#none"><span>核销记录</span></a></li>
+                </ul>
+            </li>
+            <li><a href="#none"><span>平台管理系统</span></a>
+                <ul class="nav_bar_level2">
+                    <li><a href="#none"><span>权限管理</span></a></li>
+                    <li><a href="#none"><span>品牌管理</span></a></li>
+                    <li><a href="#none"><span>系统消息</span></a></li>
+                    <li><a href="#none"><span>服务帮助</span></a></li>
+                </ul>
+            </li>
+        </ul>
+
+    </div>
+    <!--导航栏结束-->
+
+    <!--右侧内容开始-->
+    <div class="content clearfix">
+
+
+        <!--隐藏警告框标签开始-->
+        <div class="alert_hide_tag hide">
+            <div class="alert_whether_show"></div>
+            <div class="alert_tag_type"></div>
+            <div class="alert_tag_delay"></div>
+            <div class="alert_tag_content"></div>
+        </div>
+        <!--隐藏警告框标签结束-->
+
+
+        <!--右侧内容主体开始-->
+        <div class="content_main">
+            <div class="content_route"><a href="#none">首页</a>
+                <span class="content_route_pathname">>文案系统>文案管理</span></div>
+
+            <!--主体内容开始-->
+            <div class="content_mb">
+                <h2 class="content_mb_title">自定义菜单</h2>
+
+                <!--警告框-范例开始-->
+                <div class="alert alert-example" role="alert">
+                    <button type="button" class="close" aria-label="Close"><span aria-hidden="true">&times;</span>
+                    </button>
+                    <strong class="alert_content"></strong>
+                </div>
+                <!--警告框-范例结束-->
+
+
+                <!--自己的内容开始-->
+                <div class="content_mb_subject">
+
+                    <!--你可以在这里写你自己的内容了-->
+                    <div class="menu_setting_box">
+                        <nav class="navbar navbar-default">
+                            <div class="navbar-header">
+                                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                                        data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                                    <span class="sr-only">Toggle navigation</span>
+                                    <span class="icon-bar"></span>
+                                    <span class="icon-bar"></span>
+                                    <span class="icon-bar"></span>
+                                </button>
+                                <a class="navbar-brand" href="#">Screen</a>
+                            </div>
+                            <div class="prompt_text_top">菜单编辑中</div>
+                            <div class="prompt_text_bottom">菜单未发布，可点击"保存并发布"同步到手机。若停用菜单，请点击这里。</div>
+                        </nav>
+                        <p class="menu_setting_tips">可添加最多3个一级菜单，每个一级菜单可添加最多5个子菜单</p>
+
+                        <div class="menu_preview_area">
+                            <div class="mobile_menu_preview">
+                                <div class="mobile_hd tc">蜜枣网内测</div>
+                                <div class="mobile_bd">
+                                    <ul class="pre_menu_list" id="menuList">
+
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="menu_form_area">
+                            <!----------------删除菜单的时候显示--------------------->
+                            <div id="js_none" class="menu_initial_tips tips_global" style="display: none;">点击左侧菜单进行编辑操作
+                            </div>
+                            <div id="js_rightBox" class="portable_editor to_left">
+                                <div class="editor_inner">
+                                    <div class="global_mod float_layout menu_form_hd js_second_title_bar">
+                                        <h4 class="global_info">
+                                            菜单名称
+                                        </h4>
+
+                                        <div class="global_extra">
+                                            <a href="javascript:void(0);" id="jsDelBt" data-toggle="modal"
+                                               data-target="#myModal_del">删除菜单</a>
+                                        </div>
+                                    </div>
+                                    <div class="menu_form_bd" id="view">
+                                        <div id="js_innerNone" style="display: none;padding-top:10px;"
+                                             class="msg_sender_tips tips_global">已添加子菜单，仅可设置菜单名称。
+                                        </div>
+                                        <div class="frm_control_group js_setNameBox">
+                                            <label for="" class="frm_label">
+                                                <strong class="title js_menuTitle">菜单名称</strong>
+                                            </label>
+
+                                            <div class="frm_controls">
+                                     <span class="frm_input_box with_counter counter_in append">
+                                        <input type="text" class="frm_input js_menu_name" style="margin-top:5px">
+                                     </span>
+
+                                                <p class="frm_msg fail js_titleEorTips" style="display: none;">
+                                                    字数超过上限</p>
+
+                                                <p class="frm_msg fail js_titlenoTips" style="display: none;">
+                                                    请输入菜单名称</p>
+
+                                                <p class="frm_tips js_titleNolTips">字数不超过4个汉字或8个字母</p>
+                                            </div>
+                                        </div>
+                                        <!---------------------子菜单----------------------->
+                                        <div class="frm_control_group" style="display: block;">
+                                            <label for="" class="frm_label">
+                                                <strong class="title js_menuContent">菜单内容</strong>
+                                            </label>
+
+                                            <div class="frm_controls frm_vertical_pt">
+                                                <label class="frm_radio_label js_radio_sendMsg selected js_radio"
+                                                       id="js_sendMsg">
+                                                    <i class="icon_radio"></i>
+                                                    <span class="lbl_content">发送消息</span>
+                                                    <input type="radio" name="click" class="frm_radio"
+                                                           checked="checked">
+                                                </label>
+                                                <label class="frm_radio_label js_radio_url js_radio" id="js_url">
+                                                    <i class="icon_radio"></i>
+                                                    <span class="lbl_content">跳转网页</span>
+                                                    <input type="radio" name="view" class="frm_radio">
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="menu_content_container">
+                                            <div class="menu_content send jsMain" id="edit">
+                                                <div class="msg_sender" id="editDiv">
+                                                    <div class="msg_tab">
+                                                        <div class="tab_navs_panel">
+                                                            <div class="tab_navs_wrp">
+                                                                <ul class="tab_navs js_tab_navs">
+                                                                    <li class="tab_nav tab_appmsg selected"
+                                                                        data-tooltip="图文消息">
+                                                                        <a href="javascript:void(0);">&nbsp;<i
+                                                                                class="icon_msg_sender"></i><span
+                                                                                class="msg_tab_title">图文消息</span></a>
+                                                                    </li>
+                                                                    <li class="tab_nav tab_text " data-tooltip="文字">
+                                                                        <a href="javascript:void(0);">&nbsp;<i
+                                                                                class="icon_msg_sender"></i><span
+                                                                                class="msg_tab_title">文字</span></a>
+                                                                    </li>
+                                                                    <li class="tab_nav tab_img" data-tooltip="图片">
+                                                                        <a href="javascript:void(0);">&nbsp;<i
+                                                                                class="icon_msg_sender"></i><span
+                                                                                class="msg_tab_title">图片</span></a>
+                                                                    </li>
+                                                                    <!--<li class="tab_nav tab_cardmsg" id="cardmsg"-->
+                                                                    <!--data-tooltip="卡券" data-toggle="modal"-->
+                                                                    <!--data-target="#myModal">-->
+                                                                    <!--<a href="javascript:void(0);">&nbsp;<i-->
+                                                                    <!--class="icon_msg_sender"></i><span-->
+                                                                    <!--class="msg_tab_title">卡券</span></a>-->
+                                                                    <!--</li>-->
+                                                                </ul>
+                                                            </div>
+                                                        </div>
+                                                        <div class="tab_panel">
+                                                            <!-------------切换内容---------------->
+                                                            <div class="tab_content" style="">
+                                                                <div class="js_appmsgArea inner ">
+                                                                    <div class="tab_cont_cover jsMsgSendTab">
+                                                                        <div class="MsgSend_box" style="display:none"><a
+                                                                                href="#none" class="del_MsgSend">删除</a>
+                                                                        </div>
+                                                                        <div class="MsgSend_media_box">
+                                                                            <div class="media_cover">
+			                                      <span class="create_access">
+			                                         <!--<a class="add_gray_wrp jsMsgSenderPopBt" href="javascript:;"-->
+                                                      <!--data-toggle="modal" data-target="#myModal_sucais"-->
+                                                      <!--onClick="getMorePic();">-->
+                                                      <!--<i class="icon36_common add_gray"></i>-->
+                                                      <!--<strong>从素材库中选择</strong>-->
+                                                      <!--</a>-->
+                                                       <a class="add_gray_wrp jsMsgSenderPopBt" href="javascript:;"
+                                                          id="cccc">
+                                                           <i class="icon36_common add_gray"></i>
+                                                           <strong>从素材库中选择</strong>
+                                                       </a>
+			                                      </span>
+                                                                            </div>
+                                                                            <div class="media_cover">
+			                                      <span class="create_access">
+                                                      <a class="add_gray_wrp"
+                                                         href="__APP__/MeeZao/Weixin/WeixinArticle/EditArticle.html">
+                                                          <i class="icon36_common add_gray"></i>
+                                                          <strong>新建图文消息</strong>
+                                                      </a>
+			                                     </span>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="tab_content" style="display:none">
+                                                                <div class="js_textArea inner no_extra">
+                                                                    <div class="emotion_editor">
+                                                                        <div class="edit_area js_editorArea"
+                                                                             contenteditable="true"></div>
+                                                                        <div class="editor_toolbar">
+                                                                            <a href="#" class="btn btn-primary"
+                                                                               style="float:right; margin-left:10px; margin-top:6px;display: none"
+                                                                               id="save_text">保存</a>
+
+                                                                            <p class=" "
+                                                                               style="float:left;color: #8d8d8d;  ">
+                                                                                点击空白处提交</p>
+                                                                            <p class="editor_tip js_editorTip">
+                                                                                还可以输入<em>600</em>字</p>
+
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="tab_content" style="display: none;">
+                                                                <div class="js_imgArea inner ">
+                                                                    <div class="tab_cont_cover jsMsgSendTab">
+                                                                        <div class="MsgSend_media_box">
+                                                                            <div class="media_cover">
+			                                         <span class="create_access">
+			                                            <a class="add_gray_wrp jsMsgSenderPopBt" href="javascript:;"
+                                                           data-toggle="modal" data-target="#myModal_p_sucai">
+                                                            <i class="icon36_common add_gray"></i>
+                                                            <strong>从素材库中选择</strong>
+                                                        </a>
+			                                          </span>
+                                                                            </div>
+                                                                            <div class="media_cover">
+			                                        <span class="create_access webuploader-container">
+			                                            <a class="add_gray_wrp webuploader-pick" href="javascript:;">
+                                                            <i class="icon36_common add_gray"></i>
+                                                            <strong>上传图片</strong>
+                                                        </a>
+			                                           <div style="position: absolute; top: 42px; left: 78.5px; width: 56px; height: 58px; overflow: hidden; bottom: auto; right: auto;">
+                                                           <!--<input type="file" id="doc" style="opacity:0;"-->
+                                                           <!--onchange="javascript:setImagePreview();">-->
+                                                           <form id="file_form" class="">
+                                                               <input type="file" id="doc" name="helen"
+                                                                      style="opacity:0;"
+                                                                      onchange="javascript:setImagePreview();">
+                                                               <input type="button" id="submit_btn_id"
+                                                                      onclick="submit_form()"/>
+                                                           </form>
+                                                       </div>
+                                                    </span>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="MsgSend_img_box"
+                                                                             style="display:none"><a
+                                                                                href="#none" class="del_img_MsgSend"
+                                                                                id="del_add_img">删除</a></div>
+                                                                        <div class="img_p_div" style="display:none;">
+                                                                            <img
+                                                                                    id="preview" src=""><a href="#none"
+                                                                                                           class="del_img"
+                                                                                                           style="vertical-align:bottom;margin-left:20px;">删除</a>
+                                                                        </div>
+                                                                    </div>
+
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="menu_content url jsMain" style="display:none;">
+                                                <form action="#" id="urlForm" method="post">
+                                                    <p class="menu_content_tips tips_global">订阅者点击该子菜单会跳到以下链接</p>
+
+                                                    <div class="frm_control_group">
+                                                        <label for="" class="frm_label">页面地址</label>
+
+                                                        <div class="frm_controls">
+                                                <span class="frm_input_box">
+                                                    <input type="text" class="frm_input" id="urlText" name="urlText"
+                                                           style="margin-top: 4px;">
+                                                </span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="frm_control_group btn_appmsg_wrap">
+                                                        <div class="frm_controls">
+                                                            <p class="frm_msg fail dn" id="urlUnSelect"
+                                                               style="display: none;">
+                                                            <span for="urlText" class="frm_msg_content"
+                                                                  style="display: inline;">请选择一篇文章</span>
+                                                            </p>
+                                                            <a href="javascript:;" id="js_appmsgPop">从公众号图文消息中选择</a>
+                                                            <a href="javascript:void(0);" class="dn btn btn_default"
+                                                               id="js_reChangeAppmsg" style="display: none;">重新选择</a>
+                                                        </div>
+                                                    </div>
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="c_s_box">
+                        <input id="upload" class="c_s_btn" type="submit" value="保存并发布"/>
+                    </div>
+
+                    <!----------------------------账户框---------------------------------->
+                    <div class="m_popover  hide change_account">
+
+                        <div class="popover_title jsPopOverContent">
+                            <h2>修改账户</h2>
+                        </div>
+                        <div class="popover_content jsPopOverContent">
+                            <p><label>账户名称:</label><span class="account_name">22222</span></p>
+
+                            <p><label>原密码:</label><input class="ori_password change_account_input"/ type="password"></p>
+
+                            <p><label>新密码:</label><input class="new_password change_account_input"/ type="password"></p>
+                        </div>
+                        <div class="popover_bar"><a href="javascript:;" class="m_btn m_btn_primary jsPopoverBt" id="change_account_confirm">确定</a>&nbsp;<a
+                                href="javascript:;" class="m_btn m_btn_default jsPopoverBt" id="change_account_del">取消</a></div>
+
+                    </div>
+
+                    <!--从公众号图文消息中选择开始-->
+                    <div class="url_k_box" style="display: none;height: 360px">
+                        <div class="url_k_h">
+                            <h2 class="url_title">
+                                <span>选择图文信息</span>
+                                <a href="#none" class="close_url_k">&times;</a>
+                            </h2>
+                        </div>
+                        <div class="url_k_c">
+                            <div class="url_t_box">
+                                <table cellspacing="0">
+                                    <thead>
+                                    <tr>
+                                        <td class="t_cell">标题</td>
+                                        <td class="t_cell" style="text-align: center">发布时间</td>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <foreach name="articles" item="list">
+                                        <tr>
+                                            <td class="t_cell">
+                                                <input type="radio" class="radio_c" data-url="{$list.content_source_url}"/>
+                                                <span class="t_title">{$list.title}</span>
+                                            </td>
+                                            <td class="t_cell data">
+                                                {$list.create_time}
+                                            </td>
+                                        </tr>
+
+                                    </foreach>
+
+
+                                    </tbody>
+
+                                </table>
+                            </div>
+                        </div>
+                        <div class="url_k_f">
+                            <a href="#none" class="url_btn a_btn_primary" id="confirm_url_btn" style="margin-right: 10px;background-color: #0096ff;border:none"
+                               data-url="">确定</a>
+
+                            <a href="#none" class="url_btn a_btn_default" id="del_url_btn">取消</a>
+                        </div>
+                    </div>
+                    <!--从公众号图文消息中选择结束-->
+
+
+                    <!-----------卡券的蒙层---------------------------->
+                    <div class="mask_ka"></div>
+                    <!------------------卡券增加框---------------------------->
+                    <div class="popover_k " style="position: fixed; left: 628.5px; top:0px; z-index: 10000;">
+                        <div class="popover_inner">
+                            <div class="popover_content">
+                                <div class="pop_store">
+                                    <!-- 普通卡券增减库存 -->
+                                    <div class="pop_card_normal">
+                                        <!--增减库存-->
+
+                                        <!-- 这一部分貌似要废弃掉 -->
+                                        <div class="frm_control_group">
+                                            <div class="frm_controls">
+                                                <label class="frm_radio_label selected add" for="checkbox16">
+                                                    <i class="icon_radio"></i>
+                                                    <span class="lbl_content">增加</span>
+                                                    <input type="radio" name="isadd" checked="" value="1" class="frm_radio js_quantity_type"
+                                                           id="checkbox16">
+                                                </label>
+                                                <label class="frm_radio_label reduce" for="checkbox17">
+                                                    <i class="icon_radio"></i>
+                                                    <span class="lbl_content">减少</span>
+                                                    <input type="radio" name="isadd" value="0" class="frm_radio js_quantity_type"
+                                                           id="checkbox17">
+                                                </label>
+                                            </div>
+                                        </div>
+
+                                        <div class="frm_control_group" style="padding-bottom: 0px;">
+                                            <div class="frm_controls">
+                                                <div class="frm_controls_hint group">
+                                                    <span class="frm_input_box"><input type="text" class="frm_input stock_input"></span>
+                                                    <span class="frm_hint">份</span>
+                                                </div>
+                                                <p class="frm_tips fail">库存不能少于1</p>
+                                            </div>
+                                        </div>
+                                        <!--增减库存 end-->
+                                    </div>
+
+                                </div>
+                            </div>
+
+
+                            <div class="popover_bar">
+
+                                <a onclick="return false;" href="javascript:;" class="js_btn btnn btn_primary j_con_k"
+                                   style="float:left">确定</a>
+
+                                <a onclick="return false;" href="javascript:;" class="js_btn btnn btn_default j_del_c" style="float:right">取消</a>
+
+                            </div>
+
+                        </div>
+                        <i class="popover_arrow popover_arrow_out"></i>
+                        <i class="popover_arrow popover_arrow_in"></i>
+                    </div>
+                    <!------------提示框------------->
+                    <div class="result_tips"></div>
+                    <!----------------------添加回复图文---------------------->
+                    <div class="showpicword_dialog common_dialog" style="display:none;" id="myModal_sucais">
+                        <div class="showpicword_dialog_title dialog_title">
+                            <h3>选择素材</h3>
+                            <i class="fa fa-close">
+                            </i>
+                        </div>
+                        <div class="showpicword_dialog_subtitle dialog_subtitle">
+                            <div class="dialog_search_bar">
+      <span class="dialog_search_box">
+        <a class="dialog_search_close">
+            <i class="fa fa-close"></i>
+        </a>
+        <a class="dialog_search_btn">
+            <i class="fa fa-search"></i>
+        </a>
+        <input class="dialog_search_input" type="text" placeholder="标题/作者/摘要"/>
+      </span>
+                            </div>
+                            <div class="dialog_subtitle_link">
+                                <button class="single selected">单图文</button>
+                                <button class="more">多图文</button>
+                                <a href="/MeeZao/Weixin/WeixinArticle/EditArticle.html" class="dialog_subtitle_create">
+                                    ＋新建图文消息
+                                </a>
+                            </div>
+                        </div>
+                        <div class="showpicword_dialog_content dialog_content">
+                            <div class="showpicword_dialog_textbox dialog_textbox">
+                                <div class="dialog_appmsg_list">
+                                    <div class="dialog_appmsg_col">
+                                        <div class="dialog_appmsg_inner">
+                                            <input type='hidden' id="insert_flag2" name='news_checked' data-id=''/>
+                                            <?php foreach($get_articles as $vo){?>
+                                            <div class="dialog_appmsg_item news_checked_lzm" data-id="<?php echo $vo['id'];?>">
+                                                <div class="dialog_appmsg_data" name="<?php echo $vo['id'];?>">
+                                                    <div class="appmsg_item_content" style="color:black">
+                                                        <div class="news_style1_title"><?php echo $vo['title']; ?></div>
+                                                        <div class="news_style1_pic" style="background-image:url('<?php echo $vo['thumb_pic_url'];?>') "></div>
+                                                        <img src="<?php echo $vo['thumb_pic_url'];?>" style="display: none" class="tuwen_img">
+                                                        <div class="pic_text" style="display: none">
+                                                            <?php echo $vo['content']; ?>
+                                                        </div>
+                                                    </div>
+                                                    <div class="appmsg_item_bgcheck">
+                                                        <i class="fa fa-check"></i>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <?php }?>
+                                        </div>
+                                    </div>
+                                    <div class="showpic_dialog_page showpic_dialog_page2">
+                                        <div id="count_articles" style="display: none">{$count.articles}</div>
+                                        <div id="count_more_articles" style="display: none">{$count.more_art}</div>
+                                        <!-- <span class=" showpic_previous_page2 showpic_page_disabled">上一页</span>
+                                         <span class="showpic_current_page">1</span>
+                                         <span class="showpic_next_page2">下一页</span>-->
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="showpicword_dialog_footer dialog_footer">
+                                <a class="showpicword_btn_cancel btn_cancel">
+                                    取消
+                                </a>
+                                <a class=" btn_confirm " id="js_con_sucais">
+                                    确定
+                                </a>
+
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+    <!--自己的内容结束-->
+
+</div>
+<!--主体内容结束-->
+<!--右侧内容结束-->
+<!--页面结束-->
+
+
+<!--尾部开始-->
+<div class="container-fluid foot">
+    <h2>Design by Meezao</h2>
+</div>
+<!--尾部结束-->
+
+<!--------------删除菜单框------------------------>
+<div class="modal fade" id="myModal_del" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true"
+>
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" style="margin-top:5px;"
+                        data-dismiss="modal" aria-hidden="true">
+                    &times;
+                </button>
+                <h4 class="modal-title" id="myModalLabel" style="color:#333;margin:5px 0">
+                    温馨提示
+                </h4>
+            </div>
+            <div class="modal-body" style="color:#333;height:200px;font-size:14px">
+                <div class="msg_icon_wrapper">
+                </div>
+                <div>
+                    <p>删除确认</p>
+
+                    <p style="color:#8d8d8d">删除后"菜单名称"菜单下设置的内容将被删除</p>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default"
+                        data-dismiss="modal">取消
+                </button>
+                <button type="button" class="btn btn-primary" id="js_confirm">
+                    确定
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="myModal_p_sucai" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true"
+     style="left:50%;width: 960px;margin-left: -480px;display:none; top:0px;">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" style="margin-top:5px;"
+                        data-dismiss="modal" aria-hidden="true">
+                    &times;
+                </button>
+                <h4 class="modal-title" id="myModal_p_Label" style="color:#333;margin:5px 0;">
+                    选择图片
+                </h4>
+            </div>
+            <div class="modal-body"
+                 style="color:#333;height:400px;font-size:14px;overflow-y:scroll;padding-top: 20px;padding-bottom: 20px; padding-left: 20px;padding-right: 20px;">
+                <div id="content_p" class="ub-f1 tx-l t-bla ub-img6 res10" style="display: inline;">
+                    <div class="img_pick_area">
+                        <div class="sub_title_bar">
+                            <div class="send_img_box"><input type="file"
+                                                             style="position: absolute; width: 100px;opacity: 0"/><a
+                                    href="#" class="btn btn_primary" id="send_file_ben">本地上传</a></div>
+                        </div>
+                        <div class="img_pick">
+                            <ul class="img_list_group">
+
+                                <foreach name="images" item="list">
+
+                                    <li class="img_item">
+                                        <label class="img_item_bd">
+                                            <img src="{$list.matter_url}" name="{$list.id}" class="pic"/>
+                                            <span class="lbl_content">{$list.name}</span>
+
+                                            <div class="selected_mask">
+                                                <div class="selected_mask_inner"></div>
+                                                <div class="selected_mask_icon"></div>
+                                            </div>
+                                        </label>
+                                    </li>
+
+                                </foreach>
+
+                            </ul>
+                        </div>
+                    </div>
+                    <!--  <button class="foot" id="nextpage" onClick="getMorePic();">查看下8条</button>-->
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" id="js_con_p_sucai">
+                    确定
+                </button>
+                <button type="button" class="btn btn-default"
+                        data-dismiss="modal">取消
+                </button>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-----素材库------------------------>
+<div class="modal fade" id="myModal_sucai" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true"
+     style="left:50%;width: 960px;margin-left: -480px;display:none; top:0px;">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" style="margin-top:5px;"
+                        data-dismiss="modal" aria-hidden="true">
+                    &times;
+                </button>
+                <h4 class="modal-title" id="myModalLabel" style="color:#333;margin:5px 0;">
+                    选择素材
+                </h4>
+
+                <div class="sub_title_bar in_dialog" style="margin-top: 10px; margin-bottom: 5px">
+                    <div class="search_bar">
+            <span class="frm_input_box search with_del append">
+                <a class="del_btn" href="javascript:" id="searchCloseBt"><i class="icon_search_del"></i>&nbsp;</a>
+                <a id="msgSearchBtn" href="javascript:" class="frm_input_append"><i
+                        class="icon16_common search_gray">搜索</i>&nbsp;</a>
+                <input id="msgSearchInput" type="text" placeholder="标题/作者/摘要" value="" class="frm_input">
+            </span>
+                    </div>
+                    <div class="appmsg_create tr">
+                        <a class="btn btn_primary btn_add" target="_blank"
+                           href="__APP__/MeeZao/Weixin/WeixinArticle/EditArticle.html">
+                            <i class="icon14_common add_white"></i>新建图文消息 </a>
+
+                    </div>
+                </div>
+            </div>
+            <div class="modal-body"
+                 style="color:#333;height:400px;font-size:14px;overflow-y:scroll;padding-top: 20px;padding-bottom: 20px;width: 100%">
+                <div id="content" class="ub-f1 tx-l t-bla ub-img6 res10" style="display: inline;">
+                    <div id="forum_list">
+
+                        <volist name="article" id="list">
+                            <div class="outDiv" style="display: inline-block;float: none">
+                                <if condition="($list.ty eq 'L')">
+
+                                    <div class="blockLeft" data-type="{$list.ty}" name="{$list.id}">
+                                        <div class="mask_page"></div>
+                                        <i class="icon_card_selected">已选择</i>
+
+                                        <p>{$list.title}</p>
+                                        <img src="{$list.thumb_pic_url}" class="tuwen_img"/>
+                                    </div>
+                                    <else/>
+                                    <div class="blockLeft" data-type="M" name="{$list.mide_ids}">
+                                        <div class="mask_page"></div>
+                                        <i class="icon_card_selected">已选择</i>
+                                        <div class="appmsg_content">
+                                            <!--{$list.title}-->
+                                            <volist name="list" id="ls">
+                                                <if condition="($key eq 0)">
+                                                    <div class="cover_appmsg_item" >
+                                                        <h4 class="appmsg_title js_title" name="{$ls.id}">
+                                                            <a href="#" class="" target="_blank">{$ls.title}</a>
+                                                        </h4>
+
+                                                        <div class="appmsg_thumb_wrp"
+                                                             style="background: url('{$ls.thumb_pic_url}')"></div>
+                                                    </div>
+                                                    <else />
+                                                    <div class="appmsg_item">
+                                                        <div class="appmsg_thumb_wrp"
+                                                             style="background: url('{$ls.thumb_pic_url}')">
+                                                        </div>
+                                                        <h4 class="appmsg_title js_title" name="{$ls.id}">
+                                                            <a href="#" class="appmsg_t_a" target="_blank">{$ls.title}</a>
+                                                        </h4>
+                                                    </div>
+                                                </if>
+                                            </volist>
+                                        </div>
+                                    </div>
+
+                                </if>
+                            </div>
+
+
+                        </volist>
+
+                    </div>
+                    <!--  <button class="foot" id="nextpage" onClick="getMorePic();">查看下8条</button>-->
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default"
+                        data-dismiss="modal">取消
+                </button>
+                <button type="button" class="btn btn-primary" id="js_con_sucai">
+                    确定
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+<!--图片素材库-->
+
+<!------------------卡券---------------------------->
+<div class="modal fade" id="myModal" aria-hidden="true" data-backdrop="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" style="margin-top:5px;"
+                        data-dismiss="modal" aria-hidden="true">
+                    &times;
+                </button>
+                <h4 class="modal-title" id="myModalLabel" style="color:#333;margin:5px 0">
+                    选择卡券
+                </h4>
+            </div>
+            <div class="modal-body" style="color:#333;font-size:14px;height:400px;padding:0px; overflow:auto;">
+                <div class="js_card_list">
+                    <div class="release_method js_card_container">
+                        <div class="table_wrp release_method_select_table_wrp">
+                            <table class="table" cellspacing="0">
+                                <thead class="thead">
+                                <tr>
+                                    <th class="table_cell release_method_select_box">&nbsp;</th>
+                                    <th class="table_cell release_method_kind">
+                                        <div class="td_panel">卡券类型</div>
+                                    </th>
+                                    <th class="table_cell release_method_name">
+                                        <div class="td_panel">卡券名称</div>
+                                    </th>
+                                    <th class="table_cell release_method_time">
+                                        <div class="td_panel">卡券有效期</div>
+                                    </th>
+                                    <th class="table_cell release_method_stock">
+                                        <div class="td_panel">库存</div>
+                                    </th>
+                                    <th class="table_cell release_method_price">
+                                        <div class="td_panel">微信价(元)</div>
+                                    </th>
+                                    <!-- <th class="table_cell release_method_preview"><div class="td_panel">预览</div></th> -->
+                                    <th class="table_cell release_method_state">
+                                        <div class="td_panel">卡券状态</div>
+                                    </th>
+                                </tr>
+                                </thead>
+                                <tbody class="tbody">
+                                <tr class="" id="js_ct_tr_p5A-htxMPj43GCNV9fblVBQa06cA">
+                                    <td class="table_cell release_method_select_box">
+                                        <div class="td_panel">
+                                            <label class="frm_radio_label" for="checkbox1">
+                                                <i class="icon_radio"></i>
+                                                <input type="radio" data-id="p5A-htxMPj43GCNV9fblVBQa06cA"
+                                                       value="p5A-htxMPj43GCNV9fblVBQa06cA"
+                                                       class="frm_radio js_select js_select_disabled_2" id="checkbox1">
+                                            </label>
+                                        </div>
+                                    </td>
+                                    <td class="table_cell release_method_kind">
+                                        <div class="td_panel">代金券</div>
+                                    </td>
+                                    <td class="table_cell release_method_name">
+                                        <div class="td_panel">代金券标题</div>
+                                    </td>
+                                    <td class="table_cell release_method_time">
+                                        <div class="td_panel">2015-11-27至2015-12-15</div>
+                                    </td>
+                                    <td class="table_cell release_method_stock">
+                                        <div class="td_panel"><span class="js_sendcard_quantity">0</span>
+                                            <a class="icon14_common edit_gray js_modify_quantity" href="javascript:;"
+                                               id="editor_1"></a></div>
+                                    </td>
+                                    <td class="table_cell release_method_price">
+                                        <div class="td_panel">--</div>
+                                    </td>
+                                    <!-- <td class="table_cell release_method_preview"><div class="td_panel"><a data-cid="p5A-htxMPj43GCNV9fblVBQa06cA" data-x="-125" class="js_card_preview" href="javascript:void(0);">预览</a></div></td> -->
+                                    <td class="table_cell release_method_state">
+                                        <div class="td_panel"><span class="fail pass"><i></i>已投放</span></div>
+                                    </td>
+                                </tr>
+
+                                <tr class="" id="js_ct_tr_p5A-htzDAaNP8P6FFlabXDMrJEOg">
+                                    <td class="table_cell release_method_select_box">
+                                        <div class="td_panel">
+
+                                            <label class="frm_radio_label" for="checkbox2">
+                                                <i class="icon_radio"></i>
+                                                <input type="radio" data-id="p5A-htzDAaNP8P6FFlabXDMrJEOg"
+                                                       value="p5A-htzDAaNP8P6FFlabXDMrJEOg"
+                                                       class="frm_radio js_select js_select_disabled_2" id="checkbox2">
+                                            </label>
+
+                                        </div>
+                                    </td>
+                                    <td class="table_cell release_method_kind">
+                                        <div class="td_panel">团购券</div>
+                                    </td>
+                                    <td class="table_cell release_method_name">
+                                        <div class="td_panel">ZARA羽绒服199元</div>
+                                    </td>
+                                    <td class="table_cell release_method_time">
+                                        <div class="td_panel">2015-12-16至2015-12-30</div>
+                                    </td>
+                                    <td class="table_cell release_method_stock">
+                                        <div class="td_panel"><span class="js_sendcard_quantity">3</span>
+                                            <a class="icon14_common edit_gray js_modify_quantity" href="javascript:;"
+                                               id="editor_2"></a></div>
+                                    </td>
+                                    <td class="table_cell release_method_price">
+                                        <div class="td_panel">--</div>
+                                    </td>
+                                    <!-- <td class="table_cell release_method_preview"><div class="td_panel"><a data-cid="p5A-htzDAaNP8P6FFlabXDMrJEOg" data-x="-125" class="js_card_preview" href="javascript:void(0);">预览</a></div></td> -->
+                                    <td class="table_cell release_method_state">
+                                        <div class="td_panel"><span class="fail pass"><i></i>待投放</span></div>
+                                    </td>
+                                </tr>
+
+                                <tr class="" id="js_ct_tr_p5A-ht5TDIVJWERWgq-h5HVBpsrA">
+                                    <td class="table_cell release_method_select_box">
+                                        <div class="td_panel">
+
+                                            <label class="frm_radio_label" for="checkbox3">
+                                                <i class="icon_radio"></i>
+                                                <input type="radio" data-id="p5A-ht5TDIVJWERWgq-h5HVBpsrA"
+                                                       value="p5A-ht5TDIVJWERWgq-h5HVBpsrA"
+                                                       class="frm_radio js_select js_select_disabled_2" id="checkbox3">
+                                            </label>
+
+                                        </div>
+                                    </td>
+                                    <td class="table_cell release_method_kind">
+                                        <div class="td_panel">兑换券</div>
+                                    </td>
+                                    <td class="table_cell release_method_name">
+                                        <div class="td_panel">小礼品一份</div>
+                                    </td>
+                                    <td class="table_cell release_method_time">
+                                        <div class="td_panel">领取后当天生效3天有效</div>
+                                    </td>
+                                    <td class="table_cell release_method_stock">
+                                        <div class="td_panel"><span class="js_sendcard_quantity">3</span>
+                                            <a class="icon14_common edit_gray js_modify_quantity" href="javascript:;"
+                                               id="editor_3"></a></div>
+                                    </td>
+                                    <td class="table_cell release_method_price">
+                                        <div class="td_panel">--</div>
+                                    </td>
+                                    <!-- <td class="table_cell release_method_preview"><div class="td_panel"><a data-cid="p5A-ht5TDIVJWERWgq-h5HVBpsrA" data-x="-125" class="js_card_preview" href="javascript:void(0);">预览</a></div></td> -->
+                                    <td class="table_cell release_method_state">
+                                        <div class="td_panel"><span class="fail pass"><i></i>待投放</span></div>
+                                    </td>
+                                </tr>
+
+                                <tr class="" id="js_ct_tr_p5A-ht8Fmzbw_Qa9azvy4O0I1uoE">
+                                    <td class="table_cell release_method_select_box">
+                                        <div class="td_panel">
+
+                                            <label class="frm_radio_label" for="checkbox4">
+                                                <i class="icon_radio"></i>
+                                                <input type="radio" data-id="p5A-ht8Fmzbw_Qa9azvy4O0I1uoE"
+                                                       value="p5A-ht8Fmzbw_Qa9azvy4O0I1uoE"
+                                                       class="frm_radio js_select js_select_disabled_2" id="checkbox4">
+                                            </label>
+
+                                        </div>
+                                    </td>
+                                    <td class="table_cell release_method_kind">
+                                        <div class="td_panel">代金券</div>
+                                    </td>
+                                    <td class="table_cell release_method_name">
+                                        <div class="td_panel">任意商品抵扣10元</div>
+                                    </td>
+                                    <td class="table_cell release_method_time">
+                                        <div class="td_panel">领取后当天生效3天有效</div>
+                                    </td>
+                                    <td class="table_cell release_method_stock">
+                                        <div class="td_panel"><span class="js_sendcard_quantity">2</span>
+                                            <a class="icon14_common edit_gray js_modify_quantity" href="javascript:;"
+                                               id="editor_4"></a></div>
+                                    </td>
+                                    <td class="table_cell release_method_price">
+                                        <div class="td_panel">--</div>
+                                    </td>
+                                    <!-- <td class="table_cell release_method_preview"><div class="td_panel"><a data-cid="p5A-ht8Fmzbw_Qa9azvy4O0I1uoE" data-x="-125" class="js_card_preview" href="javascript:void(0);">预览</a></div></td> -->
+                                    <td class="table_cell release_method_state">
+                                        <div class="td_panel"><span class="fail pass"><i></i>待投放</span></div>
+                                    </td>
+                                </tr>
+
+                                <tr class="" id="js_ct_tr_p5A-ht6VN7vnQ3HxPPLFpag3VfDI">
+                                    <td class="table_cell release_method_select_box">
+                                        <div class="td_panel">
+
+                                            <label class="frm_radio_label" for="checkbox5">
+                                                <i class="icon_radio"></i>
+                                                <input type="radio" data-id="p5A-ht6VN7vnQ3HxPPLFpag3VfDI"
+                                                       value="p5A-ht6VN7vnQ3HxPPLFpag3VfDI"
+                                                       class="frm_radio js_select js_select_disabled_2" id="checkbox5">
+                                            </label>
+
+                                        </div>
+                                    </td>
+                                    <td class="table_cell release_method_kind">
+                                        <div class="td_panel">折扣券</div>
+                                    </td>
+                                    <td class="table_cell release_method_name">
+                                        <div class="td_panel">进店吉祥为您2折</div>
+                                    </td>
+                                    <td class="table_cell release_method_time">
+                                        <div class="td_panel">领取后当天生效3天有效</div>
+                                    </td>
+                                    <td class="table_cell release_method_stock">
+                                        <div class="td_panel"><span class="js_sendcard_quantity">11</span>
+                                            <a class="icon14_common edit_gray js_modify_quantity" href="javascript:;"
+                                               id="edit_gray_5"></a></div>
+                                    </td>
+                                    <td class="table_cell release_method_price">
+                                        <div class="td_panel">--</div>
+                                    </td>
+                                    <!-- <td class="table_cell release_method_preview"><div class="td_panel"><a data-cid="p5A-ht6VN7vnQ3HxPPLFpag3VfDI" data-x="-125" class="js_card_preview" href="javascript:void(0);">预览</a></div></td> -->
+                                    <td class="table_cell release_method_state">
+                                        <div class="td_panel"><span class="fail pass"><i></i>待投放</span></div>
+                                    </td>
+                                </tr>
+
+
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default"
+                        data-dismiss="modal" id="js_del_ka">取消
+                </button>
+                <button type="button" class="btn btn-primary" id="js_confirm_ka">
+                    确定
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+
+<style>
+    .appmsg_content {
+        border: 1px solid #ccc;
+    }
+
+    .appmsg_title {
+        font-weight: 400;
+        font-style: normal;
+        font-size: 16px;
+        line-height: 28px;
+        max-height: 56px;
+        overflow: hidden;
+        word-wrap: break-word;
+        word-break: break-all;
+    }
+
+    .appmsg_content .title {
+        padding: 10px;
+        border-bottom: 1px solid #ccc;
+    }
+
+    .cover_appmsg_item {
+    }
+
+    .appmsg_title {
+        margin: 0px;
+    }
+
+    .appmsg_thumb_wrp {
+        height: 160px;
+        overflow: hidden;
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-size: cover;
+    }
+
+    .appmsg_item {
+        position: relative;
+        border-top: 1px solid #e7e7eb;
+    }
+
+    .appmsg_item {
+        padding: 10px;
+    }
+
+    .appmsg_item .appmsg_thumb_wrp {
+        float: right;
+        width: 78px;
+        height: 78px;
+        margin-left: 14px;
+    }
+
+    .appmsg_item .appmsg_title {
+        line-height: 24px;
+        max-height: 48px;
+        overflow: hidden;
+        margin-top: 14px;
+        text-align: left;
+    }
+
+    .appmsg_item:after {
+        content: ".";
+        clear: both;
+        height: 0px;
+        display: block;
+        visibility: hidden;
+    }
+
+    .cover_appmsg_item .appmsg_title {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: rgba(0, 0, 0, 0.6) !important;
+        filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0, startColorstr='#99000000', endcolorstr='#99000000');
+    }
+
+    .cover_appmsg_item {
+        position: relative;
+        margin: 0 14px 14px;
+        margin-top: 10px;
+    }
+
+    .cover_appmsg_item .appmsg_title a {
+        padding: 0 8px;
+        color: #fff;
+    }
+
+    .appmsg_t_a {
+        text-decoration: none;
+        color: #333;
+    }
+
+    .url_k_box {
+        width: 60%;
+        position: fixed;
+        left: 20%;
+        z-index: 10000;
+        border: 1px solid #ccc;
+        top: 100px;
+        background: #fff;
+
+    }
+
+    .url_k_h {
+        background: #f4f5f9;
+        padding: 5px 10px;
+    }
+
+    .url_title {
+        margin: 0;
+        height: 40px;
+        line-height: 40px;
+        font-size: 18px;
+        font-weight: 600;
+        color: #333;
+    }
+
+    .close_url_k {
+        float: right;
+        text-decoration: none;
+        color: #ccc;
+    }
+
+    .url_k_f {
+        height: 35px;
+        line-height: 35px;
+        padding: 5px 10px;
+        background: #f4f5f9;
+        text-align: center;
+    }
+
+    .url_btn {
+        text-decoration: none;
+        padding: 7px 25px;
+        color: #333;
+        background-color: #fff;
+        border-radius: 5px;
+    }
+
+    .a_btn_primary {
+        background-color: #333;
+        color: #fff;
+        border: 1px solid #333;
+    }
+
+    .a_btn_default {
+        background-color: #fff;
+        color: #333;
+        border: 1px solid #ccc;
+    }
+
+    .url_t_box {
+        max-height: 300px;
+        overflow: auto;
+        width: 90%;
+        margin: 20px auto;
+        border: 1px solid #ccc;
+    }
+
+    .url_t_box table {
+        width: 100%;
+        color: #333;
+    }
+
+    .url_t_box table tr {
+        height: 30px;
+        line-height: 30px;
+        padding: 5px;
+    }
+
+    .url_t_box table .t_cell {
+        padding: 5px 15px;
+        border-top: 1px solid #ccc;
+    }
+
+    .url_t_box table thead .t_cell {
+        border-top: 0;
+    }
+
+    .url_t_box table .t_cell.data {
+        padding: 5px 15px;
+        border-top: 1px solid #ccc;
+        text-align: center;
+    }
+
+    .radio_c {
+        margin: 0px !important;
+    }
+
+    .a_btn_primary:hover {
+        color: #fff;
+    }
+
+    .a_btn_primary:active {
+        color: #fff;
+    }
+
+    .a_btn_primary:visited {
+        color: #fff;
+    }
+
+    .a_btn_default:hover {
+        color: #333;
+    }
+</style>
+<!--  <script src="js/zepto.js"></script>
+  <script src="js/base64.js"></script>
+  <script src="js/pic.js"></script>-->
+<script>
+
+    $('#cccc').click(function(){
+        $("#myModal_sucais").show();
+    });
+    //用于瀑布流自动加载
+    //兼容Android,iphone
+    $(document).ready(function (e) {
+        $(".url_t_box").delegate(".radio_c", "click", function () {
+            var url = $(this).attr("data-url");
+            $(".radio_c").not(this).attr("checked", false);
+            $("#confirm_url_btn").attr("data-url", url);
+
+        })
+        //关闭页面
+        $(".close_url_k").click(function () {
+            $(".url_k_box").hide();
+        })
+        //取消页面
+        $("#del_url_btn").click(function () {
+            $(".url_k_box").hide();
+        })
+        //确定
+
+//        js_rightBox
+        $("#js_rightBox").delegate("#js_appmsgPop", "click", function (event) {
+
+//            $("#js_appmsgPop").click(function(){
+            $('.url_k_box').show();
+        });
+
+
+        $("#forum_list").delegate(".blockLeft", "click", function (event) {
+            $(".mask_page").hide();
+            $(".icon_card_selected").hide()
+            $(this).find(".mask_page").show();
+            $(this).find(".icon_card_selected").show();
+            $(".blockLeft").removeClass("check");
+            $(".blockRight").removeClass("check");
+            $(this).addClass("check");
+            //console.log($("data-check=checked_img").length);
+
+        })
+        $("#forum_list").delegate(".blockRight", "click", function (event) {
+            $(".mask_page").hide();
+            $(".icon_card_selected").hide();
+            $(this).find(".mask_page").show();
+            $(this).find(".icon_card_selected").show();
+            $(".blockLeft").removeClass("check");
+            $(".blockRight").removeClass("check");
+            $(this).addClass("check");
+        })
+        $("#forum_list").delegate(".blockLeft", "mouseover mouseout", function (event) {
+            //alert(event.type);
+            if (event.type == 'mouseover') {
+                $(this).find(".mask_page").show();
+
+            }
+            else {
+                if ($(this).find(".icon_card_selected").is(":visible")) {
+                    $(this).find(".mask_page").show();
+                }
+                else {
+                    $(this).find(".mask_page").hide();
+                }
+            }
+        })
+        $("#forum_list").delegate(".blockRight", "mouseover mouseout", function (event) {
+            //alert(event.type);
+            if (event.type == 'mouseover') {
+                $(this).find(".mask_page").show();
+
+            }
+            else {
+                if ($(this).find(".icon_card_selected").is(":visible")) {
+                    $(this).find(".mask_page").show();
+                }
+                else {
+                    $(this).find(".mask_page").hide();
+                }
+            }
+        })
+    })
+    function js_con_sucai() {
+        // var $div=$(["data-check=checked_img"]).attr("class");
+        var index = $(".tab_navs .selected").index();
+        if (index == 0) {
+            $(".MsgSend_box").eq(0).find(".blockLeft").remove();
+            //素材内容
+            var $div = $(".outDiv").find(".check").html();//素材库内容
+
+            //传给后台$div和id_name;
+
+            //console.log($div);
+            //console.log($(".outDiv").find(".check").index());
+            $(".MsgSend_media_box").eq(0).hide();
+            //$(".c_p_div").hide();
+            $(".MsgSend_box").eq(0).show().prepend("<div class='blockLeft'>" + $div + "</div>");
+            $(".MsgSend_box").eq(0).find(".mask_page").remove();
+            $(".MsgSend_box").eq(0).find(".icon_card_selected").remove();
+            $(".fade").hide();
+        }
+        if (index == 2) {
+            $(".MsgSend_box").eq(1).find(".blockLeft").remove();
+            var $div = $(".outDiv").find(".check").html();
+            //传给后台$div和id_name;
+            var id_name = $(".menu_form_area").attr("data-id");//与菜单相对应的菜单名称
+            var menu_name = $(".js_menu_name").val();//菜单名称
+            var $div = $(".outDiv").find(".check").html();//素材库内容
+            var id_name = $(".js_radio").filter(".selected").attr("id");//子菜单内容上面的单选框
+            var editor_text = $(".js_editorArea").text();//子菜单内容文字
+            //console.log($div);
+            //console.log($(".outDiv").find(".check").index());
+            $(".MsgSend_media_box").eq(1).hide();
+            //$(".c_p_div").hide();
+            $(".MsgSend_box").eq(1).show().prepend("<div class='blockLeft'>" + $div + "</div>");
+            $(".MsgSend_box").eq(1).find(".mask_page").remove();
+            $(".MsgSend_box").eq(1).find(".icon_card_selected").remove();
+        }
+    }
+    ;
+
+</script>
+<script>
+    $(document).ready(function () {
+        function send_wx_menu_date(id, menu_name, menu_type, type, key, pid, name, t) {
+
+            var d = {
+                "id": id, "menu_name": menu_name, "menu_type": menu_type,
+                "type": type, "pid": pid, "name": name
+            };
+            d[t] = key;
+            console.info('dddddddddddddddddddddddd');
+            console.info(d);
+            /*ajax发送相关数据*/
+            $.ajax({
+                type: "POST",
+                url: "{:U('ajaxData')}",
+                data: d,
+                dataType: "json",
+                success: function (data) {
+                    console.log("success-----send_wx_menu_date------");
+                    console.info(data);
+                    get_menu_date({'id':id});
+                    $(".fade").hide();
+//                    $("#" + id).attr('data_id', data.data_id)
+                },
+                error: function (data) {
+                    console.log("error-----send_wx_menu_date------");
+                    console.log(data);
+
+                }
+            });
+        }
+        /*view消息*/
+        $("#confirm_url_btn").click(function () {
+            var data_url = $(this).attr("data-url");
+            if (data_url != '') {
+                $(".url_k_box").hide();
+                $("#urlText").val(data_url);
+                var id = $(".menu_form_area").attr("data-id");//与菜单相对应的内容
+                var menu_name = $(".js_menu_name").val();//子菜单名称
+                var menu_type = $(".js_radio").find(":checked").attr("name");
+                var type = $("#editDiv").find(".selected").attr("data-tooltip");
+                var pid = $("#" + id).parents(".jslevel1").attr("id");
+                var url = data_url;
+                var name = $("#" + id).parents(".jslevel1").find(".js_l1Title").text();
+                /*ajax发送相关数据*/
+                send_wx_menu_date(id, menu_name, menu_type, type, url, pid, name, 'url');
+            }
+            else {
+                alert("请选择图文信息");
+            }
+        });
+
+        /*图文消息*/
+        $("#js_con_sucais").click(function () {
+            $('.fa-close').trigger('click');
+            var id = $(".menu_form_area").attr("data-id");//与菜单相对应的内容
+            var menu_name = $(".js_menu_name").val();//子菜单名称
+            var menu_type = $(".js_radio").find(":checked").attr("name");
+            var type = $("#editDiv").find(".selected").attr("data-tooltip");
+            var ty = getTypes();
+            var pid = $("#" + id).parents(".jslevel1").attr("id");
+
+//            js_con_sucai();
+
+            $(".js_appmsgArea .MsgSend_box").remove();
+            $('.js_appmsgArea .MsgSend_media_box').hide();
+            var p_text = $('.dialog_appmsg_col .this_checked').find(".news_style1_title").text();
+            var img_src = $('.dialog_appmsg_col .this_checked').find("img").attr("src");
+            var img_class = $('.dialog_appmsg_col .this_checked').find("img").attr("class");
+
+            var div = '';
+            if(ty=='L'){
+                var media_id = $(".dialog_appmsg_col").find(".this_checked").attr("name");
+                div = '<div class="MsgSend_box">' +
+                        '<div class="blockLeft"><p>' + p_text + '</p>' +
+                        '<img src="' + img_src + '" class="tuwen_img"></div><a href="#none" class="del_MsgSend">删除</a>';
+            }else if(ty=='M') {
+                var media_id = $("#insert_flag2").attr('data-id');
+
+
+                var html=$(".dialog_appmsg_col .this_checked").html();
+                div = '<div class="MsgSend_box">' +'<div class="blockLeft">'+html+'</div><a href="#none" class="del_MsgSend">删除</a>';
+
+            }
+            $('.js_appmsgArea .jsMsgSendTab').prepend(div);
+            $('.js_appmsgArea .jsMsgSendTab').find(".blockLeft").find(".appmsg_item_bgcheck").remove();
+            $('.js_appmsgArea .jsMsgSendTab').find(".blockLeft").find(".icon_card_selected").remove();
+
+            var d = {
+                "id": id, "menu_name": menu_name, "menu_type": menu_type,
+                "type": type, "pid": pid, "media_id": media_id
+            };
+            $(".fade").hide();
+//            console.info(d);
+            send_wx_menu_date(id, menu_name, menu_type, type, media_id, pid, ty, 'media_id');
+
+        });
+
+        /*图文消息*/
+        $("#js_con_sucai").click(function () {
+            var id = $(".menu_form_area").attr("data-id");//与菜单相对应的内容
+            var menu_name = $(".js_menu_name").val();//子菜单名称
+            var menu_type = $(".js_radio").find(":checked").attr("name");
+            var type = $("#editDiv").find(".selected").attr("data-tooltip");
+            var ty = $("#forum_list").find(".check").attr("data-type");
+            var pid = $("#" + id).parents(".jslevel1").attr("id");
+
+//            js_con_sucai();
+
+            $(".js_appmsgArea .MsgSend_box").remove();
+            $('.js_appmsgArea .MsgSend_media_box').hide();
+            var p_text = $('.blockLeft.check').find("p").text();
+            var img_src = $('.blockLeft.check').find("img").attr("src");
+            var img_class = $('.blockLeft.check').find("img").attr("class");
+            console.info($('.blockLeft.check').html());
+            console.log(p_text + img_src + img_class);
+            var media_id = $("#forum_list").find(".check").attr("name");
+
+            var div = '';
+            if(ty=='L'){
+                var title = $('.blockLeft.check p').text();
+                var thumb_pic_url = $('.blockLeft.check .tuwen_img').text();
+                div = '<div class="MsgSend_box">' +
+                        '<div class="blockLeft"><p>' + p_text + '</p>' +
+                        '<img src="' + img_src + '" class="tuwen_img"></div>' +
+                        '<a href="#none" class="del_MsgSend">删除</a>';
+            }else if(ty=='M') {
+                var html=$(".blockLeft.check").html();
+//                console.log(html);
+                div = '<div class="MsgSend_box">' +'<div class="blockLeft">'+html+'</div><a href="#none" class="del_MsgSend">删除</a>';
+//                var t_len=$(".check").find(".appmsg_title.js_title").length;
+//                var name_s="";
+//                for(var i=0;i<t_len;i++){
+//                    var name_l= $(".check").find(".appmsg_title.js_title").eq(i).attr("name");
+//                    name_s=name_s+","+name_l;
+//                    console.log(name_s);
+//                }
+
+            }
+            $('.js_appmsgArea .jsMsgSendTab').prepend(div);
+            $('.js_appmsgArea .jsMsgSendTab').find(".blockLeft").find(".mask_page").remove();
+            $('.js_appmsgArea .jsMsgSendTab').find(".blockLeft").find(".icon_card_selected").remove();
+
+            var d = {
+                "id": id, "menu_name": menu_name, "menu_type": menu_type,
+                "type": type, "pid": pid, "media_id": media_id
+            };
+            $(".fade").hide();
+//            console.info(d);
+            send_wx_menu_date(id, menu_name, menu_type, type, media_id, pid, ty, 'media_id');
+
+        });
+        /*图片发送*/
+        $("#js_con_p_sucai").click(function () {
+            var id = $(".menu_form_area").attr("data-id");//与菜单相对应的内容
+            var menu_name = $(".js_menu_name").val();//子菜单名称
+            var menu_type = $(".js_radio").find(":checked").attr("name");
+            var type = $("#editDiv").find(".selected").attr("data-tooltip");
+            var media_id = $(".img_pick").find(".img_item").find(".selected").find(".pic").attr("name");
+            var pid = $("#" + id).parents(".jslevel1").attr("id");
+            var name = $("#" + id).parents(".jslevel1").find(".js_l1Title").text();
+            send_wx_menu_date(id, menu_name, menu_type, type, media_id, pid, name, 'media_id')
+
+        });
+
+        $("#js_rightBox").delegate(".del_MsgSend", "click", function (e) {
+
+//            $(".del_MsgSend").click(function (e) {
+//            alert('aa');
+            $(this).prev().remove();
+            var index = $(".tab_navs .selected").index();
+            if (index == 0) {
+                $(".MsgSend_media_box").eq(0).show();
+                //$(".c_p_div").show();
+                $(".MsgSend_box").eq(0).hide();
+            }
+            if (index == 2) {
+                $(".MsgSend_media_box").eq(1).show();
+                //$(".c_p_div").show();
+                $(".MsgSend_box").eq(1).hide();
+            }
+        });
+
+
+        /*文字发送*/
+        $("#save_text").click(function () {
+            var id = $(".menu_form_area").attr("data-id");//与菜单相对应的内容
+            var menu_name = $(".js_menu_name").val();//子菜单名称
+            var menu_type = $(".js_radio").find(":checked").attr("name");
+            var type = $("#editDiv").find(".selected").attr("data-tooltip");
+            var pid = $("#" + id).parents(".jslevel1").attr("id");
+            var key = $(".edit_area.js_editorArea").text();
+            var name = $("#" + id).parents(".jslevel1").find(".js_l1Title").text();
+
+            /*ajax发送相关数据*/
+            send_wx_menu_date(id, menu_name, menu_type, type, key, pid, name, 'key')
+
+        });
+        $(".js_textArea .edit_area.js_editorArea").blur(function () {
+            $('#save_text').trigger("click");
+        });
+        /*跳转网页*/
+        $("#urlText").blur(function () {
+            var id = $(".menu_form_area").attr("data-id");//与菜单相对应的内容
+            var menu_name = $(".js_menu_name").val();//子菜单名称
+            var menu_type = $(".js_radio").find(":checked").attr("name");
+            var type = $("#editDiv").find(".selected").attr("data-tooltip");
+            var pid = $("#" + id).parents(".jslevel1").attr("id");
+            var url = $(this).val();
+            var name = $("#" + id).parents(".jslevel1").find(".js_l1Title").text();
+            /*ajax发送相关数据*/
+            send_wx_menu_date(id, menu_name, menu_type, type, url, pid, name, 'url');
+
+        });
+
+
+        /*保存并发布*/
+        $("#upload").click(function () {
+            var msg = 'hello';
+            /*ajax发送相关数据*/
+            $.ajax({
+                type: "POST",
+                url: "{:U('createMenu')}",
+                data: {"msg": msg},
+                dataType: "json",
+                success: function (data) {
+                    alert(data.msg);
+                    console.info(data.msgs);
+                    console.info(data.msgss);
+                }
+            });
+        });
+
+        $(".js_menu_name").blur(function (e) {
+            var id_name = $(".menu_form_area").attr("data-id");
+            var menu_name = $(this).val();
+            //要传给后台的值
+            //console.log(menu_name)
+            var len = menu_name.trim().length;
+            var c_menu_box = $(this).parents(".menu_form_area").attr("data-id");
+            if (len > 0) {
+                if ($(".frm_msg.fail").is(":hidden")) {
+                    $(".menu_form_area").find(".global_info").text(menu_name);
+                    var class_name = $("#" + c_menu_box).attr("class");
+                    console.log(class_name);
+                    if (class_name.indexOf("jslevel2") != -1) {
+                        $("#" + c_menu_box).find(".js_l2Title").text(menu_name);
+                    }
+                    if (class_name.indexOf("jslevel1") != -1) {
+                        $("#" + c_menu_box).find(".js_l1Title").text(menu_name);
+                    }
+                    /*if($(".current").hasClass("jslevel2"))
+                     {
+                     $(".current").find(".js_l2Title").text(menu_name);
+                     }
+                     else{
+
+                     $(".current").find(".js_l1Title").text(menu_name);
+                     }*/
+                    var id = $('li.current').attr('id');
+                    var data = {'id': id, 'name': menu_name};
+                    console.info(data);
+                    renameMenu(data);
+                }
+            }
+        });
+        function renameMenu(data) {
+            $.ajax({
+                type: "POST",
+                url: "{:U('ajaxDatas')}",
+                data: data,
+                dataType: "json",
+                success: function (data) {
+                    console.info(data);
+                }
+            });
+        }
+
+        function dele_messge() {
+            $('.edit_area.js_editorArea').text('');
+            $(".img_p_div").hide();
+            $(".MsgSend_img_box").hide();
+            $(".MsgSend_img_box .imag_src").remove();
+            $(".MsgSend_media_box").show();
+            $(".MsgSend_box").hide();
+            $("#urlText").val('');
+            $(".js_tab_navs .tab_appmsg").trigger('click');
+//            $('li.current .sub_pre_menu_box').hide();
+
+//            $(".js_imgArea").find(".MsgSend_media_box").show();
+
+
+        }
+
+        //主菜单
+        $("#menuList").delegate(".jsMenu", "click", function (e) {
+            var id = $(this).attr("id");
+            /*ajax发送相关数据*/
+            var data = {'id': id};
+            get_menu_date(data);
+        })
+        //子菜单
+        $("#menuList").delegate(".jslevel2", "click", function (e) {
+//        $(".jslevel2").click(function() {
+            $(this).closest('.jsMenu').attr('id');
+            var id = $(this).attr("id");
+            var data_id = $(this).attr("data-id");
+            var data_ty = $(this).attr("data-ty");
+            $("#js_confirm").attr('data-id', data_id).attr('data-ty', data_ty);
+            /*ajax发送相关数据*/
+            var data = {"id": id, 'data_id': data_id};
+            console.info(data);
+            get_menu_date(data)
+        });
+
+        function get_menu_date(data) {
+            dele_messge();
+
+            $.ajax({
+                type: "POST",
+                url: "{:U('getMenuData')}",
+                data: data,
+                dataType: "json",
+                success: function (data) {
+                    console.log("success-----------");
+                    console.info(data);
+                    console.log("success-----------");
+                    var title = data.zhu_name;
+                    var type_name = data.type_name;
+                    var type = data.type;
+                    var pid = data.pid;
+                    var id = data.id;
+                    $('.js_menu_name').val(title);
+                    $('.image_src').remove();
+                    if (type) {
+                        if (pid == '0') {
+//                            $('.sub_pre_menu_box').hide();
+                        }
+                        if (type == 'view') {
+
+                            var url = data.url;
+                            $("#js_url").trigger("click");
+                            $("#urlText").val(url);
+                        } else if (type == 'click') {
+                            $("#js_sendMsg").trigger("click");
+                            $(".tab_" + type_name).trigger("click");
+
+                            if (type_name == 'text') {
+                                var type_value = data.type_value;
+                                $('.edit_area.js_editorArea').text(type_value);
+                            } else if (type_name == 'img') {
+                                var pic_url = data.pic_url;
+                                $(".MsgSend_img_box .imag_src").remove();
+                                $(".MsgSend_img_box").prepend("<div class='imag_src' >" + "<img class='img_app' src='" + pic_url + "'></div>");
+                                $(".MsgSend_img_box").show();
+                                $(".js_imgArea").find(".MsgSend_media_box").hide();
+                                $(".MsgSend_box").hide();
+                                $(".fade").hide();
+                            } else if (type_name == 'appmsg') {
+//                                alert('aa');
+                                if(data.news_type=="L"){
+                                    var article_name = data.article_name;
+                                    var thumb_pic_url = data.thumb_pic_url;
+                                    var div = '<div class="MsgSend_box">' +
+                                            '<div class="blockLeft"><p>' + article_name + '</p>' +
+                                            '<img src="' + thumb_pic_url + '" class="tuwen_img"></div>' +
+                                            '<a href="#none" class="del_MsgSend">删除</a>';
+                                }else{
+                                    var div='<div class="MsgSend_box"><div class="blockLeft"><div class="appmsg_content">';
+                                    for(var i=0;i<data.info.length;i++){
+                                        if(i==0){
+                                            div+='<div class="cover_appmsg_item"> <h4 class="appmsg_title js_title">'
+                                                    +'<a href="#" class="" target="_blank">'+data.info[i].article_name+'</a> </h4>'
+                                                    +'<div class="appmsg_thumb_wrp" style="background: url(\''+data.info[i].thumb_pic_url+'\')"></div> </div>';
+                                        }else{
+                                            div+='<div class="appmsg_item"> <div class="appmsg_thumb_wrp" style="background: url(\''+data.info[i].thumb_pic_url+'\')"></div> '
+                                                    +'<h4 class="appmsg_title js_title" name="69"> <a href="#" class="appmsg_t_a" target="_blank">'+data.info[i].article_name+'</a> </h4> </div>';
+                                        }
+                                    }
+                                    div+='</div></div><a href="#none" class="del_MsgSend">删除</a></div>';
+
+                                }
+                                $(".jsMsgSendTab .MsgSend_box").remove();
+                                $('.js_appmsgArea .jsMsgSendTab').prepend(div);
+                                $(".js_appmsgArea .MsgSend_media_box").hide();
+                                $(".fade").hide();
+                            }
+                        } else {
+
+                            $(".jsMsgSendTab .MsgSend_box").remove();
+
+                            $("#js_sendMsg").trigger("click");
+                            $(".tab_img").trigger("click");
+                            var src = data.src;
+                            $(".MsgSend_img_box").prepend("<div class='imag_src' >" + "<img class='img_app' src=" + src + ">" + "</div>");
+                            $(".MsgSend_img_box").show();
+                            $(".js_imgArea").find(".MsgSend_media_box").hide();
+                            $(".fade").hide();
+                        }
+                    } else {
+                        $("#js_sendMsg").trigger("click");
+                        $(".tab_appmsg").trigger("click");
+                        $(".jsMsgSendTab .MsgSend_box").remove();
+
+                        $(".fade").hide();
+                    }
+                    /*alert(data.id);*/
+                },
+                error: function (data) {
+                    console.log("error-----------");
+                    console.log(data);
+                }
+            });
+        }
+
+        //删除菜单
+        $("#js_confirm").click(function () {
+            var id = $(this).attr("data-id");
+            var ty = $(this).attr("data-ty");
+            /*ajax发送相关数据*/
+            $.ajax({
+                type: "POST",
+                url: "{:U('deleteMenu')}",
+                data: {"id": id, 'ty': ty},
+                dataType: "json",
+                success: function (data) {
+                    var menu_1_len = $(".jslevel1").length;
+                    if (menu_1_len == 3) {
+                        add_action();
+//                        $(".add_menu1").show();
+
+                    }
+                    $("#myModal_del").hide();
+                    $(".modal-backdrop").hide();
+                    var menu_1_len = $(".jslevel1").length;//一级菜单的个数
+                    var id_name = $(".menu_form_area").attr("data-id");
+                    $("#" + id_name).remove();//编辑菜单被删除;
+
+                    $("#js_none").show();//一级菜单右侧
+                    $("#js_rightBox").hide();//一级菜单右侧
+
+//                    if (menu_1_len == 3) {
+//                        //$(".js_addMenuBox").find(".pre_menu_link").append('<span class="js_addMenuTips">添加菜单</span>');
+//
+//                        //$("#menuList").append("<li class='js_addMenuBox pre_menu_item size1of3 add_menu1'>"+"<a href='javascript:void(0);' class='pre_menu_link' title='添加菜单'>"+'<i class="icon16_common add_gray"></i>'+"</a>"+"</li>")
+//                    }
+//                    if (menu_1_len == 2) {
+//                        $(".jslevel1").removeClass("size1of3").addClass("size1of2")
+//                    }else if (menu_1_len == 1) {
+//                        $(".js_addMenuBox").find(".pre_menu_link").append('<span class="js_addMenuTips">添加菜单</span>');
+//                    }
+//                    $('.add_menu1').hide();
+                    alert(data.msg);
+
+//                    $(".pre_menu_link").append('<span class="js_addMenuTips">添加菜单</span>');
+                }
+            });
+
+        })
+    })
+    function hide_add() {
+        var menu_1_len = $(".jslevel1").length;
+        if (menu_1_len == 3) {
+            $(".add_menu1").hide();
+        }
+    }
+
+
+</script>
+<script>
+    function add_action() {
+        $(".add_menu1").remove();
+        $(".pre_menu_list").append(
+                '<li class="js_addMenuBox pre_menu_item add_menu1">' +
+                '<a href="javascript:void(0);" class="pre_menu_link" title="添加菜单" draggable="false">' +
+                '<i class="icon16_common add_gray"></i> </a>' +
+                '</li>');
+    }
+    $(document).ready(function () {
+
+        var menu_attr = {$menu_data};
+
+        if (menu_attr != '') {
+            $(".jsMenu").remove();//清空现有的菜单
+            //一级菜单
+            var i = 0;
+            $.each(menu_attr, function (key, value) {
+                i = i + 1;
+                console.info(key);
+                var menu = key.split('_');
+                var id = menu[0];
+                var zhu_name = menu[1];
+                var zhu_type = menu[2];
+                $(".pre_menu_list").append(
+                        "<li class='jsMenu pre_menu_item grid_item jslevel1 size1of3' " +
+                        "id=" + id + ">"
+                        + '<a href="javascript:void(0);" class="pre_menu_link" draggable="false">'
+                        + '<i class="icon_menu_dot js_icon_menu_dot dn" style="display: none;"></i>'
+                        + '<span class="js_l1Title">' + zhu_name + '</span>'
+                        + '</a>'
+                        + "</li>");
+                var two_menu_string = "<div class='sub_pre_menu_box'>";
+                two_menu_string += '<ul class= " sub_pre_menu_list">';
+                console.info(value);
+                if (zhu_type == 'sub') {
+                    $.each(value, function (k, v) {
+                        var sub_menu = v;
+
+                        two_menu_string += '<li data-ty="sub" data-id="' + sub_menu.id + '" class="jslevel2" id="'
+                                + sub_menu.id
+                                + '">'
+                                + '<a href="javascript:void(0);" class="jsSubView" draggable="false">'
+                                + '<span class="  sub_pre_menu_inner js_sub_pre_menu_inner">'
+                                + '<i class="   icon20_common sort_gray "></i>'
+                                + '<span class="js_l2Title">'
+                                + sub_menu.zhu_name
+                                + "</span></span></a></li>";
+                    });
+                }
+                two_menu_string += '<li class="js_addMenuBox add_menu2">'
+                        + '<a href="javascript:void(0);" class="jsSubView" title="添加子菜单" draggable="false">'
+                        + '<span class="sub_pre_menu_inner js_sub_pre_menu_inner"><i class="icon16_common add_gray"></i></span></a></li>';
+                two_menu_string += "</ul></div>";
+                $("#" + id + ".jslevel1").first().append(two_menu_string);
+
+            });
+            if (i < 3) {
+                add_action();
+            };
+
+        }
+    })
+    for(var i=0;i<$('.appmsg_content').size();i++){
+        $('.appmsg_content:eq('+i+') .cover_appmsg_item:eq(1)').remove();
+    }
+</script>
+
+<!--全局js开始-->
+<script src="../../plugin_folder/jquery_v1.11.3/jquery-1.11.3.min.js"></script>
+<script src="../../plugin_folder/bootstrap_v3.3.5/js/bootstrap.min.js"></script>
+<script src="../../plugin_folder/jquery.validate_v1.13.1/jquery.validate-1.13.1.js"></script>
+<script src="../../plugin_folder/less_v1.7.0/less.min.js"></script>
+<script src="../../common_folder/javascripts/base.js"></script>
+<script src="../../common_folder/javascripts/common_index.js"></script>
+<!--全局js结束-->
+
+<script src="javascripts/meezao.js"></script>
+<script src="javascripts/men.js"></script>
+<script src="javascripts/d_menu.js"></script>
+
+
+</html>

@@ -1,0 +1,50 @@
+/*css 特效*/
+/*transition属性*/
+.demo1{
+    width: 100px;height: 100px;background-color: #00aaff;
+    transition: width 3s,height 3s,background-color 3s;
+}
+.change1{
+    width: 400px;height: 400px;background-color: #f00;
+}
+/*@keyframes规则*/
+.demo2{
+    animation: change2 3s;
+}
+@keyframes change2 {
+    0% {background-color: red; width:100px;}
+    50% {background-color: blue; width:500px;}
+    100% {background-color: green; width:300px;}
+}
+/*浏览器适配*/
+.demo3 {
+    width:100px;
+    height:100px;
+    background:red;
+    position:relative;
+    animation:change3 5s infinite;
+    -moz-animation:change3 5s infinite; /* Firefox */
+    -webkit-animation:change3 5s infinite; /* Safari and Chrome */
+    -o-animation:change3 5s infinite; /* Opera */
+}
+@keyframes change3 {
+    from {top:0px;}
+    to {top:200px;}
+}
+@-moz-keyframes change3 /* Firefox */
+{
+    from {top:0px;}
+    to {top:200px;}
+}
+
+@-webkit-keyframes change3 /* Safari and Chrome */
+{
+    from {top:0px;}
+    to {top:200px;}
+}
+
+@-o-keyframes change3 /* Opera */
+{
+    from {top:0px;}
+    to {top:200px;}
+}

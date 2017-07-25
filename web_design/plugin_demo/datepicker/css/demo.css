@@ -1,0 +1,7 @@
+.main {
+    margin: 40px;
+}
+
+.ui-datepicker{
+    z-index: 3!important;
+}

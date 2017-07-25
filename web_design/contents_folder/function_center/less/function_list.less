@@ -1,0 +1,95 @@
+//引入全局less变量
+@import "../../../common_folder/less/PC_library";
+//后台路径
+//@import "../../MeeZao/B_New/common_folder/less/PC_library";
+
+
+html {
+  height: 100%;
+  body {
+    height: 100%;
+    font-size: 14px;
+
+      .navbar-default {
+        width: 100%;
+        height: 50px;
+        .font_yahei;
+        margin-top: 15px;
+        height: 48px;
+        padding-right: 20px;
+        .navbar-brand {
+          .font_arial;
+          font-weight: bold;
+        }
+        .navbar-form {
+          margin-top: 0;
+          float:right!important;
+          margin-right: 20px;
+          .form-control {
+            .size(252px, 32px);
+            margin-top: 8px;
+          }
+          .btn-default{
+            margin-top: 8px;
+            padding: 5px 12px;
+          }
+
+        }
+
+      }
+
+    .content_mb{
+      .content_mb_subject{
+        .common_table{
+          .table{
+            margin-top: 9px!important;
+            .table_head{
+              height: 50px;
+              font-family: .font_yahei;
+              font-size: 16px;
+              th{
+                .dropdown{
+                  .btn{
+                    font-size: 16px!important;
+                  }
+                }
+              }
+              .create_time_second{
+                width: 31.3%;
+              }
+              .open_state{
+                width: 16.9%;
+              }
+              .module_kind{
+                width: 16.8%;
+              }
+              .module_name{
+                width: 35%;
+              }
+            }
+            .table_body{
+              tr{
+                height: 40px;
+              }
+            }
+          }
+
+        }
+      }
+    }
+
+    .function_list_footer{
+      float: right;
+      ul.pagination{
+        .size(350px,35px);
+        margin-top: 2px;
+        li{
+          a{
+            padding: 6px 20px;
+          }
+        }
+      }
+    }
+
+  }
+}

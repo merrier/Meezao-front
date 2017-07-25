@@ -1,0 +1,178 @@
+/* CSS login */
+/* +--------------------------------------------------------------------------
+// | Author: Merrier <953075999@qq.com> <http://> <Date:2016/5/11 22:27>
+// +--------------------------------------------------------------------------*/
+//引入全局less变量
+@import "../../../common_folder/less/PC_library";
+//后台路径
+//@import "../../MeeZao/B_New/common_folder/less/PC_library";
+
+html {
+  height: 100%;
+  body.login {
+    height:100%;
+
+    /*系统升级蒙版开始*/
+    .update_bg{
+      display: block;
+      position: fixed;
+      width: 100%;
+      height: 100%;
+      background-color: #000;
+      opacity: 0.7;
+      color: #ffffff;
+      z-index:101;
+
+      .update_box{
+        position: fixed;
+        width:660px;
+        height:160px;
+        top: 50%;
+        left: 50%;
+        margin-left: -330px;
+        margin-top: -80px;
+        text-align: center;
+
+        h1{
+          font-size: 40px;
+          font-weight: bold;
+          margin-bottom: 35px;
+          letter-spacing: 3px;
+        }
+        .progress{
+          box-shadow: 0 0 10px #ffffff;
+          margin-bottom: 20px;
+
+          .progress-bar-danger{
+            background-color: #ff0000;
+            box-shadow: 0 0 10px #ffffff;
+          }
+        }
+        p{
+          font-size: 20px;
+          font-weight: bold;
+          letter-spacing: 1px;
+        }
+
+      }
+    }
+    /*系统升级蒙版结束*/
+
+    //主体内容开始
+    .wrp {
+      height:100%;
+      min-width: 1600px;
+      padding:0;
+      //左侧背景图片开始
+      .login_left_part{
+        .size(80%,100%);
+        .background_percent100("../images/login_left_bg.jpg");
+        min-height: 900px;
+        float:left;
+      }
+      //右侧登录表单开始
+      .login_right_part{
+        position: relative;
+        .size(20%,100%);
+        padding:0 10px;
+        min-height: 900px;
+        background-color: @color_black;
+        float:left;
+
+        .right_part_box{
+          .size(100%,100%);
+          .center_block;
+
+          .right_part_title{
+            color: @color_white;
+            .font_sitka;
+            font-size: 36px;
+            width: 100%;
+            text-align: center;
+            padding-top: 134px;
+            margin-bottom:210px;
+          }
+
+          .input-group{
+            .size(100%,45px);
+            .center_block;
+            margin-bottom: 30px;
+            border-radius: 10px;
+
+            .input-group-addon{
+              background-color: @color_white;
+            }
+
+            .form-control{
+              height:45px;
+            }
+          }
+
+          .login_retrieve_password{
+            float: right;
+            font-size: 12px;
+            margin-bottom: 20px;
+            color: @color_white;
+            text-decoration: underline;
+            cursor: pointer;
+            &:hover{
+              color: @color_white;
+              text-decoration: underline;
+            }
+          }
+
+          .btn-info{
+            display: block;
+            .size(100%,40px);
+            .center_block;
+            .word_space(10px);
+            padding: 0;
+            font-size: 18px;
+            line-height: 40px;
+            background-color: @color_blue;
+          }
+
+          .login_tips{
+            .size(100%,auto);
+            .center_block;
+          }
+
+          //右侧底部开始
+          .right_part_bottom{
+            color: @color_white;
+            .font_arial;
+            position: absolute;
+            left: 0;
+            bottom:30px;
+            font-size:14px;
+            text-align:center;
+            width: 100%;
+            letter-spacing: 1px;
+          }
+        }
+      }
+    }
+  }
+  //媒体查询开始
+  @media (max-width: 1600px) {
+    .wrp {
+      height: 100%;
+      min-width: 1200px !important;
+      .login_left_part {
+        min-height: 655px !important;
+      }
+      .login_right_part {
+        min-height: 655px !important;
+        .right_part_title {
+          padding-top: 95px !important;
+          margin-bottom: 135px !important;
+        }
+        .right_part_bottom {
+          margin-top: 146px !important;
+        }
+      }
+    }
+
+  }
+  //媒体查询结束
+}

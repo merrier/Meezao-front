@@ -1,0 +1,152 @@
+//引入全局less变量
+@import "../../../common_folder/less/PC_library";
+//后台路径
+//@import "../../MeeZao/B_New/common_folder/less/PC_library";
+
+
+html {
+  height: 100%;
+  body {
+    height: 100%;
+    font-size: 14px;
+    .wrp {
+      .content_mb_subject {
+        .navbar {
+          .navbar-form {
+            .btn_search {
+              width: 70px;
+            }
+            .btn_save{
+              margin: 0 10px;
+            }
+            .btn_back{
+              margin: 0 10px 0 0;
+            }
+            .btn_add_level1{
+              background-color: rgba(69, 241, 96, 0.84);
+              color: #fff;
+            }
+          }
+        }
+        .common_table {
+          .table_head {
+            .publish_time{
+              width: 25%;
+            }
+            .kind{
+              width: 18%;
+            }
+            .name{
+              width: 39%;
+            }
+            .operation{
+              width: 18%;
+            }
+          }
+          .table {
+            .table_head {
+              .menu_name {
+                width: 80%;
+              }
+              .operation {
+                width: 20%;
+              }
+            }
+            .table_body {
+              font-size: 14px;
+              .menu_level1 {
+                td:first-child {
+                  text-align: left;
+                  padding-left: 18%;
+                }
+              }
+              .menu_level2 {
+                td:first-child {
+                  text-align: left;
+                  padding-left: 36%;
+                }
+              }
+              .menu_level3 {
+                td:first-child {
+                  text-align: left;
+                  padding-left: 54%;
+                }
+              }
+              td {
+                .btn-group {
+                  .btn_add_level2, .btn_add_level3 {
+                    background-color: rgba(69, 241, 96, 0.84);
+                    color: #fff;
+                  }
+                  .btn_delete {
+                    background-color: #f90000;
+                    color: #fff;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+    .modal{
+      .modal-dialog{
+        margin-top: 30px;
+        .modal-content{
+          .modal-body{
+            padding: 20px 40px;
+            .form-group{
+              .error_tips{
+                color: red;
+                font-size: 12px;
+              }
+              #btn1,#btn2{
+                display: block;
+                float: left;
+                margin-top: 20px;
+              }
+              .img_name {
+                font-size: 14px;
+                color: #111;
+                text-align: center;
+                width: 200px;
+                height: 170px;
+                margin-left: 100px;
+                margin-top: 10px;
+                .upload_img {
+                  width: 150px;
+                  height: 150px;
+                  border-radius: 4px;
+                  margin-left: 20px;
+                  background-color: #fff;
+                }
+                p {
+                  margin: auto;
+                }
+              }
+            }
+          }
+          .modal-footer{
+            .btn-default{
+              background-color: #111;
+              color: #fff;
+            }
+          }
+        }
+      }
+    }
+    .modal_delete{
+      .modal-dialog {
+        margin-top: 200px;
+        .modal-content {
+          .modal-footer{
+            .btn-default{
+              background-color: #111;
+              color: #fff;
+            }
+          }
+        }
+      }
+    }
+  }
+}

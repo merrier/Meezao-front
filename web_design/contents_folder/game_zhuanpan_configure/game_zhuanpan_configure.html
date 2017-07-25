@@ -1,0 +1,621 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <!--360 浏览器在读取到这个标签后，立即切换对应的极速核-->
+    <meta name="renderer" content="webkit">
+    <!--优先使用 IE 最新版本和 Chrome-->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <!--百度禁止转码-->
+    <meta http-equiv="Cache-Control" content="no-siteapp"/>
+    <title>新的首页</title>
+
+    <!--全局css开始-->
+    <link href="../../plugin_folder/bootstrap_v3.3.5/css/bootstrap.min.css" rel="stylesheet"/>
+    <link href="../../plugin_folder/font-awesome/font-awesome.min.css" rel="stylesheet"/>
+    <link href="../../common_folder/stylesheets/common_base.css" rel="stylesheet"/>
+    <link href="../../common_folder/less/PC_index.less" rel="stylesheet/less"/>
+    <!--全局css结束-->
+
+    <link href="less/game_zhuanpan_configure.less" rel="stylesheet/less"/>
+
+</head>
+
+<body>
+
+<!--页面开始-->
+<div class="container-fluid wrp">
+
+    <!--右侧内容开始-->
+    <div class="content clearfix">
+
+        <!--隐藏警告框标签开始-->
+        <div class="alert_hide_tag hide">
+            <div class="alert_whether_show"></div>
+            <div class="alert_tag_type"></div>
+            <div class="alert_tag_delay"></div>
+            <div class="alert_tag_content"></div>
+        </div>
+        <!--隐藏警告框标签结束-->
+
+        <!--右侧内容主体开始-->
+        <div class="content_main">
+            <div class="content_route"><a href="#none">首页</a>
+                <span class="content_route_pathname">>CRM系统>消费者管理</span></div>
+
+            <!--主体内容开始-->
+            <div class="content_mb">
+                <h2 class="content_mb_title">游戏平台配置-大转盘</h2>
+
+                <!--警告框-范例开始-->
+                <div class="alert alert-example" role="alert">
+                    <button type="button" class="close" aria-label="Close"><span aria-hidden="true">&times;</span>
+                    </button>
+                    <strong class="alert_content"></strong>
+                </div>
+                <!--警告框-范例结束-->
+
+
+                <!--自己的内容开始-->
+                <div class="content_mb_subject">
+
+
+                    <!-- Modal -->
+                    <!--<div class="modal fade" id="preview_mobile" tabindex="-1" role="dialog"-->
+                         <!--aria-labelledby="myModalLabel">-->
+                        <!--<div class="modal-dialog" role="document">-->
+                            <!--<div class="modal-content">-->
+                                <!--<div class="modal-header">-->
+                                    <!--<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span-->
+                                            <!--aria-hidden="true">&times;</span></button>-->
+                                    <!--<h4 class="modal-title">图文效果预览</h4>-->
+                                <!--</div>-->
+                                <!--<div class="modal-body">-->
+                                    <!--<div class="preview_box">-->
+                                        <!--<img class="preview_box_headimg" src="images/preview_box_headimg.png"/>-->
+
+                                        <!--<div class="preview_box_content">-->
+                                            <!--<img src="images/IMG_1514.JPG">-->
+                                        <!--</div>-->
+                                    <!--</div>-->
+                                    <!--<div class="preview_foot">-->
+                                        <!--<section></section>-->
+                                    <!--</div>-->
+                                <!--</div>-->
+                                <!--<div class="modal-footer">-->
+                                    <!--<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>-->
+                                    <!--<button type="button" class="btn btn-primary">Save changes</button>-->
+                                <!--</div>-->
+                            <!--</div>-->
+                        <!--</div>-->
+                    <!--</div>-->
+
+
+                    <!--你可以在这里写你自己的内容了-->
+                    <form class="game_zhuanpan_configure">
+
+                        <div class="game_zhuanpan_content">
+
+                            <div class="main_content_left">
+
+                                <!--上传背景图开始-->
+                                <div class="form-group">
+                                    <label class="col-sm-2 control-label">背景图:</label>
+
+                                    <div class="btn btn-default col-sm-4 input_uppic_box">
+                                        <input type="file" name="upload_img_bg" class="upload_img_bg">
+                                        <span>上传图片</span>
+
+                                        <div class="input_uppic_mask"></div>
+                                    </div>
+
+                                    <span class="img_prompt">图片不能大于500KB</span>
+                                </div>
+                                <!--上传背景图结束-->
+
+                                <!--上传指针图开始-->
+                                <div class="form-group">
+                                    <label class="col-sm-2 control-label">指针图:</label>
+
+                                    <div class="btn btn-default col-sm-4 input_uppic_box">
+                                        <input type="file" name="upload_img_pointer" class="upload_img_pointer input_submit_need" data-tips="请上传指针图!">
+                                        <span>上传图片</span>
+
+                                        <div class="input_uppic_mask"></div>
+                                    </div>
+
+                                    <span class="img_prompt">图片不能大于500KB</span>
+                                </div>
+                                <!--上传指针图结束-->
+
+                                <!--奖项分级设置开始-->
+                                <div class="form-group">
+                                    <div class="input-group">
+                                        <label class="input-group-addon">奖项分级设置</label>
+
+                                        <div class="dropdown" data-id="0">
+                                            <button type="button" class="btn btn-default btn-dropdown">
+                                                <span>请选择奖项数量(默认为3个)</span></button>
+                                            <button type="button" class="btn btn-default dropdown-toggle"
+                                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                <span class="caret"></span>
+                                                <span class="sr-only">Toggle Dropdown</span>
+                                            </button>
+                                            <ul class="dropdown-menu">
+                                                <li><a href="javascript:void(0)" data-id="1">3个奖项</a></li>
+                                                <li><a href="javascript:void(0)" data-id="2">4个奖项</a></li>
+                                                <li><a href="javascript:void(0)" data-id="3">5个奖项</a></li>
+                                                <li><a href="javascript:void(0)" data-id="4">6个奖项</a></li>
+                                            </ul>
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <!--奖项分级设置结束-->
+
+                                <!--一等奖奖项设置开始-->
+                                <div class="prize_input_box prize_input_box1">
+
+                                    <div class="form-group">
+                                        <div class="input-group">
+                                            <label class="input-group-addon">一等奖名称</label>
+                                            <input type="text" class="form-control input_word_limit input_submit_need"
+                                                   name="first_prize_name" data-tips="请填写一等奖名称!"
+                                                   maxlength="15">
+                                            <span class="input_num_box"><span class="input_num">0</span>/15</span>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="input-group">
+                                            <label class="input-group-addon">一等奖数量</label>
+                                            <input type="text" class="form-control input_submit_need" data-tips="请填写一等奖数量!" name="first_prize_number" placeholder="请输入正整数,可以为0">
+                                            <span class="input-group-addon">个</span>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="input-group">
+                                            <label class="input-group-addon">一等奖概率</label>
+                                            <input type="text" class="form-control input_submit_need" data-tips="请填写一等奖概率!" name="first_prize_probability" placeholder="请输入正整数,可以为0">
+                                            <span class="input-group-addon">%</span>
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <!--一等奖奖项设置结束-->
+
+                                <!--二等奖奖项设置开始-->
+                                <div class="prize_input_box prize_input_box2">
+                                    <div class="form-group">
+                                        <div class="input-group">
+                                            <label class="input-group-addon">二等奖名称</label>
+                                            <input type="text" class="form-control input_word_limit input_submit_need"
+                                                   name="second_prize_name" maxlength="15" data-tips="请填写二等奖名称!">
+                                            <span class="input_num_box"><span class="input_num">0</span>/15</span>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="input-group">
+                                            <label class="input-group-addon">二等奖数量</label>
+                                            <input type="text" class="form-control input_submit_need" name="second_prize_number" data-tips="请填写二等奖数量" placeholder="请输入正整数,可以为0">
+                                            <span class="input-group-addon">个</span>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="input-group">
+                                            <label class="input-group-addon">二等奖概率</label>
+                                            <input type="text" class="form-control input_submit_need" name="second_prize_probability" data-tips="请填写二等奖概率" placeholder="请输入正整数,可以为0">
+                                            <span class="input-group-addon">%</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--二等奖奖项设置结束-->
+
+                                <!--三等奖奖项设置开始-->
+                                <div class="prize_input_box prize_input_box3">
+                                    <div class="form-group">
+                                        <div class="input-group">
+                                            <label class="input-group-addon">三等奖名称</label>
+                                            <input type="text" class="form-control input_word_limit input_submit_need"
+                                                   name="third_prize_name" data-tips="请填写三等奖名称"
+                                                   maxlength="15">
+                                            <span class="input_num_box"><span class="input_num">0</span>/15</span>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="input-group">
+                                            <label class="input-group-addon">三等奖数量</label>
+                                            <input type="text" class="form-control input_submit_need" data-tips="请填写三等奖数量" name="third_prize_number" placeholder="请输入正整数,可以为0">
+                                            <span class="input-group-addon">个</span>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="input-group">
+                                            <label class="input-group-addon">三等奖概率</label>
+                                            <input type="text" class="form-control input_submit_need" data-tips="请填写三等奖概率" name="third_prize_probability" placeholder="请输入正整数,可以为0">
+                                            <span class="input-group-addon">%</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--三等奖奖项设置结束-->
+
+                                <!--四等奖奖项设置开始-->
+                                <div class="prize_input_box prize_input_box4" style="display: none">
+
+                                    <div class="form-group">
+                                        <div class="input-group">
+                                            <label class="input-group-addon">四等奖名称</label>
+                                            <input type="text" class="form-control input_word_limit input_submit_need" data-tips="请填写四等奖名称"
+                                                   name="fourth_prize_name"
+                                                   maxlength="15">
+                                            <span class="input_num_box"><span class="input_num">0</span>/15</span>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <div class="input-group">
+                                            <label class="input-group-addon">四等奖数量</label>
+                                            <input type="text" class="form-control input_submit_need" data-tips="请填写四等奖数量" name="fourth_prize_number" placeholder="请输入正整数,可以为0">
+                                            <span class="input-group-addon">个</span>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <div class="input-group">
+                                            <label class="input-group-addon">四等奖概率</label>
+                                            <input type="text" class="form-control input_submit_need" data-tips="请填写四等奖概率" name="fourth_prize_probability" placeholder="请输入正整数,可以为0">
+                                            <span class="input-group-addon">%</span>
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <!--四等奖奖项设置结束-->
+
+                                <!--五等奖奖项设置开始-->
+                                <div class="prize_input_box prize_input_box5" style="display: none">
+                                    <div class="form-group">
+                                        <div class="input-group">
+                                            <label class="input-group-addon">五等奖名称</label>
+                                            <input type="text" class="form-control input_word_limit input_submit_need" data-tips="请填写五等奖名称"
+                                                   name="fifth_prize_name" maxlength="15">
+                                            <span class="input_num_box"><span class="input_num">0</span>/15</span>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <div class="input-group">
+                                            <label class="input-group-addon">五等奖数量</label>
+                                            <input type="text" class="form-control input_submit_need" data-tips="请填写五等奖数量" name="fifth_prize_number" placeholder="请输入正整数,可以为0">
+                                            <span class="input-group-addon">个</span>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <div class="input-group">
+                                            <label class="input-group-addon">五等奖概率</label>
+                                            <input type="text" class="form-control input_submit_need" data-tips="请填写五等奖概率" name="fifth_prize_probability" placeholder="请输入正整数,可以为0">
+                                            <span class="input-group-addon">%</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--五等奖奖项设置结束-->
+
+                                <!--六等奖奖项设置开始-->
+                                <div class="prize_input_box prize_input_box6" style="display: none">
+                                    <div class="form-group">
+                                        <div class="input-group">
+                                            <label class="input-group-addon">六等奖名称</label>
+                                            <input type="text" class="form-control input_word_limit input_submit_need" data-tips="请填写六等奖名称"
+                                                   name="sixth_prize_name"
+                                                   maxlength="15">
+                                            <span class="input_num_box"><span class="input_num">0</span>/15</span>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <div class="input-group">
+                                            <label class="input-group-addon">六等奖数量</label>
+                                            <input type="text" class="form-control input_submit_need" data-tips="请填写六等奖数量" name="sixth_prize_number" placeholder="请输入正整数,可以为0">
+                                            <span class="input-group-addon">个</span>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <div class="input-group">
+                                            <label class="input-group-addon">六等奖概率</label>
+                                            <input type="text" class="form-control input_submit_need" data-tips="请填写六等奖概率" name="sixth_prize_probability" placeholder="请输入正整数,可以为0">
+                                            <span class="input-group-addon">%</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--六等奖奖项设置结束-->
+
+
+
+                                <!--未中奖提示开始-->
+                                <div class="form-group">
+                                    <div class="input-group">
+                                        <label class="input-group-addon">未中奖提示</label>
+                                        <input type="text" class="form-control" name="tips_nowin"
+                                               placeholder="再接再厉，大奖马上来了!">
+                                    </div>
+                                </div>
+                                <!--未中奖提示结束-->
+
+                                <!--每人每天次数开始-->
+                                <div class="form-group">
+                                    <div class="input-group">
+                                        <label class="input-group-addon">每人每天次数</label>
+                                        <input type="text" class="form-control perman_perday_num" name="perman_perday_num"
+                                               placeholder="请填写整数">
+                                    </div>
+                                </div>
+                                <!--每人每天次数结束-->
+
+                                <!--几次助力得到下次机会开始-->
+                                <div class="form-group">
+                                    <div class="input-group">
+                                        <label class="input-group-addon">几次助力得到下次机会</label>
+                                        <input type="text" class="form-control helptimes_need" name="helptimes_need"
+                                               placeholder="请填写整数">
+                                    </div>
+                                </div>
+                                <!--几次助力得到下次机会结束-->
+
+                                <!--每人总共抽奖次数开始-->
+                                <div class="form-group">
+                                    <div class="input-group">
+                                        <label class="input-group-addon">每人总共抽奖次数</label>
+                                        <input type="text" class="form-control perman_total_num" name="perman_total_num"
+                                               placeholder="请填写整数">
+                                    </div>
+                                </div>
+                                <!--每人总共抽奖次数结束-->
+
+                                <!--奖品说明开始-->
+                                <div class="form-group">
+                                    <label class="control-label">奖品说明</label>
+
+                                    <div class="editor_div">
+
+                                    </div>
+                                </div>
+                                <!--奖品说明结束-->
+
+                                <!--活动说明开始-->
+                                <div class="form-group">
+                                    <label class="control-label">活动说明</label>
+                                <textarea class="activity_detail" maxlength="300">
+
+                                </textarea>
+                                    <span class="message_span">0/300</span>
+                                </div>
+                                <!--活动说明结束-->
+
+                                <!--是否显示分享导航开始-->
+                                <div class="form-group">
+                                    <label class="control-label">是否显示分享导航:</label>
+                                    <label class="radio-inline">
+                                        <input type="radio" name="whether_show_shareguide"
+                                               class="whether_show_shareguide" value="1">是
+                                    </label>
+                                    <label class="radio-inline">
+                                        <input type="radio" name="whether_show_shareguide"
+                                               class="whether_show_shareguide" checked="checked" value="0">否
+                                    </label>
+                                </div>
+                                <!--是否显示分享导航结束-->
+
+                                <!--分享引导页面开始-->
+                                <div class="form-group">
+                                    <label class="col-sm-2 control-label">分享引导图片:</label>
+
+                                    <div class="btn btn-default col-sm-4 input_uppic_box">
+                                        <input type="file" name="upload_img_shareguide" class="upload_img_shareguide">
+                                        <span>上传图片</span>
+
+                                        <div class="input_uppic_mask"></div>
+                                    </div>
+
+                                    <span class="img_prompt">图片不能大于500KB</span>
+                                </div>
+                                <!--分享引导页面结束-->
+
+                                <!--抽奖机会用完提示开始-->
+                                <div class="form-group">
+                                    <div class="input-group">
+                                        <label class="input-group-addon">抽奖机会用完提示</label>
+                                        <input type="text" class="form-control" name="tips_nochance"
+                                               placeholder="抽奖机会已用完,请下次再来">
+                                    </div>
+                                </div>
+                                <!--抽奖机会用完提示结束-->
+
+                                <!--分享图标页面开始-->
+                                <div class="form-group">
+                                    <label class="col-sm-2 control-label">分享图标:</label>
+
+                                    <div class="btn btn-default col-sm-4 input_uppic_box">
+                                        <input type="file" name="upload_img_sharelogo" class="upload_img_sharelogo">
+                                        <span>上传图片</span>
+
+                                        <div class="input_uppic_mask"></div>
+                                    </div>
+
+                                    <span class="img_prompt">图片不能大于500KB</span>
+                                </div>
+                                <!--分享图标页面结束-->
+
+                                <!--分享标题开始-->
+                                <div class="form-group">
+                                    <div class="input-group">
+                                        <label class="input-group-addon">分享标题</label>
+                                        <input type="text" class="form-control input_word_limit share_title" name="share_title"
+                                               maxlength="15">
+                                        <span class="input_num_box"><span class="input_num">0</span>/15</span>
+                                    </div>
+                                </div>
+                                <!--分享标题结束-->
+
+                                <!--分享描述开始-->
+                                <div class="form-group">
+                                    <div class="input-group">
+                                        <label class="input-group-addon">分享描述</label>
+                                        <input type="text" class="form-control input_word_limit share_des" name="share_des"
+                                               maxlength="30">
+                                        <span class="input_num_box"><span class="input_num">0</span>/30</span>
+                                    </div>
+                                </div>
+                                <!--分享描述结束-->
+
+                                <!--是否需要助力开始-->
+                                <div class="form-group">
+                                    <label class="control-label">是否需要助力:</label>
+                                    <label class="radio-inline">
+                                        <input type="radio" name="whether_need_help" class="whether_need_help"
+                                               value="1">是
+                                    </label>
+                                    <label class="radio-inline">
+                                        <input type="radio" name="whether_need_help" class="whether_need_help"
+                                               checked="checked" value="0">否
+                                    </label>
+                                </div>
+                                <!--是否需要助力结束-->
+
+                                <!--分享引导页面开始-->
+                                <div class="form-group">
+                                    <label class="col-sm-2 control-label">助力页图片:</label>
+
+                                    <div class="btn btn-default col-sm-4 input_uppic_box">
+                                        <input type="file" name="upload_img_help" class="upload_img_help">
+                                        <span>上传图片</span>
+
+                                        <div class="input_uppic_mask"></div>
+                                    </div>
+
+                                    <span class="img_prompt">图片不能大于500KB</span>
+                                </div>
+                                <!--分享引导页面结束-->
+
+
+                            </div>
+                            <div class="main_content_right">
+
+                                <!--主显示效果开始-->
+                                <div class="right_show_box right_show_main">
+                                    <div class="right_show_content">
+                                        <img class="show_bg" src="">
+
+                                        <div class="show_mask_black"></div>
+                                        <div class="show_rules_box">
+
+                                        </div>
+                                        <div class="show_turntable_box show_turntable_bgbox">
+                                            <img class="show_turntable_bg" src=""/>
+                                            <img class="show_turntable_pointer" src=""/>
+                                        </div>
+                                        <div class="show_turntable_box">
+                                            <p class="show_turntable_lotterynum">您当前有5次机会</p>
+
+                                            <p class="show_turntable_neednum">离下次机会还需4次助力</p>
+                                        </div>
+                                        <div class="show_turntable_box">
+                                            <a class="show_btn show_btn_myprize">我的奖品</a>
+                                            <a class="show_btn show_btn_share">分享朋友圈</a>
+                                        </div>
+                                        <div class="show_turntable_box">
+                                            <span class="show_turntable_actdes">活动说明</span>
+                                        </div>
+                                        <div class="show_turntable_box show_turntable_prize">
+                                            <div class="show_turntable_prizetitle">奖项说明</div>
+                                            <div class="show_turntable_prizemain">
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--主显示效果结束-->
+
+                                <!--分享页面显示效果开始-->
+                                <div class="right_show_box right_show_share">
+                                    <div class="right_show_content">
+                                        <p class="show_share_title"></p>
+                                        <img src="" class="show_share_logo">
+
+                                        <div class="show_share_desbox"><p class="show_share_des"></p></div>
+                                    </div>
+                                </div>
+                                <!--分享页面显示效果结束-->
+
+                                <!--助力页面显示效果开始-->
+                                <div class="right_show_box right_show_help">
+                                    <div class="right_show_content">
+                                        <img class="show_bg" src="">
+
+                                        <div class="show_mask_black"></div>
+                                        <div class="show_rules_box">
+
+                                        </div>
+                                        <div class="show_turntable_box show_turntable_bgbox">
+                                            <img class="show_turntable_bg show_helppage_bg" src="">
+                                            <img class="show_turntable_pointer show_helppage_pointer" src="">
+                                        </div>
+                                        <div class="show_turntable_box">
+                                            <a class="show_btn show_btn_help">为TA助力</a>
+                                            <a class="show_btn show_btn_goplay show_btn_goplayonly">我也要抽奖</a>
+                                        </div>
+                                        <div class="show_turntable_box">
+                                            <span class="show_turntable_actdes">活动说明</span>
+                                        </div>
+                                        <div class="show_turntable_box show_turntable_prize">
+                                            <div class="show_turntable_prizetitle">奖项说明</div>
+                                            <div class="show_turntable_prizemain"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--助力页面显示效果结束-->
+                            </div>
+                        </div>
+
+                        <div class="game_zhuanpan_opr">
+                            <a class="btn btn-primary btn_save" type="submit">保存</a>
+                            <a class="btn btn-black btn_reset">重置</a>
+                        </div>
+                    </form>
+
+                </div>
+                <!--自己的内容结束-->
+
+            </div>
+            <!--主体内容结束-->
+
+        </div>
+        <!--右侧内容主体结束-->
+
+
+    </div>
+    <!--右侧内容结束-->
+</div>
+<!--页面结束-->
+
+
+<!--尾部开始-->
+<div class="container-fluid foot">
+    <h2>Design by Meezao</h2>
+</div>
+<!--尾部结束-->
+
+
+</body>
+
+<!--全局js开始-->
+<script src="../../plugin_folder/jquery_v1.11.3/jquery-1.11.3.min.js"></script>
+<script src="../../plugin_folder/bootstrap_v3.3.5/js/bootstrap.min.js"></script>
+<script src="../../plugin_folder/jquery.validate_v1.13.1/jquery.validate-1.13.1.js"></script>
+<script src="../../plugin_folder/less_v1.7.0/less.min.js"></script>
+<script src="../../common_folder/javascripts/base.js"></script>
+<script src="../../common_folder/javascripts/common_index.js"></script>
+<!--全局js结束-->
+
+<script src="javascripts/game_zhuanpan_configure.js"></script>
+
+</html>

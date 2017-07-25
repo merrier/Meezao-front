@@ -1,0 +1,146 @@
+/* CSS login */
+/* +--------------------------------------------------------------------------
+// | Author: Merrier <953075999@qq.com> <http://> <Date:2016/5/20 22:27>
+// +--------------------------------------------------------------------------*/
+//引入全局less变量
+@import "PC_library";
+
+html {
+
+  body {
+
+    //平台模版列表开始
+    .library_platform_module {
+      padding: 10px 12px;
+      border: 1px solid @color_border;
+      border-radius: 6px;
+      width: 100%;
+      .clearfix();
+
+      .row {
+        margin: 0;
+        margin-top: 15px;
+        width: 100%;
+
+        .col-md-3 {
+          padding: 0 4px;
+
+          .title {
+            font-size: 16px;
+            font-weight: bold;
+            text-align: center;
+            height: 40px;
+            line-height: 40px;
+          }
+
+          .thumbnail {
+            padding: 0;
+            margin-bottom: 0;
+
+            .thumbnail {
+              position: relative;
+              border: none;
+              margin-bottom: 9px;
+
+              img {
+                height: 140px;
+              }
+
+              .thumbnail_logo {
+                position: absolute;
+                bottom: 0;
+                .size(22px, 22px);
+                color: @color_white;
+                line-height: 22px;
+                text-align: center;
+                font-size: 12px;
+                border-radius: 5px;
+              }
+
+              .thumbnail_logo_mi {
+                left:0;
+                background-color: #d30e02;
+              }
+
+              .thumbnail_logo_chou {
+                left:25px;
+                background-color: #c200e5;
+              }
+
+              .thumbnail_logo_he {
+                left:50px;
+                background-color: #00a81c;
+              }
+
+              .thumbnail_logo_lian {
+                left:75px;
+                background-color: #0000a8;
+              }
+
+            }
+          }
+
+          .caption {
+            padding-bottom: 0;
+
+            h3 {
+              padding: 10px 0;
+              text-align: center;
+            }
+
+            p {
+              margin-bottom: 8px;
+
+              .btn {
+                height: 30px;
+                line-height: 18px;
+              }
+
+              span.open {
+                float: right;
+                color: green;
+                margin-top: 4px;
+              }
+
+              span.un_open {
+                float: right;
+                color: gray;
+                margin-top: 4px;
+              }
+            }
+          }
+        }
+      }
+    }
+    //平台模版列表结束
+
+    //模态框-平台模版开始
+    .modal_platform_module{
+
+      .modal-dialog{
+        width: 800px;
+
+        .modal-content{
+
+          .modal-body{
+            overflow: auto;
+            height: 300px;
+
+            img{
+              width: 100%;
+            }
+          }
+
+          .modal-footer{
+            .btn-default{
+              background-color: @color_black;
+              color: @color_white;
+            }
+          }
+        }
+      }
+    }
+    //模态框-平台模版结束
+
+  }
+}

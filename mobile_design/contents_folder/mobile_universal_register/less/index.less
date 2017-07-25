@@ -1,0 +1,87 @@
+/* CSS login */
+/* +--------------------------------------------------------------------------
+// | Author: Merrier <953075999@qq.com> <http://> <Date:2016/5/11 22:27>
+// +--------------------------------------------------------------------------*/
+//引入全局less变量
+@import "../../../common_folder/less/Mobile_library";
+
+html {
+
+  body {
+
+    .main{
+      position: fixed;
+      .size(100%,100%);
+      top: 0;
+      left: 0;
+      background-color: rgba(0,0,0,0.7);
+
+      #mobile_register_form {
+        padding: 1rem;
+
+
+        .reg_common{
+          margin-bottom: 10px;
+
+          label {
+            font-size: 0.8rem;
+            color: #ffffff;
+            font-weight: bold;
+          }
+
+          .ui-input-text{
+            border-radius: 0;
+          }
+
+          input{
+            border-radius: 0;
+            min-height: 1.5rem;
+            height: 1.5rem;
+            font-size: 0.8rem;
+          }
+          #code_random{
+            display: none;
+          }
+          .reg_box{
+            position: relative;
+            .clearfix;
+
+            #reg_btn_getcode{
+              float: right;
+              .size(5rem,1.2rem);
+              line-height: 1.2rem;
+              color: @color_black;
+              background-color: @color_white;
+              font-size: 0.7rem;
+              border-radius: 0;
+              text-align: center;
+              text-decoration: none;
+            }
+            .reg_btn_mask{
+              display: none;
+              position: absolute;
+              .size(5rem,1.2rem);
+              right: 0;
+              bottom: 0;
+            }
+            #reg_btn_register{
+              display: block;
+              width: 96%;
+              height: 1.5rem;
+              .center_block;
+              margin-top: 30px;
+              line-height: 1.5rem;
+              color: @color_black;
+              background-color: @color_white;
+              font-size: 0.9rem;
+              text-align: center;
+              text-decoration: none;
+            }
+          }
+        }
+
+      }
+    }
+  }
+
+}

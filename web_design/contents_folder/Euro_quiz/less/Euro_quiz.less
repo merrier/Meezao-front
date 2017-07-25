@@ -1,0 +1,186 @@
+/* Less index_new */
+/* +--------------------------------------------------------------------------
+// | Author: Merrier <953075999@qq.com> <http://> <Date:2016/5/11 22:27>
+// +--------------------------------------------------------------------------*/
+
+//引入全局less变量
+@import "../../../common_folder/less/PC_library";
+//后台路径
+//@import "../../MeeZao/B_New/common_folder/less/PC_library";
+
+html{
+
+  body{
+
+    #ui-timepicker-div{
+      z-index: 2;
+    }
+
+    #ui-datepicker-div{
+      z-index:2;
+    }
+
+    .content_mb_subject{
+
+      //导航条开始
+      .navbar{
+
+        .btn_create_battle{
+          margin-top: 0;
+          line-height: 32px;
+        }
+      }
+      //导航条结束
+
+      //标题开始
+      .battle_title{
+        font-weight: bold;
+        font-size: 18px;
+        text-align: left;
+        margin-bottom: 30px;
+      }
+      //标题结束
+
+      //竞猜主体内容开始
+      .battle_box{
+        width:90%;
+        margin: 0 auto;
+
+        //活动时间开始
+        .battle_box_time{
+          width:300px;
+          margin-bottom: 20px;
+
+          .input-group-addon{
+            width:100px;
+          }
+          .battle_time{
+            text-align: center;
+          }
+        }
+        //活动时间结束
+
+        //主队与客队选择开始
+        .battle_box_team{
+          .clearfix;
+          width:100%;
+          margin-bottom: 50px;
+          text-align: center;
+
+          .battle_team{
+            width:45%;
+            font-size: 20px;
+
+            .input-group-addon{
+              width:100px;
+            }
+            input{
+              text-align: center;
+            }
+
+            .dropdown-menu {
+              padding: 0;
+              width: 100%;
+              max-height: 210px;
+              overflow-y: auto;
+
+              li {
+                height: 30px;
+                line-height: 30px;
+                text-align: center;
+
+                :hover {
+                  background-color: @color_blue;
+                }
+
+                a {
+                  padding: 0;
+                  line-height: 30px;
+                }
+              }
+
+            }
+          }
+
+          .battle_hometeam{
+            float: left;
+          }
+
+          .battle_visitteam{
+            float: right;
+          }
+        }
+        //主队与客队选择结束
+
+        //主队与客队logo展示开始
+        .battle_box_teamlogo{
+          position: relative;
+          .clearfix;
+          width:100%;
+          margin-bottom: 50px;
+
+          p{
+            position: absolute;
+            width: 100%;
+            top: 50%;
+            margin-top: -70px;
+            font-size: 55px;
+            text-align: center;
+          }
+
+          .battle_result{
+            position: absolute;
+            width: 200px;
+            bottom: 0;
+            left: 50%;
+            margin-left: -100px;
+            text-align: center;
+
+            .battle_result_num{
+              float: left;
+              width: 90px;
+              text-align: center;
+            }
+            b{
+              width: 20px;
+              float: left;
+              margin-top: 5px;
+            }
+          }
+
+          .battle_teamlogo{
+            width:45%;
+            text-align: center;
+
+            img{
+              width:50%;
+              margin-bottom: 15px;
+              border-radius: 25px;
+              box-shadow: 0 0 20px #aaa;
+            }
+            h5{
+              font-size: 24px;
+            }
+          }
+
+          .battle_hometeam_logo{
+            float: left;
+          }
+
+          .battle_visitteam_logo{
+            float: right;
+          }
+        }
+        //主队与客队logo展示结束
+
+        //按钮开始
+        .battle_btn{
+          text-align: center;
+        }
+        //按钮结束
+      }
+      //竞猜主体内容结束
+    }
+  }
+}
+

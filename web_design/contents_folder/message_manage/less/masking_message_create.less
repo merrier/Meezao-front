@@ -1,0 +1,177 @@
+//引入全局less变量
+@import "../../../common_folder/less/PC_library";
+//后台路径
+//@import "../../MeeZao/B_New/common_folder/less/PC_library";
+
+
+html {
+  height: 100%;
+  body {
+    height: 100%;
+    font-size: 14px;
+    .wrp {
+      .content_mb_subject {
+        .setting_content{
+          width: 100%;
+          border: 1px solid #e0e0e0;
+          border-radius: 4px;
+          margin-top: 20px;
+          overflow: hidden;
+          .content_left{
+            width: 45%;
+            border-right: 1px solid #e0e0e0;
+            padding: 10px 50px 0 20px;
+            text-align: center;
+            float: left;
+            .form-group{
+              margin-top: 20px;
+              text-align: left;
+              position: relative;
+              label{
+                font-weight: normal;
+              }
+              .input_num_box{
+                position: absolute;
+                top:34px;
+                right: 0;
+              }
+              .object_div{
+                width: 100%;
+                height: 300px;
+                overflow: auto;
+                border: 1px solid #e0e0e0;
+                border-radius: 4px;
+                .object_div_item{
+                  height: 32px;
+                  line-height: 32px;
+                  padding-left: 20px;
+                  border-bottom: 1px  solid #e0e0e0;
+                  position: relative;
+                  .fa{
+                    position: absolute;
+                    right: 10px;
+                    top:8px;
+                  }
+                }
+              }
+              .object_input{
+                visibility: hidden;
+                position: absolute;
+              }
+              .error_tips{
+                color: red;
+                font-size: 12px;
+                //display: block;
+              }
+              .datimepicker{
+                input{
+                  width: 194px;
+                  text-align: center;
+                }
+              }
+              .message_textarea{
+                display: block;
+                width: 100%;
+                height: 300px;
+                resize: none;
+                overflow: auto;
+              }
+            }
+            .btn_submit{
+              margin: auto;
+              margin-top: 50px;
+              margin-bottom: 30px;
+            }
+          }
+          .content_right{
+            width: 55%;
+            height: 100%;
+            float: right;
+            .content_right_header{
+              height: 20%;
+              border-bottom: 1px solid #e0e0e0;
+              padding: 10px 0;
+              .checkAll_checkbox{
+                float: left;
+                margin-left: 10px;
+                margin-top: 10px;
+              }
+              .checkAll_p{
+                float: left;
+                font-size: 16px;
+                margin-left: 1%;
+                margin-top: 6px;
+              }
+              .form-group{
+                float: left;
+                margin-left: 4%;
+                width: 60%;
+                .btn-dropdown{
+                  width: 80px;
+                }
+                .dropdown-menu{
+                  min-width: 60%;
+                  li{
+                    :hover{
+                      background-color: #0096ff;
+                      color: #fff;
+                    }
+                  }
+                }
+                .search_input{
+                  width: 210px;
+                }
+              }
+              .search{
+                width: 70px;
+              }
+            }
+            .content_right_middle{
+              width: 100%;
+              min-height: 500px;
+              overflow: auto;
+              .content_item{
+                padding: 10px 2% 0 4%;
+                .content_item_title{
+                  width: 94%;
+                  height: 34px;
+                  line-height: 34px;
+                  border: 1px solid #e0e0e0;
+                  border-radius: 4px;
+                  position: relative;
+                  .check_item{
+                    float: left;
+                    margin: 12px 10px 0 10px;
+                  }
+                  .checkAll_p{
+                    width: 80%;
+                    margin-left: 20px;
+                  }
+                  .fa{
+                    position: absolute;
+                    right: 20px;
+                    top:4px;
+                  }
+                }
+                .content_item_div{
+                  width: 94%;
+                  min-height: 100px;
+                  display: none;
+                  .content_item_child{
+                    height: 34px;
+                    line-height: 34px;
+                    .check_item_child{
+                      float: left;
+                      margin: 10px 20px 0 30px;
+                    }
+                  }
+
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

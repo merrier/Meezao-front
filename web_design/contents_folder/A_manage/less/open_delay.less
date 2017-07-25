@@ -1,0 +1,77 @@
+//引入全局less变量
+@import "../../../common_folder/less/PC_library";
+//后台路径
+//@import "../../MeeZao/B_New/common_folder/less/PC_library";
+
+
+html {
+  height: 100%;
+  body {
+    height: 100%;
+    font-size: 14px;
+    .wrp {
+      .content_mb_subject {
+        text-align: center;
+        .navbar {
+          height: 100px;
+          .navbar_top {
+            height: 49px;
+            border-bottom: 1px solid #ececec;
+          }
+          .navbar_bottom {
+            .navbar-form {
+              .form-group {
+                .form-control {
+                  width: 200px;
+                }
+              }
+            }
+          }
+        }
+        .common_table{
+          .table-bordered{
+            .table_head{
+              .publish_time{
+                width: 16%;
+              }
+              .kind{
+                width: 14%;
+              }
+              .name{
+                width: 22%;
+              }
+              .state{
+                width: 10%;
+              }
+              .period_of_validity{
+                width: 22%;
+              }
+              .operation{
+                width: 16%;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  .modal_delay{
+    .modal-body{
+      height: 200px;
+      padding: 40px;
+      input[type=radio]{
+        margin: 20px 10px;
+        display: inline-block;
+      }
+      .datimepicker{
+        display: inline-block;
+      }
+    }
+    .modal-footer{
+      .btn-default{
+        background-color: #111;
+        color: #fff;
+      }
+    }
+  }
+}
